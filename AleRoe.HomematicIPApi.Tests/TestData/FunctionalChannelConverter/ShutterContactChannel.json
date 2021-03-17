@@ -1,0 +1,13 @@
+{
+  "label": "",
+  "deviceId": "3014F711A00000D70995699C",
+  "index": 1,
+  "groupIndex": 1,
+  "functionalChannelType": "SHUTTER_CONTACT_CHANNEL",
+  "groups": [
+    "ae83e9db-1f93-4352-ac17-c103ca838d8b",
+    "389d0062-dc2e-48e5-a80b-65a38dc447c8"
+  ],
+  "windowState": null,
+  "eventDelay": 0
+}

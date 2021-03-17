@@ -1,0 +1,13 @@
+{
+  "label": "",
+  "deviceId": "3014F711A0000D1A49A3D77A",
+  "index": 1,
+  "groupIndex": 1,
+  "functionalChannelType": "SWITCH_CHANNEL",
+  "groups": [
+    "e5b4902e-fd95-47db-9dfa-131bce0e06e4"
+  ],
+  "on": false,
+  "profileMode": "AUTOMATIC",
+  "userDesiredProfileMode": "AUTOMATIC"
+}

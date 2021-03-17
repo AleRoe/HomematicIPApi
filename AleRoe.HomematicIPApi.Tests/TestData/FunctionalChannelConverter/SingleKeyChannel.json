@@ -1,0 +1,10 @@
+{
+  "label": "",
+  "deviceId": "3014F711A0000B5A498F7871",
+  "index": 1,
+  "groupIndex": 1,
+  "functionalChannelType": "SINGLE_KEY_CHANNEL",
+  "groups": [
+    "e5b4902e-fd95-47db-9dfa-131bce0e06e4"
+  ]
+}

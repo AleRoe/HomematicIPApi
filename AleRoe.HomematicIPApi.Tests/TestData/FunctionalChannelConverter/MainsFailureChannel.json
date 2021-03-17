@@ -1,0 +1,11 @@
+{
+  "deviceId": "3014F7110000000000ABCD50",
+  "functionalChannelType": "MAINS_FAILURE_CHANNEL",
+  "genericAlarmSignal": "FULL_ALARM",
+  "groupIndex": 1,
+  "groups": [
+  ],
+  "index": 1,
+  "label": "",
+  "powerMainsFailure": false
+}

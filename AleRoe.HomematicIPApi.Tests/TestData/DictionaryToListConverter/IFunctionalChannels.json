@@ -1,0 +1,65 @@
+{
+  "0": {
+    "label": "",
+    "deviceId": "3014F711A00001D709A10652",
+    "index": 0,
+    "groupIndex": 0,
+    "functionalChannelType": "DEVICE_BASE",
+    "groups": [
+      "f1840206-f73d-4772-94d3-706feb53ebe2"
+    ],
+    "unreach": false,
+    "lowBat": null,
+    "routerModuleEnabled": false,
+    "multicastRoutingEnabled": false,
+    "routerModuleSupported": true,
+    "rssiDeviceValue": -57,
+    "rssiPeerValue": -58,
+    "configPending": false,
+    "dutyCycle": false,
+    "deviceOverloaded": false,
+    "coProUpdateFailure": false,
+    "coProFaulty": false,
+    "coProRestartNeeded": false,
+    "deviceUndervoltage": false,
+    "deviceOverheated": null,
+    "temperatureOutOfRange": false,
+    "devicePowerFailureDetected": false,
+    "supportedOptionalFeatures": {
+      "IFeatureDeviceCoProRestart": false,
+      "IFeatureDeviceOverheated": true,
+      "IOptionalFeatureDutyCycle": true,
+      "IFeatureMulticastRouter": true,
+      "IFeatureDeviceCoProUpdate": false,
+      "IFeaturePowerShortCircuit": false,
+      "IFeatureDevicePowerFailure": false,
+      "IFeatureShortCircuitDataLine": false,
+      "IFeatureRssiValue": true,
+      "IFeatureBusConfigMismatch": false,
+      "IFeatureDeviceUndervoltage": false,
+      "IFeatureDeviceOverloaded": false,
+      "IFeatureDeviceCoProError": false,
+      "IFeatureDeviceIdentify": false,
+      "IOptionalFeatureLowBat": false,
+      "IFeatureDeviceTemperatureOutOfRange": false
+    },
+    "busConfigMismatch": null,
+    "powerShortCircuit": null,
+    "shortCircuitDataLine": null
+  },
+  "1": {
+    "label": "",
+    "deviceId": "3014F711A00001D709A10652",
+    "index": 1,
+    "groupIndex": 1,
+    "functionalChannelType": "SWITCH_MEASURING_CHANNEL",
+    "groups": [
+      "e5b4902e-fd95-47db-9dfa-131bce0e06e4"
+    ],
+    "on": false,
+    "profileMode": "AUTOMATIC",
+    "userDesiredProfileMode": "AUTOMATIC",
+    "energyCounter": 0.07719999999999999,
+    "currentPowerConsumption": 0.0
+  }
+}

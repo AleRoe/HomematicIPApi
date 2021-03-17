@@ -1,0 +1,21 @@
+{
+  "label": "",
+  "deviceId": "3014F711A00008D8A989F035",
+  "index": 1,
+  "groupIndex": 1,
+  "functionalChannelType": "DIMMER_CHANNEL",
+  "groups": [
+    "e5b4902e-fd95-47db-9dfa-131bce0e06e4"
+  ],
+  "on": false,
+  "profileMode": "AUTOMATIC",
+  "userDesiredProfileMode": "AUTOMATIC",
+  "dimLevel": 0.0,
+  "deviceOverloaded": false,
+  "coProFaulty": false,
+  "coProRestartNeeded": false,
+  "deviceOverheated": false,
+  "supportedOptionalFeatures": {
+    "IFeatureDeviceOverloaded": false
+  }
+}
