@@ -17,8 +17,8 @@ namespace AleRoe.HomematicIpApi.Model.Groups
         [JsonProperty("sabotage")]
         public bool? Sabotage { get; set; }
 
-        [JsonProperty("smokeDetectorAlarmType", NullValueHandling = NullValueHandling.Ignore)]
-        public SmokeDetectorAlarmType SmokeDetectorAlarmType { get; set; } = SmokeDetectorAlarmType.IDLE_OFF;
+        [JsonProperty("smokeDetectorAlarmType", NullValueHandling = NullValueHandling.Include)]
+        public SmokeDetectorAlarmType? SmokeDetectorAlarmType { get; set; }
 
         [JsonProperty("moistureDetected")]
         public bool? MoistureDetected { get; set; }

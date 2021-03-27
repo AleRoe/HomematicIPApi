@@ -9,22 +9,22 @@ namespace AleRoe.HomematicIpApi.Model.Devices
     [FunctionalChannelType(FunctionalChannelType.MOTION_DETECTION_CHANNEL)]
     public class MotionDetectorIndoor : SabotageDeviceBase
     {
-        [JsonProperty("currentIllumination")]
+        [JsonIgnore]
         public double? CurrentIllumination { get; private set; }
 
-        [JsonProperty("motionDetected")]
+        [JsonIgnore]
         public bool? MotionDetected { get; private set; }
 
-        [JsonProperty("illumination")]
+        [JsonIgnore]
         public double? Illumination { get; private set; }
 
-        [JsonProperty("motionBufferActive")]
+        [JsonIgnore]
         public bool MotionBufferActive { get; private set; }
 
-        [JsonProperty("motionDetectionSendInterval")]
+        [JsonIgnore]
         public MotionDetectionSendInterval MotionDetectionSendInterval { get; private set; } = MotionDetectionSendInterval.SECONDS_30;
 
-        [JsonProperty("numberOfBrightnessMeasurements")]
+        [JsonIgnore]
         public int NumberOfBrightnessMeasurements { get; private set; }
 
         [OnDeserialized]

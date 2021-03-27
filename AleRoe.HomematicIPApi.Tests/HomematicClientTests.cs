@@ -1,23 +1,29 @@
-﻿using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using AleRoe.HomematicIpApi;
+﻿using AleRoe.HomematicIpApi;
 using AleRoe.HomematicIpApi.Model.Devices;
 using AleRoe.HomematicIpApi.Model.Groups;
 using AleRoe.HomematicIpApi.Rpc;
+using Nito.AsyncEx;
+using NUnit.Framework;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace AleRoe.HomematicIPApi.Tests
 {
     [TestFixture()]
-    [NonParallelizable]
     public class HomematicClientTests
     {
         private string accessPoint = "3014F711A00003D709B034F7";
         private string authToken = "F321A85FF95C4BB213B20DC0E005EAC6F649CB14A73A4A382335FB3CCB4DC3C8";
+
+        [SetUp]
+        public void Init()
+        {
+            /* ... */
+            Thread.Sleep(1000);
+        }
 
         [Test()]
         public void CtorTest_Success()
@@ -46,23 +52,29 @@ namespace AleRoe.HomematicIPApi.Tests
         }
 
         [Test()]
-        public async Task GetDevicesAsyncTest_ServiceProviderIsSet()
+        public void GetDevicesAsyncTest_ServiceProviderIsSet()
         {
+            IEnumerable<IDevice> result = default;
             using var client = new HomematicIpClient(accessPoint, authToken);
-            await client.Initialize();
-            var result = await client.Service.GetDevicesAsync(CancellationToken.None);
+            Assert.DoesNotThrowAsync(async () =>
+            {
+                await client.Initialize();
+                result = await client.Service.GetDevicesAsync(CancellationToken.None);
+            });
             Assert.IsTrue(result.All(x => x.Service != null));
-
         }
 
         [Test()]
-        public async Task GetGroupsAsyncTest_ServiceProviderIsSet()
+        public void GetGroupsAsyncTest_ServiceProviderIsSet()
         {
-            using HomematicIpClient client = new HomematicIpClient(accessPoint, authToken);
-            await client.Initialize();
-            var result = await client.Service.GetGroupsAsync(CancellationToken.None);
+            IEnumerable<IGroup> result = default;
+            using var client = new HomematicIpClient(accessPoint, authToken);
+            Assert.DoesNotThrowAsync(async () =>
+            {
+                await client.Initialize();
+                result = await client.Service.GetGroupsAsync(CancellationToken.None);
+            });
             Assert.IsTrue(result.All(x => x.Service != null));
-
         }
 
         //[Test()]
@@ -124,8 +136,11 @@ namespace AleRoe.HomematicIPApi.Tests
                 hasError = true;
             };
 
-            Assert.DoesNotThrowAsync(async () => await client.Initialize());
-            Assert.DoesNotThrowAsync(async () => result = await client.Service.GetCurrentStateAsync());
+            Assert.DoesNotThrowAsync(async () =>
+            {
+                await client.Initialize();
+                result = await client.Service.GetCurrentStateAsync();
+            });
             Assert.IsNotNull(result);
             Assert.IsFalse(hasError);
 
@@ -141,7 +156,7 @@ namespace AleRoe.HomematicIPApi.Tests
         }
 
         [Test()]
-        public async Task InitializeAsyncTest_RaisesEvents()
+        public void InitializeAsyncTest_RaisesEvents()
         {
             var tcs = new TaskCompletionSource<PushEventArgs>();
             
@@ -152,18 +167,20 @@ namespace AleRoe.HomematicIPApi.Tests
                 TestContext.Out.WriteLine();
             };
             client.StateChanged += (s, e) => { tcs.SetResult(e);};
-            
-            await client.Initialize();
 
-            var result = await client.Service.GetDevicesAsync(CancellationToken.None);
-            var light = result.OfType<SwitchDeviceBase>().First();
+            Assert.DoesNotThrowAsync(async () =>
+            {
+                await client.Initialize();
 
-            await client.Service.SetDeviceStateAsync(light.Id, !light.On);
+                var result = await client.Service.GetDevicesAsync(CancellationToken.None);
+                var light = result.OfType<SwitchDeviceBase>().First();
 
-            tcs.Task.Wait(5000);
-            
+                await client.Service.SetDeviceStateAsync(light.Id, !light.On);
+                await tcs.Task.WaitAsync(new CancellationTokenSource(50000).Token);
+            });
+
+            //tcs.Task.Wait(50000);
             Assert.IsTrue(tcs.Task.IsCompleted);
-            
         }
     }
 }

@@ -6,15 +6,21 @@ namespace AleRoe.HomematicIpApi.Model.Groups
     public class HeatingCoolingDemandBoilerGroup : Group
     {
         [JsonProperty("on")]
-        public bool? On { get; set; }
+        public bool? On { get; private set; }
 
         [JsonProperty("boilerLeadTime")]
-        public int BoilerLeadTime { get; set; }
+        public int BoilerLeadTime { get; private set; }
 
         [JsonProperty("boilerFollowUpTime")]
-        public int BoilerFollowUpTime { get; set; }
+        public int BoilerFollowUpTime { get; private set; }
 
         [JsonProperty("heatDemand")]
-        public object HeatDemand { get; set; }
+        public object HeatDemand { get; private set; }
+
+        [JsonProperty("heatDemandRuleEnabled")]
+        public bool? HeatDemandRuleEnabled { get; private set; }
+
+        [JsonProperty("triggered")]
+        public bool? Triggered { get; private set; }
     }
 }

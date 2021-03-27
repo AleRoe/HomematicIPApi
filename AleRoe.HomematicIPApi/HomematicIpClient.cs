@@ -61,36 +61,28 @@ namespace AleRoe.HomematicIpApi
         /// Initializes the <see cref="HomematicIpClient"/> for use.
         /// </summary>
         /// <returns>A <see cref="Task"/>.</returns>
-        public Task Initialize()
+        public async Task Initialize()
         {
-            try
+            if (service == null)
             {
-                if (service == null)
+                var settings = new JsonSerializerSettings()
                 {
-                    var settings = new JsonSerializerSettings()
-                    {
-                        TraceWriter = new DiagnosticsTraceWriter(),
-                        MissingMemberHandling = MissingMemberHandling.Error,
-                        NullValueHandling = NullValueHandling.Include
-                    };
-                    
-                    client = new JsonClient(accessPoint, authToken, settings);
-                    Service = new HomematicRpcService(client);
-                    listener = new HomematicListener(client);
-
-                    //need to set the StreamingContext after the service is created!
-                    client.Settings.Context = new StreamingContext(StreamingContextStates.Other, this.Service);
-                    client.Settings.Error += OnSerializerError;
-                    
-                    cts = new CancellationTokenSource();
-                    this.listenerTask = Task.Run(async () => await listener.ReceiveAsync(OnStateChanged, cts.Token).ConfigureAwait(false), cts.Token);
-                }
+                    TraceWriter = new DiagnosticsTraceWriter(),
+                    MissingMemberHandling = MissingMemberHandling.Error,
+                    NullValueHandling = NullValueHandling.Include
+                };
                 
-                return Task.CompletedTask;
-            }
-            catch (Exception e)
-            {
-                return Task.FromException(e);
+                client = new JsonClient(accessPoint, authToken, settings);
+                Service = new HomematicRpcService(client);
+                listener = new HomematicListener(client);
+
+                //need to set the StreamingContext after the service is created!
+                client.Settings.Context = new StreamingContext(StreamingContextStates.Other, this.Service);
+                client.Settings.Error += OnSerializerError;
+                
+                cts = new CancellationTokenSource();
+                await listener.ConnectAsync().ConfigureAwait(false);
+                this.listenerTask = listener.ReceiveAsync(OnStateChanged, cts.Token);
             }
         }
 
@@ -140,9 +132,10 @@ namespace AleRoe.HomematicIpApi
             {
                 if (disposing)
                 {
-                    ShutDown().WaitWithoutException();
+                    ShutDown().WaitAndUnwrapException();
                     cts?.Dispose();
                     listenerTask?.Dispose();
+                    listener?.Dispose();
                     client?.Dispose();
                 }
                 disposedValue = true;

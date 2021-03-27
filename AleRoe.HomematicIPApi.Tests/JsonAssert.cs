@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Linq;
 using JsonDiffPatchDotNet;
+using JsonDiffPatchDotNet.Formatters.JsonPatch;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
@@ -18,12 +20,13 @@ namespace AleRoe.HomematicIpApi.Tests
 
         public static JsonSerializerSettings GetJsonSerializerSettings()
         {
-            return new JsonSerializerSettings
+            var settings = new JsonSerializerSettings
             {
                 TraceWriter = new TestContextTraceWriter(),
                 MissingMemberHandling = MissingMemberHandling.Error,
-                NullValueHandling = NullValueHandling.Include
+                NullValueHandling = NullValueHandling.Ignore,
             };
+            return settings;
         }
 
         public static void Deserialize(string json, Type type, JsonSerializerSettings settings, out object result)
@@ -92,17 +95,44 @@ namespace AleRoe.HomematicIpApi.Tests
         {
             if (!JToken.DeepEquals(left, right))
             {
-                var jdp = new JsonDiffPatch();
-                var diff = jdp.Diff(left, right);
-                TestContext.Out.WriteLine(diff.ToString());
+                var options = new Options
+                {
+                    DiffBehaviors = DiffBehavior.IgnoreMissingProperties,
+                };
+                var jdp = new JsonDiffPatch(options);
+                var patch = jdp.Diff(left, right);
+                if (patch != null)
+                {
+                    //TestContext.Out.WriteLine(patch.ToString());
+                    var fail = false;
+                    var formatter = new JsonDeltaFormatter();
+                    var operations = formatter.Format(patch);
+                    foreach (var operation in operations.ToList())
+                    {
+                        if (operation.Op == "replace")
+                        {
+                            var path = operation.Path.Replace("/", ".");
+                            var valueLeft = left.SelectToken(path)?.Value<string>();
+                            var valueRight = right.SelectToken(path)?.Value<string>();
 
-                TestContext.Out.WriteLine(left.ToString());
+                            if (string.Equals(valueLeft, valueRight, StringComparison.InvariantCultureIgnoreCase))
+                            {
+                                continue;
+                            }
+                        }
+                        
+                        TestContext.Out.WriteLine($"{operation.Op} {operation.Path} {operation.Value} {operation.From}");
+                        fail = true;
+                        
+                    }
 
-                //var formatter = new JsonDeltaFormatter();
-                //var operations = formatter.Format(diff);
-                //operations.ToList().ForEach(x => TestContext.Out.WriteLine(x));
+                    if (fail)
+                    {
+                        Assert.Fail("Values do not match.");
+                    }
+                }
 
-                Assert.Fail("Values do not match.");
+
             }
 
             Assert.Pass();

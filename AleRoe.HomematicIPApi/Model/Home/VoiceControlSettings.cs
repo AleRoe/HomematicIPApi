@@ -5,13 +5,13 @@ namespace AleRoe.HomematicIpApi.Model.Home
 {
     public class VoiceControlSettings
     {
-        [JsonProperty("language", NullValueHandling = NullValueHandling.Include, DefaultValueHandling = DefaultValueHandling.Include)]
+        [JsonProperty("language")]
         public string Language { get; private set; }
 
         [JsonProperty("allowedActiveSecurityZoneIds")]
         public List<object> AllowedActiveSecurityZoneIds { get; private set; }
 
-        [JsonProperty("stateReportEnabled", NullValueHandling = NullValueHandling.Ignore)] 
+        [JsonProperty("stateReportEnabled")] 
         public StateReportEnabled StateReportEnabled { get; private set; }
     }
 }

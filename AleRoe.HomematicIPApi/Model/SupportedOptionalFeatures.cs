@@ -88,5 +88,9 @@ namespace AleRoe.HomematicIpApi.Model
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         [OptionalFeatureProperty(nameof(DeviceBaseChannel.MountingOrientation))]
         public bool? IOptionalFeatureMountingOrientation { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        [OptionalFeatureProperty(nameof(DeviceBaseChannel.ProfilePeriodLimitReached))]
+        public bool? IFeatureProfilePeriodLimit { get; private set; }
     }
 }

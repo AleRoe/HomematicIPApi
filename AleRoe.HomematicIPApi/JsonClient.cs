@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace AleRoe.HomematicIpApi
 {
-    internal sealed class JsonClient : IDisposable
+    internal class JsonClient : IDisposable
     {
         private const string GetHostsUri = @"https://lookup.homematic.com:48335/getHost";
         private bool disposedValue;

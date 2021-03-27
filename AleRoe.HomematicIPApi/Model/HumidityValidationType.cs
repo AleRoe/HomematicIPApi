@@ -4,9 +4,10 @@ using Newtonsoft.Json.Converters;
 namespace AleRoe.HomematicIpApi.Model
 {
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum GroupVisibility
+    public enum HumidityValidationType
     {
-        VISIBLE,
-        INVISIBLE_GROUP_AND_CONTROL
+        LESSER_LOWER_THRESHOLD,
+        GREATER_UPPER_THRESHOLD,
+        GREATER_LOWER_LESSER_UPPER_THRESHOLD
     }
 }

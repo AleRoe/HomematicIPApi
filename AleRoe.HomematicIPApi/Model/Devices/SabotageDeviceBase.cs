@@ -8,7 +8,7 @@ namespace AleRoe.HomematicIpApi.Model.Devices
     [FunctionalChannelType(FunctionalChannelType.DEVICE_SABOTAGE)]
     public abstract class SabotageDeviceBase : DeviceBase
     {
-        [JsonProperty("sabotage")]
+        [JsonIgnore]
         public bool? Sabotage { get; set; }
 
         [OnDeserialized]

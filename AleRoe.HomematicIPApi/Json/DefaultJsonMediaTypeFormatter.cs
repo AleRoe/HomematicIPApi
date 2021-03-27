@@ -52,7 +52,7 @@ namespace AleRoe.HomematicIpApi.Json
         private string GetTempFile()
         {
             var path = Path.GetTempPath();
-            var fileName = $"HomematicIpDump_{Guid.NewGuid().ToString()}.json";
+            var fileName = $"HomematicIpDump_{Guid.NewGuid()}.json";
             return Path.Combine(path, fileName);
         }
     }

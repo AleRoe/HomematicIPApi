@@ -24,6 +24,15 @@ namespace AleRoe.HomematicIpApi.Json
 
                 var propertyName = property.PropertyName;
                 var propertyValue = property.ValueProvider.GetValue(value) ?? property.DefaultValue;
+
+                var nullValueHandling = property.NullValueHandling == NullValueHandling.Ignore ||
+                                        serializer.NullValueHandling == NullValueHandling.Ignore;
+
+                if (propertyValue == null & nullValueHandling & property.NullValueHandling != NullValueHandling.Include)
+                {
+                    continue;
+                }
+
                 writer.WritePropertyName(propertyName);
 
                 if (property.Converter != null && property.Converter.CanWrite)

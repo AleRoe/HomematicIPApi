@@ -7,7 +7,6 @@ namespace AleRoe.HomematicIpApi.Model.Channels
     {
         [JsonProperty("accessPointPriority")]
         public int AccessPointPriority { get; private set; }
-
         
         [JsonProperty("carrierSenseLevel")]
         public double CarrierSenseLevel { get; private set; }

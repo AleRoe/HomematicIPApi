@@ -63,7 +63,7 @@ namespace AleRoe.HomematicIpApi.Model.Groups
         public bool Controllable { get; set; }
 
         [JsonProperty("boostAllowed")]
-        public bool BoostAllowed { get; set; }
+        public bool? BoostAllowed { get; set; }
 
         [JsonProperty("floorHeatingMode")]
         public string FloorHeatingMode { get; set; }

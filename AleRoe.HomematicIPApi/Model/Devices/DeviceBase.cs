@@ -10,29 +10,30 @@ namespace AleRoe.HomematicIpApi.Model.Devices
     /// </summary>
     /// <seealso cref="AleRoe.HomematicIpApi.Model.Devices.IDevice" />
     [FunctionalChannelType(FunctionalChannelType.DEVICE_BASE)]
+    
     public abstract class DeviceBase : Device
     {
         [JsonIgnore]
         public bool UnReach { get; private set; }
-
+        
         [JsonIgnore]
         public bool? LowBat { get ; private set ; }
-
+        
         [JsonIgnore]
-        public bool RouterModuleSupported { get; private set; }
-
+        public bool? RouterModuleSupported { get; private set; }
+        
         [JsonIgnore]
         public bool RouterModuleEnabled { get; private set; }
-
+        
         [JsonIgnore]
         public long? RssiDeviceValue { get; private set; }
-
+        
         [JsonIgnore]
         public long? RssiPeerValue { get; private set; }
 
         [JsonIgnore]
         public bool DutyCycle { get; private set; }
-
+        
         [JsonIgnore]
         public bool ConfigPending { get; private set; }
 
@@ -56,7 +57,6 @@ namespace AleRoe.HomematicIpApi.Model.Devices
 
         [JsonIgnore]
         public bool? CoProUpdateFailure { get; private set; }
-
         
         public override string ToString()
         {

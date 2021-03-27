@@ -8,7 +8,7 @@ namespace AleRoe.HomematicIpApi.Model.Channels
         [JsonProperty("unreach")] 
         public bool? UnReach { get; private set; }
 
-        [JsonProperty("lowBat")]
+        [JsonProperty("lowBat", NullValueHandling = NullValueHandling.Include)]
         public bool? LowBat { get; private set; }
 
         [JsonProperty("routerModuleEnabled")] 
@@ -38,7 +38,7 @@ namespace AleRoe.HomematicIpApi.Model.Channels
         [JsonProperty("coProUpdateFailure")]
         public bool CoProUpdateFailure { get; private set; }
 
-        [JsonProperty("deviceOverheated")]
+        [JsonProperty("deviceOverheated", NullValueHandling = NullValueHandling.Include)]
         public bool? DeviceOverheated { get; private set; }
 
         [JsonProperty("deviceOverloaded")]
@@ -59,13 +59,13 @@ namespace AleRoe.HomematicIpApi.Model.Channels
         [JsonProperty("multicastRoutingEnabled")]
         public bool MulticastRoutingEnabled { get; private set; }
 
-        [JsonProperty("busConfigMismatch")]
+        [JsonProperty("busConfigMismatch", NullValueHandling = NullValueHandling.Include)]
         public bool? BusConfigMismatch { get; private set; }
 
-        [JsonProperty("powerShortCircuit")]
+        [JsonProperty("powerShortCircuit", NullValueHandling = NullValueHandling.Include)]
         public bool? PowerShortCircuit { get; private set; }
 
-        [JsonProperty("shortCircuitDataLine")]
+        [JsonProperty("shortCircuitDataLine", NullValueHandling = NullValueHandling.Include)]
         public object ShortCircuitDataLine { get; private set; }
 
         [JsonProperty("particulateMatterSensorError")]
@@ -82,5 +82,8 @@ namespace AleRoe.HomematicIpApi.Model.Channels
 
         [JsonProperty("mountingOrientation")]
         public object MountingOrientation { get; private set; }
+
+        [JsonProperty("profilePeriodLimitReached")]
+        public bool? ProfilePeriodLimitReached { get;  set; } 
     }
 }

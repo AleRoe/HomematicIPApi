@@ -8,9 +8,5 @@ namespace AleRoe.HomematicIpApi.Model.Channels
         [JsonProperty("sabotage")] 
         public bool? Sabotage { get; private set; }
 
-        //[JsonProperty("deviceOverheated")]
-        //[DefaultValue(false)]
-        //public new bool? DeviceOverheated { get; private set; }
-
     }
 }

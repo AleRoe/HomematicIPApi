@@ -5,15 +5,18 @@ namespace AleRoe.HomematicIpApi.Model.Home
     public class FunctionalHomes
     {
         [JsonProperty("WEATHER_AND_ENVIRONMENT")]
-        public WeatherAndEnvironment WeatherAndEnvironment { get; set; }
+        public WeatherAndEnvironment WeatherAndEnvironment { get; private set; }
 
         [JsonProperty("SECURITY_AND_ALARM")] 
-        public SecurityAndAlarm SecurityAndAlarm { get; set; }
+        public SecurityAndAlarm SecurityAndAlarm { get; private set; }
 
         [JsonProperty("LIGHT_AND_SHADOW")] 
-        public LightAndShadow LightAndShadow { get; set; }
+        public LightAndShadow LightAndShadow { get; private set; }
 
         [JsonProperty("INDOOR_CLIMATE")] 
-        public IndoorClimate IndoorClimate { get; set; }
+        public IndoorClimate IndoorClimate { get; private set; }
+
+        [JsonProperty("ACCESS_CONTROL")]
+        public AccessControl AccessControl { get; private set; }
     }
 }

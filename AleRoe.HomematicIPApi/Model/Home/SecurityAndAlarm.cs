@@ -14,52 +14,52 @@ namespace AleRoe.HomematicIpApi.Model.Home
         [JsonProperty("alarmActive")]
         public bool AlarmActive { get; set; }
 
-        [JsonProperty("alarmEventDeviceChannel", NullValueHandling = NullValueHandling.Include)]
+        [JsonProperty("alarmEventDeviceChannel")]
         public object AlarmEventDeviceChannel { get; set; }
 
-        [JsonProperty("alarmEventDeviceId", NullValueHandling = NullValueHandling.Include)]
+        [JsonProperty("alarmEventDeviceId")]
         public string AlarmEventDeviceId { get; set; }
 
-        [JsonProperty("alarmEventTimestamp", NullValueHandling = NullValueHandling.Include)]
+        [JsonProperty("alarmEventTimestamp")]
         public long? AlarmEventTimestamp { get; set; }
 
-        [JsonProperty("alarmEventTriggerId", NullValueHandling = NullValueHandling.Include)]
+        [JsonProperty("alarmEventTriggerId")]
         public object AlarmEventTriggerId { get; set; }
 
-        [JsonProperty("alarmSecurityJournalEntryType", NullValueHandling = NullValueHandling.Include)]
+        [JsonProperty("alarmSecurityJournalEntryType")]
         public object AlarmSecurityJournalEntryType { get; set; }
 
         [JsonProperty("functionalGroups")] 
         public List<string> FunctionalGroups { get; set; }
 
         [JsonProperty("intrusionAlarmActive")]
-        public bool IntrusionAlarmActive { get; set; }
+        public bool? IntrusionAlarmActive { get; set; }
 
-        [JsonProperty("intrusionAlarmEventDeviceChannel", NullValueHandling = NullValueHandling.Include)]
+        [JsonProperty("intrusionAlarmEventDeviceChannel")]
         public object IntrusionAlarmEventDeviceChannel { get; set; }
 
-        [JsonProperty("intrusionAlarmEventTimestamp", NullValueHandling = NullValueHandling.Include)]
+        [JsonProperty("intrusionAlarmEventTimestamp")]
         public long? IntrusionAlarmEventTimestamp { get; set; }
 
-        [JsonProperty("intrusionAlarmEventTriggerId", NullValueHandling = NullValueHandling.Include)]
+        [JsonProperty("intrusionAlarmEventTriggerId")]
         public object IntrusionAlarmEventTriggerId { get; set; }
 
-        [JsonProperty("intrusionAlarmSecurityJournalEntryType", NullValueHandling = NullValueHandling.Include)]
+        [JsonProperty("intrusionAlarmSecurityJournalEntryType")]
         public object IntrusionAlarmSecurityJournalEntryType { get; set; }
         
         [JsonProperty("intrusionAlertThroughSmokeDetectors")]
         public bool IntrusionAlertThroughSmokeDetectors { get; set; }
 
         [JsonProperty("safetyAlarmActive")]
-        public bool SafetyAlarmActive { get; set; }
+        public bool? SafetyAlarmActive { get; set; }
 
-        [JsonProperty("safetyAlarmEventDeviceChannel", NullValueHandling = NullValueHandling.Include)]
+        [JsonProperty("safetyAlarmEventDeviceChannel")]
         public object SafetyAlarmEventDeviceChannel { get; set; }
 
-        [JsonProperty("safetyAlarmEventTimestamp", NullValueHandling = NullValueHandling.Include)]
+        [JsonProperty("safetyAlarmEventTimestamp")]
         public long? SafetyAlarmEventTimestamp { get; set; }
 
-        [JsonProperty("safetyAlarmSecurityJournalEntryType", NullValueHandling = NullValueHandling.Include)]
+        [JsonProperty("safetyAlarmSecurityJournalEntryType")]
         public object SafetyAlarmSecurityJournalEntryType { get; set; }
 
         [JsonProperty("securitySwitchingGroups")]

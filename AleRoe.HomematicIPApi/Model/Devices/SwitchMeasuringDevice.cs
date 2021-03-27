@@ -7,10 +7,8 @@ namespace AleRoe.HomematicIpApi.Model.Devices
 {
     public class SwitchMeasuringDevice : SwitchDeviceBase
     {
-        [JsonProperty("energyCounter")]
         public double EnergyCounter { get; private set; }
 
-        [JsonProperty("currentPowerConsumption")]
         public double CurrentPowerConsumption { get; private set; }
 
         [OnDeserialized]

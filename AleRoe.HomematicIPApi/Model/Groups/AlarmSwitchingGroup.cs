@@ -14,8 +14,8 @@ namespace AleRoe.HomematicIpApi.Model.Groups
         [JsonProperty("signalOptical")]
         public OpticalAlarmSignalType SignalOptical { get; set; }
 
-        [JsonProperty("smokeDetectorAlarmType")]
-        public object SmokeDetectorAlarmType { get; set; }
+        [JsonProperty("smokeDetectorAlarmType", NullValueHandling = NullValueHandling.Include)]
+        public SmokeDetectorAlarmType? SmokeDetectorAlarmType { get; set; }
 
         [JsonProperty("acousticFeedbackEnabled")]
         public bool AcousticFeedbackEnabled { get; set; }

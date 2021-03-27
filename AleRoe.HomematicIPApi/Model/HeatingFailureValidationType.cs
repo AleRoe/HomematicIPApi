@@ -4,9 +4,10 @@ using Newtonsoft.Json.Converters;
 namespace AleRoe.HomematicIpApi.Model
 {
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum GroupVisibility
+    public enum HeatingFailureValidationType
     {
-        VISIBLE,
-        INVISIBLE_GROUP_AND_CONTROL
+        NO_HEATING_FAILURE,
+        HEATING_FAILURE_WARNING,
+        HEATING_FAILURE_ALARM
     }
 }

@@ -35,7 +35,7 @@ namespace AleRoe.HomematicIpApi.Model.Home
         public bool PinAssigned { get; set; }
 
         [JsonProperty("isLiveUpdateSupported")]
-        public bool IsLiveUpdateSupported { get; set; }
+        public bool? IsLiveUpdateSupported { get; set; }
 
         [JsonProperty("dutyCycle")] 
         public double? DutyCycle { get; set; }
@@ -84,7 +84,7 @@ namespace AleRoe.HomematicIpApi.Model.Home
         public LiveOTAUStatus LiveOTAUStatus { get; set; }
 
         [JsonProperty("liveUpdateSupported")] 
-        public bool LiveUpdateSupported { get; set; }
+        public bool? LiveUpdateSupported { get; set; }
 
         [JsonProperty("id")] 
         public string Id { get; set; }
