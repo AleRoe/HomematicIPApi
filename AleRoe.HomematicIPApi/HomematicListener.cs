@@ -3,92 +3,157 @@ using Newtonsoft.Json;
 using System;
 using System.IO;
 using System.Net.WebSockets;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Nito.AsyncEx.Synchronous;
 
+[assembly : InternalsVisibleTo("AleRoe.HomematicIpApi.Tests")]
+[assembly: InternalsVisibleTo("TestProject1")]
 namespace AleRoe.HomematicIpApi
 {
     internal class HomematicListener : IDisposable
     {
-        private readonly CancellationTokenSource cts;
         private readonly JsonClient client;
-        private readonly ClientWebSocket socket;
-        
+        internal ClientWebSocket Socket;
+        private CancellationTokenSource socketLoopTokenSource;
+        internal CancellationTokenSource CancellationTokenSource;
+        private bool reconnect;
+        private bool isListening;
+
         public HomematicListener(JsonClient client)
         {
             this.client = client ?? throw new ArgumentNullException(nameof(client));
-            this.cts = new CancellationTokenSource();
-            this.socket = new ClientWebSocket();
         }
+
+        public  WebSocketState State => Socket?.State ?? WebSocketState.None;
 
         public async Task ConnectAsync(CancellationToken cancellationToken = default)
         {
+            this.socketLoopTokenSource = new CancellationTokenSource();
+            this.Socket = new ClientWebSocket();
             var socketUri = client.Hosts.GetWebSocketUri();
-            socket.Options.SetRequestHeader("AUTHTOKEN", client.AuthToken);
-            socket.Options.SetRequestHeader("CLIENTAUTH", client.ClientAuth);
+            Socket.Options.SetRequestHeader("AUTHTOKEN", client.AuthToken);
+            Socket.Options.SetRequestHeader("CLIENTAUTH", client.ClientAuth);
+            //Socket.Options.KeepAliveInterval = TimeSpan.FromSeconds(20);
 
-            await socket.ConnectAsync(socketUri, cancellationToken).ConfigureAwait(false);
+            await Socket.ConnectAsync(socketUri, cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task DisconnectAsync(CancellationToken cancellationToken = default)
+        public async Task CloseAsync(int timeoutDelay = 10000)
         {
-            if (socket.State != WebSocketState.Aborted & socket.State != WebSocketState.Closed)
+            if (Socket == null || Socket.State != WebSocketState.Open) return;
+            var timeout = new CancellationTokenSource(timeoutDelay);
+            try
             {
-                await socket.CloseAsync(WebSocketCloseStatus.NormalClosure, string.Empty, cancellationToken).ConfigureAwait(false);
+                if (isListening)
+                {
+                    // close the socket first, because ReceiveAsync leaves an invalid socket (state = aborted) when the token is cancelled
+                    // after this, the socket state which change to CloseSent
+                    await Socket.CloseOutputAsync(WebSocketCloseStatus.NormalClosure, "Closing", timeout.Token);
+                    // now we wait for the server response, which will close the socket
+                    while (Socket.State != WebSocketState.Closed && !timeout.Token.IsCancellationRequested) { }
+                }
+                else
+                {
+                    await Socket.CloseAsync(WebSocketCloseStatus.NormalClosure, "Closing", timeout.Token);
+                }
+            }
+            catch (OperationCanceledException)
+            {
+                // normal upon task/token cancellation, disregard
+            }
+            finally
+            {
+                // whether we closed the socket or timed out, we cancel the token causing ReceiveAsync to abort the socket
+                socketLoopTokenSource.Cancel();
             }
         }
 
-        private static Task SocketListenTask(WebSocket socket, Action<PushEventArgs> receiveDelegate, JsonSerializerSettings settings, CancellationToken cancellationToken)
+
+        private Task SocketProcessingLoopAsync(Action<PushEventArgs> receiveDelegate)
         {
             return Task.Run(async () =>
             {
-                await using var stream = new MemoryStream();
-                while (socket.State == WebSocketState.Open)
+                try
                 {
-                    cancellationToken.ThrowIfCancellationRequested();
+                    if (State != WebSocketState.Open)
+                        throw new WebSocketException(WebSocketError.InvalidState);
 
-                    var buffer = new byte[1024];
-                    var result = await socket.ReceiveAsync(new ArraySegment<byte>(buffer), cancellationToken).ConfigureAwait(false);
-                    if (result.MessageType == WebSocketMessageType.Binary)
+                    isListening = true;
+                    await using var stream = new MemoryStream();
+                    var buffer = WebSocket.CreateClientBuffer(4096, 4096);
+                    var cancellationToken = socketLoopTokenSource.Token;
+
+                    while (Socket.State != WebSocketState.Closed && !cancellationToken.IsCancellationRequested)
                     {
-                        await stream.WriteAsync(buffer.AsMemory(0, result.Count), cancellationToken).ConfigureAwait(false);
-                        if (result.EndOfMessage)
+                        var result = await Socket.ReceiveAsync(buffer, cancellationToken).ConfigureAwait(false);
+                        // if the token is cancelled while ReceiveAsync is blocking, the socket state changes to aborted and it can't be used
+                        if (!cancellationToken.IsCancellationRequested)
                         {
-                            stream.Seek(0, SeekOrigin.Begin);
-                            var data = Deserialize<PushEventArgs>(stream, settings, true);
-                            if (data != null) receiveDelegate(data);
-                            stream.SetLength(0);
+                            // the server is notifying us that the connection will close; send acknowledgement
+                            if (Socket.State == WebSocketState.CloseReceived && result.MessageType == WebSocketMessageType.Close)
+                            {
+                                await Socket.CloseOutputAsync(WebSocketCloseStatus.NormalClosure, "Acknowledge Close frame", CancellationToken.None).ConfigureAwait(false);
+                            }
+                            else if (Socket.State == WebSocketState.Open && result.MessageType == WebSocketMessageType.Binary)
+                            {
+                                await stream.WriteAsync(buffer.AsMemory(0, result.Count), cancellationToken).ConfigureAwait(false);
+                                if (result.EndOfMessage)
+                                {
+                                    stream.Seek(0, SeekOrigin.Begin);
+                                    var data = Deserialize<PushEventArgs>(stream, client.Settings, true);
+                                    if (data != null) receiveDelegate(data);
+                                    stream.SetLength(0);
+                                }
+                            }
                         }
                     }
-                    else if (result.MessageType == WebSocketMessageType.Close)
-                    {
-                        throw new WebSocketException(WebSocketError.ConnectionClosedPrematurely);
-                    }
                 }
-            }, cancellationToken);
+                catch (OperationCanceledException)
+                {
+                    // normal upon task/token cancellation, disregard
+                }
+                finally
+                {
+                   
+                    isListening = false;
+                }
+            }, CancellationToken.None);
         }
 
-        public async Task ReceiveAsync(Action<PushEventArgs> receiveDelegate, CancellationToken cancellationToken = default)
+        
+        public async Task ReceiveAsync(Action<PushEventArgs> receiveDelegate, CancellationToken cancellationToken)
         {
-            using var lts = CancellationTokenSource.CreateLinkedTokenSource(cts.Token, cancellationToken);
+            //CancellationTokenSource = new CancellationTokenSource();
+            //using var linkedTokenSource = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken, CancellationTokenSource.Token);
             try
             {
-                await SocketListenTask(socket, receiveDelegate, client.Settings, lts.Token).ConfigureAwait(false);
+                await using var registration = cancellationToken.Register(async ()
+                    => await CloseAsync().ConfigureAwait(false));
+
+                if (reconnect)
+                {
+                    await ConnectAsync(CancellationToken.None).ConfigureAwait(false);
+                }
+
+                await SocketProcessingLoopAsync(receiveDelegate).ConfigureAwait(false);
             }
             catch (TaskCanceledException)
             {
-                if (!lts.IsCancellationRequested)
+                if (!cancellationToken.IsCancellationRequested)
                     throw;
             }
             catch (OperationCanceledException)
             {
                 //Ignore and end gracefully
             }
-
-            //needed to terminate the task, we ignore any errors
-            await Task.CompletedTask.ConfigureAwait(false);
+            finally
+            {
+                this.Socket?.Dispose();
+                Socket = null;
+            }
+            reconnect = true;
         }
 
         private static T Deserialize<T>(MemoryStream stream, JsonSerializerSettings settings, bool leaveOpen = false) where T : class
@@ -116,10 +181,11 @@ namespace AleRoe.HomematicIpApi
             {
                 if (disposing)
                 {
-                    cts?.Cancel();
-                    cts?.Dispose();
-                    DisconnectAsync().WaitAndUnwrapException();
-                    socket?.Dispose();
+                    CloseAsync().Wait();
+                    socketLoopTokenSource?.Dispose();
+                    CancellationTokenSource?.Dispose();
+                    Socket?.Dispose();
+                    Socket = null;
                 }
 
                 disposedValue = true;
