@@ -9,7 +9,7 @@ namespace AleRoe.HomematicIpApi.Model.Devices
     /// This attribute must be applied to all non-abstract classes deriving from <see cref="DeviceBase"/> for deserialization to work.
     /// </remarks>
     /// <seealso cref="System.Attribute" />
-    [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
+    [AttributeUsage(AttributeTargets.Class, Inherited = false)]
     public class DeviceTypeAttribute : Attribute
     {
         public DeviceType DeviceType { get; }

@@ -23,19 +23,23 @@ namespace AleRoe.HomematicIpApi.Json
         public override IDevice ReadJson(JsonReader reader, Type objectType, [AllowNull] IDevice existingValue, bool hasExistingValue, JsonSerializer serializer)
         {
             var jsonObject = JObject.Load(reader);
-            var deviceType = jsonObject.SelectToken("type").ToObject<DeviceType>();
+            var deviceType = jsonObject.SelectToken("type")?.ToObject<DeviceType>();
+            if (deviceType == null)
+                throw new InvalidOperationException($"Could not find DeviceType.");
 
             var type = this.GetType().Assembly.GetTypes()
                 .Where(t => typeof(IDevice).IsAssignableFrom(t) && !t.IsInterface && !t.IsAbstract)
                 .SingleOrDefault(t => t.GetCustomAttribute<DeviceTypeAttribute>()?.DeviceType == deviceType);
 
             if (type == null)
-                throw new InvalidOperationException($"Could not find Device with type {deviceType}");
+                throw new InvalidOperationException($"Could not find Device with type {deviceType}.");
 
-            var result = Activator.CreateInstance(type);
-            serializer.Populate(jsonObject.CreateReader(), result);
-            
-            return (IDevice)result;
+            if (Activator.CreateInstance(type) is IDevice result)
+            {
+                serializer.Populate(jsonObject.CreateReader(), result);
+                return result;
+            }
+            throw new InvalidOperationException($"Could not create Device with type {type}");
         }
     }
 }

@@ -10,7 +10,7 @@ namespace AleRoe.HomematicIpApi.Json
         public override IEvent ReadJson(JsonReader reader, Type objectType, IEvent existingValue, bool hasExistingValue, JsonSerializer serializer)
         {
             var jsonObject = JObject.Load(reader);
-            var eventType = jsonObject.SelectToken("pushEventType").ToObject<EventType>();
+            var eventType = jsonObject.SelectToken("pushEventType")?.ToObject<EventType>();
 
             Type type = default;
             if (eventType == EventType.DEVICE_CHANGED || eventType == EventType.DEVICE_ADDED || eventType == EventType.DEVICE_REMOVED)
@@ -25,10 +25,12 @@ namespace AleRoe.HomematicIpApi.Json
             if (type == null)
                 throw new InvalidOperationException($"Could not find Event with type {eventType}");
 
-            var result = Activator.CreateInstance(type);
-            serializer.Populate(jsonObject.CreateReader(), result);
-
-            return (IEvent)result;
+            if (Activator.CreateInstance(type) is IEvent result)
+            {
+                serializer.Populate(jsonObject.CreateReader(), result);
+                return result;
+            }
+            throw new InvalidOperationException($"Could not create Event with type {type}");
         }
 
         public override void WriteJson(JsonWriter writer, IEvent value, JsonSerializer serializer)

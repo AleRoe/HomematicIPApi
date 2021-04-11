@@ -1,5 +1,4 @@
-﻿using AleRoe.HomematicIpApi.Json;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 
 namespace AleRoe.HomematicIpApi.Model.Home

@@ -2,7 +2,7 @@
 
 namespace AleRoe.HomematicIpApi.Model.Groups
 {
-    [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
+    [AttributeUsage(AttributeTargets.Class, Inherited = false)]
     public class GroupTypeAttribute : Attribute
     {
         public GroupType GroupType { get; }

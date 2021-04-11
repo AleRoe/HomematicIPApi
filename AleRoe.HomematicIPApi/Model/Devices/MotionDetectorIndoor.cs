@@ -31,7 +31,7 @@ namespace AleRoe.HomematicIpApi.Model.Devices
         internal new void OnDeserializedMethod(StreamingContext context)
         {
             this.GetFunctionalChannel<MotionDetectionChannel>()
-                .CopyTo<MotionDetectorIndoor>(this);
+                .CopyTo(this);
         }
     }
 }

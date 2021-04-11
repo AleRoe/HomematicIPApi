@@ -17,7 +17,9 @@ namespace AleRoe.HomematicIpApi.Json
                 return null;
 
             var jsonObject = JObject.Load(reader);
-            var groupType = jsonObject.SelectToken("type").ToObject<GroupType>();
+            var groupType = jsonObject.SelectToken("type")?.ToObject<GroupType>();
+            if (groupType == null)
+                throw new InvalidOperationException($"Could not find GroupType.");
 
             var type = this.GetType().Assembly.GetTypes()
                 .Where(t => typeof(IGroup).IsAssignableFrom(t) && !t.IsInterface && !t.IsAbstract)
@@ -26,10 +28,12 @@ namespace AleRoe.HomematicIpApi.Json
             if (type == null)
                 throw new InvalidOperationException($"Could not find Group with type {groupType}");
 
-            var result = Activator.CreateInstance(type);
-            serializer.Populate(jsonObject.CreateReader(), result);
-
-            return (IGroup)result;
+            if (Activator.CreateInstance(type) is IGroup result)
+            {
+                serializer.Populate(jsonObject.CreateReader(), result);
+                return result;
+            }
+            throw new InvalidOperationException($"Could not create Group with type {type}");
         }
     }
 }

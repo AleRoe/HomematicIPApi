@@ -1,7 +1,6 @@
 ﻿using System.Runtime.Serialization;
 using AleRoe.HomematicIpApi.Extensions;
 using AleRoe.HomematicIpApi.Model.Channels;
-using Newtonsoft.Json;
 
 namespace AleRoe.HomematicIpApi.Model.Devices
 {

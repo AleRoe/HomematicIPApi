@@ -62,8 +62,8 @@ namespace AleRoe.HomematicIpApi.Extensions
         }
 
         /// <summary>
-        ///     Returns the single occurence of the given <see cref="IFunctionalChannel" />, and throws an exception if there is
-        ///     not exactly one element
+        /// Returns the single occurrence of the given <see cref="IFunctionalChannel" />, and throws an exception if there is
+        /// not exactly one element
         /// </summary>
         /// <typeparam name="T">
         ///     <see cref="IFunctionalChannel" />

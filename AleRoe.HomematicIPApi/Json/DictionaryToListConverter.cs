@@ -61,11 +61,10 @@ namespace AleRoe.HomematicIpApi.Json
             writer.WriteStartObject();
             foreach (var item in value)
             {
-                var propName = propInfo.GetValue(item).ToString();
+                var propName = propInfo.GetValue(item)?.ToString();
                 writer.WritePropertyName(propName);
                 serializer.Serialize(writer, item);
             }
-
             writer.WriteEndObject();
         }
     }

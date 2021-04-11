@@ -18,7 +18,9 @@ namespace AleRoe.HomematicIpApi.Json
                 return null;
 
             var jsonObject = JObject.Load(reader);
-            var channelType = jsonObject.SelectToken("functionalChannelType").ToObject<FunctionalChannelType>();
+            var channelType = jsonObject.SelectToken("functionalChannelType")?.ToObject<FunctionalChannelType>();
+            if (channelType == null)
+                throw new InvalidOperationException($"Could not find FunctionalChannelType.");
 
             var type = this.GetType().Assembly.GetTypesWithInterface<IFunctionalChannel>()
                   .SingleOrDefault(t => t.GetCustomAttribute<FunctionalChannelTypeAttribute>()?.FunctionalChannelType == channelType);
@@ -26,10 +28,12 @@ namespace AleRoe.HomematicIpApi.Json
             if (type == null)
                 throw new InvalidOperationException($"Could not find Channel with type {channelType}");
 
-            var result = Activator.CreateInstance(type);
-            serializer.Populate(jsonObject.CreateReader(), result);
-
-            return (IFunctionalChannel)result;
+            if (Activator.CreateInstance(type) is IFunctionalChannel result)
+            {
+                serializer.Populate(jsonObject.CreateReader(), result);
+                return result;
+            }
+            throw new InvalidOperationException($"Could not create Channel with type {type}");
         }
     }
 }
