@@ -1,7 +1,6 @@
 ﻿using AleRoe.HomematicIpApi.Rpc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-using Nito.AsyncEx.Synchronous;
 using System;
 using System.Runtime.Serialization;
 using System.Threading;
@@ -81,8 +80,9 @@ namespace AleRoe.HomematicIpApi
                 client.Settings.Error += OnSerializerError;
                 
                 cts = new CancellationTokenSource();
-                await listener.ConnectAsync().ConfigureAwait(false);
+                await listener.ConnectAsync(CancellationToken.None);
                 this.listenerTask = listener.ReceiveAsync(OnStateChanged, cts.Token);
+                
             }
         }
 
@@ -132,7 +132,7 @@ namespace AleRoe.HomematicIpApi
             {
                 if (disposing)
                 {
-                    ShutDown().WaitAndUnwrapException();
+                    ShutDown().Wait(15000);
                     cts?.Dispose();
                     listenerTask?.Dispose();
                     listener?.Dispose();
