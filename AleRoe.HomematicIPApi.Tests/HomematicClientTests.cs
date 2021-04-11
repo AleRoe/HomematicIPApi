@@ -1,5 +1,4 @@
-﻿using AleRoe.HomematicIpApi;
-using AleRoe.HomematicIpApi.Model.Devices;
+﻿using AleRoe.HomematicIpApi.Model.Devices;
 using AleRoe.HomematicIpApi.Model.Groups;
 using AleRoe.HomematicIpApi.Rpc;
 using Nito.AsyncEx;
@@ -10,7 +9,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace AleRoe.HomematicIPApi.Tests
+namespace AleRoe.HomematicIpApi.Tests
 {
     [TestFixture()]
     public class HomematicClientTests
@@ -47,7 +46,7 @@ namespace AleRoe.HomematicIPApi.Tests
         public void InitializeAsyncTest_Success()
         {
             using var client = new HomematicIpClient(accessPoint, authToken);
-            Assert.DoesNotThrowAsync( async () => await client.Initialize());
+            Assert.DoesNotThrowAsync(async () => await client.Initialize());
             
         }
 
@@ -78,11 +77,11 @@ namespace AleRoe.HomematicIPApi.Tests
         }
 
         //[Test()]
-        public void InitializeAsyncTest_RunTwiceFails()
+        public void InitializeAsyncTest_RunTwiceDoesNotThrow()
         {
             using var client = new HomematicIpClient(accessPoint, authToken);
-            Assert.DoesNotThrowAsync(() => client.Initialize());
-            Assert.ThrowsAsync<InvalidOperationException>(() => client.Initialize());
+            Assert.DoesNotThrowAsync(async () => await client.Initialize());
+            Assert.DoesNotThrowAsync(async () => await client.Initialize());
         }
 
         [Test()]

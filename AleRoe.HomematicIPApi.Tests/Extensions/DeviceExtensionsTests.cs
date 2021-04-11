@@ -6,7 +6,7 @@ using AleRoe.HomematicIpApi;
 using AleRoe.HomematicIpApi.Extensions;
 using AleRoe.HomematicIpApi.Model.Devices;
 
-namespace AleRoe.HomematicIPApi.Extensions.Tests
+namespace AleRoe.HomematicIPApi.Tests.Extensions
 {
     [TestFixture()]
     public class DeviceExtensionsTests

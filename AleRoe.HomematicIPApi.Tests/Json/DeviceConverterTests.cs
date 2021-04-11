@@ -1,14 +1,11 @@
-﻿using NUnit.Framework;
-using AleRoe.HomematicIpApi.Json;
+﻿using AleRoe.HomematicIpApi.Model.Channels;
+using AleRoe.HomematicIpApi.Model.Devices;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
-using AleRoe.HomematicIpApi.Model.Channels;
-using AleRoe.HomematicIpApi.Model.Devices;
-using AleRoe.HomematicIpApi.Tests;
 
-namespace AleRoe.HomematicIpApi.Json.Tests
+namespace AleRoe.HomematicIpApi.Tests.Json
 {
     [TestFixture()]
     public class DeviceConverterTests

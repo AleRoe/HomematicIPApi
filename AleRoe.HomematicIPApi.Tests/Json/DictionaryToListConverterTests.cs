@@ -4,8 +4,9 @@ using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using AleRoe.HomematicIpApi.Json;
 
-namespace AleRoe.HomematicIpApi.Json.Tests
+namespace AleRoe.HomematicIpApi.Tests.Json
 {
     [TestFixture()]
     public class DictionaryToListConverterTests

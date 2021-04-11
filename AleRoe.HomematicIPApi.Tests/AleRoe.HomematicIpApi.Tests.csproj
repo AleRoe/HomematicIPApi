@@ -3,6 +3,7 @@
   <PropertyGroup>
 	  <TargetFramework>net5.0</TargetFramework>
 	  <IsPackable>false</IsPackable>
+	  <AssemblyName>AleRoe.HomematicIpApi.Tests</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,7 +12,7 @@
 
   <ItemGroup>
     <PackageReference Include="JsonDiffPatch.Net" Version="2.3.0" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.4" />
     <PackageReference Include="MSTest.TestAdapter" Version="2.2.3" />
     <PackageReference Include="MSTest.TestFramework" Version="2.2.3" />
     <PackageReference Include="coverlet.collector" Version="3.0.3">
@@ -34,22 +35,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="hmip-config_27EE.json">
+    <None Update="TestData\hmip-config_27EE.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="hmip-config_CORE.json">
+    <None Update="TestData\hmip-config_CORE.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="hmip-config_LATEST.json">
+    <None Update="TestData\hmip-config_LATEST.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="hmip-config_local.json">
+    <None Update="TestData\hmip-config_local.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="hmip-config_2018.json">
+    <None Update="TestData\hmip-config_2018.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="hmip-config_XXXX.json">
+    <None Update="TestData\hmip-config_XXXX.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="TestData\DeviceConverter\PlugableSwitchMeasuringDevice.json">

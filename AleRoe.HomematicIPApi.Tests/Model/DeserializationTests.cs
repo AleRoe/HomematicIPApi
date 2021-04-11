@@ -7,7 +7,7 @@ using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using System.IO;
 
-namespace AleRoe.HomematicIpApi.Tests
+namespace AleRoe.HomematicIpApi.Tests.Model
 {
     [TestFixture()]
     [NonParallelizable]
@@ -22,9 +22,9 @@ namespace AleRoe.HomematicIpApi.Tests
 
         private static object[] FixtureArgs =
         {
-            "hmip-config_LATEST.json",
-            "hmip-config_27EE.json",
-            "hmip-config_CORE.json",
+            @"TestData\hmip-config_LATEST.json",
+            @"TestData\hmip-config_27EE.json",
+            @"TestData\hmip-config_CORE.json",
         };
 
         [Test()]
