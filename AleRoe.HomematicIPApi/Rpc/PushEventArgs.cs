@@ -15,6 +15,6 @@ namespace AleRoe.HomematicIpApi.Rpc
         public Origin Origin { get; private set; }
 
         [JsonProperty("accessPointId")]
-        public Guid AccessPointId { get; private set; }
+        public string AccessPointId { get; private set; }
     }
 }
