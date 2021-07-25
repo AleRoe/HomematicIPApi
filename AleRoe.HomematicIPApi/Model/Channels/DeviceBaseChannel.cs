@@ -84,6 +84,9 @@ namespace AleRoe.HomematicIpApi.Model.Channels
         public object MountingOrientation { get; private set; }
 
         [JsonProperty("profilePeriodLimitReached")]
-        public bool? ProfilePeriodLimitReached { get;  set; } 
+        public bool? ProfilePeriodLimitReached { get;  private set; }
+
+        [JsonProperty("displayContrast")]
+        public bool? DisplayContrast { get; private set; }
     }
 }

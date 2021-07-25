@@ -92,5 +92,9 @@ namespace AleRoe.HomematicIpApi.Model
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         [OptionalFeatureProperty(nameof(DeviceBaseChannel.ProfilePeriodLimitReached))]
         public bool? IFeatureProfilePeriodLimit { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        [OptionalFeatureProperty(nameof(DeviceBaseChannel.DisplayContrast))]
+        public bool? IOptionalFeatureDisplayContrast { get; private set; }
     }
 }
