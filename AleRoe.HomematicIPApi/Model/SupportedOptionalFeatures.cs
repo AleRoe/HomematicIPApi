@@ -96,5 +96,13 @@ namespace AleRoe.HomematicIpApi.Model
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         [OptionalFeatureProperty(nameof(DeviceBaseChannel.DisplayContrast))]
         public bool? IOptionalFeatureDisplayContrast { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        [OptionalFeatureProperty(nameof(DeviceBaseChannel.LockJammed))]
+        public bool? IOptionalFeatureDeviceErrorLockJammed { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        [OptionalFeatureProperty(nameof(DeviceBaseChannel.LockJammed))]
+        public bool? IOptionalFeatureInternalLinkConfiguration { get; private set; }
     }
 }

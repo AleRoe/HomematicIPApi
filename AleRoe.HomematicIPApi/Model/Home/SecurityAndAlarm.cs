@@ -76,5 +76,8 @@ namespace AleRoe.HomematicIpApi.Model.Home
 
         [JsonProperty("zoneActivationDelay")] 
         public double ZoneActivationDelay { get; set; }
+
+        [JsonProperty("deviceChannelSpecificFunction")]
+        public object DeviceChannelSpecificFunction { get; set; }
     }
 }

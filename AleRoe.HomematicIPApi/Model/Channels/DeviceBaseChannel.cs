@@ -88,5 +88,11 @@ namespace AleRoe.HomematicIpApi.Model.Channels
 
         [JsonProperty("displayContrast")]
         public bool? DisplayContrast { get; private set; }
+
+        [JsonProperty("lockJammed")]
+        public bool? LockJammed { get; private set; }
+
+        [JsonProperty("internalLinkConfiguration")]
+        public bool? InternalLinkConfiguration { get; private set; }
     }
 }

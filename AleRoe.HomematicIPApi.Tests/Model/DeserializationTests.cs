@@ -23,6 +23,7 @@ namespace AleRoe.HomematicIpApi.Tests.Model
         private static object[] FixtureArgs =
         {
             @"TestData\hmip-config_LATEST.json",
+            @"TestData\hmip-config_PREVIOUS.json",
             @"TestData\hmip-config_27EE.json",
             @"TestData\hmip-config_CORE.json",
         };

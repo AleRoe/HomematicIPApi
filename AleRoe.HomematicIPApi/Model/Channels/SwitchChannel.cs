@@ -13,5 +13,11 @@ namespace AleRoe.HomematicIpApi.Model.Channels
 
         [JsonProperty("userDesiredProfileMode")]
         public string UserDesiredProfileMode { get; private set; }
+
+        [JsonProperty("internalLinkConfiguration")]
+        public InternalLinkConfiguration InternalLinkConfiguration { get; private set; }
+
+        [JsonProperty("supportedOptionalFeatures")]
+        public SupportedOptionalFeatures SupportedOptionalFeatures { get; private set; }
     }
 }

@@ -50,6 +50,9 @@
     <None Update="TestData\hmip-config_2018.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="TestData\hmip-config_PREVIOUS.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="TestData\hmip-config_XXXX.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

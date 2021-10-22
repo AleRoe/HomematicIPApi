@@ -1,0 +1,1826 @@
+{
+  "home": {
+    "weather": {
+      "temperature": 1.3,
+      "weatherCondition": "CLOUDY",
+      "weatherDayTime": "NIGHT",
+      "minTemperature": 1.1,
+      "maxTemperature": 1.7,
+      "humidity": 85,
+      "windSpeed": 2.2680000000000002,
+      "windDirection": 199,
+      "vaporAmount": 4.504717466736245
+    },
+    "metaGroups": [
+      "f7859d94-3eb2-497e-834e-62bd3869366e",
+      "f1840206-f73d-4772-94d3-706feb53ebe2",
+      "7b9cd387-866e-4f72-9516-202df2941694",
+      "68aec86c-e32f-4607-a0e6-33bceac6b050"
+    ],
+    "clients": [
+      "355c07e2-c5f6-4a7f-bb66-2ef61a45828f",
+      "c3bbbdc3-a785-4f9a-9549-87eaaf610fb6",
+      "982967e5-0281-4351-a427-e0d477f197ee"
+    ],
+    "connected": true,
+    "currentAPVersion": "2.2.18",
+    "availableAPVersion": null,
+    "timeZoneId": "Europe/Berlin",
+    "location": {
+      "city": "80469 München, Deutschland",
+      "latitude": "48.12619831170166",
+      "longitude": "11.569028729572892"
+    },
+    "pinAssigned": false,
+    "isLiveUpdateSupported": false,
+    "dutyCycle": 2.0,
+    "carrierSense": 0.0,
+    "updateState": "UP_TO_DATE",
+    "powerMeterUnitPrice": 0.32,
+    "powerMeterCurrency": "EUR",
+    "deviceUpdateStrategy": "MANUALLY",
+    "lastReadyForUpdateTimestamp": 1605868551099,
+    "functionalHomes": {
+      "WEATHER_AND_ENVIRONMENT": {
+        "functionalGroups": [
+        ],
+        "solution": "WEATHER_AND_ENVIRONMENT",
+        "active": false
+      },
+      "SECURITY_AND_ALARM": {
+        "functionalGroups": [
+          "72ec9f6f-b518-4bdc-b426-be0371b9211a"
+        ],
+        "alarmEventTimestamp": null,
+        "alarmEventDeviceId": null,
+        "alarmEventTriggerId": null,
+        "alarmEventDeviceChannel": null,
+        "alarmSecurityJournalEntryType": null,
+        "alarmActive": false,
+        "safetyAlarmEventTimestamp": null,
+        "safetyAlarmEventDeviceChannel": null,
+        "safetyAlarmSecurityJournalEntryType": null,
+        "safetyAlarmActive": false,
+        "intrusionAlarmEventTimestamp": null,
+        "intrusionAlarmEventTriggerId": null,
+        "intrusionAlarmEventDeviceChannel": null,
+        "intrusionAlarmSecurityJournalEntryType": null,
+        "intrusionAlarmActive": false,
+        "securityZones": {
+          "EXTERNAL": "b78d8a5e-fb61-4e28-b369-14f0eb67bbf4",
+          "INTERNAL": "3969b01c-c418-4728-b853-d1fda99be7f6"
+        },
+        "securitySwitchingGroups": {
+          "SIREN": "3cc605c4-f2ed-4d4d-bf5d-2f01281febbc",
+          "PANIC": "c2fa961c-6e94-4519-931b-546e25b7ff09",
+          "ALARM": "0db40472-15bc-4b91-8a55-bbae481efbfb",
+          "COMING_HOME": "1cca76ef-0404-4215-8d6c-84597ab1af7e",
+          "BACKUP_ALARM_SIREN": "389d0062-dc2e-48e5-a80b-65a38dc447c8"
+        },
+        "zoneActivationDelay": 0.0,
+        "intrusionAlertThroughSmokeDetectors": false,
+        "securityZoneActivationMode": "ACTIVATION_IF_ALL_IN_VALID_STATE",
+        "solution": "SECURITY_AND_ALARM",
+        "activationInProgress": false,
+        "active": true
+      },
+      "LIGHT_AND_SHADOW": {
+        "functionalGroups": [
+          "86033919-0129-40f4-97a9-af489e6febb2",
+          "fc6d2267-9982-4bc7-b043-9a9dcf7b9d19",
+          "71bf0a36-4495-4a00-a3e9-82e6c6ff4eba"
+        ],
+        "extendedLinkedSwitchingGroups": [
+        ],
+        "extendedLinkedShutterGroups": [
+        ],
+        "switchingProfileGroups": [
+          "60f2dac3-6be6-4b80-ae04-9a3d949bf172",
+          "abc95e89-f7e2-4c41-98dc-bca63ed867d5"
+        ],
+        "shutterProfileGroups": [
+        ],
+        "solution": "LIGHT_AND_SHADOW",
+        "active": true
+      },
+      "INDOOR_CLIMATE": {
+        "functionalGroups": [
+          "ae83e9db-1f93-4352-ac17-c103ca838d8b"
+        ],
+        "absenceType": "NOT_ABSENT",
+        "absenceEndTime": null,
+        "floorHeatingSpecificGroups": {
+          "HEATING_COOLING_DEMAND_PUMP": "14c039c8-ab41-4cb9-af94-4a8d6063139b",
+          "HEATING_COOLING_DEMAND_BOILER": "247c29a3-0935-4e77-964e-e6e922ff66ae",
+          "HEATING_HUMIDITY_LIMITER": "ea2e1d5b-e4c7-452e-b626-59b3d019b68a",
+          "HEATING_TEMPERATURE_LIMITER": "205df531-c352-48c9-a5cc-c0f93f0a1d08",
+          "HEATING_DEHUMIDIFIER": "eb002b87-f0f7-4a18-b2e1-0c1f3fa3ca22",
+          "HEATING_CHANGEOVER": "f862b4d1-eea4-4ddc-ae8c-b7e407d1f283",
+          "HEATING_EXTERNAL_CLOCK": "28db2070-5836-4bc2-84c5-11412611cc93"
+        },
+        "ecoTemperature": 17.0,
+        "coolingEnabled": false,
+        "ecoDuration": "PERMANENT",
+        "optimumStartStopEnabled": false,
+        "deviceChannelSpecificFunction": {
+        },
+        "solution": "INDOOR_CLIMATE",
+        "active": true
+      }
+    },
+    "inboxGroup": "598d13c2-9f75-4627-85ea-b44f4f3d9123",
+    "apExchangeClientId": null,
+    "apExchangeState": "NONE",
+    "voiceControlSettings": {
+      "language": null,
+      "allowedActiveSecurityZoneIds": [
+      ],
+      "stateReportEnabled": {
+        "hmip_alexa_skill": "YES"
+      }
+    },
+    "ruleGroups": [
+      "14c039c8-ab41-4cb9-af94-4a8d6063139b",
+      "247c29a3-0935-4e77-964e-e6e922ff66ae"
+    ],
+    "ruleMetaDatas": {
+      "6e4c984e-625e-4beb-8d93-d0dcd18ec06a": {
+        "id": "6e4c984e-625e-4beb-8d93-d0dcd18ec06a",
+        "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+        "label": "Taste1",
+        "type": "SIMPLE",
+        "active": true,
+        "ruleErrorCategories": [
+        ]
+      },
+      "c6b253b7-2883-476c-a17e-c957f1f90303": {
+        "id": "c6b253b7-2883-476c-a17e-c957f1f90303",
+        "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+        "label": "Taste2",
+        "type": "SIMPLE",
+        "active": true,
+        "ruleErrorCategories": [
+        ]
+      },
+      "410e1b34-27a1-40dc-b4ec-c426b47e952c": {
+        "id": "410e1b34-27a1-40dc-b4ec-c426b47e952c",
+        "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+        "label": "Taste2 lang",
+        "type": "SIMPLE",
+        "active": true,
+        "ruleErrorCategories": [
+        ]
+      },
+      "75bddd8d-f964-480b-b74a-3abc374dcb0b": {
+        "id": "75bddd8d-f964-480b-b74a-3abc374dcb0b",
+        "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+        "label": "Taste3",
+        "type": "SIMPLE",
+        "active": true,
+        "ruleErrorCategories": [
+        ]
+      },
+      "5286f49d-f1bb-4a70-8a27-86b0a3a157f2": {
+        "id": "5286f49d-f1bb-4a70-8a27-86b0a3a157f2",
+        "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+        "label": "Balkonbeleuchtung",
+        "type": "SIMPLE",
+        "active": true,
+        "ruleErrorCategories": [
+        ]
+      },
+      "7d13a5c1-7afb-4d98-b002-a6ec90c73178": {
+        "id": "7d13a5c1-7afb-4d98-b002-a6ec90c73178",
+        "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+        "label": "Handtuchheizung AutoOff Timer",
+        "type": "SIMPLE",
+        "active": true,
+        "ruleErrorCategories": [
+        ]
+      },
+      "0b137998-f3b4-4313-904a-dadcea30a482": {
+        "id": "0b137998-f3b4-4313-904a-dadcea30a482",
+        "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+        "label": "Handtuchheizung AutoOff Fenster",
+        "type": "SIMPLE",
+        "active": true,
+        "ruleErrorCategories": [
+        ]
+      },
+      "21043cb2-241b-4b2f-8328-43884bd81f76": {
+        "id": "21043cb2-241b-4b2f-8328-43884bd81f76",
+        "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+        "label": "Taste4",
+        "type": "SIMPLE",
+        "active": true,
+        "ruleErrorCategories": [
+        ]
+      }
+    },
+    "liveOTAUStatus": {
+      "liveOTAUState": "INACTIVE",
+      "progress": 0.0,
+      "deviceId": null
+    },
+    "accessPointUpdateStates": {
+      "3014F711A00003D709B034F7": {
+        "successfulUpdateTimestamp": 0,
+        "updateStateChangedTimestamp": 0,
+        "accessPointUpdateState": "UP_TO_DATE"
+      }
+    },
+    "liveUpdateSupported": false,
+    "id": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff"
+  },
+  "groups": {
+    "c2fa961c-6e94-4519-931b-546e25b7ff09": {
+      "id": "c2fa961c-6e94-4519-931b-546e25b7ff09",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "metaGroupId": null,
+      "label": "PANIC",
+      "lastStatusUpdate": 0,
+      "unreach": null,
+      "lowBat": null,
+      "dutyCycle": null,
+      "type": "LINKED_SWITCHING",
+      "channels": [
+      ],
+      "on": null,
+      "dimLevel": null
+    },
+    "14c039c8-ab41-4cb9-af94-4a8d6063139b": {
+      "id": "14c039c8-ab41-4cb9-af94-4a8d6063139b",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "metaGroupId": null,
+      "label": "HEATING_COOLING_DEMAND_PUMP",
+      "lastStatusUpdate": 0,
+      "unreach": null,
+      "lowBat": null,
+      "dutyCycle": null,
+      "type": "HEATING_COOLING_DEMAND_PUMP",
+      "channels": [
+      ],
+      "on": null,
+      "pumpLeadTime": 2,
+      "pumpFollowUpTime": 2,
+      "pumpProtectionDuration": 1,
+      "pumpProtectionSwitchingInterval": 14,
+      "heatDemand": null
+    },
+    "f1840206-f73d-4772-94d3-706feb53ebe2": {
+      "id": "f1840206-f73d-4772-94d3-706feb53ebe2",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "metaGroupId": null,
+      "label": "Wohnzimmer",
+      "lastStatusUpdate": 1612809869119,
+      "unreach": false,
+      "lowBat": null,
+      "dutyCycle": false,
+      "type": "META",
+      "channels": [
+        {
+          "deviceId": "3014F711A00003D709B034F7",
+          "channelIndex": 0
+        }
+      ],
+      "groups": [
+      ],
+      "configPending": false,
+      "sabotage": null,
+      "incorrectPositioned": null,
+      "groupIcon": ""
+    },
+    "60f2dac3-6be6-4b80-ae04-9a3d949bf172": {
+      "id": "60f2dac3-6be6-4b80-ae04-9a3d949bf172",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "metaGroupId": null,
+      "label": "Handtuchheizung",
+      "lastStatusUpdate": 1612808727769,
+      "unreach": false,
+      "lowBat": null,
+      "dutyCycle": false,
+      "type": "SWITCHING_PROFILE",
+      "channels": [
+        {
+          "deviceId": "3014F711A00001D709A106A2",
+          "channelIndex": 1
+        }
+      ],
+      "on": false,
+      "dimLevel": null,
+      "profileId": "06f11b30-1a8b-4794-a06f-56210f807d9b",
+      "profileMode": "AUTOMATIC"
+    },
+    "205df531-c352-48c9-a5cc-c0f93f0a1d08": {
+      "id": "205df531-c352-48c9-a5cc-c0f93f0a1d08",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "metaGroupId": null,
+      "label": "HEATING_TEMPERATURE_LIMITER",
+      "lastStatusUpdate": 0,
+      "unreach": null,
+      "lowBat": null,
+      "dutyCycle": null,
+      "type": "HEATING_TEMPERATURE_LIMITER",
+      "channels": [
+      ]
+    },
+    "389d0062-dc2e-48e5-a80b-65a38dc447c8": {
+      "id": "389d0062-dc2e-48e5-a80b-65a38dc447c8",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "metaGroupId": null,
+      "label": "BACKUP_ALARM_SIREN",
+      "lastStatusUpdate": 1612809198379,
+      "unreach": false,
+      "lowBat": false,
+      "dutyCycle": false,
+      "type": "SECURITY_BACKUP_ALARM_SWITCHING",
+      "channels": [
+        {
+          "deviceId": "3014F711A00000D70995699C",
+          "channelIndex": 1
+        },
+        {
+          "deviceId": "3014F711A00000D709956758",
+          "channelIndex": 1
+        },
+        {
+          "deviceId": "3014F711A000091BE99D5315",
+          "channelIndex": 1
+        }
+      ],
+      "on": null,
+      "dimLevel": null,
+      "onTime": 180.0,
+      "signalAcoustic": "FREQUENCY_RISING",
+      "signalOptical": "DOUBLE_FLASHING_REPEATING",
+      "smokeDetectorAlarmType": null,
+      "acousticFeedbackEnabled": true
+    },
+    "68aec86c-e32f-4607-a0e6-33bceac6b050": {
+      "id": "68aec86c-e32f-4607-a0e6-33bceac6b050",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "metaGroupId": null,
+      "label": "System",
+      "lastStatusUpdate": 1612809862223,
+      "unreach": false,
+      "lowBat": false,
+      "dutyCycle": false,
+      "type": "META",
+      "channels": [
+        {
+          "deviceId": "3014F711A0000D1A49A3D77A",
+          "channelIndex": 0
+        },
+        {
+          "deviceId": "3014F711A0000B5A498F7871",
+          "channelIndex": 0
+        }
+      ],
+      "groups": [
+        "71bf0a36-4495-4a00-a3e9-82e6c6ff4eba"
+      ],
+      "configPending": false,
+      "sabotage": null,
+      "incorrectPositioned": null,
+      "groupIcon": ""
+    },
+    "71bf0a36-4495-4a00-a3e9-82e6c6ff4eba": {
+      "id": "71bf0a36-4495-4a00-a3e9-82e6c6ff4eba",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "metaGroupId": "68aec86c-e32f-4607-a0e6-33bceac6b050",
+      "label": "System",
+      "lastStatusUpdate": 1612809862223,
+      "unreach": false,
+      "lowBat": false,
+      "dutyCycle": false,
+      "type": "SWITCHING",
+      "channels": [
+        {
+          "deviceId": "3014F711A0000B5A498F7871",
+          "channelIndex": 6
+        },
+        {
+          "deviceId": "3014F711A0000D1A49A3D77A",
+          "channelIndex": 1
+        },
+        {
+          "deviceId": "3014F711A0000D1A49A3D77A",
+          "channelIndex": 4
+        },
+        {
+          "deviceId": "3014F711A0000B5A498F7871",
+          "channelIndex": 1
+        },
+        {
+          "deviceId": "3014F711A0000D1A49A3D77A",
+          "channelIndex": 5
+        },
+        {
+          "deviceId": "3014F711A0000D1A49A3D77A",
+          "channelIndex": 2
+        },
+        {
+          "deviceId": "3014F711A0000D1A49A3D77A",
+          "channelIndex": 3
+        },
+        {
+          "deviceId": "3014F711A0000B5A498F7871",
+          "channelIndex": 5
+        },
+        {
+          "deviceId": "3014F711A0000B5A498F7871",
+          "channelIndex": 4
+        },
+        {
+          "deviceId": "3014F711A0000D1A49A3D77A",
+          "channelIndex": 6
+        },
+        {
+          "deviceId": "3014F711A0000B5A498F7871",
+          "channelIndex": 3
+        },
+        {
+          "deviceId": "3014F711A0000B5A498F7871",
+          "channelIndex": 2
+        }
+      ],
+      "on": false,
+      "processing": null,
+      "dimLevel": null,
+      "shutterLevel": null,
+      "primaryShadingLevel": null,
+      "primaryShadingStateType": "NOT_EXISTENT",
+      "slatsLevel": null,
+      "secondaryShadingLevel": null,
+      "secondaryShadingStateType": "NOT_EXISTENT"
+    },
+    "f862b4d1-eea4-4ddc-ae8c-b7e407d1f283": {
+      "id": "f862b4d1-eea4-4ddc-ae8c-b7e407d1f283",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "metaGroupId": null,
+      "label": "HEATING_CHANGEOVER",
+      "lastStatusUpdate": 0,
+      "unreach": null,
+      "lowBat": null,
+      "dutyCycle": null,
+      "type": "HEATING_CHANGEOVER",
+      "channels": [
+      ],
+      "on": null
+    },
+    "72ec9f6f-b518-4bdc-b426-be0371b9211a": {
+      "id": "72ec9f6f-b518-4bdc-b426-be0371b9211a",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "metaGroupId": "7b9cd387-866e-4f72-9516-202df2941694",
+      "label": "Bad",
+      "lastStatusUpdate": 1612809198379,
+      "unreach": false,
+      "lowBat": false,
+      "dutyCycle": false,
+      "type": "SECURITY",
+      "channels": [
+        {
+          "deviceId": "3014F711A000091BE99D5315",
+          "channelIndex": 1
+        }
+      ],
+      "windowState": null,
+      "motionDetected": false,
+      "presenceDetected": null,
+      "sabotage": false,
+      "moistureDetected": null,
+      "waterlevelDetected": null,
+      "powerMainsFailure": null,
+      "smokeDetectorAlarmType": null
+    },
+    "f7859d94-3eb2-497e-834e-62bd3869366e": {
+      "id": "f7859d94-3eb2-497e-834e-62bd3869366e",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "metaGroupId": null,
+      "label": "Balkon",
+      "lastStatusUpdate": 1612809975883,
+      "unreach": false,
+      "lowBat": null,
+      "dutyCycle": false,
+      "type": "META",
+      "channels": [
+        {
+          "deviceId": "3014F711A00001D709A10652",
+          "channelIndex": 0
+        }
+      ],
+      "groups": [
+        "86033919-0129-40f4-97a9-af489e6febb2"
+      ],
+      "configPending": false,
+      "sabotage": null,
+      "incorrectPositioned": null,
+      "groupIcon": ""
+    },
+    "1cca76ef-0404-4215-8d6c-84597ab1af7e": {
+      "id": "1cca76ef-0404-4215-8d6c-84597ab1af7e",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "metaGroupId": null,
+      "label": "COMING_HOME",
+      "lastStatusUpdate": 0,
+      "unreach": null,
+      "lowBat": null,
+      "dutyCycle": null,
+      "type": "LINKED_SWITCHING",
+      "channels": [
+      ],
+      "on": null,
+      "dimLevel": null
+    },
+    "86033919-0129-40f4-97a9-af489e6febb2": {
+      "id": "86033919-0129-40f4-97a9-af489e6febb2",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "metaGroupId": "f7859d94-3eb2-497e-834e-62bd3869366e",
+      "label": "Balkon",
+      "lastStatusUpdate": 1612809975883,
+      "unreach": false,
+      "lowBat": null,
+      "dutyCycle": false,
+      "type": "SWITCHING",
+      "channels": [
+        {
+          "deviceId": "3014F711A00001D709A10652",
+          "channelIndex": 1
+        }
+      ],
+      "on": false,
+      "processing": null,
+      "dimLevel": null,
+      "shutterLevel": null,
+      "primaryShadingLevel": null,
+      "primaryShadingStateType": "NOT_EXISTENT",
+      "slatsLevel": null,
+      "secondaryShadingLevel": null,
+      "secondaryShadingStateType": "NOT_EXISTENT"
+    },
+    "fc6d2267-9982-4bc7-b043-9a9dcf7b9d19": {
+      "id": "fc6d2267-9982-4bc7-b043-9a9dcf7b9d19",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "metaGroupId": "7b9cd387-866e-4f72-9516-202df2941694",
+      "label": "Bad",
+      "lastStatusUpdate": 1612808727769,
+      "unreach": false,
+      "lowBat": null,
+      "dutyCycle": false,
+      "type": "SWITCHING",
+      "channels": [
+        {
+          "deviceId": "3014F711A00001D709A106A2",
+          "channelIndex": 1
+        }
+      ],
+      "on": false,
+      "processing": null,
+      "dimLevel": null,
+      "shutterLevel": null,
+      "primaryShadingLevel": null,
+      "primaryShadingStateType": "NOT_EXISTENT",
+      "slatsLevel": null,
+      "secondaryShadingLevel": null,
+      "secondaryShadingStateType": "NOT_EXISTENT"
+    },
+    "7b9cd387-866e-4f72-9516-202df2941694": {
+      "id": "7b9cd387-866e-4f72-9516-202df2941694",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "metaGroupId": null,
+      "label": "Bad",
+      "lastStatusUpdate": 1612809198379,
+      "unreach": false,
+      "lowBat": false,
+      "dutyCycle": false,
+      "type": "META",
+      "channels": [
+        {
+          "deviceId": "3014F711A00001D709A106A2",
+          "channelIndex": 0
+        },
+        {
+          "deviceId": "3014F711A00000D70995699C",
+          "channelIndex": 0
+        },
+        {
+          "deviceId": "3014F711A000091BE99D5315",
+          "channelIndex": 0
+        },
+        {
+          "deviceId": "3014F711A00000D709956758",
+          "channelIndex": 0
+        }
+      ],
+      "groups": [
+        "72ec9f6f-b518-4bdc-b426-be0371b9211a",
+        "fc6d2267-9982-4bc7-b043-9a9dcf7b9d19",
+        "ae83e9db-1f93-4352-ac17-c103ca838d8b"
+      ],
+      "configPending": false,
+      "sabotage": false,
+      "incorrectPositioned": null,
+      "groupIcon": ""
+    },
+    "598d13c2-9f75-4627-85ea-b44f4f3d9123": {
+      "id": "598d13c2-9f75-4627-85ea-b44f4f3d9123",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "metaGroupId": null,
+      "label": "INBOX",
+      "lastStatusUpdate": 0,
+      "unreach": null,
+      "lowBat": null,
+      "dutyCycle": null,
+      "type": "INBOX",
+      "channels": [
+      ]
+    },
+    "ea2e1d5b-e4c7-452e-b626-59b3d019b68a": {
+      "id": "ea2e1d5b-e4c7-452e-b626-59b3d019b68a",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "metaGroupId": null,
+      "label": "HEATING_HUMIDITY_LIMITER",
+      "lastStatusUpdate": 0,
+      "unreach": null,
+      "lowBat": null,
+      "dutyCycle": null,
+      "type": "HEATING_HUMIDITY_LIMITER",
+      "channels": [
+      ]
+    },
+    "ae83e9db-1f93-4352-ac17-c103ca838d8b": {
+      "id": "ae83e9db-1f93-4352-ac17-c103ca838d8b",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "metaGroupId": "7b9cd387-866e-4f72-9516-202df2941694",
+      "label": "Bad",
+      "lastStatusUpdate": 0,
+      "unreach": null,
+      "lowBat": null,
+      "dutyCycle": null,
+      "type": "HEATING",
+      "channels": [
+        {
+          "deviceId": "3014F711A00000D70995699C",
+          "channelIndex": 1
+        },
+        {
+          "deviceId": "3014F711A00000D709956758",
+          "channelIndex": 1
+        }
+      ],
+      "windowOpenTemperature": 12.0,
+      "setPointTemperature": null,
+      "minTemperature": 5.0,
+      "maxTemperature": 30.0,
+      "windowState": null,
+      "cooling": null,
+      "partyMode": false,
+      "controlMode": "AUTOMATIC",
+      "profiles": {
+        "PROFILE_6": {
+          "profileId": "bf895598-1236-414c-87fd-c6d05b13286a",
+          "groupId": "ae83e9db-1f93-4352-ac17-c103ca838d8b",
+          "index": "PROFILE_6",
+          "name": "",
+          "visible": false,
+          "enabled": false
+        },
+        "PROFILE_3": {
+          "profileId": "34177152-a583-4d43-88b8-05f9fd227006",
+          "groupId": "ae83e9db-1f93-4352-ac17-c103ca838d8b",
+          "index": "PROFILE_3",
+          "name": "",
+          "visible": false,
+          "enabled": true
+        },
+        "PROFILE_2": {
+          "profileId": "cc70d9f4-94d4-41ed-ad66-80d48922a88f",
+          "groupId": "ae83e9db-1f93-4352-ac17-c103ca838d8b",
+          "index": "PROFILE_2",
+          "name": "",
+          "visible": false,
+          "enabled": true
+        },
+        "PROFILE_1": {
+          "profileId": "2253ad95-b134-4505-bd2d-a7633f73ecc0",
+          "groupId": "ae83e9db-1f93-4352-ac17-c103ca838d8b",
+          "index": "PROFILE_1",
+          "name": "",
+          "visible": true,
+          "enabled": true
+        },
+        "PROFILE_4": {
+          "profileId": "83eca8bc-0fa4-4c8c-b91a-f98baf258973",
+          "groupId": "ae83e9db-1f93-4352-ac17-c103ca838d8b",
+          "index": "PROFILE_4",
+          "name": "",
+          "visible": true,
+          "enabled": false
+        },
+        "PROFILE_5": {
+          "profileId": "37d92499-5480-48fc-8d3d-d1f331578499",
+          "groupId": "ae83e9db-1f93-4352-ac17-c103ca838d8b",
+          "index": "PROFILE_5",
+          "name": "",
+          "visible": false,
+          "enabled": false
+        }
+      },
+      "activeProfile": "PROFILE_1",
+      "boostMode": false,
+      "boostDuration": 5,
+      "actualTemperature": null,
+      "humidity": null,
+      "coolingAllowed": true,
+      "coolingIgnored": false,
+      "ecoAllowed": false,
+      "ecoIgnored": false,
+      "controllable": false,
+      "boostAllowed": false,
+      "floorHeatingMode": "FLOOR_HEATING_STANDARD",
+      "humidityLimitEnabled": true,
+      "humidityLimitValue": 60,
+      "externalClockEnabled": false,
+      "externalClockHeatingTemperature": 19.0,
+      "externalClockCoolingTemperature": 23.0,
+      "valvePosition": null,
+      "sabotage": null,
+      "valveSilentModeSupported": false,
+      "valveSilentModeEnabled": false,
+      "lastSetPointReachedTimestamp": 1612794599158,
+      "lastSetPointUpdatedTimestamp": 1612794599158,
+      "heatingFailureSupported": false
+    },
+    "eb002b87-f0f7-4a18-b2e1-0c1f3fa3ca22": {
+      "id": "eb002b87-f0f7-4a18-b2e1-0c1f3fa3ca22",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "metaGroupId": null,
+      "label": "HEATING_DEHUMIDIFIER",
+      "lastStatusUpdate": 0,
+      "unreach": null,
+      "lowBat": null,
+      "dutyCycle": null,
+      "type": "HEATING_DEHUMIDIFIER",
+      "channels": [
+      ],
+      "on": null
+    },
+    "0db40472-15bc-4b91-8a55-bbae481efbfb": {
+      "id": "0db40472-15bc-4b91-8a55-bbae481efbfb",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "metaGroupId": null,
+      "label": "ALARM",
+      "lastStatusUpdate": 0,
+      "unreach": null,
+      "lowBat": null,
+      "dutyCycle": null,
+      "type": "ALARM_SWITCHING",
+      "channels": [
+      ],
+      "on": null,
+      "dimLevel": null,
+      "onTime": 7200.0,
+      "signalAcoustic": "FREQUENCY_RISING",
+      "signalOptical": "DOUBLE_FLASHING_REPEATING",
+      "smokeDetectorAlarmType": null,
+      "acousticFeedbackEnabled": true
+    },
+    "3cc605c4-f2ed-4d4d-bf5d-2f01281febbc": {
+      "id": "3cc605c4-f2ed-4d4d-bf5d-2f01281febbc",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "metaGroupId": null,
+      "label": "SIREN",
+      "lastStatusUpdate": 0,
+      "unreach": null,
+      "lowBat": null,
+      "dutyCycle": null,
+      "type": "ALARM_SWITCHING",
+      "channels": [
+      ],
+      "on": null,
+      "dimLevel": null,
+      "onTime": 180.0,
+      "signalAcoustic": "FREQUENCY_RISING",
+      "signalOptical": "DOUBLE_FLASHING_REPEATING",
+      "smokeDetectorAlarmType": null,
+      "acousticFeedbackEnabled": true
+    },
+    "28db2070-5836-4bc2-84c5-11412611cc93": {
+      "id": "28db2070-5836-4bc2-84c5-11412611cc93",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "metaGroupId": null,
+      "label": "HEATING_EXTERNAL_CLOCK",
+      "lastStatusUpdate": 0,
+      "unreach": null,
+      "lowBat": null,
+      "dutyCycle": null,
+      "type": "HEATING_EXTERNAL_CLOCK",
+      "channels": [
+      ]
+    },
+    "b78d8a5e-fb61-4e28-b369-14f0eb67bbf4": {
+      "id": "b78d8a5e-fb61-4e28-b369-14f0eb67bbf4",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "metaGroupId": null,
+      "label": "EXTERNAL",
+      "lastStatusUpdate": 0,
+      "unreach": null,
+      "lowBat": null,
+      "dutyCycle": null,
+      "type": "SECURITY_ZONE",
+      "channels": [
+      ],
+      "active": false,
+      "silent": false,
+      "ignorableDevices": [
+      ],
+      "ignorableDeviceChannels": [
+      ],
+      "windowState": null,
+      "motionDetected": null,
+      "presenceDetected": null,
+      "sabotage": null,
+      "zoneAssignmentIndex": "ALARM_MODE_ZONE_2",
+      "configPending": null
+    },
+    "247c29a3-0935-4e77-964e-e6e922ff66ae": {
+      "id": "247c29a3-0935-4e77-964e-e6e922ff66ae",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "metaGroupId": null,
+      "label": "HEATING_COOLING_DEMAND_BOILER",
+      "lastStatusUpdate": 0,
+      "unreach": null,
+      "lowBat": null,
+      "dutyCycle": null,
+      "type": "HEATING_COOLING_DEMAND_BOILER",
+      "channels": [
+      ],
+      "on": null,
+      "boilerLeadTime": 0,
+      "boilerFollowUpTime": 0,
+      "heatDemand": null
+    },
+    "abc95e89-f7e2-4c41-98dc-bca63ed867d5": {
+      "id": "abc95e89-f7e2-4c41-98dc-bca63ed867d5",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "metaGroupId": null,
+      "label": "Balkondeko",
+      "lastStatusUpdate": 1612809975883,
+      "unreach": false,
+      "lowBat": null,
+      "dutyCycle": false,
+      "type": "SWITCHING_PROFILE",
+      "channels": [
+        {
+          "deviceId": "3014F711A00001D709A10652",
+          "channelIndex": 1
+        }
+      ],
+      "on": false,
+      "dimLevel": null,
+      "profileId": "297c95dd-c61f-4da9-afc8-4ba33ef8bd97",
+      "profileMode": "AUTOMATIC"
+    },
+    "3969b01c-c418-4728-b853-d1fda99be7f6": {
+      "id": "3969b01c-c418-4728-b853-d1fda99be7f6",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "metaGroupId": null,
+      "label": "INTERNAL",
+      "lastStatusUpdate": 1612809198379,
+      "unreach": false,
+      "lowBat": false,
+      "dutyCycle": false,
+      "type": "SECURITY_ZONE",
+      "channels": [
+        {
+          "deviceId": "3014F711A000091BE99D5315",
+          "channelIndex": 0
+        },
+        {
+          "deviceId": "3014F711A000091BE99D5315",
+          "channelIndex": 1
+        }
+      ],
+      "active": false,
+      "silent": false,
+      "ignorableDevices": [
+      ],
+      "ignorableDeviceChannels": [
+      ],
+      "windowState": null,
+      "motionDetected": false,
+      "presenceDetected": null,
+      "sabotage": false,
+      "zoneAssignmentIndex": "ALARM_MODE_ZONE_3",
+      "configPending": false
+    }
+  },
+  "devices": {
+    "3014F711A00001D709A10652": {
+      "id": "3014F711A00001D709A10652",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "label": "Dekolicht",
+      "lastStatusUpdate": 1612809975883,
+      "type": "PLUGABLE_SWITCH_MEASURING",
+      "functionalChannels": {
+        "0": {
+          "label": "",
+          "deviceId": "3014F711A00001D709A10652",
+          "index": 0,
+          "groupIndex": 0,
+          "functionalChannelType": "DEVICE_BASE",
+          "groups": [
+            "f7859d94-3eb2-497e-834e-62bd3869366e"
+          ],
+          "unreach": false,
+          "lowBat": null,
+          "routerModuleEnabled": true,
+          "multicastRoutingEnabled": false,
+          "routerModuleSupported": true,
+          "rssiDeviceValue": -47,
+          "rssiPeerValue": -47,
+          "configPending": false,
+          "dutyCycle": false,
+          "deviceOverloaded": false,
+          "coProUpdateFailure": false,
+          "coProFaulty": false,
+          "coProRestartNeeded": false,
+          "deviceUndervoltage": false,
+          "deviceOverheated": false,
+          "temperatureOutOfRange": false,
+          "devicePowerFailureDetected": false,
+          "supportedOptionalFeatures": {
+            "IFeatureDeviceParticulateMatterSensorCommunicationError": false,
+            "IFeatureDeviceCoProRestart": false,
+            "IFeatureDeviceOverheated": true,
+            "IOptionalFeatureDutyCycle": true,
+            "IFeatureMulticastRouter": true,
+            "IFeatureDeviceCoProUpdate": false,
+            "IFeaturePowerShortCircuit": false,
+            "IFeatureDevicePowerFailure": false,
+            "IFeatureDeviceTemperatureHumiditySensorCommunicationError": false,
+            "IFeatureShortCircuitDataLine": false,
+            "IFeatureRssiValue": true,
+            "IFeatureBusConfigMismatch": false,
+            "IFeatureDeviceUndervoltage": false,
+            "IFeatureDeviceParticulateMatterSensorError": false,
+            "IFeatureDeviceOverloaded": false,
+            "IFeatureDeviceCoProError": false,
+            "IFeatureDeviceIdentify": false,
+            "IOptionalFeatureLowBat": false,
+            "IOptionalFeatureMountingOrientation": false,
+            "IFeatureDeviceTemperatureHumiditySensorError": false,
+            "IFeatureDeviceTemperatureOutOfRange": false
+          },
+          "busConfigMismatch": null,
+          "powerShortCircuit": null,
+          "shortCircuitDataLine": null,
+          "mountingOrientation": null,
+          "temperatureHumiditySensorError": null,
+          "temperatureHumiditySensorCommunicationError": null,
+          "particulateMatterSensorError": null,
+          "particulateMatterSensorCommunicationError": null
+        },
+        "1": {
+          "label": "",
+          "deviceId": "3014F711A00001D709A10652",
+          "index": 1,
+          "groupIndex": 1,
+          "functionalChannelType": "SWITCH_MEASURING_CHANNEL",
+          "groups": [
+            "86033919-0129-40f4-97a9-af489e6febb2",
+            "abc95e89-f7e2-4c41-98dc-bca63ed867d5"
+          ],
+          "on": false,
+          "profileMode": "AUTOMATIC",
+          "userDesiredProfileMode": "AUTOMATIC",
+          "energyCounter": 3.6207,
+          "currentPowerConsumption": 2.61
+        }
+      },
+      "liveUpdateState": "LIVE_UPDATE_NOT_SUPPORTED",
+      "firmwareVersion": "2.18.14",
+      "firmwareVersionInteger": 135694,
+      "availableFirmwareVersion": "2.18.14",
+      "serializedGlobalTradeItemNumber": "3014F711A00001D709A10652",
+      "modelType": "HMIP-PSM",
+      "modelId": 262,
+      "permanentlyReachable": true,
+      "connectionType": "HMIP_RF",
+      "updateState": "UP_TO_DATE",
+      "manufacturerCode": 1,
+      "oem": "eQ-3"
+    },
+    "3014F711A00001D709A106A2": {
+      "id": "3014F711A00001D709A106A2",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "label": "Handtuchheizung",
+      "lastStatusUpdate": 1612808727769,
+      "type": "PLUGABLE_SWITCH_MEASURING",
+      "functionalChannels": {
+        "0": {
+          "label": "",
+          "deviceId": "3014F711A00001D709A106A2",
+          "index": 0,
+          "groupIndex": 0,
+          "functionalChannelType": "DEVICE_BASE",
+          "groups": [
+            "7b9cd387-866e-4f72-9516-202df2941694"
+          ],
+          "unreach": false,
+          "lowBat": null,
+          "routerModuleEnabled": true,
+          "multicastRoutingEnabled": false,
+          "routerModuleSupported": true,
+          "rssiDeviceValue": -76,
+          "rssiPeerValue": null,
+          "configPending": false,
+          "dutyCycle": false,
+          "deviceOverloaded": false,
+          "coProUpdateFailure": false,
+          "coProFaulty": false,
+          "coProRestartNeeded": false,
+          "deviceUndervoltage": false,
+          "deviceOverheated": false,
+          "temperatureOutOfRange": false,
+          "devicePowerFailureDetected": false,
+          "supportedOptionalFeatures": {
+            "IFeatureDeviceParticulateMatterSensorCommunicationError": false,
+            "IFeatureDeviceCoProRestart": false,
+            "IFeatureDeviceOverheated": true,
+            "IOptionalFeatureDutyCycle": true,
+            "IFeatureMulticastRouter": true,
+            "IFeatureDeviceCoProUpdate": false,
+            "IFeaturePowerShortCircuit": false,
+            "IFeatureDevicePowerFailure": false,
+            "IFeatureDeviceTemperatureHumiditySensorCommunicationError": false,
+            "IFeatureShortCircuitDataLine": false,
+            "IFeatureRssiValue": true,
+            "IFeatureBusConfigMismatch": false,
+            "IFeatureDeviceUndervoltage": false,
+            "IFeatureDeviceParticulateMatterSensorError": false,
+            "IFeatureDeviceOverloaded": false,
+            "IFeatureDeviceCoProError": false,
+            "IFeatureDeviceIdentify": false,
+            "IOptionalFeatureLowBat": false,
+            "IOptionalFeatureMountingOrientation": false,
+            "IFeatureDeviceTemperatureHumiditySensorError": false,
+            "IFeatureDeviceTemperatureOutOfRange": false
+          },
+          "busConfigMismatch": null,
+          "powerShortCircuit": null,
+          "shortCircuitDataLine": null,
+          "mountingOrientation": null,
+          "temperatureHumiditySensorError": null,
+          "temperatureHumiditySensorCommunicationError": null,
+          "particulateMatterSensorError": null,
+          "particulateMatterSensorCommunicationError": null
+        },
+        "1": {
+          "label": "",
+          "deviceId": "3014F711A00001D709A106A2",
+          "index": 1,
+          "groupIndex": 1,
+          "functionalChannelType": "SWITCH_MEASURING_CHANNEL",
+          "groups": [
+            "60f2dac3-6be6-4b80-ae04-9a3d949bf172",
+            "fc6d2267-9982-4bc7-b043-9a9dcf7b9d19"
+          ],
+          "on": false,
+          "profileMode": "AUTOMATIC",
+          "userDesiredProfileMode": "AUTOMATIC",
+          "energyCounter": 18.393700000000003,
+          "currentPowerConsumption": 0.0
+        }
+      },
+      "liveUpdateState": "LIVE_UPDATE_NOT_SUPPORTED",
+      "firmwareVersion": "2.18.14",
+      "firmwareVersionInteger": 135694,
+      "availableFirmwareVersion": "2.18.14",
+      "serializedGlobalTradeItemNumber": "3014F711A00001D709A106A2",
+      "modelType": "HMIP-PSM",
+      "modelId": 262,
+      "permanentlyReachable": true,
+      "connectionType": "HMIP_RF",
+      "updateState": "UP_TO_DATE",
+      "manufacturerCode": 1,
+      "oem": "eQ-3"
+    },
+    "3014F711A00000D70995699C": {
+      "id": "3014F711A00000D70995699C",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "label": "Fensterkontakt rechts",
+      "lastStatusUpdate": 0,
+      "type": "SHUTTER_CONTACT",
+      "functionalChannels": {
+        "0": {
+          "label": "",
+          "deviceId": "3014F711A00000D70995699C",
+          "index": 0,
+          "groupIndex": 0,
+          "functionalChannelType": "DEVICE_SABOTAGE",
+          "groups": [
+            "7b9cd387-866e-4f72-9516-202df2941694"
+          ],
+          "unreach": null,
+          "lowBat": null,
+          "routerModuleEnabled": false,
+          "multicastRoutingEnabled": false,
+          "routerModuleSupported": false,
+          "rssiDeviceValue": null,
+          "rssiPeerValue": null,
+          "configPending": false,
+          "dutyCycle": null,
+          "deviceOverloaded": false,
+          "coProUpdateFailure": false,
+          "coProFaulty": false,
+          "coProRestartNeeded": false,
+          "deviceUndervoltage": false,
+          "deviceOverheated": false,
+          "temperatureOutOfRange": false,
+          "devicePowerFailureDetected": false,
+          "supportedOptionalFeatures": {
+            "IFeatureDeviceParticulateMatterSensorCommunicationError": false,
+            "IFeatureDeviceCoProRestart": false,
+            "IFeatureDeviceOverheated": false,
+            "IOptionalFeatureDutyCycle": true,
+            "IFeatureMulticastRouter": false,
+            "IFeatureDeviceCoProUpdate": false,
+            "IFeaturePowerShortCircuit": false,
+            "IFeatureDevicePowerFailure": false,
+            "IFeatureDeviceTemperatureHumiditySensorCommunicationError": false,
+            "IFeatureShortCircuitDataLine": false,
+            "IFeatureRssiValue": true,
+            "IFeatureBusConfigMismatch": false,
+            "IFeatureDeviceUndervoltage": false,
+            "IFeatureDeviceParticulateMatterSensorError": false,
+            "IFeatureDeviceOverloaded": false,
+            "IFeatureDeviceCoProError": false,
+            "IFeatureDeviceIdentify": false,
+            "IOptionalFeatureLowBat": true,
+            "IOptionalFeatureMountingOrientation": false,
+            "IFeatureDeviceTemperatureHumiditySensorError": false,
+            "IFeatureDeviceTemperatureOutOfRange": false
+          },
+          "busConfigMismatch": null,
+          "powerShortCircuit": null,
+          "shortCircuitDataLine": null,
+          "mountingOrientation": null,
+          "temperatureHumiditySensorError": null,
+          "temperatureHumiditySensorCommunicationError": null,
+          "particulateMatterSensorError": null,
+          "particulateMatterSensorCommunicationError": null,
+          "sabotage": null
+        },
+        "1": {
+          "label": "",
+          "deviceId": "3014F711A00000D70995699C",
+          "index": 1,
+          "groupIndex": 1,
+          "functionalChannelType": "SHUTTER_CONTACT_CHANNEL",
+          "groups": [
+            "ae83e9db-1f93-4352-ac17-c103ca838d8b",
+            "389d0062-dc2e-48e5-a80b-65a38dc447c8"
+          ],
+          "windowState": null,
+          "eventDelay": 0
+        }
+      },
+      "liveUpdateState": "UP_TO_DATE",
+      "firmwareVersion": "1.16.8",
+      "firmwareVersionInteger": 69640,
+      "availableFirmwareVersion": "1.16.8",
+      "serializedGlobalTradeItemNumber": "3014F711A00000D70995699C",
+      "modelType": "HMIP-SWDO",
+      "modelId": 258,
+      "permanentlyReachable": false,
+      "connectionType": "HMIP_RF",
+      "updateState": "UP_TO_DATE",
+      "manufacturerCode": 1,
+      "oem": "eQ-3"
+    },
+    "3014F711A0000D1A49A3D77A": {
+      "id": "3014F711A0000D1A49A3D77A",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "label": "Modulplatine Open Collector – 8-fach",
+      "lastStatusUpdate": 1612806951771,
+      "type": "OPEN_COLLECTOR_8_MODULE",
+      "functionalChannels": {
+        "0": {
+          "label": "",
+          "deviceId": "3014F711A0000D1A49A3D77A",
+          "index": 0,
+          "groupIndex": 0,
+          "functionalChannelType": "DEVICE_BASE",
+          "groups": [
+            "68aec86c-e32f-4607-a0e6-33bceac6b050"
+          ],
+          "unreach": false,
+          "lowBat": null,
+          "routerModuleEnabled": false,
+          "multicastRoutingEnabled": false,
+          "routerModuleSupported": false,
+          "rssiDeviceValue": -45,
+          "rssiPeerValue": null,
+          "configPending": false,
+          "dutyCycle": false,
+          "deviceOverloaded": false,
+          "coProUpdateFailure": false,
+          "coProFaulty": false,
+          "coProRestartNeeded": false,
+          "deviceUndervoltage": false,
+          "deviceOverheated": false,
+          "temperatureOutOfRange": false,
+          "devicePowerFailureDetected": false,
+          "supportedOptionalFeatures": {
+            "IFeatureDeviceParticulateMatterSensorCommunicationError": false,
+            "IFeatureDeviceCoProRestart": false,
+            "IFeatureDeviceOverheated": true,
+            "IOptionalFeatureDutyCycle": true,
+            "IFeatureMulticastRouter": false,
+            "IFeatureDeviceCoProUpdate": false,
+            "IFeaturePowerShortCircuit": false,
+            "IFeatureDevicePowerFailure": false,
+            "IFeatureDeviceTemperatureHumiditySensorCommunicationError": false,
+            "IFeatureShortCircuitDataLine": false,
+            "IFeatureRssiValue": true,
+            "IFeatureBusConfigMismatch": false,
+            "IFeatureDeviceUndervoltage": false,
+            "IFeatureDeviceParticulateMatterSensorError": false,
+            "IFeatureDeviceOverloaded": false,
+            "IFeatureDeviceCoProError": false,
+            "IFeatureDeviceIdentify": false,
+            "IOptionalFeatureLowBat": false,
+            "IOptionalFeatureMountingOrientation": false,
+            "IFeatureDeviceTemperatureHumiditySensorError": false,
+            "IFeatureDeviceTemperatureOutOfRange": false
+          },
+          "busConfigMismatch": null,
+          "powerShortCircuit": null,
+          "shortCircuitDataLine": null,
+          "mountingOrientation": null,
+          "temperatureHumiditySensorError": null,
+          "temperatureHumiditySensorCommunicationError": null,
+          "particulateMatterSensorError": null,
+          "particulateMatterSensorCommunicationError": null
+        },
+        "1": {
+          "label": "OUT (1)",
+          "deviceId": "3014F711A0000D1A49A3D77A",
+          "index": 1,
+          "groupIndex": 1,
+          "functionalChannelType": "SWITCH_CHANNEL",
+          "groups": [
+            "71bf0a36-4495-4a00-a3e9-82e6c6ff4eba"
+          ],
+          "on": false,
+          "profileMode": "AUTOMATIC",
+          "userDesiredProfileMode": "AUTOMATIC"
+        },
+        "2": {
+          "label": "OUT (2)",
+          "deviceId": "3014F711A0000D1A49A3D77A",
+          "index": 2,
+          "groupIndex": 2,
+          "functionalChannelType": "SWITCH_CHANNEL",
+          "groups": [
+            "71bf0a36-4495-4a00-a3e9-82e6c6ff4eba"
+          ],
+          "on": false,
+          "profileMode": "AUTOMATIC",
+          "userDesiredProfileMode": "AUTOMATIC"
+        },
+        "3": {
+          "label": "OUT (3)",
+          "deviceId": "3014F711A0000D1A49A3D77A",
+          "index": 3,
+          "groupIndex": 3,
+          "functionalChannelType": "SWITCH_CHANNEL",
+          "groups": [
+            "71bf0a36-4495-4a00-a3e9-82e6c6ff4eba"
+          ],
+          "on": false,
+          "profileMode": "AUTOMATIC",
+          "userDesiredProfileMode": "AUTOMATIC"
+        },
+        "4": {
+          "label": "OUT (4)",
+          "deviceId": "3014F711A0000D1A49A3D77A",
+          "index": 4,
+          "groupIndex": 4,
+          "functionalChannelType": "SWITCH_CHANNEL",
+          "groups": [
+            "71bf0a36-4495-4a00-a3e9-82e6c6ff4eba"
+          ],
+          "on": false,
+          "profileMode": "AUTOMATIC",
+          "userDesiredProfileMode": "AUTOMATIC"
+        },
+        "5": {
+          "label": "OUT (5)",
+          "deviceId": "3014F711A0000D1A49A3D77A",
+          "index": 5,
+          "groupIndex": 5,
+          "functionalChannelType": "SWITCH_CHANNEL",
+          "groups": [
+            "71bf0a36-4495-4a00-a3e9-82e6c6ff4eba"
+          ],
+          "on": false,
+          "profileMode": "AUTOMATIC",
+          "userDesiredProfileMode": "AUTOMATIC"
+        },
+        "6": {
+          "label": "OUT (6)",
+          "deviceId": "3014F711A0000D1A49A3D77A",
+          "index": 6,
+          "groupIndex": 6,
+          "functionalChannelType": "SWITCH_CHANNEL",
+          "groups": [
+            "71bf0a36-4495-4a00-a3e9-82e6c6ff4eba"
+          ],
+          "on": false,
+          "profileMode": "AUTOMATIC",
+          "userDesiredProfileMode": "AUTOMATIC"
+        },
+        "7": {
+          "label": "",
+          "deviceId": "3014F711A0000D1A49A3D77A",
+          "index": 7,
+          "groupIndex": 7,
+          "functionalChannelType": "SWITCH_CHANNEL",
+          "groups": [
+          ],
+          "on": false,
+          "profileMode": "AUTOMATIC",
+          "userDesiredProfileMode": "AUTOMATIC"
+        },
+        "8": {
+          "label": "",
+          "deviceId": "3014F711A0000D1A49A3D77A",
+          "index": 8,
+          "groupIndex": 8,
+          "functionalChannelType": "SWITCH_CHANNEL",
+          "groups": [
+          ],
+          "on": false,
+          "profileMode": "AUTOMATIC",
+          "userDesiredProfileMode": "AUTOMATIC"
+        }
+      },
+      "liveUpdateState": "LIVE_UPDATE_NOT_SUPPORTED",
+      "firmwareVersion": "1.8.12",
+      "firmwareVersionInteger": 67596,
+      "availableFirmwareVersion": "1.8.12",
+      "serializedGlobalTradeItemNumber": "3014F711A0000D1A49A3D77A",
+      "modelType": "HmIP-MOD-OC8",
+      "modelId": 307,
+      "permanentlyReachable": true,
+      "connectionType": "HMIP_RF",
+      "updateState": "UP_TO_DATE",
+      "manufacturerCode": 1,
+      "oem": "eQ-3"
+    },
+    "3014F711A0000B5A498F7871": {
+      "id": "3014F711A0000B5A498F7871",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "label": "Wandtaster - 6-fach",
+      "lastStatusUpdate": 1612809862223,
+      "type": "PUSH_BUTTON_6",
+      "functionalChannels": {
+        "0": {
+          "label": "",
+          "deviceId": "3014F711A0000B5A498F7871",
+          "index": 0,
+          "groupIndex": 0,
+          "functionalChannelType": "DEVICE_BASE",
+          "groups": [
+            "68aec86c-e32f-4607-a0e6-33bceac6b050"
+          ],
+          "unreach": false,
+          "lowBat": false,
+          "routerModuleEnabled": false,
+          "multicastRoutingEnabled": false,
+          "routerModuleSupported": false,
+          "rssiDeviceValue": -53,
+          "rssiPeerValue": null,
+          "configPending": false,
+          "dutyCycle": false,
+          "deviceOverloaded": false,
+          "coProUpdateFailure": false,
+          "coProFaulty": false,
+          "coProRestartNeeded": false,
+          "deviceUndervoltage": false,
+          "deviceOverheated": false,
+          "temperatureOutOfRange": false,
+          "devicePowerFailureDetected": false,
+          "supportedOptionalFeatures": {
+            "IFeatureDeviceParticulateMatterSensorCommunicationError": false,
+            "IFeatureDeviceCoProRestart": false,
+            "IFeatureDeviceOverheated": false,
+            "IOptionalFeatureDutyCycle": true,
+            "IFeatureMulticastRouter": false,
+            "IFeatureDeviceCoProUpdate": false,
+            "IFeaturePowerShortCircuit": false,
+            "IFeatureDevicePowerFailure": false,
+            "IFeatureDeviceTemperatureHumiditySensorCommunicationError": false,
+            "IFeatureShortCircuitDataLine": false,
+            "IFeatureRssiValue": true,
+            "IFeatureBusConfigMismatch": false,
+            "IFeatureDeviceUndervoltage": false,
+            "IFeatureDeviceParticulateMatterSensorError": false,
+            "IFeatureDeviceOverloaded": false,
+            "IFeatureDeviceCoProError": false,
+            "IFeatureDeviceIdentify": false,
+            "IOptionalFeatureLowBat": true,
+            "IOptionalFeatureMountingOrientation": false,
+            "IFeatureDeviceTemperatureHumiditySensorError": false,
+            "IFeatureDeviceTemperatureOutOfRange": false
+          },
+          "busConfigMismatch": null,
+          "powerShortCircuit": null,
+          "shortCircuitDataLine": null,
+          "mountingOrientation": null,
+          "temperatureHumiditySensorError": null,
+          "temperatureHumiditySensorCommunicationError": null,
+          "particulateMatterSensorError": null,
+          "particulateMatterSensorCommunicationError": null
+        },
+        "1": {
+          "label": "",
+          "deviceId": "3014F711A0000B5A498F7871",
+          "index": 1,
+          "groupIndex": 1,
+          "functionalChannelType": "SINGLE_KEY_CHANNEL",
+          "groups": [
+            "71bf0a36-4495-4a00-a3e9-82e6c6ff4eba"
+          ]
+        },
+        "2": {
+          "label": "",
+          "deviceId": "3014F711A0000B5A498F7871",
+          "index": 2,
+          "groupIndex": 1,
+          "functionalChannelType": "SINGLE_KEY_CHANNEL",
+          "groups": [
+            "71bf0a36-4495-4a00-a3e9-82e6c6ff4eba"
+          ]
+        },
+        "3": {
+          "label": "",
+          "deviceId": "3014F711A0000B5A498F7871",
+          "index": 3,
+          "groupIndex": 2,
+          "functionalChannelType": "SINGLE_KEY_CHANNEL",
+          "groups": [
+            "71bf0a36-4495-4a00-a3e9-82e6c6ff4eba"
+          ]
+        },
+        "4": {
+          "label": "",
+          "deviceId": "3014F711A0000B5A498F7871",
+          "index": 4,
+          "groupIndex": 2,
+          "functionalChannelType": "SINGLE_KEY_CHANNEL",
+          "groups": [
+            "71bf0a36-4495-4a00-a3e9-82e6c6ff4eba"
+          ]
+        },
+        "5": {
+          "label": "",
+          "deviceId": "3014F711A0000B5A498F7871",
+          "index": 5,
+          "groupIndex": 3,
+          "functionalChannelType": "SINGLE_KEY_CHANNEL",
+          "groups": [
+            "71bf0a36-4495-4a00-a3e9-82e6c6ff4eba"
+          ]
+        },
+        "6": {
+          "label": "",
+          "deviceId": "3014F711A0000B5A498F7871",
+          "index": 6,
+          "groupIndex": 3,
+          "functionalChannelType": "SINGLE_KEY_CHANNEL",
+          "groups": [
+            "71bf0a36-4495-4a00-a3e9-82e6c6ff4eba"
+          ]
+        }
+      },
+      "liveUpdateState": "LIVE_UPDATE_NOT_SUPPORTED",
+      "firmwareVersion": "1.0.19",
+      "firmwareVersionInteger": 65555,
+      "availableFirmwareVersion": "1.0.19",
+      "serializedGlobalTradeItemNumber": "3014F711A0000B5A498F7871",
+      "modelType": "HmIP-WRC6",
+      "modelId": 300,
+      "permanentlyReachable": false,
+      "connectionType": "HMIP_RF",
+      "updateState": "UP_TO_DATE",
+      "manufacturerCode": 1,
+      "oem": "eQ-3"
+    },
+    "3014F711A00000D709956758": {
+      "id": "3014F711A00000D709956758",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "label": "Fensterkontakt links",
+      "lastStatusUpdate": 0,
+      "type": "SHUTTER_CONTACT",
+      "functionalChannels": {
+        "0": {
+          "label": "",
+          "deviceId": "3014F711A00000D709956758",
+          "index": 0,
+          "groupIndex": 0,
+          "functionalChannelType": "DEVICE_SABOTAGE",
+          "groups": [
+            "7b9cd387-866e-4f72-9516-202df2941694"
+          ],
+          "unreach": null,
+          "lowBat": null,
+          "routerModuleEnabled": false,
+          "multicastRoutingEnabled": false,
+          "routerModuleSupported": false,
+          "rssiDeviceValue": null,
+          "rssiPeerValue": null,
+          "configPending": false,
+          "dutyCycle": null,
+          "deviceOverloaded": false,
+          "coProUpdateFailure": false,
+          "coProFaulty": false,
+          "coProRestartNeeded": false,
+          "deviceUndervoltage": false,
+          "deviceOverheated": false,
+          "temperatureOutOfRange": false,
+          "devicePowerFailureDetected": false,
+          "supportedOptionalFeatures": {
+            "IFeatureDeviceParticulateMatterSensorCommunicationError": false,
+            "IFeatureDeviceCoProRestart": false,
+            "IFeatureDeviceOverheated": false,
+            "IOptionalFeatureDutyCycle": true,
+            "IFeatureMulticastRouter": false,
+            "IFeatureDeviceCoProUpdate": false,
+            "IFeaturePowerShortCircuit": false,
+            "IFeatureDevicePowerFailure": false,
+            "IFeatureDeviceTemperatureHumiditySensorCommunicationError": false,
+            "IFeatureShortCircuitDataLine": false,
+            "IFeatureRssiValue": true,
+            "IFeatureBusConfigMismatch": false,
+            "IFeatureDeviceUndervoltage": false,
+            "IFeatureDeviceParticulateMatterSensorError": false,
+            "IFeatureDeviceOverloaded": false,
+            "IFeatureDeviceCoProError": false,
+            "IFeatureDeviceIdentify": false,
+            "IOptionalFeatureLowBat": true,
+            "IOptionalFeatureMountingOrientation": false,
+            "IFeatureDeviceTemperatureHumiditySensorError": false,
+            "IFeatureDeviceTemperatureOutOfRange": false
+          },
+          "busConfigMismatch": null,
+          "powerShortCircuit": null,
+          "shortCircuitDataLine": null,
+          "mountingOrientation": null,
+          "temperatureHumiditySensorError": null,
+          "temperatureHumiditySensorCommunicationError": null,
+          "particulateMatterSensorError": null,
+          "particulateMatterSensorCommunicationError": null,
+          "sabotage": null
+        },
+        "1": {
+          "label": "",
+          "deviceId": "3014F711A00000D709956758",
+          "index": 1,
+          "groupIndex": 1,
+          "functionalChannelType": "SHUTTER_CONTACT_CHANNEL",
+          "groups": [
+            "ae83e9db-1f93-4352-ac17-c103ca838d8b",
+            "389d0062-dc2e-48e5-a80b-65a38dc447c8"
+          ],
+          "windowState": null,
+          "eventDelay": 0
+        }
+      },
+      "liveUpdateState": "LIVE_UPDATE_NOT_SUPPORTED",
+      "firmwareVersion": "1.16.8",
+      "firmwareVersionInteger": 69640,
+      "availableFirmwareVersion": "1.16.8",
+      "serializedGlobalTradeItemNumber": "3014F711A00000D709956758",
+      "modelType": "HMIP-SWDO",
+      "modelId": 258,
+      "permanentlyReachable": false,
+      "connectionType": "HMIP_RF",
+      "updateState": "UP_TO_DATE",
+      "manufacturerCode": 1,
+      "oem": "eQ-3"
+    },
+    "3014F711A00003D709B034F7": {
+      "id": "3014F711A00003D709B034F7",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "label": "Access Point",
+      "lastStatusUpdate": 1612809869119,
+      "type": "HOME_CONTROL_ACCESS_POINT",
+      "functionalChannels": {
+        "0": {
+          "label": "",
+          "deviceId": "3014F711A00003D709B034F7",
+          "index": 0,
+          "groupIndex": 0,
+          "functionalChannelType": "ACCESS_CONTROLLER_CHANNEL",
+          "groups": [
+            "f1840206-f73d-4772-94d3-706feb53ebe2"
+          ],
+          "unreach": false,
+          "lowBat": null,
+          "routerModuleEnabled": false,
+          "multicastRoutingEnabled": false,
+          "routerModuleSupported": false,
+          "rssiDeviceValue": null,
+          "rssiPeerValue": null,
+          "configPending": false,
+          "dutyCycle": false,
+          "deviceOverloaded": false,
+          "coProUpdateFailure": false,
+          "coProFaulty": false,
+          "coProRestartNeeded": false,
+          "deviceUndervoltage": false,
+          "deviceOverheated": false,
+          "temperatureOutOfRange": false,
+          "devicePowerFailureDetected": false,
+          "supportedOptionalFeatures": {
+            "IFeatureDeviceParticulateMatterSensorCommunicationError": false,
+            "IFeatureDeviceCoProRestart": false,
+            "IFeatureDeviceOverheated": false,
+            "IOptionalFeatureDutyCycle": true,
+            "IFeatureMulticastRouter": false,
+            "IFeatureDeviceCoProUpdate": false,
+            "IFeaturePowerShortCircuit": false,
+            "IFeatureDevicePowerFailure": false,
+            "IFeatureDeviceTemperatureHumiditySensorCommunicationError": false,
+            "IFeatureShortCircuitDataLine": false,
+            "IFeatureRssiValue": false,
+            "IFeatureBusConfigMismatch": false,
+            "IFeatureDeviceUndervoltage": false,
+            "IFeatureDeviceParticulateMatterSensorError": false,
+            "IFeatureDeviceOverloaded": false,
+            "IFeatureDeviceCoProError": false,
+            "IFeatureDeviceIdentify": false,
+            "IOptionalFeatureLowBat": false,
+            "IOptionalFeatureMountingOrientation": false,
+            "IFeatureDeviceTemperatureHumiditySensorError": false,
+            "IFeatureDeviceTemperatureOutOfRange": false
+          },
+          "busConfigMismatch": null,
+          "powerShortCircuit": null,
+          "shortCircuitDataLine": null,
+          "mountingOrientation": null,
+          "temperatureHumiditySensorError": null,
+          "temperatureHumiditySensorCommunicationError": null,
+          "particulateMatterSensorError": null,
+          "particulateMatterSensorCommunicationError": null,
+          "signalBrightness": 1.0,
+          "accessPointPriority": 1,
+          "dutyCycleLevel": 2.0,
+          "carrierSenseLevel": 0.0
+        }
+      },
+      "liveUpdateState": "LIVE_UPDATE_NOT_SUPPORTED",
+      "firmwareVersion": "2.2.18",
+      "firmwareVersionInteger": 131602,
+      "availableFirmwareVersion": "2.2.18",
+      "serializedGlobalTradeItemNumber": "3014F711A00003D709B034F7",
+      "modelType": "HmIP-HAP",
+      "modelId": 270,
+      "permanentlyReachable": true,
+      "connectionType": "HMIP_LAN",
+      "updateState": "BACKGROUND_UPDATE_NOT_SUPPORTED",
+      "manufacturerCode": 1,
+      "oem": "eQ-3"
+    },
+    "3014F711A000091BE99D5315": {
+      "id": "3014F711A000091BE99D5315",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "label": "Bewegungsmelder",
+      "lastStatusUpdate": 1612809198379,
+      "type": "MOTION_DETECTOR_INDOOR",
+      "functionalChannels": {
+        "0": {
+          "label": "",
+          "deviceId": "3014F711A000091BE99D5315",
+          "index": 0,
+          "groupIndex": 0,
+          "functionalChannelType": "DEVICE_SABOTAGE",
+          "groups": [
+            "7b9cd387-866e-4f72-9516-202df2941694",
+            "3969b01c-c418-4728-b853-d1fda99be7f6"
+          ],
+          "unreach": false,
+          "lowBat": false,
+          "routerModuleEnabled": false,
+          "multicastRoutingEnabled": false,
+          "routerModuleSupported": false,
+          "rssiDeviceValue": -75,
+          "rssiPeerValue": null,
+          "configPending": false,
+          "dutyCycle": false,
+          "deviceOverloaded": false,
+          "coProUpdateFailure": false,
+          "coProFaulty": false,
+          "coProRestartNeeded": false,
+          "deviceUndervoltage": false,
+          "deviceOverheated": false,
+          "temperatureOutOfRange": false,
+          "devicePowerFailureDetected": false,
+          "supportedOptionalFeatures": {
+            "IFeatureDeviceParticulateMatterSensorCommunicationError": false,
+            "IFeatureDeviceCoProRestart": false,
+            "IFeatureDeviceOverheated": false,
+            "IOptionalFeatureDutyCycle": true,
+            "IFeatureMulticastRouter": false,
+            "IFeatureDeviceCoProUpdate": false,
+            "IFeaturePowerShortCircuit": false,
+            "IFeatureDevicePowerFailure": false,
+            "IFeatureDeviceTemperatureHumiditySensorCommunicationError": false,
+            "IFeatureShortCircuitDataLine": false,
+            "IFeatureRssiValue": true,
+            "IFeatureBusConfigMismatch": false,
+            "IFeatureDeviceUndervoltage": false,
+            "IFeatureDeviceParticulateMatterSensorError": false,
+            "IFeatureDeviceOverloaded": false,
+            "IFeatureDeviceCoProError": false,
+            "IFeatureDeviceIdentify": false,
+            "IOptionalFeatureLowBat": true,
+            "IOptionalFeatureMountingOrientation": false,
+            "IFeatureDeviceTemperatureHumiditySensorError": false,
+            "IFeatureDeviceTemperatureOutOfRange": false
+          },
+          "busConfigMismatch": null,
+          "powerShortCircuit": null,
+          "shortCircuitDataLine": null,
+          "mountingOrientation": null,
+          "temperatureHumiditySensorError": null,
+          "temperatureHumiditySensorCommunicationError": null,
+          "particulateMatterSensorError": null,
+          "particulateMatterSensorCommunicationError": null,
+          "sabotage": false
+        },
+        "1": {
+          "label": "",
+          "deviceId": "3014F711A000091BE99D5315",
+          "index": 1,
+          "groupIndex": 1,
+          "functionalChannelType": "MOTION_DETECTION_CHANNEL",
+          "groups": [
+            "72ec9f6f-b518-4bdc-b426-be0371b9211a",
+            "3969b01c-c418-4728-b853-d1fda99be7f6",
+            "389d0062-dc2e-48e5-a80b-65a38dc447c8"
+          ],
+          "motionDetected": false,
+          "illumination": 0.0,
+          "currentIllumination": null,
+          "numberOfBrightnessMeasurements": 7,
+          "motionDetectionSendInterval": "SECONDS_120",
+          "motionBufferActive": true
+        }
+      },
+      "liveUpdateState": "LIVE_UPDATE_NOT_SUPPORTED",
+      "firmwareVersion": "1.4.8",
+      "firmwareVersionInteger": 66568,
+      "availableFirmwareVersion": "1.4.8",
+      "serializedGlobalTradeItemNumber": "3014F711A000091BE99D5315",
+      "modelType": "HmIP-SMI",
+      "modelId": 291,
+      "permanentlyReachable": true,
+      "connectionType": "HMIP_RF",
+      "updateState": "UP_TO_DATE",
+      "manufacturerCode": 1,
+      "oem": "eQ-3"
+    }
+  },
+  "clients": {
+    "355c07e2-c5f6-4a7f-bb66-2ef61a45828f": {
+      "clientType": "APP",
+      "id": "355c07e2-c5f6-4a7f-bb66-2ef61a45828f",
+      "label": "Alex's iPhone X",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "createdAtTimestamp": 0,
+      "lastSeenAtTimestamp": 1611801057318
+    },
+    "c3bbbdc3-a785-4f9a-9549-87eaaf610fb6": {
+      "clientType": "C2C",
+      "id": "c3bbbdc3-a785-4f9a-9549-87eaaf610fb6",
+      "label": "Amazon Alexa Client",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "createdAtTimestamp": 0,
+      "lastSeenAtTimestamp": 1612734234157,
+      "c2cServiceIdentifier": "hmip_alexa_skill",
+      "inactive": null
+    },
+    "982967e5-0281-4351-a427-e0d477f197ee": {
+      "clientType": "APP",
+      "id": "982967e5-0281-4351-a427-e0d477f197ee",
+      "label": "homematicip-python",
+      "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+      "createdAtTimestamp": 0,
+      "lastSeenAtTimestamp": 1612809977162
+    }
+  }
+}
