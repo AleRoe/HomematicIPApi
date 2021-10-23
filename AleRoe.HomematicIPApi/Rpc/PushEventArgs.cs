@@ -16,5 +16,8 @@ namespace AleRoe.HomematicIpApi.Rpc
 
         [JsonProperty("accessPointId")]
         public string AccessPointId { get; private set; }
+
+        [JsonProperty("timestamp")]
+        public long Timestamp { get; private set; }
     }
 }
