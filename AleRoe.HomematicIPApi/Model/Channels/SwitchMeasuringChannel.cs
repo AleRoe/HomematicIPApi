@@ -6,9 +6,9 @@ namespace AleRoe.HomematicIpApi.Model.Channels
     public class SwitchMeasuringChannel : SwitchChannel
     {
         [JsonProperty("energyCounter")] 
-        public double EnergyCounter { get; private set; }
+        public double? EnergyCounter { get; private set; }
 
         [JsonProperty("currentPowerConsumption")]
-        public double CurrentPowerConsumption { get; private set; }
+        public double? CurrentPowerConsumption { get; private set; }
     }
 }
