@@ -1,15 +1,27 @@
 {
   "label": "",
-  "deviceId": "3014F711A00001D709A106A2",
+  "deviceId": "3014F711A00001D709A10652",
   "index": 1,
   "groupIndex": 1,
   "functionalChannelType": "SWITCH_MEASURING_CHANNEL",
   "groups": [
-    "ae83e9db-1f93-4352-ac17-c103ca838d8b"
+    "86033919-0129-40f4-97a9-af489e6febb2",
+    "abc95e89-f7e2-4c41-98dc-bca63ed867d5"
   ],
   "on": false,
-  "profileMode": "AUTOMATIC",
+  "profileMode": null,
   "userDesiredProfileMode": "AUTOMATIC",
-  "energyCounter": 9.828700000000001,
-  "currentPowerConsumption": 0.0
+  "internalLinkConfiguration": {
+    "internalLinkConfigurationType": "SINGLE_INPUT_SWITCH",
+    "onTime": 111600.0,
+    "firstInputAction": "TOGGLE",
+    "longPressOnTimeEnabled": false
+  },
+  "supportedOptionalFeatures": {
+    "IOptionalFeatureInternalLinkConfiguration": true,
+    "IOptionalFeatureEnergyMeterMode": false
+  },
+  "energyCounter": null,
+  "currentPowerConsumption": null,
+  "energyMeterMode": "CONSUMPTION_MEASURING"
 }
