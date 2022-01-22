@@ -92,5 +92,12 @@ namespace AleRoe.HomematicIpApi.Model.Home
         [JsonProperty("accessPointUpdateStates")]
         public AccessPointUpdateStatesDictionary AccessPointUpdateStates { get; set; }
 
+        [JsonProperty("pinChangeTimestamp", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonConverter(typeof(UnixTimestampConverter))]
+        public DateTime PinChangeTimestamp { get; set; }
+
+        [JsonProperty("pinChangeClientLabel")]
+        public string PinChangeClientLabel { get; set; }
+
     }
 }
