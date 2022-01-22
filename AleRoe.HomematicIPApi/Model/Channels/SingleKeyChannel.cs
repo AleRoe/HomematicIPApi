@@ -7,5 +7,6 @@ namespace AleRoe.HomematicIpApi.Model.Channels
     {
         [JsonProperty("visibleChannelIndex")]
         public int VisibleChannelIndex { get; private set; }
+
     }
 }
