@@ -16,7 +16,7 @@ namespace AleRoe.HomematicIpApi.Model.Groups
         public Guid ProfileId { get; private set; }
 
         [JsonProperty("profileMode", NullValueHandling = NullValueHandling.Ignore)]
-        public ProfileMode? ProfileMode { get; private set; } = null;
+        public ProfileMode ProfileMode { get; private set; } = ProfileMode.MANUAL;
 
     }
 }

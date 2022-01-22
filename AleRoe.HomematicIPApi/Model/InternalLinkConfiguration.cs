@@ -12,9 +12,5 @@ namespace AleRoe.HomematicIpApi.Model
 
         [JsonProperty("firstInputAction")]
         public FirstInputAction FirstInputAction { get; private set; }
-
-        [JsonProperty("longPressOnTimeEnabled")]
-        public bool LongPressOnTimeEnabled { get; private set; }
-
     }
 }
