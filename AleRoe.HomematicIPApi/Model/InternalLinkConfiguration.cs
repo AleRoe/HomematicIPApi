@@ -15,6 +15,5 @@ namespace AleRoe.HomematicIpApi.Model
 
         [JsonProperty("longPressOnTimeEnabled")]
         public bool LongPressOnTimeEnabled { get; private set; }
-
     }
 }
