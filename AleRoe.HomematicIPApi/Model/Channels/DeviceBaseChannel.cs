@@ -94,5 +94,8 @@ namespace AleRoe.HomematicIpApi.Model.Channels
 
         [JsonProperty("internalLinkConfiguration")]
         public bool? InternalLinkConfiguration { get; private set; }
+
+        [JsonProperty("energyMeterMode")]
+        public bool? EnergyMeterMode { get; private set; }
     }
 }

@@ -10,5 +10,8 @@ namespace AleRoe.HomematicIpApi.Model.Channels
 
         [JsonProperty("currentPowerConsumption")]
         public double? CurrentPowerConsumption { get; private set; }
+
+        [JsonProperty("energyMeterMode")]
+        public EnergyMeterMode EnergyMeterMode { get; private set; }
     }
 }

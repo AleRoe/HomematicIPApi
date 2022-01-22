@@ -104,5 +104,9 @@ namespace AleRoe.HomematicIpApi.Model
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         [OptionalFeatureProperty(nameof(DeviceBaseChannel.LockJammed))]
         public bool? IOptionalFeatureInternalLinkConfiguration { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        [OptionalFeatureProperty(nameof(DeviceBaseChannel.EnergyMeterMode))]
+        public bool? IOptionalFeatureEnergyMeterMode { get; private set; }
     }
 }
