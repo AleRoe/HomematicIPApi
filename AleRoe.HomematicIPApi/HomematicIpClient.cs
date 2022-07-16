@@ -2,7 +2,9 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System;
+using System.Net.Http;
 using System.Runtime.Serialization;
+using System.Security.Authentication;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -70,18 +72,31 @@ namespace AleRoe.HomematicIpApi
                     MissingMemberHandling = MissingMemberHandling.Error,
                     NullValueHandling = NullValueHandling.Include
                 };
-                
-                client = new JsonClient(accessPoint, authToken, settings);
-                Service = new HomematicRpcService(client);
-                listener = new HomematicListener(client);
 
-                //need to set the StreamingContext after the service is created!
-                client.Settings.Context = new StreamingContext(StreamingContextStates.Other, this.Service);
-                client.Settings.Error += OnSerializerError;
+                try
+                {
+                    client = new JsonClient(accessPoint, authToken, settings);
+                    Service = new HomematicRpcService(client);
+                    listener = new HomematicListener(client);
+
+                    //need to set the StreamingContext after the service is created!
+                    client.Settings.Context = new StreamingContext(StreamingContextStates.Other, this.Service);
+                    client.Settings.Error += OnSerializerError;
+
+                    cts = new CancellationTokenSource();
+                    await listener.ConnectAsync(CancellationToken.None);
+                    this.listenerTask = listener.ReceiveAsync(OnStateChanged, cts.Token);
+                }
+                catch (AggregateException ae)
+                {
+                    if (ae.InnerException is HttpRequestException http)
+                        if (http.InnerException is AuthenticationException)
+                            if (OperatingSystem.IsWindows() && Environment.OSVersion.Version.Major < 10)
+                                throw new PlatformNotSupportedException("HomematicIP requires Windows 10 or greater.", http.InnerException);
+                    throw;
+                }
+
                 
-                cts = new CancellationTokenSource();
-                await listener.ConnectAsync(CancellationToken.None);
-                this.listenerTask = listener.ReceiveAsync(OnStateChanged, cts.Token);
                 
             }
         }
