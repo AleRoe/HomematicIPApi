@@ -25,10 +25,10 @@ jobs:
       run: dotnet test --no-build --verbosity normal
     - name: Echo home
       run: 
-        dir $HOME\AppData\Local\Temp
+        dir $HOME/AppData/Local/Temp
     - name: Upload dotnet test results
       uses: actions/upload-artifact@v3
       with:
         name: dump
-        path: $HOME\AppData\Local\Temp\HomematicIpDump_*
+        path: $env:USERPROFILE\AppData\Local\Temp\HomematicIpDump_*.*
       if: ${{ always() }}
