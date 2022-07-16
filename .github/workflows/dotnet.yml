@@ -13,9 +13,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Echo home
-      run: 
-        dir $HOME\AppData\Local\Temp
     - name: Setup .NET
       uses: actions/setup-dotnet@v2
       with:
@@ -26,9 +23,12 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+    - name: Echo home
+      run: 
+        dir $HOME\AppData\Local\Temp
     - name: Upload dotnet test results
       uses: actions/upload-artifact@v3
       with:
         name: dump
-        path: $HOME/AppData/Local/Temp/HomematicIpDump_*
+        path: '{$HOME}/AppData/Local/Temp/HomematicIpDump_*'
       if: ${{ always() }}
