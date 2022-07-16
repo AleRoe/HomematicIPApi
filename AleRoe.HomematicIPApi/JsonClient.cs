@@ -82,9 +82,10 @@ namespace AleRoe.HomematicIpApi
                     response.EnsureSuccessStatusCode();
                     return await response.Content.ReadAsAsync<Hosts>().ConfigureAwait(false);
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-                    return null;
+                    Trace.TraceError(e.Message);
+                    throw;
                 }
             });
 
