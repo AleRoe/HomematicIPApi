@@ -6,102 +6,126 @@ namespace AleRoe.HomematicIpApi.Model.Groups
     public class HeatingGroup : Group
     {
         [JsonProperty("windowOpenTemperature")]
-        public double WindowOpenTemperature { get; set; }
+        public double WindowOpenTemperature { get; private set; }
 
         [JsonProperty("setPointTemperature")]
-        public object SetPointTemperature { get; set; }
+        public object SetPointTemperature { get; private set; }
 
         [JsonProperty("minTemperature")]
-        public double MinTemperature { get; set; }
+        public double MinTemperature { get; private set; }
 
         [JsonProperty("maxTemperature")]
-        public double MaxTemperature { get; set; }
+        public double MaxTemperature { get; private set; }
 
         [JsonProperty("windowState")]
-        public object WindowState { get; set; }
+        public object WindowState { get; private set; }
 
         [JsonProperty("cooling")]
-        public object Cooling { get; set; }
+        public object Cooling { get; private set; }
 
         [JsonProperty("partyMode")]
-        public bool PartyMode { get; set; }
+        public bool PartyMode { get; private set; }
 
         [JsonProperty("controlMode")]
-        public string ControlMode { get; set; }
+        public string ControlMode { get; private set; }
 
         [JsonProperty("profiles")]
-        public ProfileCollection Profiles { get; set; }
+        public ProfileCollection Profiles { get; private set; }
 
         [JsonProperty("activeProfile")]
-        public string ActiveProfile { get; set; }
+        public string ActiveProfile { get; private set; }
 
         [JsonProperty("boostMode")]
-        public bool BoostMode { get; set; }
+        public bool BoostMode { get; private set; }
 
         [JsonProperty("boostDuration")]
-        public int BoostDuration { get; set; }
+        public int BoostDuration { get; private set; }
 
         [JsonProperty("actualTemperature")]
-        public object ActualTemperature { get; set; }
+        public object ActualTemperature { get; private set; }
 
         [JsonProperty("humidity")]
-        public object Humidity { get; set; }
+        public object Humidity { get; private set; }
 
         [JsonProperty("coolingAllowed")]
-        public bool CoolingAllowed { get; set; }
+        public bool CoolingAllowed { get; private set; }
 
         [JsonProperty("coolingIgnored")]
-        public bool CoolingIgnored { get; set; }
+        public bool CoolingIgnored { get; private set; }
 
         [JsonProperty("ecoAllowed")]
-        public bool EcoAllowed { get; set; }
+        public bool EcoAllowed { get; private set; }
 
         [JsonProperty("ecoIgnored")]
-        public bool EcoIgnored { get; set; }
+        public bool EcoIgnored { get; private set; }
 
         [JsonProperty("controllable")]
-        public bool Controllable { get; set; }
+        public bool Controllable { get; private set; }
 
         [JsonProperty("boostAllowed")]
-        public bool? BoostAllowed { get; set; }
+        public bool? BoostAllowed { get; private set; }
 
         [JsonProperty("floorHeatingMode")]
-        public string FloorHeatingMode { get; set; }
+        public string FloorHeatingMode { get; private set; }
 
         [JsonProperty("humidityLimitEnabled")]
-        public bool HumidityLimitEnabled { get; set; }
+        public bool HumidityLimitEnabled { get; private set; }
 
         [JsonProperty("humidityLimitValue")]
-        public int HumidityLimitValue { get; set; }
+        public int HumidityLimitValue { get; private set; }
 
         [JsonProperty("externalClockEnabled")]
-        public bool ExternalClockEnabled { get; set; }
+        public bool ExternalClockEnabled { get; private set; }
 
         [JsonProperty("externalClockHeatingTemperature")]
-        public double ExternalClockHeatingTemperature { get; set; }
+        public double ExternalClockHeatingTemperature { get; private set; }
 
         [JsonProperty("externalClockCoolingTemperature")]
-        public double ExternalClockCoolingTemperature { get; set; }
+        public double ExternalClockCoolingTemperature { get; private set; }
 
         [JsonProperty("valvePosition")]
-        public object ValvePosition { get; set; }
+        public object ValvePosition { get; private set; }
 
         [JsonProperty("sabotage")]
-        public object Sabotage { get; set; }
+        public object Sabotage { get; private set; }
 
         [JsonProperty("valveSilentModeSupported")]
-        public bool ValveSilentModeSupported { get; set; }
+        public bool ValveSilentModeSupported { get; private set; }
 
         [JsonProperty("valveSilentModeEnabled")]
-        public bool ValveSilentModeEnabled { get; set; }
+        public bool ValveSilentModeEnabled { get; private set; }
 
         [JsonProperty("lastSetPointReachedTimestamp")]
-        public long LastSetPointReachedTimestamp { get; set; }
+        public long LastSetPointReachedTimestamp { get; private set; }
 
         [JsonProperty("lastSetPointUpdatedTimestamp")]
-        public long LastSetPointUpdatedTimestamp { get; set; }
+        public long LastSetPointUpdatedTimestamp { get; private set; }
 
         [JsonProperty("heatingFailureSupported")]
-        public bool HeatingFailureSupported { get; set; }
+        public bool HeatingFailureSupported { get; private set; }
+
+        [JsonProperty("humidityLimiterAlarm")]
+        public object HumidityLimiterAlarm { get; private set; }
+
+        [JsonProperty("humidityLimitPreEnabled")]
+        public bool HumidityLimitPreEnabled { get; private set; }
+
+        [JsonProperty("humidityLimitPreValue")]
+        public int HumidityLimitPreValue { get; private set; }
+
+        [JsonProperty("humidityLimiterPreAlarm")]
+        public object HumidityLimiterPreAlarm { get; private set; }
+
+        [JsonProperty("switchClimateFunction")]
+        public SwitchClimateFunction SwitchClimateFunction { get; private set; }
+
+        [JsonProperty("supportedOptionalFeatures")]
+        public SupportedOptionalFeatures SupportedOptionalFeatures { get; private set; }
+
+        [JsonProperty("processing")]
+        public object Processing { get; private set; }
+
+        [JsonProperty("ventilationState")]
+        public object VentilationState { get; private set; }
     }
 }

@@ -13,30 +13,36 @@ namespace AleRoe.HomematicIpApi.Model.Home
         public AbsenceType AbsenceType { get; set; }
 
         [JsonProperty("absenceEndTime", NullValueHandling = NullValueHandling.Include)] 
-        public DateTime? AbsenceEndTime { get; set; }
+        public DateTime? AbsenceEndTime { get; private set; }
 
         [JsonProperty("floorHeatingSpecificGroups")]
-        public FloorHeatingSpecificGroups FloorHeatingSpecificGroups { get; set; }
+        public FloorHeatingSpecificGroups FloorHeatingSpecificGroups { get; private set; }
 
         [JsonProperty("ecoTemperature")] 
-        public double EcoTemperature { get; set; }
+        public double EcoTemperature { get; private set; }
 
         [JsonProperty("coolingEnabled")] 
-        public bool CoolingEnabled { get; set; }
+        public bool CoolingEnabled { get; private set; }
 
         [JsonProperty("ecoDuration")] 
-        public EcoDuration EcoDuration { get; set; }
+        public EcoDuration EcoDuration { get; private set; }
 
         [JsonProperty("optimumStartStopEnabled")]
-        public bool OptimumStartStopEnabled { get; set; }
+        public bool OptimumStartStopEnabled { get; private set; }
 
         [JsonProperty("deviceChannelSpecificFunction", NullValueHandling = NullValueHandling.Ignore)]
-        public object DeviceChannelSpecificFunction { get; set; }
+        public object DeviceChannelSpecificFunction { get; private set; }
 
         [JsonProperty("solution")] 
-        public string Solution { get; set; }
+        public string Solution { get; private set; }
 
         [JsonProperty("active")] 
-        public bool Active { get; set; }
+        public bool Active { get; private set; }
+
+        [JsonProperty("extendedLinkedVentilationGroups", NullValueHandling = NullValueHandling.Ignore)]
+        public object ExtendedLinkedVentilationGroups { get; private set; }
+
+        [JsonProperty("ventilationProfileGroups", NullValueHandling = NullValueHandling.Ignore)]
+        public object VentilationProfileGroups { get; private set; }
     }
 }

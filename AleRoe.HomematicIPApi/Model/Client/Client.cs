@@ -32,6 +32,18 @@ namespace AleRoe.HomematicIpApi.Model.Client
         [JsonProperty("c2cServiceIdentifier", NullValueHandling = NullValueHandling.Ignore)]
         public string C2CServiceIdentifier { get; private set; }
 
+        [JsonProperty("userRole", NullValueHandling = NullValueHandling.Ignore)]
+        public object UserRole { get; private set; }
+
+        [JsonProperty("userRoleChangeStatus", NullValueHandling = NullValueHandling.Ignore)]
+        public object UserRoleChangeStatus { get; private set; }
+
+        [JsonProperty("adminInitializationRequired")]
+        public bool? AdminInitializationRequired { get; private set; }
+
+        [JsonProperty("hasC2cServiceToken")]
+        public bool? HasC2cServiceToken { get; private set; }
+
         public override string ToString()
         {
             return Label;

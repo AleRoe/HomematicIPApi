@@ -102,11 +102,47 @@ namespace AleRoe.HomematicIpApi.Model
         public bool? IOptionalFeatureDeviceErrorLockJammed { get; private set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        [OptionalFeatureProperty(nameof(DeviceBaseChannel.LockJammed))]
+        [OptionalFeatureProperty(nameof(DeviceBaseChannel.InternalLinkConfiguration))]
         public bool? IOptionalFeatureInternalLinkConfiguration { get; private set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         [OptionalFeatureProperty(nameof(DeviceBaseChannel.EnergyMeterMode))]
         public bool? IOptionalFeatureEnergyMeterMode { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        [OptionalFeatureProperty(nameof(DeviceBaseChannel.DeviceDriveModeError))]
+        public bool? IFeatureDeviceDriveModeError { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        [OptionalFeatureProperty(nameof(DeviceBaseChannel.DeviceDriveError))]
+        public bool? IFeatureDeviceDriveError { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        [OptionalFeatureProperty(nameof(DeviceBaseChannel.DeviceCommunicationError))]
+        public bool? IFeatureDeviceCommunicationError { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        //[OptionalFeatureProperty(nameof(DeviceBaseChannel))]
+        public bool? IOptionalFeaturePowerUpSwitchState { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        //[OptionalFeatureProperty(nameof(DeviceBaseChannel))]
+        public bool? IOptionalFeatureLongPressSupported { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        //[OptionalFeatureProperty(nameof(DeviceBaseChannel.EnergyMeterMode))]
+        public bool? IOptionalFeatureDoorBellSensorEventTimestamp { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        //[OptionalFeatureProperty(nameof(DeviceBaseChannel.EnergyMeterMode))]
+        public bool? IOptionalFeatureAcousticSendStateEnabled { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        //[OptionalFeatureProperty(nameof(DeviceBaseChannel.EnergyMeterMode))]
+        public bool? IOptionalFeatureHumidityLimitPre { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        //[OptionalFeatureProperty(nameof(DeviceBaseChannel.EnergyMeterMode))]
+        public bool? IOptionalFeatureSwitchClimateFunction { get; private set; }
     }
 }

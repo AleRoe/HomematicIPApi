@@ -97,5 +97,14 @@ namespace AleRoe.HomematicIpApi.Model.Channels
 
         [JsonProperty("energyMeterMode")]
         public bool? EnergyMeterMode { get; private set; }
+
+        [JsonProperty("deviceDriveError")]
+        public bool? DeviceDriveError { get; private set; }
+
+        [JsonProperty("deviceDriveModeError")]
+        public bool? DeviceDriveModeError { get; private set; }
+
+        [JsonProperty("deviceCommunicationError")]
+        public bool? DeviceCommunicationError { get; private set; }
     }
 }

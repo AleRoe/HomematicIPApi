@@ -19,5 +19,8 @@ namespace AleRoe.HomematicIpApi.Model.Channels
 
         [JsonProperty("supportedOptionalFeatures")]
         public SupportedOptionalFeatures SupportedOptionalFeatures { get; private set; }
+
+        [JsonProperty("powerUpSwitchState")]
+        public PowerUpSwitchState PowerUpSwitchState { get; private set; }
     }
 }

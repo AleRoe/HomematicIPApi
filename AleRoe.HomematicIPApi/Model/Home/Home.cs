@@ -99,5 +99,18 @@ namespace AleRoe.HomematicIpApi.Model.Home
         [JsonProperty("pinChangeClientLabel")]
         public string PinChangeClientLabel { get; private set; }
 
+        
+        [JsonProperty("userRightsManagementActive")]
+        public object UserRightsManagementActive { get; private set; }
+
+        [JsonProperty("accountLinkingStatus")]
+        public object AccountLinkingStatus { get; private set; }
+
+        [JsonProperty("userRightsManagementActiveChangeStatus")]
+        public object UserRightsManagementActiveChangeStatus { get; private set; }
+
+        [JsonProperty("userRightsManagementSupported")]
+        public bool UserRightsManagementSupported { get; private set; }
+
     }
 }

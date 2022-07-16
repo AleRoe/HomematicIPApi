@@ -6,6 +6,9 @@ namespace AleRoe.HomematicIpApi.Model.Groups
     public class HeatingChangeoverGroup : Group
     {
         [JsonProperty("on")]
-        public bool? On { get; set; }
+        public bool? On { get; private set; }
+
+        [JsonProperty("changeOver")]
+        public object ChangeOver { get; private set; }
     }
 }

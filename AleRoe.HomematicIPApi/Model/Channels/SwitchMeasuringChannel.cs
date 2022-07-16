@@ -14,5 +14,7 @@ namespace AleRoe.HomematicIpApi.Model.Channels
         [JsonProperty("energyMeterMode")]
         public EnergyMeterMode EnergyMeterMode { get; private set; }
 
+        
+
     }
 }
