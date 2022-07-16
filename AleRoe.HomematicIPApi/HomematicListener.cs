@@ -2,14 +2,15 @@
 using Newtonsoft.Json;
 using System;
 using System.IO;
+using System.Net.Http;
 using System.Net.WebSockets;
 using System.Runtime.CompilerServices;
+using System.Security.Authentication;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
 [assembly : InternalsVisibleTo("AleRoe.HomematicIpApi.Tests")]
-[assembly: InternalsVisibleTo("TestProject1")]
 namespace AleRoe.HomematicIpApi
 {
     internal class HomematicListener : IDisposable
@@ -30,14 +31,24 @@ namespace AleRoe.HomematicIpApi
 
         public async Task ConnectAsync(CancellationToken cancellationToken = default)
         {
-            this.socketLoopTokenSource = new CancellationTokenSource();
-            this.Socket = new ClientWebSocket();
-            var socketUri = client.Hosts.GetWebSocketUri();
-            Socket.Options.SetRequestHeader("AUTHTOKEN", client.AuthToken);
-            Socket.Options.SetRequestHeader("CLIENTAUTH", client.ClientAuth);
-            //Socket.Options.KeepAliveInterval = TimeSpan.FromSeconds(20);
+            try
+            {
+                this.socketLoopTokenSource = new CancellationTokenSource();
+                this.Socket = new ClientWebSocket();
+                var socketUri = client.Hosts.GetWebSocketUri();
+                Socket.Options.SetRequestHeader("AUTHTOKEN", client.AuthToken);
+                Socket.Options.SetRequestHeader("CLIENTAUTH", client.ClientAuth);
+                await Socket.ConnectAsync(socketUri, cancellationToken).ConfigureAwait(false);
+            }
+            catch (AggregateException ae)
+            {
+                if (ae.InnerException is HttpRequestException http)
+                    if (http.InnerException is AuthenticationException)
+                        if (OperatingSystem.IsWindows() && Environment.OSVersion.Version.Major < 10)
+                            throw new PlatformNotSupportedException("HomematicIP requires Windows 10 or greater.", http);
+                throw;
+            }
 
-            await Socket.ConnectAsync(socketUri, cancellationToken).ConfigureAwait(false);
         }
 
         public async Task CloseAsync(int timeoutDelay = 10000)
