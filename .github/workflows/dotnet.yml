@@ -14,9 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Echo home
-      run: 
-        mkdir $HOME/AppData/Local/Temp
-        dir $HOME/AppData/Local/Temp
+      run: dir C:\Users\runneradmin\AppData\Local\Temp
     - name: Setup .NET
       uses: actions/setup-dotnet@v2
       with:
@@ -35,5 +33,5 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: dump
-        path: $HOME\AppData\Local\Temp\HomematicIpDump_*.json
+        path: C:\Users\runneradmin\AppData\Local\Temp\HomematicIpDump_*.json
       if: ${{ always() }}
