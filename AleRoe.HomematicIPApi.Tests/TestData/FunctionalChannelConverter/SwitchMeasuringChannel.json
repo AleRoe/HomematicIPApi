@@ -21,6 +21,7 @@
     "IOptionalFeatureInternalLinkConfiguration": true,
     "IOptionalFeatureEnergyMeterMode": false
   },
+  "powerUpSwitchState": "PERMANENT_OFF",
   "energyCounter": null,
   "currentPowerConsumption": null,
   "energyMeterMode": "CONSUMPTION_MEASURING"

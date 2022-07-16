@@ -1,15 +1,15 @@
 {
   "home": {
     "weather": {
-      "temperature": 1.3,
-      "weatherCondition": "CLOUDY",
-      "weatherDayTime": "NIGHT",
-      "minTemperature": 1.1,
-      "maxTemperature": 1.7,
-      "humidity": 85,
-      "windSpeed": 2.2680000000000002,
-      "windDirection": 199,
-      "vaporAmount": 4.504717466736245
+      "temperature": 0.1,
+      "weatherCondition": "HEAVILY_CLOUDY_WITH_SNOW",
+      "weatherDayTime": "DAY",
+      "minTemperature": -0.9,
+      "maxTemperature": 1.1,
+      "humidity": 92,
+      "windSpeed": 4.824000000000001,
+      "windDirection": 258,
+      "vaporAmount": 4.491439253932626
     },
     "metaGroups": [
       "f7859d94-3eb2-497e-834e-62bd3869366e",
@@ -23,7 +23,7 @@
       "982967e5-0281-4351-a427-e0d477f197ee"
     ],
     "connected": true,
-    "currentAPVersion": "2.2.18",
+    "currentAPVersion": "2.4.12",
     "availableAPVersion": null,
     "timeZoneId": "Europe/Berlin",
     "location": {
@@ -32,14 +32,16 @@
       "longitude": "11.569028729572892"
     },
     "pinAssigned": false,
-    "isLiveUpdateSupported": false,
-    "dutyCycle": 2.0,
+    "pinChangeTimestamp": null,
+    "pinChangeClientLabel": null,
+    "liveUpdateSupported": true,
+    "dutyCycle": 3.5,
     "carrierSense": 0.0,
     "updateState": "UP_TO_DATE",
     "powerMeterUnitPrice": 0.32,
     "powerMeterCurrency": "EUR",
     "deviceUpdateStrategy": "MANUALLY",
-    "lastReadyForUpdateTimestamp": 1605868551099,
+    "lastReadyForUpdateTimestamp": 1626991347704,
     "functionalHomes": {
       "WEATHER_AND_ENVIRONMENT": {
         "functionalGroups": [
@@ -52,7 +54,6 @@
           "72ec9f6f-b518-4bdc-b426-be0371b9211a"
         ],
         "alarmEventTimestamp": null,
-        "alarmEventDeviceId": null,
         "alarmEventTriggerId": null,
         "alarmEventDeviceChannel": null,
         "alarmSecurityJournalEntryType": null,
@@ -80,6 +81,8 @@
         "zoneActivationDelay": 0.0,
         "intrusionAlertThroughSmokeDetectors": false,
         "securityZoneActivationMode": "ACTIVATION_IF_ALL_IN_VALID_STATE",
+        "deviceChannelSpecificFunction": {
+        },
         "solution": "SECURITY_AND_ALARM",
         "activationInProgress": false,
         "active": true
@@ -126,6 +129,22 @@
         },
         "solution": "INDOOR_CLIMATE",
         "active": true
+      },
+      "ACCESS_CONTROL": {
+        "functionalGroups": [
+        ],
+        "accessAuthorizationProfileGroups": [
+        ],
+        "lockProfileGroups": [
+        ],
+        "autoRelockProfileGroups": [
+        ],
+        "extendedLinkedGarageDoorGroups": [
+        ],
+        "extendedLinkedNotificationGroups": [
+        ],
+        "solution": "ACCESS_CONTROL",
+        "active": false
       }
     },
     "inboxGroup": "598d13c2-9f75-4627-85ea-b44f4f3d9123",
@@ -140,8 +159,6 @@
       }
     },
     "ruleGroups": [
-      "14c039c8-ab41-4cb9-af94-4a8d6063139b",
-      "247c29a3-0935-4e77-964e-e6e922ff66ae"
     ],
     "ruleMetaDatas": {
       "6e4c984e-625e-4beb-8d93-d0dcd18ec06a": {
@@ -151,6 +168,10 @@
         "type": "SIMPLE",
         "active": true,
         "ruleErrorCategories": [
+        ],
+        "lastExecutionTimestamp": 1642785944764,
+        "executionCounterOfDay": 0,
+        "specialInterestCategories": [
         ]
       },
       "c6b253b7-2883-476c-a17e-c957f1f90303": {
@@ -160,6 +181,10 @@
         "type": "SIMPLE",
         "active": true,
         "ruleErrorCategories": [
+        ],
+        "lastExecutionTimestamp": 1642828656756,
+        "executionCounterOfDay": 1,
+        "specialInterestCategories": [
         ]
       },
       "410e1b34-27a1-40dc-b4ec-c426b47e952c": {
@@ -169,6 +194,10 @@
         "type": "SIMPLE",
         "active": true,
         "ruleErrorCategories": [
+        ],
+        "lastExecutionTimestamp": null,
+        "executionCounterOfDay": 0,
+        "specialInterestCategories": [
         ]
       },
       "75bddd8d-f964-480b-b74a-3abc374dcb0b": {
@@ -178,6 +207,10 @@
         "type": "SIMPLE",
         "active": true,
         "ruleErrorCategories": [
+        ],
+        "lastExecutionTimestamp": 1642717524666,
+        "executionCounterOfDay": 0,
+        "specialInterestCategories": [
         ]
       },
       "5286f49d-f1bb-4a70-8a27-86b0a3a157f2": {
@@ -187,6 +220,10 @@
         "type": "SIMPLE",
         "active": true,
         "ruleErrorCategories": [
+        ],
+        "lastExecutionTimestamp": null,
+        "executionCounterOfDay": 0,
+        "specialInterestCategories": [
         ]
       },
       "7d13a5c1-7afb-4d98-b002-a6ec90c73178": {
@@ -196,6 +233,10 @@
         "type": "SIMPLE",
         "active": true,
         "ruleErrorCategories": [
+        ],
+        "lastExecutionTimestamp": 1642783967713,
+        "executionCounterOfDay": 0,
+        "specialInterestCategories": [
         ]
       },
       "0b137998-f3b4-4313-904a-dadcea30a482": {
@@ -205,6 +246,10 @@
         "type": "SIMPLE",
         "active": true,
         "ruleErrorCategories": [
+        ],
+        "lastExecutionTimestamp": null,
+        "executionCounterOfDay": 0,
+        "specialInterestCategories": [
         ]
       },
       "21043cb2-241b-4b2f-8328-43884bd81f76": {
@@ -214,6 +259,10 @@
         "type": "SIMPLE",
         "active": true,
         "ruleErrorCategories": [
+        ],
+        "lastExecutionTimestamp": 1642717521995,
+        "executionCounterOfDay": 0,
+        "specialInterestCategories": [
         ]
       }
     },
@@ -224,12 +273,11 @@
     },
     "accessPointUpdateStates": {
       "3014F711A00003D709B034F7": {
-        "successfulUpdateTimestamp": 0,
-        "updateStateChangedTimestamp": 0,
+        "successfulUpdateTimestamp": 1638283111258,
+        "updateStateChangedTimestamp": 1638283111258,
         "accessPointUpdateState": "UP_TO_DATE"
       }
     },
-    "liveUpdateSupported": false,
     "id": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff"
   },
   "groups": {
@@ -272,7 +320,7 @@
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "metaGroupId": null,
       "label": "Wohnzimmer",
-      "lastStatusUpdate": 1612809869119,
+      "lastStatusUpdate": 1642852369368,
       "unreach": false,
       "lowBat": null,
       "dutyCycle": false,
@@ -295,7 +343,7 @@
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "metaGroupId": null,
       "label": "Handtuchheizung",
-      "lastStatusUpdate": 1612808727769,
+      "lastStatusUpdate": 1642851024115,
       "unreach": false,
       "lowBat": null,
       "dutyCycle": false,
@@ -329,7 +377,7 @@
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "metaGroupId": null,
       "label": "BACKUP_ALARM_SIREN",
-      "lastStatusUpdate": 1612809198379,
+      "lastStatusUpdate": 1642852058189,
       "unreach": false,
       "lowBat": false,
       "dutyCycle": false,
@@ -361,7 +409,7 @@
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "metaGroupId": null,
       "label": "System",
-      "lastStatusUpdate": 1612809862223,
+      "lastStatusUpdate": 1642850151754,
       "unreach": false,
       "lowBat": false,
       "dutyCycle": false,
@@ -389,7 +437,7 @@
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "metaGroupId": "68aec86c-e32f-4607-a0e6-33bceac6b050",
       "label": "System",
-      "lastStatusUpdate": 1612809862223,
+      "lastStatusUpdate": 1642850151754,
       "unreach": false,
       "lowBat": false,
       "dutyCycle": false,
@@ -473,7 +521,7 @@
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "metaGroupId": "7b9cd387-866e-4f72-9516-202df2941694",
       "label": "Bad",
-      "lastStatusUpdate": 1612809198379,
+      "lastStatusUpdate": 1642852058189,
       "unreach": false,
       "lowBat": false,
       "dutyCycle": false,
@@ -498,10 +546,10 @@
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "metaGroupId": null,
       "label": "Balkon",
-      "lastStatusUpdate": 1612809975883,
-      "unreach": false,
+      "lastStatusUpdate": 1642852365210,
+      "unreach": true,
       "lowBat": null,
-      "dutyCycle": false,
+      "dutyCycle": null,
       "type": "META",
       "channels": [
         {
@@ -537,10 +585,10 @@
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "metaGroupId": "f7859d94-3eb2-497e-834e-62bd3869366e",
       "label": "Balkon",
-      "lastStatusUpdate": 1612809975883,
-      "unreach": false,
+      "lastStatusUpdate": 1642852365210,
+      "unreach": true,
       "lowBat": null,
-      "dutyCycle": false,
+      "dutyCycle": null,
       "type": "SWITCHING",
       "channels": [
         {
@@ -548,7 +596,7 @@
           "channelIndex": 1
         }
       ],
-      "on": false,
+      "on": null,
       "processing": null,
       "dimLevel": null,
       "shutterLevel": null,
@@ -563,7 +611,7 @@
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "metaGroupId": "7b9cd387-866e-4f72-9516-202df2941694",
       "label": "Bad",
-      "lastStatusUpdate": 1612808727769,
+      "lastStatusUpdate": 1642851024115,
       "unreach": false,
       "lowBat": null,
       "dutyCycle": false,
@@ -589,7 +637,7 @@
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "metaGroupId": null,
       "label": "Bad",
-      "lastStatusUpdate": 1612809198379,
+      "lastStatusUpdate": 1642852058189,
       "unreach": false,
       "lowBat": false,
       "dutyCycle": false,
@@ -747,8 +795,8 @@
       "sabotage": null,
       "valveSilentModeSupported": false,
       "valveSilentModeEnabled": false,
-      "lastSetPointReachedTimestamp": 1612794599158,
-      "lastSetPointUpdatedTimestamp": 1612794599158,
+      "lastSetPointReachedTimestamp": 1642602949917,
+      "lastSetPointUpdatedTimestamp": 1642602949917,
       "heatingFailureSupported": false
     },
     "eb002b87-f0f7-4a18-b2e1-0c1f3fa3ca22": {
@@ -832,8 +880,6 @@
       ],
       "active": false,
       "silent": false,
-      "ignorableDevices": [
-      ],
       "ignorableDeviceChannels": [
       ],
       "windowState": null,
@@ -865,10 +911,10 @@
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "metaGroupId": null,
       "label": "Balkondeko",
-      "lastStatusUpdate": 1612809975883,
-      "unreach": false,
+      "lastStatusUpdate": 1642852365210,
+      "unreach": true,
       "lowBat": null,
-      "dutyCycle": false,
+      "dutyCycle": null,
       "type": "SWITCHING_PROFILE",
       "channels": [
         {
@@ -876,17 +922,17 @@
           "channelIndex": 1
         }
       ],
-      "on": false,
+      "on": null,
       "dimLevel": null,
       "profileId": "297c95dd-c61f-4da9-afc8-4ba33ef8bd97",
-      "profileMode": "AUTOMATIC"
+      "profileMode": null
     },
     "3969b01c-c418-4728-b853-d1fda99be7f6": {
       "id": "3969b01c-c418-4728-b853-d1fda99be7f6",
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "metaGroupId": null,
       "label": "INTERNAL",
-      "lastStatusUpdate": 1612809198379,
+      "lastStatusUpdate": 1642852058189,
       "unreach": false,
       "lowBat": false,
       "dutyCycle": false,
@@ -903,8 +949,6 @@
       ],
       "active": false,
       "silent": false,
-      "ignorableDevices": [
-      ],
       "ignorableDeviceChannels": [
       ],
       "windowState": null,
@@ -920,7 +964,7 @@
       "id": "3014F711A00001D709A10652",
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "label": "Dekolicht",
-      "lastStatusUpdate": 1612809975883,
+      "lastStatusUpdate": 1642852365210,
       "type": "PLUGABLE_SWITCH_MEASURING",
       "functionalChannels": {
         "0": {
@@ -932,21 +976,21 @@
           "groups": [
             "f7859d94-3eb2-497e-834e-62bd3869366e"
           ],
-          "unreach": false,
+          "unreach": true,
           "lowBat": null,
           "routerModuleEnabled": true,
           "multicastRoutingEnabled": false,
           "routerModuleSupported": true,
-          "rssiDeviceValue": -47,
-          "rssiPeerValue": -47,
+          "rssiDeviceValue": null,
+          "rssiPeerValue": null,
           "configPending": false,
-          "dutyCycle": false,
+          "dutyCycle": null,
           "deviceOverloaded": false,
           "coProUpdateFailure": false,
           "coProFaulty": false,
           "coProRestartNeeded": false,
           "deviceUndervoltage": false,
-          "deviceOverheated": false,
+          "deviceOverheated": null,
           "temperatureOutOfRange": false,
           "devicePowerFailureDetected": false,
           "supportedOptionalFeatures": {
@@ -954,7 +998,9 @@
             "IFeatureDeviceCoProRestart": false,
             "IFeatureDeviceOverheated": true,
             "IOptionalFeatureDutyCycle": true,
+            "IOptionalFeatureDeviceErrorLockJammed": false,
             "IFeatureMulticastRouter": true,
+            "IFeatureProfilePeriodLimit": true,
             "IFeatureDeviceCoProUpdate": false,
             "IFeaturePowerShortCircuit": false,
             "IFeatureDevicePowerFailure": false,
@@ -966,6 +1012,7 @@
             "IFeatureDeviceParticulateMatterSensorError": false,
             "IFeatureDeviceOverloaded": false,
             "IFeatureDeviceCoProError": false,
+            "IOptionalFeatureDisplayContrast": false,
             "IFeatureDeviceIdentify": false,
             "IOptionalFeatureLowBat": false,
             "IOptionalFeatureMountingOrientation": false,
@@ -975,11 +1022,14 @@
           "busConfigMismatch": null,
           "powerShortCircuit": null,
           "shortCircuitDataLine": null,
+          "profilePeriodLimitReached": null,
           "mountingOrientation": null,
           "temperatureHumiditySensorError": null,
           "temperatureHumiditySensorCommunicationError": null,
           "particulateMatterSensorError": null,
-          "particulateMatterSensorCommunicationError": null
+          "particulateMatterSensorCommunicationError": null,
+          "displayContrast": null,
+          "lockJammed": null
         },
         "1": {
           "label": "",
@@ -992,30 +1042,41 @@
             "abc95e89-f7e2-4c41-98dc-bca63ed867d5"
           ],
           "on": false,
-          "profileMode": "AUTOMATIC",
+          "profileMode": null,
           "userDesiredProfileMode": "AUTOMATIC",
-          "energyCounter": 3.6207,
-          "currentPowerConsumption": 2.61
+          "internalLinkConfiguration": {
+            "internalLinkConfigurationType": "SINGLE_INPUT_SWITCH",
+            "onTime": 111600.0,
+            "firstInputAction": "TOGGLE",
+            "longPressOnTimeEnabled": false
+          },
+          "supportedOptionalFeatures": {
+            "IOptionalFeatureInternalLinkConfiguration": true,
+            "IOptionalFeatureEnergyMeterMode": false
+          },
+          "energyCounter": null,
+          "currentPowerConsumption": null,
+          "energyMeterMode": "CONSUMPTION_MEASURING"
         }
       },
+      "manufacturerCode": 1,
+      "oem": "eQ-3",
+      "updateState": "UPDATE_AVAILABLE",
       "liveUpdateState": "LIVE_UPDATE_NOT_SUPPORTED",
       "firmwareVersion": "2.18.14",
       "firmwareVersionInteger": 135694,
-      "availableFirmwareVersion": "2.18.14",
+      "availableFirmwareVersion": "2.18.22",
       "serializedGlobalTradeItemNumber": "3014F711A00001D709A10652",
       "modelType": "HMIP-PSM",
       "modelId": 262,
       "permanentlyReachable": true,
-      "connectionType": "HMIP_RF",
-      "updateState": "UP_TO_DATE",
-      "manufacturerCode": 1,
-      "oem": "eQ-3"
+      "connectionType": "HMIP_RF"
     },
     "3014F711A00001D709A106A2": {
       "id": "3014F711A00001D709A106A2",
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "label": "Handtuchheizung",
-      "lastStatusUpdate": 1612808727769,
+      "lastStatusUpdate": 1642851024115,
       "type": "PLUGABLE_SWITCH_MEASURING",
       "functionalChannels": {
         "0": {
@@ -1032,8 +1093,8 @@
           "routerModuleEnabled": true,
           "multicastRoutingEnabled": false,
           "routerModuleSupported": true,
-          "rssiDeviceValue": -76,
-          "rssiPeerValue": null,
+          "rssiDeviceValue": -79,
+          "rssiPeerValue": -73,
           "configPending": false,
           "dutyCycle": false,
           "deviceOverloaded": false,
@@ -1049,7 +1110,9 @@
             "IFeatureDeviceCoProRestart": false,
             "IFeatureDeviceOverheated": true,
             "IOptionalFeatureDutyCycle": true,
+            "IOptionalFeatureDeviceErrorLockJammed": false,
             "IFeatureMulticastRouter": true,
+            "IFeatureProfilePeriodLimit": true,
             "IFeatureDeviceCoProUpdate": false,
             "IFeaturePowerShortCircuit": false,
             "IFeatureDevicePowerFailure": false,
@@ -1061,6 +1124,7 @@
             "IFeatureDeviceParticulateMatterSensorError": false,
             "IFeatureDeviceOverloaded": false,
             "IFeatureDeviceCoProError": false,
+            "IOptionalFeatureDisplayContrast": false,
             "IFeatureDeviceIdentify": false,
             "IOptionalFeatureLowBat": false,
             "IOptionalFeatureMountingOrientation": false,
@@ -1070,11 +1134,14 @@
           "busConfigMismatch": null,
           "powerShortCircuit": null,
           "shortCircuitDataLine": null,
+          "profilePeriodLimitReached": null,
           "mountingOrientation": null,
           "temperatureHumiditySensorError": null,
           "temperatureHumiditySensorCommunicationError": null,
           "particulateMatterSensorError": null,
-          "particulateMatterSensorCommunicationError": null
+          "particulateMatterSensorCommunicationError": null,
+          "displayContrast": null,
+          "lockJammed": null
         },
         "1": {
           "label": "",
@@ -1089,22 +1156,33 @@
           "on": false,
           "profileMode": "AUTOMATIC",
           "userDesiredProfileMode": "AUTOMATIC",
-          "energyCounter": 18.393700000000003,
-          "currentPowerConsumption": 0.0
+          "internalLinkConfiguration": {
+            "internalLinkConfigurationType": "SINGLE_INPUT_SWITCH",
+            "onTime": 111600.0,
+            "firstInputAction": "TOGGLE",
+            "longPressOnTimeEnabled": false
+          },
+          "supportedOptionalFeatures": {
+            "IOptionalFeatureInternalLinkConfiguration": true,
+            "IOptionalFeatureEnergyMeterMode": false
+          },
+          "energyCounter": 97.48689999999999,
+          "currentPowerConsumption": 0.0,
+          "energyMeterMode": "CONSUMPTION_MEASURING"
         }
       },
+      "manufacturerCode": 1,
+      "oem": "eQ-3",
+      "updateState": "UPDATE_AVAILABLE",
       "liveUpdateState": "LIVE_UPDATE_NOT_SUPPORTED",
       "firmwareVersion": "2.18.14",
       "firmwareVersionInteger": 135694,
-      "availableFirmwareVersion": "2.18.14",
+      "availableFirmwareVersion": "2.18.22",
       "serializedGlobalTradeItemNumber": "3014F711A00001D709A106A2",
       "modelType": "HMIP-PSM",
       "modelId": 262,
       "permanentlyReachable": true,
-      "connectionType": "HMIP_RF",
-      "updateState": "UP_TO_DATE",
-      "manufacturerCode": 1,
-      "oem": "eQ-3"
+      "connectionType": "HMIP_RF"
     },
     "3014F711A00000D70995699C": {
       "id": "3014F711A00000D70995699C",
@@ -1144,7 +1222,9 @@
             "IFeatureDeviceCoProRestart": false,
             "IFeatureDeviceOverheated": false,
             "IOptionalFeatureDutyCycle": true,
+            "IOptionalFeatureDeviceErrorLockJammed": false,
             "IFeatureMulticastRouter": false,
+            "IFeatureProfilePeriodLimit": false,
             "IFeatureDeviceCoProUpdate": false,
             "IFeaturePowerShortCircuit": false,
             "IFeatureDevicePowerFailure": false,
@@ -1156,6 +1236,7 @@
             "IFeatureDeviceParticulateMatterSensorError": false,
             "IFeatureDeviceOverloaded": false,
             "IFeatureDeviceCoProError": false,
+            "IOptionalFeatureDisplayContrast": false,
             "IFeatureDeviceIdentify": false,
             "IOptionalFeatureLowBat": true,
             "IOptionalFeatureMountingOrientation": false,
@@ -1165,11 +1246,14 @@
           "busConfigMismatch": null,
           "powerShortCircuit": null,
           "shortCircuitDataLine": null,
+          "profilePeriodLimitReached": null,
           "mountingOrientation": null,
           "temperatureHumiditySensorError": null,
           "temperatureHumiditySensorCommunicationError": null,
           "particulateMatterSensorError": null,
           "particulateMatterSensorCommunicationError": null,
+          "displayContrast": null,
+          "lockJammed": null,
           "sabotage": null
         },
         "1": {
@@ -1186,6 +1270,9 @@
           "eventDelay": 0
         }
       },
+      "manufacturerCode": 1,
+      "oem": "eQ-3",
+      "updateState": "UP_TO_DATE",
       "liveUpdateState": "UP_TO_DATE",
       "firmwareVersion": "1.16.8",
       "firmwareVersionInteger": 69640,
@@ -1194,16 +1281,13 @@
       "modelType": "HMIP-SWDO",
       "modelId": 258,
       "permanentlyReachable": false,
-      "connectionType": "HMIP_RF",
-      "updateState": "UP_TO_DATE",
-      "manufacturerCode": 1,
-      "oem": "eQ-3"
+      "connectionType": "HMIP_RF"
     },
     "3014F711A0000D1A49A3D77A": {
       "id": "3014F711A0000D1A49A3D77A",
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "label": "Modulplatine Open Collector – 8-fach",
-      "lastStatusUpdate": 1612806951771,
+      "lastStatusUpdate": 1642849692080,
       "type": "OPEN_COLLECTOR_8_MODULE",
       "functionalChannels": {
         "0": {
@@ -1220,8 +1304,8 @@
           "routerModuleEnabled": false,
           "multicastRoutingEnabled": false,
           "routerModuleSupported": false,
-          "rssiDeviceValue": -45,
-          "rssiPeerValue": null,
+          "rssiDeviceValue": -25,
+          "rssiPeerValue": -27,
           "configPending": false,
           "dutyCycle": false,
           "deviceOverloaded": false,
@@ -1237,7 +1321,9 @@
             "IFeatureDeviceCoProRestart": false,
             "IFeatureDeviceOverheated": true,
             "IOptionalFeatureDutyCycle": true,
+            "IOptionalFeatureDeviceErrorLockJammed": false,
             "IFeatureMulticastRouter": false,
+            "IFeatureProfilePeriodLimit": true,
             "IFeatureDeviceCoProUpdate": false,
             "IFeaturePowerShortCircuit": false,
             "IFeatureDevicePowerFailure": false,
@@ -1249,6 +1335,7 @@
             "IFeatureDeviceParticulateMatterSensorError": false,
             "IFeatureDeviceOverloaded": false,
             "IFeatureDeviceCoProError": false,
+            "IOptionalFeatureDisplayContrast": false,
             "IFeatureDeviceIdentify": false,
             "IOptionalFeatureLowBat": false,
             "IOptionalFeatureMountingOrientation": false,
@@ -1258,11 +1345,14 @@
           "busConfigMismatch": null,
           "powerShortCircuit": null,
           "shortCircuitDataLine": null,
+          "profilePeriodLimitReached": null,
           "mountingOrientation": null,
           "temperatureHumiditySensorError": null,
           "temperatureHumiditySensorCommunicationError": null,
           "particulateMatterSensorError": null,
-          "particulateMatterSensorCommunicationError": null
+          "particulateMatterSensorCommunicationError": null,
+          "displayContrast": null,
+          "lockJammed": null
         },
         "1": {
           "label": "OUT (1)",
@@ -1275,7 +1365,16 @@
           ],
           "on": false,
           "profileMode": "AUTOMATIC",
-          "userDesiredProfileMode": "AUTOMATIC"
+          "userDesiredProfileMode": "AUTOMATIC",
+          "internalLinkConfiguration": {
+            "internalLinkConfigurationType": "SINGLE_INPUT_SWITCH",
+            "onTime": 111600.0,
+            "firstInputAction": "TOGGLE",
+            "longPressOnTimeEnabled": false
+          },
+          "supportedOptionalFeatures": {
+            "IOptionalFeatureInternalLinkConfiguration": true
+          }
         },
         "2": {
           "label": "OUT (2)",
@@ -1288,7 +1387,16 @@
           ],
           "on": false,
           "profileMode": "AUTOMATIC",
-          "userDesiredProfileMode": "AUTOMATIC"
+          "userDesiredProfileMode": "AUTOMATIC",
+          "internalLinkConfiguration": {
+            "internalLinkConfigurationType": "SINGLE_INPUT_SWITCH",
+            "onTime": 111600.0,
+            "firstInputAction": "TOGGLE",
+            "longPressOnTimeEnabled": false
+          },
+          "supportedOptionalFeatures": {
+            "IOptionalFeatureInternalLinkConfiguration": true
+          }
         },
         "3": {
           "label": "OUT (3)",
@@ -1301,7 +1409,16 @@
           ],
           "on": false,
           "profileMode": "AUTOMATIC",
-          "userDesiredProfileMode": "AUTOMATIC"
+          "userDesiredProfileMode": "AUTOMATIC",
+          "internalLinkConfiguration": {
+            "internalLinkConfigurationType": "SINGLE_INPUT_SWITCH",
+            "onTime": 111600.0,
+            "firstInputAction": "TOGGLE",
+            "longPressOnTimeEnabled": false
+          },
+          "supportedOptionalFeatures": {
+            "IOptionalFeatureInternalLinkConfiguration": true
+          }
         },
         "4": {
           "label": "OUT (4)",
@@ -1314,7 +1431,16 @@
           ],
           "on": false,
           "profileMode": "AUTOMATIC",
-          "userDesiredProfileMode": "AUTOMATIC"
+          "userDesiredProfileMode": "AUTOMATIC",
+          "internalLinkConfiguration": {
+            "internalLinkConfigurationType": "SINGLE_INPUT_SWITCH",
+            "onTime": 111600.0,
+            "firstInputAction": "TOGGLE",
+            "longPressOnTimeEnabled": false
+          },
+          "supportedOptionalFeatures": {
+            "IOptionalFeatureInternalLinkConfiguration": true
+          }
         },
         "5": {
           "label": "OUT (5)",
@@ -1327,7 +1453,16 @@
           ],
           "on": false,
           "profileMode": "AUTOMATIC",
-          "userDesiredProfileMode": "AUTOMATIC"
+          "userDesiredProfileMode": "AUTOMATIC",
+          "internalLinkConfiguration": {
+            "internalLinkConfigurationType": "SINGLE_INPUT_SWITCH",
+            "onTime": 111600.0,
+            "firstInputAction": "TOGGLE",
+            "longPressOnTimeEnabled": false
+          },
+          "supportedOptionalFeatures": {
+            "IOptionalFeatureInternalLinkConfiguration": true
+          }
         },
         "6": {
           "label": "OUT (6)",
@@ -1340,7 +1475,16 @@
           ],
           "on": false,
           "profileMode": "AUTOMATIC",
-          "userDesiredProfileMode": "AUTOMATIC"
+          "userDesiredProfileMode": "AUTOMATIC",
+          "internalLinkConfiguration": {
+            "internalLinkConfigurationType": "SINGLE_INPUT_SWITCH",
+            "onTime": 111600.0,
+            "firstInputAction": "TOGGLE",
+            "longPressOnTimeEnabled": false
+          },
+          "supportedOptionalFeatures": {
+            "IOptionalFeatureInternalLinkConfiguration": true
+          }
         },
         "7": {
           "label": "",
@@ -1352,7 +1496,16 @@
           ],
           "on": false,
           "profileMode": "AUTOMATIC",
-          "userDesiredProfileMode": "AUTOMATIC"
+          "userDesiredProfileMode": "AUTOMATIC",
+          "internalLinkConfiguration": {
+            "internalLinkConfigurationType": "SINGLE_INPUT_SWITCH",
+            "onTime": 111600.0,
+            "firstInputAction": "TOGGLE",
+            "longPressOnTimeEnabled": false
+          },
+          "supportedOptionalFeatures": {
+            "IOptionalFeatureInternalLinkConfiguration": true
+          }
         },
         "8": {
           "label": "",
@@ -1364,9 +1517,21 @@
           ],
           "on": false,
           "profileMode": "AUTOMATIC",
-          "userDesiredProfileMode": "AUTOMATIC"
+          "userDesiredProfileMode": "AUTOMATIC",
+          "internalLinkConfiguration": {
+            "internalLinkConfigurationType": "SINGLE_INPUT_SWITCH",
+            "onTime": 111600.0,
+            "firstInputAction": "TOGGLE",
+            "longPressOnTimeEnabled": false
+          },
+          "supportedOptionalFeatures": {
+            "IOptionalFeatureInternalLinkConfiguration": true
+          }
         }
       },
+      "manufacturerCode": 1,
+      "oem": "eQ-3",
+      "updateState": "UP_TO_DATE",
       "liveUpdateState": "LIVE_UPDATE_NOT_SUPPORTED",
       "firmwareVersion": "1.8.12",
       "firmwareVersionInteger": 67596,
@@ -1375,16 +1540,13 @@
       "modelType": "HmIP-MOD-OC8",
       "modelId": 307,
       "permanentlyReachable": true,
-      "connectionType": "HMIP_RF",
-      "updateState": "UP_TO_DATE",
-      "manufacturerCode": 1,
-      "oem": "eQ-3"
+      "connectionType": "HMIP_RF"
     },
     "3014F711A0000B5A498F7871": {
       "id": "3014F711A0000B5A498F7871",
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "label": "Wandtaster - 6-fach",
-      "lastStatusUpdate": 1612809862223,
+      "lastStatusUpdate": 1642850151754,
       "type": "PUSH_BUTTON_6",
       "functionalChannels": {
         "0": {
@@ -1401,7 +1563,7 @@
           "routerModuleEnabled": false,
           "multicastRoutingEnabled": false,
           "routerModuleSupported": false,
-          "rssiDeviceValue": -53,
+          "rssiDeviceValue": -54,
           "rssiPeerValue": null,
           "configPending": false,
           "dutyCycle": false,
@@ -1418,7 +1580,9 @@
             "IFeatureDeviceCoProRestart": false,
             "IFeatureDeviceOverheated": false,
             "IOptionalFeatureDutyCycle": true,
+            "IOptionalFeatureDeviceErrorLockJammed": false,
             "IFeatureMulticastRouter": false,
+            "IFeatureProfilePeriodLimit": false,
             "IFeatureDeviceCoProUpdate": false,
             "IFeaturePowerShortCircuit": false,
             "IFeatureDevicePowerFailure": false,
@@ -1430,6 +1594,7 @@
             "IFeatureDeviceParticulateMatterSensorError": false,
             "IFeatureDeviceOverloaded": false,
             "IFeatureDeviceCoProError": false,
+            "IOptionalFeatureDisplayContrast": false,
             "IFeatureDeviceIdentify": false,
             "IOptionalFeatureLowBat": true,
             "IOptionalFeatureMountingOrientation": false,
@@ -1439,11 +1604,14 @@
           "busConfigMismatch": null,
           "powerShortCircuit": null,
           "shortCircuitDataLine": null,
+          "profilePeriodLimitReached": null,
           "mountingOrientation": null,
           "temperatureHumiditySensorError": null,
           "temperatureHumiditySensorCommunicationError": null,
           "particulateMatterSensorError": null,
-          "particulateMatterSensorCommunicationError": null
+          "particulateMatterSensorCommunicationError": null,
+          "displayContrast": null,
+          "lockJammed": null
         },
         "1": {
           "label": "",
@@ -1453,7 +1621,8 @@
           "functionalChannelType": "SINGLE_KEY_CHANNEL",
           "groups": [
             "71bf0a36-4495-4a00-a3e9-82e6c6ff4eba"
-          ]
+          ],
+          "visibleChannelIndex": 2
         },
         "2": {
           "label": "",
@@ -1463,7 +1632,8 @@
           "functionalChannelType": "SINGLE_KEY_CHANNEL",
           "groups": [
             "71bf0a36-4495-4a00-a3e9-82e6c6ff4eba"
-          ]
+          ],
+          "visibleChannelIndex": 1
         },
         "3": {
           "label": "",
@@ -1473,7 +1643,8 @@
           "functionalChannelType": "SINGLE_KEY_CHANNEL",
           "groups": [
             "71bf0a36-4495-4a00-a3e9-82e6c6ff4eba"
-          ]
+          ],
+          "visibleChannelIndex": 4
         },
         "4": {
           "label": "",
@@ -1483,7 +1654,8 @@
           "functionalChannelType": "SINGLE_KEY_CHANNEL",
           "groups": [
             "71bf0a36-4495-4a00-a3e9-82e6c6ff4eba"
-          ]
+          ],
+          "visibleChannelIndex": 3
         },
         "5": {
           "label": "",
@@ -1493,7 +1665,8 @@
           "functionalChannelType": "SINGLE_KEY_CHANNEL",
           "groups": [
             "71bf0a36-4495-4a00-a3e9-82e6c6ff4eba"
-          ]
+          ],
+          "visibleChannelIndex": 6
         },
         "6": {
           "label": "",
@@ -1503,9 +1676,13 @@
           "functionalChannelType": "SINGLE_KEY_CHANNEL",
           "groups": [
             "71bf0a36-4495-4a00-a3e9-82e6c6ff4eba"
-          ]
+          ],
+          "visibleChannelIndex": 5
         }
       },
+      "manufacturerCode": 1,
+      "oem": "eQ-3",
+      "updateState": "UP_TO_DATE",
       "liveUpdateState": "LIVE_UPDATE_NOT_SUPPORTED",
       "firmwareVersion": "1.0.19",
       "firmwareVersionInteger": 65555,
@@ -1514,10 +1691,7 @@
       "modelType": "HmIP-WRC6",
       "modelId": 300,
       "permanentlyReachable": false,
-      "connectionType": "HMIP_RF",
-      "updateState": "UP_TO_DATE",
-      "manufacturerCode": 1,
-      "oem": "eQ-3"
+      "connectionType": "HMIP_RF"
     },
     "3014F711A00000D709956758": {
       "id": "3014F711A00000D709956758",
@@ -1557,7 +1731,9 @@
             "IFeatureDeviceCoProRestart": false,
             "IFeatureDeviceOverheated": false,
             "IOptionalFeatureDutyCycle": true,
+            "IOptionalFeatureDeviceErrorLockJammed": false,
             "IFeatureMulticastRouter": false,
+            "IFeatureProfilePeriodLimit": false,
             "IFeatureDeviceCoProUpdate": false,
             "IFeaturePowerShortCircuit": false,
             "IFeatureDevicePowerFailure": false,
@@ -1569,6 +1745,7 @@
             "IFeatureDeviceParticulateMatterSensorError": false,
             "IFeatureDeviceOverloaded": false,
             "IFeatureDeviceCoProError": false,
+            "IOptionalFeatureDisplayContrast": false,
             "IFeatureDeviceIdentify": false,
             "IOptionalFeatureLowBat": true,
             "IOptionalFeatureMountingOrientation": false,
@@ -1578,11 +1755,14 @@
           "busConfigMismatch": null,
           "powerShortCircuit": null,
           "shortCircuitDataLine": null,
+          "profilePeriodLimitReached": null,
           "mountingOrientation": null,
           "temperatureHumiditySensorError": null,
           "temperatureHumiditySensorCommunicationError": null,
           "particulateMatterSensorError": null,
           "particulateMatterSensorCommunicationError": null,
+          "displayContrast": null,
+          "lockJammed": null,
           "sabotage": null
         },
         "1": {
@@ -1599,6 +1779,9 @@
           "eventDelay": 0
         }
       },
+      "manufacturerCode": 1,
+      "oem": "eQ-3",
+      "updateState": "UP_TO_DATE",
       "liveUpdateState": "LIVE_UPDATE_NOT_SUPPORTED",
       "firmwareVersion": "1.16.8",
       "firmwareVersionInteger": 69640,
@@ -1607,16 +1790,13 @@
       "modelType": "HMIP-SWDO",
       "modelId": 258,
       "permanentlyReachable": false,
-      "connectionType": "HMIP_RF",
-      "updateState": "UP_TO_DATE",
-      "manufacturerCode": 1,
-      "oem": "eQ-3"
+      "connectionType": "HMIP_RF"
     },
     "3014F711A00003D709B034F7": {
       "id": "3014F711A00003D709B034F7",
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "label": "Access Point",
-      "lastStatusUpdate": 1612809869119,
+      "lastStatusUpdate": 1642852369368,
       "type": "HOME_CONTROL_ACCESS_POINT",
       "functionalChannels": {
         "0": {
@@ -1650,7 +1830,9 @@
             "IFeatureDeviceCoProRestart": false,
             "IFeatureDeviceOverheated": false,
             "IOptionalFeatureDutyCycle": true,
+            "IOptionalFeatureDeviceErrorLockJammed": false,
             "IFeatureMulticastRouter": false,
+            "IFeatureProfilePeriodLimit": false,
             "IFeatureDeviceCoProUpdate": false,
             "IFeaturePowerShortCircuit": false,
             "IFeatureDevicePowerFailure": false,
@@ -1662,6 +1844,7 @@
             "IFeatureDeviceParticulateMatterSensorError": false,
             "IFeatureDeviceOverloaded": false,
             "IFeatureDeviceCoProError": false,
+            "IOptionalFeatureDisplayContrast": false,
             "IFeatureDeviceIdentify": false,
             "IOptionalFeatureLowBat": false,
             "IOptionalFeatureMountingOrientation": false,
@@ -1671,35 +1854,38 @@
           "busConfigMismatch": null,
           "powerShortCircuit": null,
           "shortCircuitDataLine": null,
+          "profilePeriodLimitReached": null,
           "mountingOrientation": null,
           "temperatureHumiditySensorError": null,
           "temperatureHumiditySensorCommunicationError": null,
           "particulateMatterSensorError": null,
           "particulateMatterSensorCommunicationError": null,
+          "displayContrast": null,
+          "lockJammed": null,
           "signalBrightness": 1.0,
           "accessPointPriority": 1,
-          "dutyCycleLevel": 2.0,
+          "dutyCycleLevel": 3.5,
           "carrierSenseLevel": 0.0
         }
       },
+      "manufacturerCode": 1,
+      "oem": "eQ-3",
+      "updateState": "BACKGROUND_UPDATE_NOT_SUPPORTED",
       "liveUpdateState": "LIVE_UPDATE_NOT_SUPPORTED",
-      "firmwareVersion": "2.2.18",
-      "firmwareVersionInteger": 131602,
-      "availableFirmwareVersion": "2.2.18",
+      "firmwareVersion": "2.4.12",
+      "firmwareVersionInteger": 132108,
+      "availableFirmwareVersion": "2.4.12",
       "serializedGlobalTradeItemNumber": "3014F711A00003D709B034F7",
       "modelType": "HmIP-HAP",
       "modelId": 270,
       "permanentlyReachable": true,
-      "connectionType": "HMIP_LAN",
-      "updateState": "BACKGROUND_UPDATE_NOT_SUPPORTED",
-      "manufacturerCode": 1,
-      "oem": "eQ-3"
+      "connectionType": "HMIP_LAN"
     },
     "3014F711A000091BE99D5315": {
       "id": "3014F711A000091BE99D5315",
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "label": "Bewegungsmelder",
-      "lastStatusUpdate": 1612809198379,
+      "lastStatusUpdate": 1642852058189,
       "type": "MOTION_DETECTOR_INDOOR",
       "functionalChannels": {
         "0": {
@@ -1734,7 +1920,9 @@
             "IFeatureDeviceCoProRestart": false,
             "IFeatureDeviceOverheated": false,
             "IOptionalFeatureDutyCycle": true,
+            "IOptionalFeatureDeviceErrorLockJammed": false,
             "IFeatureMulticastRouter": false,
+            "IFeatureProfilePeriodLimit": false,
             "IFeatureDeviceCoProUpdate": false,
             "IFeaturePowerShortCircuit": false,
             "IFeatureDevicePowerFailure": false,
@@ -1746,6 +1934,7 @@
             "IFeatureDeviceParticulateMatterSensorError": false,
             "IFeatureDeviceOverloaded": false,
             "IFeatureDeviceCoProError": false,
+            "IOptionalFeatureDisplayContrast": false,
             "IFeatureDeviceIdentify": false,
             "IOptionalFeatureLowBat": true,
             "IOptionalFeatureMountingOrientation": false,
@@ -1755,11 +1944,14 @@
           "busConfigMismatch": null,
           "powerShortCircuit": null,
           "shortCircuitDataLine": null,
+          "profilePeriodLimitReached": null,
           "mountingOrientation": null,
           "temperatureHumiditySensorError": null,
           "temperatureHumiditySensorCommunicationError": null,
           "particulateMatterSensorError": null,
           "particulateMatterSensorCommunicationError": null,
+          "displayContrast": null,
+          "lockJammed": null,
           "sabotage": false
         },
         "1": {
@@ -1774,13 +1966,16 @@
             "389d0062-dc2e-48e5-a80b-65a38dc447c8"
           ],
           "motionDetected": false,
-          "illumination": 0.0,
+          "illumination": 157.2,
           "currentIllumination": null,
           "numberOfBrightnessMeasurements": 7,
           "motionDetectionSendInterval": "SECONDS_120",
           "motionBufferActive": true
         }
       },
+      "manufacturerCode": 1,
+      "oem": "eQ-3",
+      "updateState": "UP_TO_DATE",
       "liveUpdateState": "LIVE_UPDATE_NOT_SUPPORTED",
       "firmwareVersion": "1.4.8",
       "firmwareVersionInteger": 66568,
@@ -1789,10 +1984,7 @@
       "modelType": "HmIP-SMI",
       "modelId": 291,
       "permanentlyReachable": true,
-      "connectionType": "HMIP_RF",
-      "updateState": "UP_TO_DATE",
-      "manufacturerCode": 1,
-      "oem": "eQ-3"
+      "connectionType": "HMIP_RF"
     }
   },
   "clients": {
@@ -1802,7 +1994,7 @@
       "label": "Alex's iPhone X",
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "createdAtTimestamp": 0,
-      "lastSeenAtTimestamp": 1611801057318
+      "lastSeenAtTimestamp": 1642191873126
     },
     "c3bbbdc3-a785-4f9a-9549-87eaaf610fb6": {
       "clientType": "C2C",
@@ -1810,7 +2002,7 @@
       "label": "Amazon Alexa Client",
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "createdAtTimestamp": 0,
-      "lastSeenAtTimestamp": 1612734234157,
+      "lastSeenAtTimestamp": 1642403029450,
       "c2cServiceIdentifier": "hmip_alexa_skill",
       "inactive": null
     },
@@ -1820,7 +2012,7 @@
       "label": "homematicip-python",
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "createdAtTimestamp": 0,
-      "lastSeenAtTimestamp": 1612809977162
+      "lastSeenAtTimestamp": 1642852482682
     }
   }
 }

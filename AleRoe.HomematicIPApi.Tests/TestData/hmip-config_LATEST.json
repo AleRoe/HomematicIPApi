@@ -1,15 +1,15 @@
 {
   "home": {
     "weather": {
-      "temperature": 0.1,
-      "weatherCondition": "HEAVILY_CLOUDY_WITH_SNOW",
+      "temperature": 25.7,
+      "weatherCondition": "CLEAR",
       "weatherDayTime": "DAY",
-      "minTemperature": -0.9,
-      "maxTemperature": 1.1,
-      "humidity": 92,
-      "windSpeed": 4.824000000000001,
-      "windDirection": 258,
-      "vaporAmount": 4.491439253932626
+      "minTemperature": 23.8,
+      "maxTemperature": 26.8,
+      "humidity": 35,
+      "windSpeed": 9.648000000000001,
+      "windDirection": 311,
+      "vaporAmount": 8.36000081063911
     },
     "metaGroups": [
       "f7859d94-3eb2-497e-834e-62bd3869366e",
@@ -34,14 +34,15 @@
     "pinAssigned": false,
     "pinChangeTimestamp": null,
     "pinChangeClientLabel": null,
+    "userRightsManagementActive": false,
     "liveUpdateSupported": true,
-    "dutyCycle": 3.5,
-    "carrierSense": 0.0,
+    "dutyCycle": 27.5,
+    "carrierSense": 19.5,
     "updateState": "UP_TO_DATE",
     "powerMeterUnitPrice": 0.32,
     "powerMeterCurrency": "EUR",
     "deviceUpdateStrategy": "MANUALLY",
-    "lastReadyForUpdateTimestamp": 1626991347704,
+    "lastReadyForUpdateTimestamp": 1651788925844,
     "functionalHomes": {
       "WEATHER_AND_ENVIRONMENT": {
         "functionalGroups": [
@@ -127,6 +128,10 @@
         "optimumStartStopEnabled": false,
         "deviceChannelSpecificFunction": {
         },
+        "extendedLinkedVentilationGroups": [
+        ],
+        "ventilationProfileGroups": [
+        ],
         "solution": "INDOOR_CLIMATE",
         "active": true
       },
@@ -151,7 +156,7 @@
     "apExchangeClientId": null,
     "apExchangeState": "NONE",
     "voiceControlSettings": {
-      "language": null,
+      "language": "GERMAN",
       "allowedActiveSecurityZoneIds": [
       ],
       "stateReportEnabled": {
@@ -169,7 +174,7 @@
         "active": true,
         "ruleErrorCategories": [
         ],
-        "lastExecutionTimestamp": 1642785944764,
+        "lastExecutionTimestamp": 1657919716013,
         "executionCounterOfDay": 0,
         "specialInterestCategories": [
         ]
@@ -182,8 +187,8 @@
         "active": true,
         "ruleErrorCategories": [
         ],
-        "lastExecutionTimestamp": 1642828656756,
-        "executionCounterOfDay": 1,
+        "lastExecutionTimestamp": 1657919713965,
+        "executionCounterOfDay": 0,
         "specialInterestCategories": [
         ]
       },
@@ -208,7 +213,7 @@
         "active": true,
         "ruleErrorCategories": [
         ],
-        "lastExecutionTimestamp": 1642717524666,
+        "lastExecutionTimestamp": 1657418104025,
         "executionCounterOfDay": 0,
         "specialInterestCategories": [
         ]
@@ -234,7 +239,7 @@
         "active": true,
         "ruleErrorCategories": [
         ],
-        "lastExecutionTimestamp": 1642783967713,
+        "lastExecutionTimestamp": 1657862103956,
         "executionCounterOfDay": 0,
         "specialInterestCategories": [
         ]
@@ -260,7 +265,20 @@
         "active": true,
         "ruleErrorCategories": [
         ],
-        "lastExecutionTimestamp": 1642717521995,
+        "lastExecutionTimestamp": 1657482567474,
+        "executionCounterOfDay": 0,
+        "specialInterestCategories": [
+        ]
+      },
+      "6659a8b5-ba0f-4937-924e-de6e65988048": {
+        "id": "6659a8b5-ba0f-4937-924e-de6e65988048",
+        "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
+        "label": "Taste5",
+        "type": "SIMPLE",
+        "active": true,
+        "ruleErrorCategories": [
+        ],
+        "lastExecutionTimestamp": 1657390937294,
         "executionCounterOfDay": 0,
         "specialInterestCategories": [
         ]
@@ -278,6 +296,9 @@
         "accessPointUpdateState": "UP_TO_DATE"
       }
     },
+    "accountLinkingStatus": null,
+    "userRightsManagementActiveChangeStatus": null,
+    "userRightsManagementSupported": true,
     "id": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff"
   },
   "groups": {
@@ -320,7 +341,7 @@
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "metaGroupId": null,
       "label": "Wohnzimmer",
-      "lastStatusUpdate": 1642852369368,
+      "lastStatusUpdate": 1657981105239,
       "unreach": false,
       "lowBat": null,
       "dutyCycle": false,
@@ -343,7 +364,7 @@
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "metaGroupId": null,
       "label": "Handtuchheizung",
-      "lastStatusUpdate": 1642851024115,
+      "lastStatusUpdate": 1657975589291,
       "unreach": false,
       "lowBat": null,
       "dutyCycle": false,
@@ -370,15 +391,16 @@
       "dutyCycle": null,
       "type": "HEATING_TEMPERATURE_LIMITER",
       "channels": [
-      ]
+      ],
+      "temperatureLimiterActive": null
     },
     "389d0062-dc2e-48e5-a80b-65a38dc447c8": {
       "id": "389d0062-dc2e-48e5-a80b-65a38dc447c8",
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "metaGroupId": null,
       "label": "BACKUP_ALARM_SIREN",
-      "lastStatusUpdate": 1642852058189,
-      "unreach": false,
+      "lastStatusUpdate": 1657980865327,
+      "unreach": true,
       "lowBat": false,
       "dutyCycle": false,
       "type": "SECURITY_BACKUP_ALARM_SWITCHING",
@@ -409,7 +431,7 @@
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "metaGroupId": null,
       "label": "System",
-      "lastStatusUpdate": 1642850151754,
+      "lastStatusUpdate": 1657980930461,
       "unreach": false,
       "lowBat": false,
       "dutyCycle": false,
@@ -437,7 +459,7 @@
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "metaGroupId": "68aec86c-e32f-4607-a0e6-33bceac6b050",
       "label": "System",
-      "lastStatusUpdate": 1642850151754,
+      "lastStatusUpdate": 1657980930461,
       "unreach": false,
       "lowBat": false,
       "dutyCycle": false,
@@ -492,7 +514,7 @@
           "channelIndex": 2
         }
       ],
-      "on": false,
+      "on": true,
       "processing": null,
       "dimLevel": null,
       "shutterLevel": null,
@@ -514,14 +536,15 @@
       "type": "HEATING_CHANGEOVER",
       "channels": [
       ],
-      "on": null
+      "on": null,
+      "changeOver": null
     },
     "72ec9f6f-b518-4bdc-b426-be0371b9211a": {
       "id": "72ec9f6f-b518-4bdc-b426-be0371b9211a",
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "metaGroupId": "7b9cd387-866e-4f72-9516-202df2941694",
       "label": "Bad",
-      "lastStatusUpdate": 1642852058189,
+      "lastStatusUpdate": 1657980865327,
       "unreach": false,
       "lowBat": false,
       "dutyCycle": false,
@@ -533,7 +556,7 @@
         }
       ],
       "windowState": null,
-      "motionDetected": false,
+      "motionDetected": true,
       "presenceDetected": null,
       "sabotage": false,
       "moistureDetected": null,
@@ -546,7 +569,7 @@
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "metaGroupId": null,
       "label": "Balkon",
-      "lastStatusUpdate": 1642852365210,
+      "lastStatusUpdate": 1657980338155,
       "unreach": true,
       "lowBat": null,
       "dutyCycle": null,
@@ -585,7 +608,7 @@
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "metaGroupId": "f7859d94-3eb2-497e-834e-62bd3869366e",
       "label": "Balkon",
-      "lastStatusUpdate": 1642852365210,
+      "lastStatusUpdate": 1657980338155,
       "unreach": true,
       "lowBat": null,
       "dutyCycle": null,
@@ -611,7 +634,7 @@
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "metaGroupId": "7b9cd387-866e-4f72-9516-202df2941694",
       "label": "Bad",
-      "lastStatusUpdate": 1642851024115,
+      "lastStatusUpdate": 1657975589291,
       "unreach": false,
       "lowBat": null,
       "dutyCycle": false,
@@ -637,8 +660,8 @@
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "metaGroupId": null,
       "label": "Bad",
-      "lastStatusUpdate": 1642852058189,
-      "unreach": false,
+      "lastStatusUpdate": 1657980865327,
+      "unreach": true,
       "lowBat": false,
       "dutyCycle": false,
       "type": "META",
@@ -694,15 +717,16 @@
       "dutyCycle": null,
       "type": "HEATING_HUMIDITY_LIMITER",
       "channels": [
-      ]
+      ],
+      "humidityLimiterActive": null
     },
     "ae83e9db-1f93-4352-ac17-c103ca838d8b": {
       "id": "ae83e9db-1f93-4352-ac17-c103ca838d8b",
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "metaGroupId": "7b9cd387-866e-4f72-9516-202df2941694",
       "label": "Bad",
-      "lastStatusUpdate": 0,
-      "unreach": null,
+      "lastStatusUpdate": 1654094339439,
+      "unreach": true,
       "lowBat": null,
       "dutyCycle": null,
       "type": "HEATING",
@@ -788,6 +812,10 @@
       "floorHeatingMode": "FLOOR_HEATING_STANDARD",
       "humidityLimitEnabled": true,
       "humidityLimitValue": 60,
+      "humidityLimiterAlarm": null,
+      "humidityLimitPreEnabled": true,
+      "humidityLimitPreValue": 60,
+      "humidityLimiterPreAlarm": null,
       "externalClockEnabled": false,
       "externalClockHeatingTemperature": 19.0,
       "externalClockCoolingTemperature": 23.0,
@@ -795,9 +823,16 @@
       "sabotage": null,
       "valveSilentModeSupported": false,
       "valveSilentModeEnabled": false,
-      "lastSetPointReachedTimestamp": 1642602949917,
-      "lastSetPointUpdatedTimestamp": 1642602949917,
-      "heatingFailureSupported": false
+      "lastSetPointReachedTimestamp": 1654082598611,
+      "lastSetPointUpdatedTimestamp": 1654082598611,
+      "heatingFailureSupported": false,
+      "switchClimateFunction": "THERMOSTAT",
+      "supportedOptionalFeatures": {
+        "IOptionalFeatureHumidityLimitPre": false,
+        "IOptionalFeatureSwitchClimateFunction": false
+      },
+      "processing": null,
+      "ventilationState": null
     },
     "eb002b87-f0f7-4a18-b2e1-0c1f3fa3ca22": {
       "id": "eb002b87-f0f7-4a18-b2e1-0c1f3fa3ca22",
@@ -864,7 +899,8 @@
       "dutyCycle": null,
       "type": "HEATING_EXTERNAL_CLOCK",
       "channels": [
-      ]
+      ],
+      "externalClockActive": null
     },
     "b78d8a5e-fb61-4e28-b369-14f0eb67bbf4": {
       "id": "b78d8a5e-fb61-4e28-b369-14f0eb67bbf4",
@@ -911,7 +947,7 @@
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "metaGroupId": null,
       "label": "Balkondeko",
-      "lastStatusUpdate": 1642852365210,
+      "lastStatusUpdate": 1657980338155,
       "unreach": true,
       "lowBat": null,
       "dutyCycle": null,
@@ -932,7 +968,7 @@
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "metaGroupId": null,
       "label": "INTERNAL",
-      "lastStatusUpdate": 1642852058189,
+      "lastStatusUpdate": 1657980865327,
       "unreach": false,
       "lowBat": false,
       "dutyCycle": false,
@@ -952,7 +988,7 @@
       "ignorableDeviceChannels": [
       ],
       "windowState": null,
-      "motionDetected": false,
+      "motionDetected": true,
       "presenceDetected": null,
       "sabotage": false,
       "zoneAssignmentIndex": "ALARM_MODE_ZONE_3",
@@ -964,7 +1000,7 @@
       "id": "3014F711A00001D709A10652",
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "label": "Dekolicht",
-      "lastStatusUpdate": 1642852365210,
+      "lastStatusUpdate": 1657980338155,
       "type": "PLUGABLE_SWITCH_MEASURING",
       "functionalChannels": {
         "0": {
@@ -998,26 +1034,29 @@
             "IFeatureDeviceCoProRestart": false,
             "IFeatureDeviceOverheated": true,
             "IOptionalFeatureDutyCycle": true,
-            "IOptionalFeatureDeviceErrorLockJammed": false,
             "IFeatureMulticastRouter": true,
-            "IFeatureProfilePeriodLimit": true,
-            "IFeatureDeviceCoProUpdate": false,
             "IFeaturePowerShortCircuit": false,
-            "IFeatureDevicePowerFailure": false,
+            "IFeatureDeviceDriveModeError": false,
             "IFeatureDeviceTemperatureHumiditySensorCommunicationError": false,
-            "IFeatureShortCircuitDataLine": false,
+            "IFeatureDeviceDriveError": false,
             "IFeatureRssiValue": true,
             "IFeatureBusConfigMismatch": false,
-            "IFeatureDeviceUndervoltage": false,
-            "IFeatureDeviceParticulateMatterSensorError": false,
             "IFeatureDeviceOverloaded": false,
-            "IFeatureDeviceCoProError": false,
             "IOptionalFeatureDisplayContrast": false,
             "IFeatureDeviceIdentify": false,
             "IOptionalFeatureLowBat": false,
             "IOptionalFeatureMountingOrientation": false,
             "IFeatureDeviceTemperatureHumiditySensorError": false,
-            "IFeatureDeviceTemperatureOutOfRange": false
+            "IFeatureDeviceTemperatureOutOfRange": false,
+            "IOptionalFeatureDeviceErrorLockJammed": false,
+            "IFeatureProfilePeriodLimit": true,
+            "IFeatureDeviceCoProUpdate": false,
+            "IFeatureDevicePowerFailure": false,
+            "IFeatureShortCircuitDataLine": false,
+            "IFeatureDeviceCommunicationError": false,
+            "IFeatureDeviceUndervoltage": false,
+            "IFeatureDeviceParticulateMatterSensorError": false,
+            "IFeatureDeviceCoProError": false
           },
           "busConfigMismatch": null,
           "powerShortCircuit": null,
@@ -1029,7 +1068,10 @@
           "particulateMatterSensorError": null,
           "particulateMatterSensorCommunicationError": null,
           "displayContrast": null,
-          "lockJammed": null
+          "lockJammed": null,
+          "deviceDriveError": null,
+          "deviceDriveModeError": null,
+          "deviceCommunicationError": null
         },
         "1": {
           "label": "",
@@ -1041,7 +1083,7 @@
             "86033919-0129-40f4-97a9-af489e6febb2",
             "abc95e89-f7e2-4c41-98dc-bca63ed867d5"
           ],
-          "on": false,
+          "on": true,
           "profileMode": null,
           "userDesiredProfileMode": "AUTOMATIC",
           "internalLinkConfiguration": {
@@ -1050,9 +1092,11 @@
             "firstInputAction": "TOGGLE",
             "longPressOnTimeEnabled": false
           },
+          "powerUpSwitchState": "PERMANENT_OFF",
           "supportedOptionalFeatures": {
             "IOptionalFeatureInternalLinkConfiguration": true,
-            "IOptionalFeatureEnergyMeterMode": false
+            "IOptionalFeatureEnergyMeterMode": false,
+            "IOptionalFeaturePowerUpSwitchState": true
           },
           "energyCounter": null,
           "currentPowerConsumption": null,
@@ -1061,11 +1105,11 @@
       },
       "manufacturerCode": 1,
       "oem": "eQ-3",
-      "updateState": "UPDATE_AVAILABLE",
+      "updateState": "TRANSFERING_UPDATE",
       "liveUpdateState": "LIVE_UPDATE_NOT_SUPPORTED",
       "firmwareVersion": "2.18.14",
       "firmwareVersionInteger": 135694,
-      "availableFirmwareVersion": "2.18.22",
+      "availableFirmwareVersion": "2.22.8",
       "serializedGlobalTradeItemNumber": "3014F711A00001D709A10652",
       "modelType": "HMIP-PSM",
       "modelId": 262,
@@ -1076,7 +1120,7 @@
       "id": "3014F711A00001D709A106A2",
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "label": "Handtuchheizung",
-      "lastStatusUpdate": 1642851024115,
+      "lastStatusUpdate": 1657975589291,
       "type": "PLUGABLE_SWITCH_MEASURING",
       "functionalChannels": {
         "0": {
@@ -1093,8 +1137,8 @@
           "routerModuleEnabled": true,
           "multicastRoutingEnabled": false,
           "routerModuleSupported": true,
-          "rssiDeviceValue": -79,
-          "rssiPeerValue": -73,
+          "rssiDeviceValue": -80,
+          "rssiPeerValue": -81,
           "configPending": false,
           "dutyCycle": false,
           "deviceOverloaded": false,
@@ -1110,26 +1154,29 @@
             "IFeatureDeviceCoProRestart": false,
             "IFeatureDeviceOverheated": true,
             "IOptionalFeatureDutyCycle": true,
-            "IOptionalFeatureDeviceErrorLockJammed": false,
             "IFeatureMulticastRouter": true,
-            "IFeatureProfilePeriodLimit": true,
-            "IFeatureDeviceCoProUpdate": false,
             "IFeaturePowerShortCircuit": false,
-            "IFeatureDevicePowerFailure": false,
+            "IFeatureDeviceDriveModeError": false,
             "IFeatureDeviceTemperatureHumiditySensorCommunicationError": false,
-            "IFeatureShortCircuitDataLine": false,
+            "IFeatureDeviceDriveError": false,
             "IFeatureRssiValue": true,
             "IFeatureBusConfigMismatch": false,
-            "IFeatureDeviceUndervoltage": false,
-            "IFeatureDeviceParticulateMatterSensorError": false,
             "IFeatureDeviceOverloaded": false,
-            "IFeatureDeviceCoProError": false,
             "IOptionalFeatureDisplayContrast": false,
             "IFeatureDeviceIdentify": false,
             "IOptionalFeatureLowBat": false,
             "IOptionalFeatureMountingOrientation": false,
             "IFeatureDeviceTemperatureHumiditySensorError": false,
-            "IFeatureDeviceTemperatureOutOfRange": false
+            "IFeatureDeviceTemperatureOutOfRange": false,
+            "IOptionalFeatureDeviceErrorLockJammed": false,
+            "IFeatureProfilePeriodLimit": true,
+            "IFeatureDeviceCoProUpdate": false,
+            "IFeatureDevicePowerFailure": false,
+            "IFeatureShortCircuitDataLine": false,
+            "IFeatureDeviceCommunicationError": false,
+            "IFeatureDeviceUndervoltage": false,
+            "IFeatureDeviceParticulateMatterSensorError": false,
+            "IFeatureDeviceCoProError": false
           },
           "busConfigMismatch": null,
           "powerShortCircuit": null,
@@ -1141,7 +1188,10 @@
           "particulateMatterSensorError": null,
           "particulateMatterSensorCommunicationError": null,
           "displayContrast": null,
-          "lockJammed": null
+          "lockJammed": null,
+          "deviceDriveError": null,
+          "deviceDriveModeError": null,
+          "deviceCommunicationError": null
         },
         "1": {
           "label": "",
@@ -1162,11 +1212,13 @@
             "firstInputAction": "TOGGLE",
             "longPressOnTimeEnabled": false
           },
+          "powerUpSwitchState": "PERMANENT_OFF",
           "supportedOptionalFeatures": {
             "IOptionalFeatureInternalLinkConfiguration": true,
-            "IOptionalFeatureEnergyMeterMode": false
+            "IOptionalFeatureEnergyMeterMode": false,
+            "IOptionalFeaturePowerUpSwitchState": true
           },
-          "energyCounter": 97.48689999999999,
+          "energyCounter": 135.29,
           "currentPowerConsumption": 0.0,
           "energyMeterMode": "CONSUMPTION_MEASURING"
         }
@@ -1177,7 +1229,7 @@
       "liveUpdateState": "LIVE_UPDATE_NOT_SUPPORTED",
       "firmwareVersion": "2.18.14",
       "firmwareVersionInteger": 135694,
-      "availableFirmwareVersion": "2.18.22",
+      "availableFirmwareVersion": "2.22.8",
       "serializedGlobalTradeItemNumber": "3014F711A00001D709A106A2",
       "modelType": "HMIP-PSM",
       "modelId": 262,
@@ -1222,26 +1274,29 @@
             "IFeatureDeviceCoProRestart": false,
             "IFeatureDeviceOverheated": false,
             "IOptionalFeatureDutyCycle": true,
-            "IOptionalFeatureDeviceErrorLockJammed": false,
             "IFeatureMulticastRouter": false,
-            "IFeatureProfilePeriodLimit": false,
-            "IFeatureDeviceCoProUpdate": false,
             "IFeaturePowerShortCircuit": false,
-            "IFeatureDevicePowerFailure": false,
+            "IFeatureDeviceDriveModeError": false,
             "IFeatureDeviceTemperatureHumiditySensorCommunicationError": false,
-            "IFeatureShortCircuitDataLine": false,
+            "IFeatureDeviceDriveError": false,
             "IFeatureRssiValue": true,
             "IFeatureBusConfigMismatch": false,
-            "IFeatureDeviceUndervoltage": false,
-            "IFeatureDeviceParticulateMatterSensorError": false,
             "IFeatureDeviceOverloaded": false,
-            "IFeatureDeviceCoProError": false,
             "IOptionalFeatureDisplayContrast": false,
             "IFeatureDeviceIdentify": false,
             "IOptionalFeatureLowBat": true,
             "IOptionalFeatureMountingOrientation": false,
             "IFeatureDeviceTemperatureHumiditySensorError": false,
-            "IFeatureDeviceTemperatureOutOfRange": false
+            "IFeatureDeviceTemperatureOutOfRange": false,
+            "IOptionalFeatureDeviceErrorLockJammed": false,
+            "IFeatureProfilePeriodLimit": false,
+            "IFeatureDeviceCoProUpdate": false,
+            "IFeatureDevicePowerFailure": false,
+            "IFeatureShortCircuitDataLine": false,
+            "IFeatureDeviceCommunicationError": false,
+            "IFeatureDeviceUndervoltage": false,
+            "IFeatureDeviceParticulateMatterSensorError": false,
+            "IFeatureDeviceCoProError": false
           },
           "busConfigMismatch": null,
           "powerShortCircuit": null,
@@ -1254,6 +1309,9 @@
           "particulateMatterSensorCommunicationError": null,
           "displayContrast": null,
           "lockJammed": null,
+          "deviceDriveError": null,
+          "deviceDriveModeError": null,
+          "deviceCommunicationError": null,
           "sabotage": null
         },
         "1": {
@@ -1287,7 +1345,7 @@
       "id": "3014F711A0000D1A49A3D77A",
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "label": "Modulplatine Open Collector – 8-fach",
-      "lastStatusUpdate": 1642849692080,
+      "lastStatusUpdate": 1657980930461,
       "type": "OPEN_COLLECTOR_8_MODULE",
       "functionalChannels": {
         "0": {
@@ -1304,8 +1362,8 @@
           "routerModuleEnabled": false,
           "multicastRoutingEnabled": false,
           "routerModuleSupported": false,
-          "rssiDeviceValue": -25,
-          "rssiPeerValue": -27,
+          "rssiDeviceValue": -20,
+          "rssiPeerValue": -22,
           "configPending": false,
           "dutyCycle": false,
           "deviceOverloaded": false,
@@ -1321,26 +1379,29 @@
             "IFeatureDeviceCoProRestart": false,
             "IFeatureDeviceOverheated": true,
             "IOptionalFeatureDutyCycle": true,
-            "IOptionalFeatureDeviceErrorLockJammed": false,
             "IFeatureMulticastRouter": false,
-            "IFeatureProfilePeriodLimit": true,
-            "IFeatureDeviceCoProUpdate": false,
             "IFeaturePowerShortCircuit": false,
-            "IFeatureDevicePowerFailure": false,
+            "IFeatureDeviceDriveModeError": false,
             "IFeatureDeviceTemperatureHumiditySensorCommunicationError": false,
-            "IFeatureShortCircuitDataLine": false,
+            "IFeatureDeviceDriveError": false,
             "IFeatureRssiValue": true,
             "IFeatureBusConfigMismatch": false,
-            "IFeatureDeviceUndervoltage": false,
-            "IFeatureDeviceParticulateMatterSensorError": false,
             "IFeatureDeviceOverloaded": false,
-            "IFeatureDeviceCoProError": false,
             "IOptionalFeatureDisplayContrast": false,
             "IFeatureDeviceIdentify": false,
             "IOptionalFeatureLowBat": false,
             "IOptionalFeatureMountingOrientation": false,
             "IFeatureDeviceTemperatureHumiditySensorError": false,
-            "IFeatureDeviceTemperatureOutOfRange": false
+            "IFeatureDeviceTemperatureOutOfRange": false,
+            "IOptionalFeatureDeviceErrorLockJammed": false,
+            "IFeatureProfilePeriodLimit": true,
+            "IFeatureDeviceCoProUpdate": false,
+            "IFeatureDevicePowerFailure": false,
+            "IFeatureShortCircuitDataLine": false,
+            "IFeatureDeviceCommunicationError": false,
+            "IFeatureDeviceUndervoltage": false,
+            "IFeatureDeviceParticulateMatterSensorError": false,
+            "IFeatureDeviceCoProError": false
           },
           "busConfigMismatch": null,
           "powerShortCircuit": null,
@@ -1352,7 +1413,10 @@
           "particulateMatterSensorError": null,
           "particulateMatterSensorCommunicationError": null,
           "displayContrast": null,
-          "lockJammed": null
+          "lockJammed": null,
+          "deviceDriveError": null,
+          "deviceDriveModeError": null,
+          "deviceCommunicationError": null
         },
         "1": {
           "label": "OUT (1)",
@@ -1372,8 +1436,10 @@
             "firstInputAction": "TOGGLE",
             "longPressOnTimeEnabled": false
           },
+          "powerUpSwitchState": "PERMANENT_OFF",
           "supportedOptionalFeatures": {
-            "IOptionalFeatureInternalLinkConfiguration": true
+            "IOptionalFeatureInternalLinkConfiguration": true,
+            "IOptionalFeaturePowerUpSwitchState": true
           }
         },
         "2": {
@@ -1394,8 +1460,10 @@
             "firstInputAction": "TOGGLE",
             "longPressOnTimeEnabled": false
           },
+          "powerUpSwitchState": "PERMANENT_OFF",
           "supportedOptionalFeatures": {
-            "IOptionalFeatureInternalLinkConfiguration": true
+            "IOptionalFeatureInternalLinkConfiguration": true,
+            "IOptionalFeaturePowerUpSwitchState": true
           }
         },
         "3": {
@@ -1416,8 +1484,10 @@
             "firstInputAction": "TOGGLE",
             "longPressOnTimeEnabled": false
           },
+          "powerUpSwitchState": "PERMANENT_OFF",
           "supportedOptionalFeatures": {
-            "IOptionalFeatureInternalLinkConfiguration": true
+            "IOptionalFeatureInternalLinkConfiguration": true,
+            "IOptionalFeaturePowerUpSwitchState": true
           }
         },
         "4": {
@@ -1438,8 +1508,10 @@
             "firstInputAction": "TOGGLE",
             "longPressOnTimeEnabled": false
           },
+          "powerUpSwitchState": "PERMANENT_OFF",
           "supportedOptionalFeatures": {
-            "IOptionalFeatureInternalLinkConfiguration": true
+            "IOptionalFeatureInternalLinkConfiguration": true,
+            "IOptionalFeaturePowerUpSwitchState": true
           }
         },
         "5": {
@@ -1451,7 +1523,7 @@
           "groups": [
             "71bf0a36-4495-4a00-a3e9-82e6c6ff4eba"
           ],
-          "on": false,
+          "on": true,
           "profileMode": "AUTOMATIC",
           "userDesiredProfileMode": "AUTOMATIC",
           "internalLinkConfiguration": {
@@ -1460,8 +1532,10 @@
             "firstInputAction": "TOGGLE",
             "longPressOnTimeEnabled": false
           },
+          "powerUpSwitchState": "PERMANENT_OFF",
           "supportedOptionalFeatures": {
-            "IOptionalFeatureInternalLinkConfiguration": true
+            "IOptionalFeatureInternalLinkConfiguration": true,
+            "IOptionalFeaturePowerUpSwitchState": true
           }
         },
         "6": {
@@ -1482,8 +1556,10 @@
             "firstInputAction": "TOGGLE",
             "longPressOnTimeEnabled": false
           },
+          "powerUpSwitchState": "PERMANENT_OFF",
           "supportedOptionalFeatures": {
-            "IOptionalFeatureInternalLinkConfiguration": true
+            "IOptionalFeatureInternalLinkConfiguration": true,
+            "IOptionalFeaturePowerUpSwitchState": true
           }
         },
         "7": {
@@ -1503,8 +1579,10 @@
             "firstInputAction": "TOGGLE",
             "longPressOnTimeEnabled": false
           },
+          "powerUpSwitchState": "PERMANENT_OFF",
           "supportedOptionalFeatures": {
-            "IOptionalFeatureInternalLinkConfiguration": true
+            "IOptionalFeatureInternalLinkConfiguration": true,
+            "IOptionalFeaturePowerUpSwitchState": true
           }
         },
         "8": {
@@ -1524,8 +1602,10 @@
             "firstInputAction": "TOGGLE",
             "longPressOnTimeEnabled": false
           },
+          "powerUpSwitchState": "PERMANENT_OFF",
           "supportedOptionalFeatures": {
-            "IOptionalFeatureInternalLinkConfiguration": true
+            "IOptionalFeatureInternalLinkConfiguration": true,
+            "IOptionalFeaturePowerUpSwitchState": true
           }
         }
       },
@@ -1546,7 +1626,7 @@
       "id": "3014F711A0000B5A498F7871",
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "label": "Wandtaster - 6-fach",
-      "lastStatusUpdate": 1642850151754,
+      "lastStatusUpdate": 1657977560978,
       "type": "PUSH_BUTTON_6",
       "functionalChannels": {
         "0": {
@@ -1563,7 +1643,7 @@
           "routerModuleEnabled": false,
           "multicastRoutingEnabled": false,
           "routerModuleSupported": false,
-          "rssiDeviceValue": -54,
+          "rssiDeviceValue": -52,
           "rssiPeerValue": null,
           "configPending": false,
           "dutyCycle": false,
@@ -1580,26 +1660,29 @@
             "IFeatureDeviceCoProRestart": false,
             "IFeatureDeviceOverheated": false,
             "IOptionalFeatureDutyCycle": true,
-            "IOptionalFeatureDeviceErrorLockJammed": false,
             "IFeatureMulticastRouter": false,
-            "IFeatureProfilePeriodLimit": false,
-            "IFeatureDeviceCoProUpdate": false,
             "IFeaturePowerShortCircuit": false,
-            "IFeatureDevicePowerFailure": false,
+            "IFeatureDeviceDriveModeError": false,
             "IFeatureDeviceTemperatureHumiditySensorCommunicationError": false,
-            "IFeatureShortCircuitDataLine": false,
+            "IFeatureDeviceDriveError": false,
             "IFeatureRssiValue": true,
             "IFeatureBusConfigMismatch": false,
-            "IFeatureDeviceUndervoltage": false,
-            "IFeatureDeviceParticulateMatterSensorError": false,
             "IFeatureDeviceOverloaded": false,
-            "IFeatureDeviceCoProError": false,
             "IOptionalFeatureDisplayContrast": false,
             "IFeatureDeviceIdentify": false,
             "IOptionalFeatureLowBat": true,
             "IOptionalFeatureMountingOrientation": false,
             "IFeatureDeviceTemperatureHumiditySensorError": false,
-            "IFeatureDeviceTemperatureOutOfRange": false
+            "IFeatureDeviceTemperatureOutOfRange": false,
+            "IOptionalFeatureDeviceErrorLockJammed": false,
+            "IFeatureProfilePeriodLimit": false,
+            "IFeatureDeviceCoProUpdate": false,
+            "IFeatureDevicePowerFailure": false,
+            "IFeatureShortCircuitDataLine": false,
+            "IFeatureDeviceCommunicationError": false,
+            "IFeatureDeviceUndervoltage": false,
+            "IFeatureDeviceParticulateMatterSensorError": false,
+            "IFeatureDeviceCoProError": false
           },
           "busConfigMismatch": null,
           "powerShortCircuit": null,
@@ -1611,7 +1694,10 @@
           "particulateMatterSensorError": null,
           "particulateMatterSensorCommunicationError": null,
           "displayContrast": null,
-          "lockJammed": null
+          "lockJammed": null,
+          "deviceDriveError": null,
+          "deviceDriveModeError": null,
+          "deviceCommunicationError": null
         },
         "1": {
           "label": "",
@@ -1622,7 +1708,14 @@
           "groups": [
             "71bf0a36-4495-4a00-a3e9-82e6c6ff4eba"
           ],
-          "visibleChannelIndex": 2
+          "visibleChannelIndex": 2,
+          "doorBellSensorEventTimestamp": null,
+          "acousticSendStateEnabled": false,
+          "supportedOptionalFeatures": {
+            "IOptionalFeatureLongPressSupported": true,
+            "IOptionalFeatureDoorBellSensorEventTimestamp": false,
+            "IOptionalFeatureAcousticSendStateEnabled": false
+          }
         },
         "2": {
           "label": "",
@@ -1633,7 +1726,14 @@
           "groups": [
             "71bf0a36-4495-4a00-a3e9-82e6c6ff4eba"
           ],
-          "visibleChannelIndex": 1
+          "visibleChannelIndex": 1,
+          "doorBellSensorEventTimestamp": null,
+          "acousticSendStateEnabled": false,
+          "supportedOptionalFeatures": {
+            "IOptionalFeatureLongPressSupported": true,
+            "IOptionalFeatureDoorBellSensorEventTimestamp": false,
+            "IOptionalFeatureAcousticSendStateEnabled": false
+          }
         },
         "3": {
           "label": "",
@@ -1644,7 +1744,14 @@
           "groups": [
             "71bf0a36-4495-4a00-a3e9-82e6c6ff4eba"
           ],
-          "visibleChannelIndex": 4
+          "visibleChannelIndex": 4,
+          "doorBellSensorEventTimestamp": null,
+          "acousticSendStateEnabled": false,
+          "supportedOptionalFeatures": {
+            "IOptionalFeatureLongPressSupported": true,
+            "IOptionalFeatureDoorBellSensorEventTimestamp": false,
+            "IOptionalFeatureAcousticSendStateEnabled": false
+          }
         },
         "4": {
           "label": "",
@@ -1655,7 +1762,14 @@
           "groups": [
             "71bf0a36-4495-4a00-a3e9-82e6c6ff4eba"
           ],
-          "visibleChannelIndex": 3
+          "visibleChannelIndex": 3,
+          "doorBellSensorEventTimestamp": null,
+          "acousticSendStateEnabled": false,
+          "supportedOptionalFeatures": {
+            "IOptionalFeatureLongPressSupported": true,
+            "IOptionalFeatureDoorBellSensorEventTimestamp": false,
+            "IOptionalFeatureAcousticSendStateEnabled": false
+          }
         },
         "5": {
           "label": "",
@@ -1666,7 +1780,14 @@
           "groups": [
             "71bf0a36-4495-4a00-a3e9-82e6c6ff4eba"
           ],
-          "visibleChannelIndex": 6
+          "visibleChannelIndex": 6,
+          "doorBellSensorEventTimestamp": null,
+          "acousticSendStateEnabled": false,
+          "supportedOptionalFeatures": {
+            "IOptionalFeatureLongPressSupported": true,
+            "IOptionalFeatureDoorBellSensorEventTimestamp": false,
+            "IOptionalFeatureAcousticSendStateEnabled": false
+          }
         },
         "6": {
           "label": "",
@@ -1677,7 +1798,14 @@
           "groups": [
             "71bf0a36-4495-4a00-a3e9-82e6c6ff4eba"
           ],
-          "visibleChannelIndex": 5
+          "visibleChannelIndex": 5,
+          "doorBellSensorEventTimestamp": null,
+          "acousticSendStateEnabled": false,
+          "supportedOptionalFeatures": {
+            "IOptionalFeatureLongPressSupported": true,
+            "IOptionalFeatureDoorBellSensorEventTimestamp": false,
+            "IOptionalFeatureAcousticSendStateEnabled": false
+          }
         }
       },
       "manufacturerCode": 1,
@@ -1697,7 +1825,7 @@
       "id": "3014F711A00000D709956758",
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "label": "Fensterkontakt links",
-      "lastStatusUpdate": 0,
+      "lastStatusUpdate": 1654094339439,
       "type": "SHUTTER_CONTACT",
       "functionalChannels": {
         "0": {
@@ -1709,7 +1837,7 @@
           "groups": [
             "7b9cd387-866e-4f72-9516-202df2941694"
           ],
-          "unreach": null,
+          "unreach": true,
           "lowBat": null,
           "routerModuleEnabled": false,
           "multicastRoutingEnabled": false,
@@ -1731,26 +1859,29 @@
             "IFeatureDeviceCoProRestart": false,
             "IFeatureDeviceOverheated": false,
             "IOptionalFeatureDutyCycle": true,
-            "IOptionalFeatureDeviceErrorLockJammed": false,
             "IFeatureMulticastRouter": false,
-            "IFeatureProfilePeriodLimit": false,
-            "IFeatureDeviceCoProUpdate": false,
             "IFeaturePowerShortCircuit": false,
-            "IFeatureDevicePowerFailure": false,
+            "IFeatureDeviceDriveModeError": false,
             "IFeatureDeviceTemperatureHumiditySensorCommunicationError": false,
-            "IFeatureShortCircuitDataLine": false,
+            "IFeatureDeviceDriveError": false,
             "IFeatureRssiValue": true,
             "IFeatureBusConfigMismatch": false,
-            "IFeatureDeviceUndervoltage": false,
-            "IFeatureDeviceParticulateMatterSensorError": false,
             "IFeatureDeviceOverloaded": false,
-            "IFeatureDeviceCoProError": false,
             "IOptionalFeatureDisplayContrast": false,
             "IFeatureDeviceIdentify": false,
             "IOptionalFeatureLowBat": true,
             "IOptionalFeatureMountingOrientation": false,
             "IFeatureDeviceTemperatureHumiditySensorError": false,
-            "IFeatureDeviceTemperatureOutOfRange": false
+            "IFeatureDeviceTemperatureOutOfRange": false,
+            "IOptionalFeatureDeviceErrorLockJammed": false,
+            "IFeatureProfilePeriodLimit": false,
+            "IFeatureDeviceCoProUpdate": false,
+            "IFeatureDevicePowerFailure": false,
+            "IFeatureShortCircuitDataLine": false,
+            "IFeatureDeviceCommunicationError": false,
+            "IFeatureDeviceUndervoltage": false,
+            "IFeatureDeviceParticulateMatterSensorError": false,
+            "IFeatureDeviceCoProError": false
           },
           "busConfigMismatch": null,
           "powerShortCircuit": null,
@@ -1763,6 +1894,9 @@
           "particulateMatterSensorCommunicationError": null,
           "displayContrast": null,
           "lockJammed": null,
+          "deviceDriveError": null,
+          "deviceDriveModeError": null,
+          "deviceCommunicationError": null,
           "sabotage": null
         },
         "1": {
@@ -1796,7 +1930,7 @@
       "id": "3014F711A00003D709B034F7",
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "label": "Access Point",
-      "lastStatusUpdate": 1642852369368,
+      "lastStatusUpdate": 1657981105239,
       "type": "HOME_CONTROL_ACCESS_POINT",
       "functionalChannels": {
         "0": {
@@ -1830,26 +1964,29 @@
             "IFeatureDeviceCoProRestart": false,
             "IFeatureDeviceOverheated": false,
             "IOptionalFeatureDutyCycle": true,
-            "IOptionalFeatureDeviceErrorLockJammed": false,
             "IFeatureMulticastRouter": false,
-            "IFeatureProfilePeriodLimit": false,
-            "IFeatureDeviceCoProUpdate": false,
             "IFeaturePowerShortCircuit": false,
-            "IFeatureDevicePowerFailure": false,
+            "IFeatureDeviceDriveModeError": false,
             "IFeatureDeviceTemperatureHumiditySensorCommunicationError": false,
-            "IFeatureShortCircuitDataLine": false,
+            "IFeatureDeviceDriveError": false,
             "IFeatureRssiValue": false,
             "IFeatureBusConfigMismatch": false,
-            "IFeatureDeviceUndervoltage": false,
-            "IFeatureDeviceParticulateMatterSensorError": false,
             "IFeatureDeviceOverloaded": false,
-            "IFeatureDeviceCoProError": false,
             "IOptionalFeatureDisplayContrast": false,
             "IFeatureDeviceIdentify": false,
             "IOptionalFeatureLowBat": false,
             "IOptionalFeatureMountingOrientation": false,
             "IFeatureDeviceTemperatureHumiditySensorError": false,
-            "IFeatureDeviceTemperatureOutOfRange": false
+            "IFeatureDeviceTemperatureOutOfRange": false,
+            "IOptionalFeatureDeviceErrorLockJammed": false,
+            "IFeatureProfilePeriodLimit": false,
+            "IFeatureDeviceCoProUpdate": false,
+            "IFeatureDevicePowerFailure": false,
+            "IFeatureShortCircuitDataLine": false,
+            "IFeatureDeviceCommunicationError": false,
+            "IFeatureDeviceUndervoltage": false,
+            "IFeatureDeviceParticulateMatterSensorError": false,
+            "IFeatureDeviceCoProError": false
           },
           "busConfigMismatch": null,
           "powerShortCircuit": null,
@@ -1862,10 +1999,13 @@
           "particulateMatterSensorCommunicationError": null,
           "displayContrast": null,
           "lockJammed": null,
+          "deviceDriveError": null,
+          "deviceDriveModeError": null,
+          "deviceCommunicationError": null,
           "signalBrightness": 1.0,
           "accessPointPriority": 1,
-          "dutyCycleLevel": 3.5,
-          "carrierSenseLevel": 0.0
+          "dutyCycleLevel": 27.5,
+          "carrierSenseLevel": 19.5
         }
       },
       "manufacturerCode": 1,
@@ -1885,7 +2025,7 @@
       "id": "3014F711A000091BE99D5315",
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "label": "Bewegungsmelder",
-      "lastStatusUpdate": 1642852058189,
+      "lastStatusUpdate": 1657980865327,
       "type": "MOTION_DETECTOR_INDOOR",
       "functionalChannels": {
         "0": {
@@ -1903,7 +2043,7 @@
           "routerModuleEnabled": false,
           "multicastRoutingEnabled": false,
           "routerModuleSupported": false,
-          "rssiDeviceValue": -75,
+          "rssiDeviceValue": -63,
           "rssiPeerValue": null,
           "configPending": false,
           "dutyCycle": false,
@@ -1920,26 +2060,29 @@
             "IFeatureDeviceCoProRestart": false,
             "IFeatureDeviceOverheated": false,
             "IOptionalFeatureDutyCycle": true,
-            "IOptionalFeatureDeviceErrorLockJammed": false,
             "IFeatureMulticastRouter": false,
-            "IFeatureProfilePeriodLimit": false,
-            "IFeatureDeviceCoProUpdate": false,
             "IFeaturePowerShortCircuit": false,
-            "IFeatureDevicePowerFailure": false,
+            "IFeatureDeviceDriveModeError": false,
             "IFeatureDeviceTemperatureHumiditySensorCommunicationError": false,
-            "IFeatureShortCircuitDataLine": false,
+            "IFeatureDeviceDriveError": false,
             "IFeatureRssiValue": true,
             "IFeatureBusConfigMismatch": false,
-            "IFeatureDeviceUndervoltage": false,
-            "IFeatureDeviceParticulateMatterSensorError": false,
             "IFeatureDeviceOverloaded": false,
-            "IFeatureDeviceCoProError": false,
             "IOptionalFeatureDisplayContrast": false,
             "IFeatureDeviceIdentify": false,
             "IOptionalFeatureLowBat": true,
             "IOptionalFeatureMountingOrientation": false,
             "IFeatureDeviceTemperatureHumiditySensorError": false,
-            "IFeatureDeviceTemperatureOutOfRange": false
+            "IFeatureDeviceTemperatureOutOfRange": false,
+            "IOptionalFeatureDeviceErrorLockJammed": false,
+            "IFeatureProfilePeriodLimit": false,
+            "IFeatureDeviceCoProUpdate": false,
+            "IFeatureDevicePowerFailure": false,
+            "IFeatureShortCircuitDataLine": false,
+            "IFeatureDeviceCommunicationError": false,
+            "IFeatureDeviceUndervoltage": false,
+            "IFeatureDeviceParticulateMatterSensorError": false,
+            "IFeatureDeviceCoProError": false
           },
           "busConfigMismatch": null,
           "powerShortCircuit": null,
@@ -1952,6 +2095,9 @@
           "particulateMatterSensorCommunicationError": null,
           "displayContrast": null,
           "lockJammed": null,
+          "deviceDriveError": null,
+          "deviceDriveModeError": null,
+          "deviceCommunicationError": null,
           "sabotage": false
         },
         "1": {
@@ -1965,8 +2111,8 @@
             "3969b01c-c418-4728-b853-d1fda99be7f6",
             "389d0062-dc2e-48e5-a80b-65a38dc447c8"
           ],
-          "motionDetected": false,
-          "illumination": 157.2,
+          "motionDetected": true,
+          "illumination": 1969.0,
           "currentIllumination": null,
           "numberOfBrightnessMeasurements": 7,
           "motionDetectionSendInterval": "SECONDS_120",
@@ -1994,7 +2140,10 @@
       "label": "Alex's iPhone X",
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "createdAtTimestamp": 0,
-      "lastSeenAtTimestamp": 1642191873126
+      "lastSeenAtTimestamp": 1657921234659,
+      "userRole": null,
+      "userRoleChangeStatus": null,
+      "adminInitializationRequired": false
     },
     "c3bbbdc3-a785-4f9a-9549-87eaaf610fb6": {
       "clientType": "C2C",
@@ -2002,9 +2151,10 @@
       "label": "Amazon Alexa Client",
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "createdAtTimestamp": 0,
-      "lastSeenAtTimestamp": 1642403029450,
+      "lastSeenAtTimestamp": 1657796439208,
       "c2cServiceIdentifier": "hmip_alexa_skill",
-      "inactive": null
+      "inactive": null,
+      "hasC2cServiceToken": false
     },
     "982967e5-0281-4351-a427-e0d477f197ee": {
       "clientType": "APP",
@@ -2012,7 +2162,10 @@
       "label": "homematicip-python",
       "homeId": "e1e8a6d7-df23-45ed-ba32-fa07f0ae42ff",
       "createdAtTimestamp": 0,
-      "lastSeenAtTimestamp": 1642852482682
+      "lastSeenAtTimestamp": 1657981113809,
+      "userRole": null,
+      "userRoleChangeStatus": null,
+      "adminInitializationRequired": false
     }
   }
 }

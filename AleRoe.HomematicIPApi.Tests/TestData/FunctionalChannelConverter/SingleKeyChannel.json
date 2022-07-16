@@ -7,5 +7,12 @@
   "groups": [
     "71bf0a36-4495-4a00-a3e9-82e6c6ff4eba"
   ],
-  "visibleChannelIndex": 2
+  "visibleChannelIndex": 2,
+  "doorBellSensorEventTimestamp": null,
+  "acousticSendStateEnabled": false,
+  "supportedOptionalFeatures": {
+    "IOptionalFeatureLongPressSupported": true,
+    "IOptionalFeatureDoorBellSensorEventTimestamp": false,
+    "IOptionalFeatureAcousticSendStateEnabled": false
+  }
 }

@@ -86,6 +86,7 @@
       "IOptionalFeatureInternalLinkConfiguration": true,
       "IOptionalFeatureEnergyMeterMode": false
     },
+    "powerUpSwitchState": "PERMANENT_OFF",
     "energyCounter": 97.48689999999999,
     "currentPowerConsumption": 0.0,
     "energyMeterMode": "CONSUMPTION_MEASURING"
