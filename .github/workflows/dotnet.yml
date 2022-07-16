@@ -28,3 +28,4 @@ jobs:
       with:
         name: dump
         path: ${{env.TEMP}}/HomematicIpDump_*
+      if: ${{ always() }}
