@@ -13,22 +13,27 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: Echo home
+      run: 
+        mkdir $HOME/AppData/Local/Temp
+        dir $HOME/AppData/Local/Temp
     - name: Setup .NET
       uses: actions/setup-dotnet@v2
       with:
         dotnet-version: 5.0.x
+    
     - name: Restore dependencies
       run: dotnet restore
+    
     - name: Build
       run: dotnet build --no-restore
+    
     - name: Test
       run: dotnet test --no-build --verbosity normal
-    - name: Echo home
-      run: 
-        dir $HOME/AppData/Local/Temp
+    
     - name: Upload dotnet test results
       uses: actions/upload-artifact@v3
       with:
         name: dump
-        path: $env:USERPROFILE\AppData\Local\Temp\HomematicIpDump_*.*
+        path: ${{env:USERPROFILE}}\AppData\Local\Temp\HomematicIpDump_*.json
       if: ${{ always() }}
