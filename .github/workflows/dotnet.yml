@@ -35,5 +35,5 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: dump
-        path: ${{env:USERPROFILE}}\AppData\Local\Temp\HomematicIpDump_*.json
+        path: ${{HOME}}\AppData\Local\Temp\HomematicIpDump_*.json
       if: ${{ always() }}
