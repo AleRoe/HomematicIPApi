@@ -92,7 +92,7 @@ namespace AleRoe.HomematicIpApi
                     if (ae.InnerException is HttpRequestException http)
                         if (http.InnerException is AuthenticationException)
                             if (OperatingSystem.IsWindows() && Environment.OSVersion.Version.Major < 10)
-                                throw new PlatformNotSupportedException("HomematicIP requires Windows 10 or greater.", http.InnerException);
+                                throw new PlatformNotSupportedException("HomematicIP requires Windows 10 or greater.", http);
                     throw;
                 }
 

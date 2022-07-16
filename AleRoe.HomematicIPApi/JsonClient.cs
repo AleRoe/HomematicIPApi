@@ -92,7 +92,7 @@ namespace AleRoe.HomematicIpApi
             return task.Result;
         }
 
-        private HttpClient GetClient(string accessPoint, string authToken)
+        private static HttpClient GetClient(string accessPoint, string authToken)
         {
             var instance = new HttpClient();
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
@@ -103,7 +103,7 @@ namespace AleRoe.HomematicIpApi
             return instance;
         }
 
-        private string GetClientAuth(string accessPoint)
+        private static string GetClientAuth(string accessPoint)
         {
             var data = Encoding.UTF8.GetBytes(accessPoint + "jiLpVitHvWnIGD1yo7MA");
             var sha = new SHA512Managed();
@@ -111,7 +111,7 @@ namespace AleRoe.HomematicIpApi
             return result;
         }
 
-        private string ToHexString(byte[] hex)
+        private static string ToHexString(byte[] hex)
         {
             if (hex == null) return null;
             if (hex.Length == 0) return string.Empty;
