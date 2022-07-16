@@ -1,0 +1,37 @@
+name: .NET
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Echo home
+      run: dir C:\Users\runneradmin\AppData\Local\Temp
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 5.0.x
+    
+    - name: Restore dependencies
+      run: dotnet restore
+    
+    - name: Build
+      run: dotnet build --no-restore
+    
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+    
+    - name: Upload dotnet test results
+      uses: actions/upload-artifact@v3
+      with:
+        name: dump
+        path: C:\Users\runneradmin\AppData\Local\Temp\HomematicIpDump_*.json
+      if: ${{ always() }}
