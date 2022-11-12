@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Formatting;
@@ -45,6 +46,7 @@ namespace AleRoe.HomematicIpApi.Json
                 var dump = reader.ReadToEnd();
                 var tempFile = GetTempFile();
                 File.WriteAllText(tempFile, dump);
+                Debug.Print("Debug dump at: " + tempFile);
             }
             stream.Seek(0, SeekOrigin.Begin);
         }
