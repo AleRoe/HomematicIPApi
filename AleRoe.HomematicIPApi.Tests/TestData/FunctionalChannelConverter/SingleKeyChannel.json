@@ -7,12 +7,21 @@
   "groups": [
     "71bf0a36-4495-4a00-a3e9-82e6c6ff4eba"
   ],
+  "channelRole": "KEY_OR_SWITCH_FOR_GROUP",
+  "supportedOptionalFeatures": {
+    "IOptionalFeatureLongPressSupported": true,
+    "IFeatureGarageGroupSensorChannel": false,
+    "IOptionalFeatureDoorBellSensorEventTimestamp": false,
+    "IOptionalFeatureDoublePressTime": true,
+    "IFeatureLightGroupSensorChannel": true,
+    "IOptionalFeatureAcousticSendStateEnabled": false,
+    "IFeatureAccessAuthorizationSensorChannel": false,
+    "IFeatureVentilationGroupSensorChannel": false,
+    "IFeatureShadingGroupSensorChannel": true
+  },
   "visibleChannelIndex": 2,
   "doorBellSensorEventTimestamp": null,
   "acousticSendStateEnabled": false,
-  "supportedOptionalFeatures": {
-    "IOptionalFeatureLongPressSupported": true,
-    "IOptionalFeatureDoorBellSensorEventTimestamp": false,
-    "IOptionalFeatureAcousticSendStateEnabled": false
-  }
+  "actionParameter": "NOT_CUSTOMISABLE",
+  "doublePressTime": 0.0
 }
