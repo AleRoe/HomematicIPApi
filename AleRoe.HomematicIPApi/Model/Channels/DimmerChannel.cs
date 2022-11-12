@@ -34,7 +34,5 @@ namespace AleRoe.HomematicIpApi.Model.Channels
         [DefaultValue(null)]
         public bool? DeviceOverheated { get; private set; }
 
-        [JsonProperty("supportedOptionalFeatures")]
-        public SupportedOptionalFeatures SupportedOptionalFeatures { get; private set; }
     }
 }

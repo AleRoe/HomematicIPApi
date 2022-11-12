@@ -53,9 +53,7 @@ namespace AleRoe.HomematicIpApi.Model.Channels
         [JsonProperty("temperatureOutOfRange")]
         public bool TemperatureOutOfRange { get; private set; }
 
-        [JsonProperty("supportedOptionalFeatures")]
-        public SupportedOptionalFeatures SupportedOptionalFeatures { get; private set; }
-
+        
         [JsonProperty("multicastRoutingEnabled")]
         public bool MulticastRoutingEnabled { get; private set; }
 
@@ -106,5 +104,11 @@ namespace AleRoe.HomematicIpApi.Model.Channels
 
         [JsonProperty("deviceCommunicationError")]
         public bool? DeviceCommunicationError { get; private set; }
+
+        [JsonProperty("controlsMountingOrientation")]
+        public object controlsMountingOrientation { get; private set; }
+
+        [JsonProperty("deviceOperationMode")]
+        public object DeviceOperationMode { get; private set; }
     }
 }

@@ -9,6 +9,9 @@ namespace AleRoe.HomematicIpApi.Model.Groups
 
         [JsonProperty("dimLevel")] 
         public double? DimLevel { get; set; }
-        
+
+        [JsonProperty("supportedOptionalFeatures")]
+        public SupportedOptionalFeatures SupportedOptionalFeatures { get; private set; }
+
     }
 }

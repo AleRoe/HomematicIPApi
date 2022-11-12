@@ -36,5 +36,6 @@ namespace AleRoe.HomematicIpApi.Model
         SMOKE_ALARM_DETECTION_RULE,
         SWITCHING,
         SWITCHING_PROFILE,
+        INDOOR_CLIMATE
     }
 }

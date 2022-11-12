@@ -63,6 +63,9 @@ namespace AleRoe.HomematicIpApi.Model.Devices
         [JsonProperty("connectionType")] 
         public ConnectionType ConnectionType { get; private set; }
 
+        [JsonProperty("deviceArchetype")]
+        public DeviceArchetype DeviceArchetype { get; private set; }
+
         [JsonIgnore] 
         public IHomematicRpcService Service { get; protected set; }
 

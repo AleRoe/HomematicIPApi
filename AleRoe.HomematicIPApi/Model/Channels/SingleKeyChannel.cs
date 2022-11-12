@@ -14,8 +14,12 @@ namespace AleRoe.HomematicIpApi.Model.Channels
         [JsonProperty("acousticSendStateEnabled")]
         public bool AcousticSendStateEnabled { get; private set; }
 
-        [JsonProperty("supportedOptionalFeatures")]
-        public SupportedOptionalFeatures SupportedOptionalFeatures { get; private set; }
+        [JsonProperty("doublePressTime")]
+        public double DoublePressTime { get; private set; }
+
+        [JsonProperty("actionParameter")]
+        public ActionParameter ActionParameter { get; private set; }
+
 
     }
 }

@@ -127,5 +127,8 @@ namespace AleRoe.HomematicIpApi.Model.Groups
 
         [JsonProperty("ventilationState")]
         public object VentilationState { get; private set; }
+
+        [JsonProperty("ventilationLevel")]
+        public object VentilationLevel { get; private set; }
     }
 }

@@ -17,10 +17,7 @@ namespace AleRoe.HomematicIpApi.Model.Channels
         [JsonProperty("internalLinkConfiguration")]
         public InternalLinkConfiguration InternalLinkConfiguration { get; private set; }
 
-        [JsonProperty("supportedOptionalFeatures")]
-        public SupportedOptionalFeatures SupportedOptionalFeatures { get; private set; }
-
-        [JsonProperty("powerUpSwitchState")]
+       [JsonProperty("powerUpSwitchState")]
         public PowerUpSwitchState PowerUpSwitchState { get; private set; }
     }
 }

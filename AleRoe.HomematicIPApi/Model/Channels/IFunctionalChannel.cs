@@ -15,5 +15,7 @@ namespace AleRoe.HomematicIpApi.Model.Channels
         string DeviceId { get; }
         FunctionalChannelType FunctionalChannelType { get; }
         List<Guid> Groups { get; }
+
+        ChannelRole? ChannelRole { get; }
     }
 }

@@ -16,5 +16,7 @@ namespace AleRoe.HomematicIpApi.Model.Channels
 
         
 
+
+
     }
 }

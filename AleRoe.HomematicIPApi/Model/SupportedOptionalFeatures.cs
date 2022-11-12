@@ -1,4 +1,5 @@
 ﻿using AleRoe.HomematicIpApi.Model.Channels;
+using AleRoe.HomematicIpApi.Model.Groups;
 using Newtonsoft.Json;
 
 namespace AleRoe.HomematicIpApi.Model
@@ -144,5 +145,69 @@ namespace AleRoe.HomematicIpApi.Model
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         //[OptionalFeatureProperty(nameof(DeviceBaseChannel.EnergyMeterMode))]
         public bool? IOptionalFeatureSwitchClimateFunction { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        //[OptionalFeatureProperty(nameof(DeviceBaseChannel.EnergyMeterMode))]
+        public bool? IOptionalFeatureDimmerState { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        [OptionalFeatureProperty(nameof(SwitchingGroup.ColorTemperature))]
+        public bool? IOptionalFeatureColorTemperature { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        [OptionalFeatureProperty(nameof(SwitchingGroup.SaturationLevel))]
+        public bool? IOptionalFeatureHueSaturationValue { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        //[OptionalFeatureProperty(nameof(SwitchingGroup.SaturationLevel))]
+        public bool? IOptionalFeatureColorTemperatureDynamicDaylight { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        [OptionalFeatureProperty(nameof(SwitchingGroup.Dim2WarmActive))]
+        public bool? IOptionalFeatureColorTemperatureDim2Warm { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        //[OptionalFeatureProperty(nameof(SwitchingGroup.SaturationLevel))]
+        public bool? IOptionalFeatureDeviceOperationMode { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        //[OptionalFeatureProperty(nameof(SwitchingGroup.SaturationLevel))]
+        public bool? IFeatureLightGroupActuatorChannel { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        //[OptionalFeatureProperty(nameof(SwitchingGroup.SaturationLevel))]
+        public bool? IFeatureAccessAuthorizationActuatorChannel { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        //[OptionalFeatureProperty(nameof(SwitchingGroup.SaturationLevel))]
+        public bool? IFeatureLightProfileActuatorChannel { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        //[OptionalFeatureProperty(nameof(SwitchingGroup.SaturationLevel))]
+        public bool? IFeatureGarageGroupSensorChannel { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        [OptionalFeatureProperty(nameof(SingleKeyChannel.DoublePressTime))]
+        public bool? IOptionalFeatureDoublePressTime { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        //[OptionalFeatureProperty(nameof(SwitchingGroup.SaturationLevel))]
+        public bool? IFeatureLightGroupSensorChannel { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        //[OptionalFeatureProperty(nameof(SwitchingGroup.SaturationLevel))]
+        public bool? IFeatureAccessAuthorizationSensorChannel { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        //[OptionalFeatureProperty(nameof(SwitchingGroup.SaturationLevel))]
+        public bool? IFeatureVentilationGroupSensorChannel { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        //[OptionalFeatureProperty(nameof(SwitchingGroup.SaturationLevel))]
+        public bool? IFeatureShadingGroupSensorChannel { get; private set; }
+
+       
+
+
     }
 }

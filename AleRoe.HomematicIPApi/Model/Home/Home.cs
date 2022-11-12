@@ -112,5 +112,14 @@ namespace AleRoe.HomematicIpApi.Model.Home
         [JsonProperty("userRightsManagementSupported")]
         public bool UserRightsManagementSupported { get; private set; }
 
+        [JsonProperty("accountLinkingStatuses")]
+        public object AccountLinkingStatuses { get; private set; }
+
+        [JsonProperty("linkedExternalServices")]
+        public object LinkedExternalServices { get; private set; }
+
+        [JsonProperty("hueLinkingSupported")]
+        public bool HueLinkingSupported { get; private set; }
+
     }
 }
