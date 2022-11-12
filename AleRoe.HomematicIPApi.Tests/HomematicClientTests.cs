@@ -1,7 +1,6 @@
 ﻿using AleRoe.HomematicIpApi.Model.Devices;
 using AleRoe.HomematicIpApi.Model.Groups;
 using AleRoe.HomematicIpApi.Rpc;
-using Nito.AsyncEx;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
