@@ -106,7 +106,7 @@ namespace AleRoe.HomematicIpApi
         private static string GetClientAuth(string accessPoint)
         {
             var data = Encoding.UTF8.GetBytes(accessPoint + "jiLpVitHvWnIGD1yo7MA");
-            var sha = new SHA512Managed();
+            var sha = SHA512.Create();
             var result = ToHexString(sha.ComputeHash(data)).ToUpper();
             return result;
         }
