@@ -31,7 +31,7 @@ namespace AleRoe.HomematicIpApi
     public class HomematicIpClient : IDisposable, IHomematicRpcService
     {
         private bool disposedValue;
-        private bool disposeHttpClient;
+        private readonly bool disposeHttpClient;
         
         private const string GetHostUri = @"https://lookup.homematic.com:48335/getHost";
         private const string CLIENTAUTH = "CLIENTAUTH";
@@ -120,8 +120,10 @@ namespace AleRoe.HomematicIpApi
 
                 });
 
-                socketClient = new WebsocketClient(new Uri(hosts.WebSocketUrl), factory);
-                socketClient.ReconnectTimeout = TimeSpan.FromMinutes(5);
+                socketClient = new WebsocketClient(new Uri(hosts.WebSocketUrl), factory)
+                {
+                    ReconnectTimeout = TimeSpan.FromMinutes(5)
+                };
 
                 messageSubscription = socketClient.MessageReceived
                     .Where(msg => msg.MessageType == WebSocketMessageType.Binary)
@@ -342,7 +344,6 @@ namespace AleRoe.HomematicIpApi
                 if (disposing)
                 {
                     socketClient?.Dispose();
-                    //socketClient?.Stop(WebSocketCloseStatus.NormalClosure,"Disposing").Wait(TimeSpan.FromSeconds(5));
                     messageSubscription?.Dispose();
                     connectSubscription?.Dispose();
                     disconnectSubscription?.Dispose();
@@ -358,10 +359,7 @@ namespace AleRoe.HomematicIpApi
         }
 
         /// <inheritdoc/>
-        public void Dispose()
-        {
-            Dispose(true);
-        }
+        public void Dispose() => Dispose(true);
         #endregion
     }
 }

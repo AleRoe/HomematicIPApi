@@ -21,13 +21,11 @@ namespace AleRoe.HomematicIpApi.Json
         {
             try
             {
-                stream.Seek(0, SeekOrigin.Begin);
-                using var reader = new StreamReader(stream, Encoding.UTF8, leaveOpen: leaveOpen);
-                using var jsonReader = new JsonTextReader(reader);
                 var serializer = (settings == null) ? JsonSerializer.CreateDefault() : JsonSerializer.CreateDefault(settings);
-                var value = serializer.Deserialize<T>(jsonReader);
-                stream.SetLength(0);
-                return value;
+                stream.Seek(0, SeekOrigin.Begin);
+                using (var reader = new StreamReader(stream, Encoding.UTF8, leaveOpen: leaveOpen)) 
+                using (var jsonReader = new JsonTextReader(reader)) 
+                    return serializer.Deserialize<T>(jsonReader);
             }
             catch (Exception e)
             {
