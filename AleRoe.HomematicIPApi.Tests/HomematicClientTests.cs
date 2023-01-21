@@ -5,6 +5,7 @@ using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -16,169 +17,246 @@ namespace AleRoe.HomematicIpApi.Tests
         private string accessPoint = "3014F711A00003D709B034F7";
         private string authToken = "F321A85FF95C4BB213B20DC0E005EAC6F649CB14A73A4A382335FB3CCB4DC3C8";
 
+
+        
+
         [SetUp]
-        public void Init()
+        public async Task Init()
         {
-            /* ... */
-            Thread.Sleep(1000);
+            await Task.Delay(500);
         }
 
         [Test()]
-        public void CtorTest_Success()
+        public async Task CtorTest()
         {
             Assert.DoesNotThrow(() =>
             {
-                using var client = new HomematicIpClient(accessPoint, authToken);
+                var config = new HomematicIpConfiguration() { AccessPointId = accessPoint, AuthToken = authToken };
+                using var client = new HomematicIpClient(config);
             });
+            await Task.CompletedTask;
         }
 
         [Test()]
-        public void CtorTest_Fail()
+        public async Task CtorArgumentNullTest()
         {
-            Assert.Throws<ArgumentException>(() =>
+            Assert.Throws<ArgumentNullException>(() =>
             {
-                using var client = new HomematicIpClient("", "");
+                using var client = new HomematicIpClient(null);
             });
+            await Task.CompletedTask;
         }
 
         [Test()]
-        public void InitializeAsyncTest_Success()
+        public async Task CtorWithHttpClientTest()
         {
-            using var client = new HomematicIpClient(accessPoint, authToken);
-            Assert.DoesNotThrowAsync(async () => await client.Initialize());
-            
+            Assert.DoesNotThrow(() =>
+            {
+                using var httpClient = new HttpClient();
+                var config = new HomematicIpConfiguration() { AccessPointId = accessPoint, AuthToken = authToken };
+                using var client = new HomematicIpClient(config, httpClient);
+                Assert.AreSame(httpClient, client.httpClient); 
+            });
+            await Task.CompletedTask;
         }
 
         [Test()]
-        public void GetDevicesAsyncTest_ServiceProviderIsSet()
+        public async Task InitializeAsyncWithHttpClientText()
+        {
+            using var httpClient = new HttpClient();
+            _ = await httpClient.GetAsync("https://api.publicapis.org/entries");
+
+            var config = new HomematicIpConfiguration() { AccessPointId = accessPoint, AuthToken = authToken };
+            using var client = new HomematicIpClient(config);
+
+            Assert.DoesNotThrowAsync(async () => await client.InitializeAsync(CancellationToken.None));
+            await Task.CompletedTask;
+        }
+
+        [Test()]
+        public async Task InitializeAsyncTest()
+        {
+            var config = new HomematicIpConfiguration() { AccessPointId = accessPoint, AuthToken = authToken };
+            using var client = new HomematicIpClient(config);
+            Assert.DoesNotThrowAsync(async () => await client.InitializeAsync(CancellationToken.None));
+            await Task.CompletedTask;
+        }
+
+        [Test()]
+        public async Task InitializeAsyncCanceledTest()
+        {
+            var config = new HomematicIpConfiguration() { AccessPointId = accessPoint, AuthToken = authToken };
+            using var client = new HomematicIpClient(config);
+
+            var cts = new CancellationTokenSource();
+            cts.Cancel();
+
+            Assert.ThrowsAsync<TaskCanceledException>(async () => await client.InitializeAsync(cts.Token));
+            await Task.CompletedTask;
+        }
+
+        [Test()]
+        public async Task GetDevicesAsyncTest_ServiceProviderIsSet()
         {
             IEnumerable<IDevice> result = default;
-            using var client = new HomematicIpClient(accessPoint, authToken);
-            Assert.DoesNotThrowAsync(async () =>
-            {
-                await client.Initialize();
-                result = await client.Service.GetDevicesAsync(CancellationToken.None);
-            });
+            var config = new HomematicIpConfiguration() { AccessPointId = accessPoint, AuthToken = authToken };
+            using var client = new HomematicIpClient(config);
+            
+            await client.InitializeAsync(CancellationToken.None);
+            result = await client.GetDevicesAsync(CancellationToken.None);
+
             Assert.IsTrue(result.All(x => x.Service != null));
         }
 
         [Test()]
-        public void GetGroupsAsyncTest_ServiceProviderIsSet()
+        public async Task GetGroupsAsyncTest_ServiceProviderIsSet()
         {
             IEnumerable<IGroup> result = default;
-            using var client = new HomematicIpClient(accessPoint, authToken);
-            Assert.DoesNotThrowAsync(async () =>
-            {
-                await client.Initialize();
-                result = await client.Service.GetGroupsAsync(CancellationToken.None);
-            });
+            var config = new HomematicIpConfiguration() { AccessPointId = accessPoint, AuthToken = authToken };
+            using var client = new HomematicIpClient(config);
+            
+            await client.InitializeAsync(CancellationToken.None);
+            result = await client.GetGroupsAsync(CancellationToken.None);
+            
             Assert.IsTrue(result.All(x => x.Service != null));
         }
 
-        //[Test()]
-        public void InitializeAsyncTest_RunTwiceDoesNotThrow()
+        [Test()]
+        public async Task InitializeAsyncRunTwiceTest()
         {
-            using var client = new HomematicIpClient(accessPoint, authToken);
-            Assert.DoesNotThrowAsync(async () => await client.Initialize());
-            Assert.DoesNotThrowAsync(async () => await client.Initialize());
+            var config = new HomematicIpConfiguration() { AccessPointId = accessPoint, AuthToken = authToken };
+            using var client = new HomematicIpClient(config);
+            Assert.DoesNotThrowAsync(async () => await client.InitializeAsync(CancellationToken.None));
+            var socket = client.socketClient.NativeClient;
+            Assert.DoesNotThrowAsync(async () => await client.InitializeAsync(CancellationToken.None));
+            Assert.AreNotSame(client.socketClient.NativeClient, socket); 
+            await Task.CompletedTask;
         }
 
+        
         [Test()]
-        public void GetDevicesAsyncTest_Success()
+        public async Task GetDevicesAsyncTest()
         {
             IEnumerable<IDevice> result = default;
             var hasError = false;
-            using var client = new HomematicIpClient(accessPoint, authToken);
-            client.SerializerError += (s, e) =>
+            var config = new HomematicIpConfiguration() { AccessPointId = accessPoint, AuthToken = authToken };
+            using var client = new HomematicIpClient(config);
+            client.OnSerializerError += (s, e) =>
             {
                 TestContext.Out.WriteLine(e.ErrorContext.Error.ToString());
                 TestContext.Out.WriteLine();
                 hasError = true;
             };
             
-            Assert.DoesNotThrowAsync(async () => await client.Initialize());
-            Assert.DoesNotThrowAsync(async () => result = await client.Service.GetDevicesAsync(CancellationToken.None));
+            await client.InitializeAsync(CancellationToken.None);
+            result = await client.GetDevicesAsync(CancellationToken.None);
+            
             CollectionAssert.IsNotEmpty(result);
             Assert.IsFalse(hasError);
         }
 
         [Test()]
-        public void GetGroupsAsyncTest_Success()
+        public async Task GetGroupsAsyncTest()
         {
-            IEnumerable<IGroup> result = default;
             var hasError = false;
-            using var client = new HomematicIpClient(accessPoint, authToken);
-            client.SerializerError += (s, e) =>
+            var config = new HomematicIpConfiguration() { AccessPointId = accessPoint, AuthToken = authToken };
+            using var client = new HomematicIpClient(config);
+            client.OnSerializerError += (s, e) =>
             {
                 TestContext.Out.WriteLine(e.ErrorContext.Error.ToString());
                 TestContext.Out.WriteLine();
                 hasError = true;
             };
-
-            Assert.DoesNotThrowAsync(async () => await client.Initialize());
-            Assert.DoesNotThrowAsync(async () => result = await client.Service.GetGroupsAsync(CancellationToken.None));
+            await client.InitializeAsync(CancellationToken.None);
+            var result = await client.GetGroupsAsync(CancellationToken.None);
+                            
             CollectionAssert.IsNotEmpty(result);
             Assert.IsFalse(hasError);
         }
 
         [Test()]
-        public void GetCurrentStateAsyncTest_Success()
+        public async Task GetCurrentStateAsyncTest()
         {
-            CurrentState result = default;
             var hasError = false;
-            using var client = new HomematicIpClient(accessPoint, authToken);
-            client.SerializerError += (s, e) =>
+            var config = new HomematicIpConfiguration() { AccessPointId = accessPoint, AuthToken = authToken };
+            using var client = new HomematicIpClient(config);
+            client.OnSerializerError += (s, e) =>
             {
                 TestContext.Out.WriteLine(e.ErrorContext.Error.ToString());
                 TestContext.Out.WriteLine();
                 hasError = true;
             };
 
-            Assert.DoesNotThrowAsync(async () =>
-            {
-                await client.Initialize();
-                result = await client.Service.GetCurrentStateAsync();
-            });
+            await client.InitializeAsync(CancellationToken.None);
+            var result = await client.GetCurrentStateAsync(CancellationToken.None);
+            
             Assert.IsNotNull(result);
             Assert.IsFalse(hasError);
 
         }
 
+        
         [Test()]
-        public void GetDevicesAsyncTest_FailIfNotInitialized()
+        public async Task GetDevicesAsyncTest_FailIfNotInitialized()
         {
-            using var client = new HomematicIpClient(accessPoint, authToken);
-            Assert.ThrowsAsync<InvalidOperationException>(async () =>
-                await client.Service.GetDevicesAsync(CancellationToken.None));
-            
+            var config = new HomematicIpConfiguration() { AccessPointId = accessPoint, AuthToken = authToken };
+            using var client = new HomematicIpClient(config);
+            Assert.ThrowsAsync<InvalidOperationException>(async () => await client.GetDevicesAsync(CancellationToken.None));
+            await Task.CompletedTask;
         }
 
         [Test()]
-        public void InitializeAsyncTest_RaisesEvents()
+        public async Task GetGroupsAsyncTest_FailIfNotInitialized()
+        {
+            var config = new HomematicIpConfiguration() { AccessPointId = accessPoint, AuthToken = authToken };
+            using var client = new HomematicIpClient(config);
+            Assert.ThrowsAsync<InvalidOperationException>(async () => await client.GetGroupsAsync(CancellationToken.None));
+            await Task.CompletedTask;
+        }
+
+        [Test()]
+        public async Task Dispose()
+        {
+            var config = new HomematicIpConfiguration() { AccessPointId = accessPoint, AuthToken = authToken };
+            var client = new HomematicIpClient(config);
+            var events = client.PushEventRecieved.Subscribe(msg => { });
+            await client.InitializeAsync(CancellationToken.None);
+            Assert.DoesNotThrow(client.Dispose);
+
+            await Task.CompletedTask;
+        }
+
+        [Test()]
+        public async Task DisposeWithCustomHttpClient()
+        {
+            var config = new HomematicIpConfiguration() { AccessPointId = accessPoint, AuthToken = authToken };
+            using var httpClient = new HttpClient();
+            using var client = new HomematicIpClient(config, httpClient);
+            Assert.DoesNotThrow(client.Dispose);
+            Assert.IsNotNull(client.httpClient);
+
+            await Task.CompletedTask;
+        }
+
+        [Test()]
+        public async Task RaisesEvents()
         {
             var tcs = new TaskCompletionSource<PushEventArgs>();
+            var cts = new CancellationTokenSource();
+
+            var config = new HomematicIpConfiguration() { AccessPointId = accessPoint, AuthToken = authToken };
+            using var client = new HomematicIpClient(config);
+            using var events = client.PushEventRecieved.Subscribe(msg => tcs.SetResult(msg));
+
+            await client.InitializeAsync(CancellationToken.None);
             
-            using var client = new HomematicIpClient(accessPoint, authToken);
-            client.SerializerError += (s, e) =>
-            {
-                TestContext.Out.WriteLine(e.ErrorContext.Error.ToString());
-                TestContext.Out.WriteLine();
-            };
-            client.StateChanged += (s, e) => { tcs.SetResult(e);};
 
-            Assert.DoesNotThrowAsync(async () =>
-            {
-                await client.Initialize();
+            var result = await client.GetDevicesAsync(CancellationToken.None);
+            var light = result.OfType<SwitchDeviceBase>().First();
+            await client.SetDeviceStateAsync(light.Id, !light.On);
+                            
+            await tcs.Task.WaitAsync(TimeSpan.FromSeconds(5));
 
-                var result = await client.Service.GetDevicesAsync(CancellationToken.None);
-                var light = result.OfType<SwitchDeviceBase>().First();
-
-                await client.Service.SetDeviceStateAsync(light.Id, !light.On);
-                await tcs.Task.WaitAsync(new CancellationTokenSource(50000).Token);
-            });
-
-            //tcs.Task.Wait(50000);
-            Assert.IsTrue(tcs.Task.IsCompleted);
         }
     }
 }

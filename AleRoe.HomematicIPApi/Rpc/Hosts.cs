@@ -8,6 +8,15 @@ namespace AleRoe.HomematicIpApi.Rpc
     /// </summary>
     public class Hosts
     {
+        [JsonProperty("apiVersion")]
+        public string ApiVersion { get; private set; }
+
+        [JsonProperty("primaryAccessPointId")]
+        public string PrimaryAccessPointId { get; private set; }
+
+        [JsonProperty("requestingAccessPointId")]
+        public string RequestingAccessPointId { get; private set; }
+
         /// <summary>
         /// Gets or sets the rest URL.
         /// </summary>
