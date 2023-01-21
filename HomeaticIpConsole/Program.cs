@@ -21,12 +21,12 @@ namespace HomeaticIpConsole
             var tcs = new TaskCompletionSource();
 
             var config = new HomematicIpConfiguration() { AccessPointId = accessPoint, AuthToken = authToken };
-            using var client = new HomematicIpClient(config);
+            var client = new HomematicIpClient(config);
 
-            client.OnDisconnect += (s, e) => Console.WriteLine(e.DisconnectionInfo);
-            client.OnReconnect += (s, e) => Console.WriteLine(e.ReconnectionInfo);
+            client.OnDisconnect += (s, e) => Console.WriteLine("Disconnecting " + e.DisconnectionInfo.Type);
+            client.OnReconnect += (s, e) => Console.WriteLine("Reconnecting " + e.ReconnectionInfo.Type);
 
-            await client.InitializeAsync(cts.Token);
+            await client.InitializeAsync(CancellationToken.None);
             client.PushEventRecieved.Subscribe(Console.WriteLine);
             
             
@@ -39,7 +39,8 @@ namespace HomeaticIpConsole
             catch (Exception)
             {
             }
-            
+            Console.WriteLine("Disposing...");
+            client.Dispose();
             Console.WriteLine("End");
         }
 

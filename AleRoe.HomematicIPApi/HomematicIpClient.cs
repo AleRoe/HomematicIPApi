@@ -341,10 +341,13 @@ namespace AleRoe.HomematicIpApi
             {
                 if (disposing)
                 {
+                    socketClient?.Dispose();
+                    //socketClient?.Stop(WebSocketCloseStatus.NormalClosure,"Disposing").Wait(TimeSpan.FromSeconds(5));
                     messageSubscription?.Dispose();
                     connectSubscription?.Dispose();
                     disconnectSubscription?.Dispose();
-                    socketClient?.Dispose();
+                    
+
                     if (disposeHttpClient)
                     {
                         httpClient?.Dispose();

@@ -13,7 +13,8 @@ namespace AleRoe.HomematicIpApi.Json
         public static T Deserialize<T>(this byte[] data, JsonSerializerSettings settings = null) where T : class
         {
             using var stream = new MemoryStream(data);
-            return stream.Deserialize<T>(settings); 
+            return stream.Deserialize<T>(settings);
+
         }
 
         public static T Deserialize<T>(this MemoryStream stream, JsonSerializerSettings settings = null, bool leaveOpen = false) where T : class
@@ -25,7 +26,7 @@ namespace AleRoe.HomematicIpApi.Json
                 using var jsonReader = new JsonTextReader(reader);
                 var serializer = (settings == null) ? JsonSerializer.CreateDefault() : JsonSerializer.CreateDefault(settings);
                 var value = serializer.Deserialize<T>(jsonReader);
-                //stream.SetLength(0);
+                stream.SetLength(0);
                 return value;
             }
             catch (Exception e)
