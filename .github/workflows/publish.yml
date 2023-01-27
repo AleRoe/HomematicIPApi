@@ -1,0 +1,43 @@
+name: Publish
+
+on:
+  push:
+    tags:
+    - "v[0-9]+.[0-9]+.[0-9]+"
+
+jobs:
+  build:
+
+    env:
+      SOLUTION: 'src/HomematicIPApi2.sln'
+      
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 7.0.x
+
+    - name: Set VERSION variable from tag
+      run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
+
+    - name: Build
+      run: dotnet build $SOLUTION --configuration release /p:Version={VERSION}
+          
+    - name: Test
+      env:
+         accessPoint: ${{ secrets.ACCESSPOINT}}
+         authToken: ${{ secrets.AUTHTOKEN}}
+      run: dotnet test $SOLUTION --configuration release /p:Version={VERSION} --no-build
+          
+    - name: Pack
+      run: dotnet pack --configuration Release /p:Version=${VERSION} --no-build --output .
+    
+    - name: Push
+      run: dotnet nuget push NuGet.Workflow.${VERSION}.nupkg --source https://nuget.pkg.github.com/aleroe/index.json --api-key ${GITHUB_TOKEN}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
