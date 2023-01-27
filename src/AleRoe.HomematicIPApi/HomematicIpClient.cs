@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Formatting;
@@ -37,8 +38,8 @@ namespace AleRoe.HomematicIpApi
         private const string CLIENTAUTH = "CLIENTAUTH";
         private const string AUTHTOKEN = "AUTHTOKEN";
 
-        protected readonly HomematicIpConfiguration homematicIpConfiguration;
-        protected Hosts hosts;
+        private readonly HomematicIpConfiguration homematicIpConfiguration;
+        private Hosts hosts;
 
         internal readonly HttpClient httpClient;
         internal WebsocketClient socketClient;
@@ -68,7 +69,7 @@ namespace AleRoe.HomematicIpApi
         /// <summary>
         /// A stream of PushEvents
         /// </summary>
-        public IObservable<PushEventArgs> PushEventRecieved => messageReceivedSubject.AsObservable();
+        public IObservable<PushEventArgs> PushEventReceived => messageReceivedSubject.AsObservable();
 
 
         /// <summary>
@@ -98,7 +99,7 @@ namespace AleRoe.HomematicIpApi
         /// Initializes the <see cref="HomematicIpClient"/> instance and starts listening for events.
         /// </summary>
         /// <param name="cancellationToken">The cancellation token to cancel the operation.</param>
-        /// <returns>The Task object representing the asynchonous operation.</returns>
+        /// <returns>The Task object representing the asynchronous operation.</returns>
         /// <exception cref="WebSocketException"></exception>
         /// <exception cref="HttpRequestException"></exception>
         public async Task InitializeAsync(CancellationToken cancellationToken)
@@ -212,65 +213,6 @@ namespace AleRoe.HomematicIpApi
         }
 
 
-        //protected async Task StartListen(CancellationToken cancellationToken)
-        //{
-        //    using var clientWebSocket = new ClientWebSocket();
-        //    clientWebSocket.Options.SetRequestHeader(AUTHTOKEN, HomematicIpConfiguration.AuthToken);
-        //    clientWebSocket.Options.SetRequestHeader(CLIENTAUTH, HomematicIpConfiguration.ClientAuthToken);
-            
-
-        //    await using var stream = new System.IO.MemoryStream();
-        //    var buffer = WebSocket.CreateClientBuffer(4096, 4096);
-
-        //    while (!cancellationToken.IsCancellationRequested)
-        //    {
-        //        if (clientWebSocket.State != WebSocketState.Open)
-        //        {
-        //            //throw new WebSocketException();
-        //            //await Task.FromException(new WebSocketException()).ConfigureAwait(false);
-        //            await clientWebSocket.ConnectAsync(new Uri(Hosts.WebSocketUrl), cancellationToken).WaitAsync(TimeSpan.FromSeconds(5), cancellationToken).ConfigureAwait(false);
-        //        }
-        //        try
-        //        {
-        //            WebSocketReceiveResult result;
-        //            do
-        //            {
-        //                result = await clientWebSocket.ReceiveAsync(buffer, cancellationToken).ConfigureAwait(false);
-        //                switch (result.MessageType)
-        //                {
-        //                    case WebSocketMessageType.Text:
-        //                        break;
-
-        //                    case WebSocketMessageType.Binary:
-        //                        await stream.WriteAsync(buffer.AsMemory(0, result.Count), cancellationToken).ConfigureAwait(false);
-        //                        break;
-
-        //                    case WebSocketMessageType.Close:
-        //                        await clientWebSocket.CloseAsync(WebSocketCloseStatus.NormalClosure, string.Empty, CancellationToken.None).ConfigureAwait(false);
-        //                        break;
-
-        //                    default:
-        //                        throw new ArgumentOutOfRangeException();
-        //                }
-
-        //            } while (!result.EndOfMessage);
-
-        //            if (stream.Length != 0)
-        //            {
-        //                var data = stream.DeserializeStream<PushEventArgs>(JsonSerializerSettings, true);
-        //                MessageRecieved?.Invoke(this, data);
-        //            }
-        //        }
-        //        catch (TaskCanceledException)
-        //        {
-        //            if (!cancellationToken.IsCancellationRequested)
-        //                throw;
-        //        }
-        //    }
-        //}
-
-
-
         internal async Task<Hosts> GetHostsAsync(CancellationToken cancellationToken)
         {
             var content = new ClientCharacteristicsRoot(homematicIpConfiguration.AccessPointId);
@@ -344,11 +286,12 @@ namespace AleRoe.HomematicIpApi
             {
                 if (disposing)
                 {
-                    socketClient?.Dispose();
+                    Debug.WriteLine("Disposing");
                     messageSubscription?.Dispose();
                     connectSubscription?.Dispose();
                     disconnectSubscription?.Dispose();
-                    
+                    socketClient?.StopOrFail(WebSocketCloseStatus.NormalClosure, "Closing").Wait(TimeSpan.FromMilliseconds(5000));
+                    socketClient?.Dispose();
 
                     if (disposeHttpClient)
                     {
