@@ -24,18 +24,18 @@ jobs:
     
     - name: Restore dependencies
       run: dotnet restore $SOLUTION
-      working-directory: $WORKDIR
+      working-directory: HomematicIPApi2
     
     - name: Build
       run: dotnet build $SOLUTION --no-restore --configuration $BUILD_CONFIG
-      working-directory: $WORKDIR
+      working-directory: HomematicIPApi2
     
     - name: Test
       env:
          accessPoint: ${{ secrets.ACCESSPOINT}}
          authToken: ${{ secrets.AUTHTOKEN}}
       run: dotnet test $SOLUTION --configuration $BUILD_CONFIG --no-build
-      working-directory: $WORKDIR
+      working-directory: HomematicIPApi2
     
     - name: Upload dotnet test results
       uses: actions/upload-artifact@v3
