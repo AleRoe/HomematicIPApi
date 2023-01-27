@@ -7,7 +7,7 @@ namespace AleRoe.HomematicIpApi
         public Uri Uri { get; }
         public RequestUri(string value)
         {
-            this.Uri = new Uri(value, UriKind.Relative);
+            this.Uri = new Uri(value, UriKind.RelativeOrAbsolute);
         }
 
         public override string ToString()
@@ -19,7 +19,6 @@ namespace AleRoe.HomematicIpApi
         public static RequestUri SetDeviceDimLevel = new (@"/hmip/device/control/setDimLevel");
         public static RequestUri SetDeviceLabel = new (@"/hmip/device/setDeviceLabel");
         public static RequestUri GetCurrentState = new (@"/hmip/home/getCurrentState");
-
         public static RequestUri SetGroupState = new (@"/hmip/group/switching/setState");
         public static RequestUri SetGroupLabel = new (@"/hmip/group/setGroupLabel");
     }
