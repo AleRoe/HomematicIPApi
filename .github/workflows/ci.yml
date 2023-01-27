@@ -24,7 +24,7 @@ jobs:
       run: dotnet build src/HomematicIPApi2.sln --no-restore --configuration Release
     
     - name: Test
-      run: dotnet test src/HomematicIPApi2.sln --configuration Release --no-build --verbosity normal
+      run: dotnet test src/HomematicIPApi2.sln --configuration Release --verbosity normal
     
     - name: Upload dotnet test results
       uses: actions/upload-artifact@v3
