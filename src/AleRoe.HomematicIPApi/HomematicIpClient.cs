@@ -136,6 +136,7 @@ namespace AleRoe.HomematicIpApi
                 disconnectSubscription = socketClient.DisconnectionHappened
                     .Subscribe(info => OnDisconnect?.Invoke(this, new DisconnectEventArgs(info)));
 
+                await Task.Delay(500, cancellationToken).ConfigureAwait(false);
                 await socketClient.StartOrFail().ConfigureAwait(false);
             }
         }
