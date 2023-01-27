@@ -13,7 +13,7 @@ namespace AleRoe.HomematicIpApi.Tests.Json
     {
         private static IEnumerable<TestCaseData> AddCases()
         {
-            string path = @"TestData\DictionaryToListConverter";
+            string path = @"TestData\\DictionaryToListConverter";
             var files = Directory.GetFiles(path, "*.json");
             foreach (var file in files)
             {
