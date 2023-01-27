@@ -7,24 +7,15 @@ using System.Threading.Tasks;
 namespace AleRoe.HomematicIpApi.Tests
 {
     [TestFixture()]
-    public class HomematicClientInitializeTests
+    public class HomematicClientInitializeTests : HomematicClientTestsBase
     {
-        private string accessPoint = "3014F711A00003D709B034F7";
-        private string authToken = "F321A85FF95C4BB213B20DC0E005EAC6F649CB14A73A4A382335FB3CCB4DC3C8";
-
-        [SetUp]
-        public async Task Init()
-        {
-            await Task.Delay(1000);
-        }
-
         [Test()]
         public async Task InitializeAsyncWithHttpClientTest()
         {
             using var httpClient = new HttpClient();
             _ = await httpClient.GetAsync("https://api.publicapis.org/entries");
 
-            var config = new HomematicIpConfiguration() { AccessPointId = accessPoint, AuthToken = authToken };
+            var config = new HomematicIpConfiguration() { AccessPointId = AccessPoint, AuthToken = AuthToken };
             using var client = new HomematicIpClient(config, httpClient);
 
             Assert.DoesNotThrowAsync(async () => await client.InitializeAsync(CancellationToken.None));
@@ -34,7 +25,7 @@ namespace AleRoe.HomematicIpApi.Tests
         [Test()]
         public async Task InitializeAsyncTest()
         {
-            var config = new HomematicIpConfiguration() { AccessPointId = accessPoint, AuthToken = authToken };
+            var config = new HomematicIpConfiguration() { AccessPointId = AccessPoint, AuthToken = AuthToken };
             using var client = new HomematicIpClient(config);
             Assert.DoesNotThrowAsync(async () => await client.InitializeAsync(CancellationToken.None));
             await Task.CompletedTask;
@@ -43,7 +34,7 @@ namespace AleRoe.HomematicIpApi.Tests
         [Test()]
         public async Task InitializeAsyncCanceledTest()
         {
-            var config = new HomematicIpConfiguration() { AccessPointId = accessPoint, AuthToken = authToken };
+            var config = new HomematicIpConfiguration() {AccessPointId = AccessPoint, AuthToken = AuthToken };
             using var client = new HomematicIpClient(config);
 
             var cts = new CancellationTokenSource();
@@ -56,7 +47,7 @@ namespace AleRoe.HomematicIpApi.Tests
         [Test()]
         public async Task InitializeAsyncRunTwiceTest()
         {
-            var config = new HomematicIpConfiguration() { AccessPointId = accessPoint, AuthToken = authToken };
+            var config = new HomematicIpConfiguration() {AccessPointId = AccessPoint, AuthToken = AuthToken };
             using var client = new HomematicIpClient(config);
             Assert.DoesNotThrowAsync(async () => await client.InitializeAsync(CancellationToken.None));
             var socket = client.socketClient.NativeClient;
@@ -68,7 +59,7 @@ namespace AleRoe.HomematicIpApi.Tests
         [Test()]
         public async Task GetDevicesAsyncTest_FailIfNotInitialized()
         {
-            var config = new HomematicIpConfiguration() { AccessPointId = accessPoint, AuthToken = authToken };
+            var config = new HomematicIpConfiguration() {AccessPointId = AccessPoint, AuthToken = AuthToken };
             using var client = new HomematicIpClient(config);
             Assert.ThrowsAsync<InvalidOperationException>(async () => await client.GetDevicesAsync(CancellationToken.None));
             await Task.CompletedTask;
@@ -77,7 +68,7 @@ namespace AleRoe.HomematicIpApi.Tests
         [Test()]
         public async Task GetGroupsAsyncTest_FailIfNotInitialized()
         {
-            var config = new HomematicIpConfiguration() { AccessPointId = accessPoint, AuthToken = authToken };
+            var config = new HomematicIpConfiguration() {AccessPointId = AccessPoint, AuthToken = AuthToken };
             using var client = new HomematicIpClient(config);
             Assert.ThrowsAsync<InvalidOperationException>(async () => await client.GetGroupsAsync(CancellationToken.None));
             await Task.CompletedTask;

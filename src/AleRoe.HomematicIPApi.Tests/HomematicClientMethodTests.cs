@@ -9,17 +9,15 @@ using System.Threading.Tasks;
 namespace AleRoe.HomematicIpApi.Tests
 {
     [TestFixture()]
-    public class HomematicClientMethodTests
+    public class HomematicClientMethodTests : HomematicClientTestsBase
     {
-        private string accessPoint = "3014F711A00003D709B034F7";
-        private string authToken = "F321A85FF95C4BB213B20DC0E005EAC6F649CB14A73A4A382335FB3CCB4DC3C8";
         private HomematicIpClient client;
         private bool hasError = false;
 
         [OneTimeSetUp]
         public async Task Init()
         {
-            var config = new HomematicIpConfiguration() { AccessPointId = accessPoint, AuthToken = authToken };
+            var config = new HomematicIpConfiguration() {AccessPointId = AccessPoint, AuthToken = AuthToken };
             client = new HomematicIpClient(config);
 
             await client.InitializeAsync(CancellationToken.None);
@@ -40,10 +38,9 @@ namespace AleRoe.HomematicIpApi.Tests
         }
 
         [SetUp]
-        public async Task PreTest()
+        public void PreTest()
         {
             hasError = false;
-            await Task.Delay(1000);
         }
 
 
@@ -93,11 +90,11 @@ namespace AleRoe.HomematicIpApi.Tests
 
 
         [Test()]
-        public async Task PushEventRecievedTest()
+        public async Task PushEventReceivedTest()
         {
             var tcs = new TaskCompletionSource<PushEventArgs>();
             
-            using var events = client.PushEventRecieved.Subscribe(msg => tcs.SetResult(msg));
+            using var events = client.PushEventReceived.Subscribe(msg => tcs.SetResult(msg));
 
             await Task.Delay(1000);
             var result = await client.GetDevicesAsync(CancellationToken.None);

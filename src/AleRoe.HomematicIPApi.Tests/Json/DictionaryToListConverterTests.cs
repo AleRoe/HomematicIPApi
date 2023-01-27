@@ -1,10 +1,9 @@
-﻿using AleRoe.HomematicIpApi.Model.Channels;
-using AleRoe.HomematicIpApi.Tests;
+﻿using AleRoe.HomematicIpApi.Json;
+using AleRoe.HomematicIpApi.Model.Channels;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using AleRoe.HomematicIpApi.Json;
 
 namespace AleRoe.HomematicIpApi.Tests.Json
 {
@@ -17,9 +16,6 @@ namespace AleRoe.HomematicIpApi.Tests.Json
             var files = Directory.GetFiles(path, "*.json");
             foreach (var file in files)
             {
-                //var typeName = $"AleRoe.HomematicIpApi.Model.Channels.{Path.GetFileNameWithoutExtension(file)}";
-
-                //var type = typeof(FunctionalChannelConverter).Assembly.GetType(typeName, true);
                 var type = typeof(List<IFunctionalChannel>);
                 yield return new TestCaseData(file, type);
             }

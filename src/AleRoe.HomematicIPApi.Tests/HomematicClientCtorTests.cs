@@ -1,33 +1,21 @@
-﻿using AleRoe.HomematicIpApi.Model.Client;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace AleRoe.HomematicIpApi.Tests
 {
     [TestFixture()]
-    public class HomematicClientCtorTests
+    public class HomematicClientCtorTests : HomematicClientTestsBase
     {
-        private string accessPoint = "3014F711A00003D709B034F7";
-        private string authToken = "F321A85FF95C4BB213B20DC0E005EAC6F649CB14A73A4A382335FB3CCB4DC3C8";
-
-        [SetUp]
-        public async Task Init()
-        {
-            await Task.Delay(1000);
-        }
 
         [Test()]
         public async Task CtorTest()
         {
             Assert.DoesNotThrow(() =>
             {
-                var config = new HomematicIpConfiguration() { AccessPointId = accessPoint, AuthToken = authToken };
+                var config = new HomematicIpConfiguration() { AccessPointId = AccessPoint, AuthToken = AuthToken };
                 using var client = new HomematicIpClient(config);
             });
             await Task.CompletedTask;
@@ -49,7 +37,7 @@ namespace AleRoe.HomematicIpApi.Tests
             Assert.DoesNotThrow(() =>
             {
                 using var httpClient = new HttpClient();
-                var config = new HomematicIpConfiguration() { AccessPointId = accessPoint, AuthToken = authToken };
+                var config = new HomematicIpConfiguration() { AccessPointId = AccessPoint, AuthToken = AuthToken };
                 using var client = new HomematicIpClient(config, httpClient);
                 Assert.AreSame(httpClient, client.httpClient);
             });
@@ -59,10 +47,10 @@ namespace AleRoe.HomematicIpApi.Tests
         [Test()]
         public async Task DisposeTest()
         {
-            var config = new HomematicIpConfiguration() { AccessPointId = accessPoint, AuthToken = authToken };
+            var config = new HomematicIpConfiguration() { AccessPointId = AccessPoint, AuthToken = AuthToken };
             var client = new HomematicIpClient(config);
             await client.InitializeAsync(CancellationToken.None);
-            var events = client.PushEventRecieved.Subscribe(msg => { });
+            var events = client.PushEventReceived.Subscribe(msg => { });
             Assert.DoesNotThrow(client.Dispose);
             await Task.CompletedTask;
         }
@@ -70,7 +58,7 @@ namespace AleRoe.HomematicIpApi.Tests
         [Test()]
         public async Task DisposeWithoutInitializeTest()
         {
-            var config = new HomematicIpConfiguration() { AccessPointId = accessPoint, AuthToken = authToken };
+            var config = new HomematicIpConfiguration() {AccessPointId = AccessPoint, AuthToken = AuthToken };
             var client = new HomematicIpClient(config);
             Assert.DoesNotThrow(client.Dispose);
             await Task.CompletedTask;
@@ -79,7 +67,7 @@ namespace AleRoe.HomematicIpApi.Tests
         [Test()]
         public async Task DisposeWithCustomHttpClientTest()
         {
-            var config = new HomematicIpConfiguration() { AccessPointId = accessPoint, AuthToken = authToken };
+            var config = new HomematicIpConfiguration() {AccessPointId = AccessPoint, AuthToken = AuthToken };
             using var httpClient = new HttpClient();
             var client = new HomematicIpClient(config, httpClient);
             Assert.DoesNotThrow(client.Dispose);
