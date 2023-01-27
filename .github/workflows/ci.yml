@@ -14,29 +14,30 @@ jobs:
     env:
       BUILD_CONFIG: 'Release'
       SOLUTION: 'src/HomematicIPApi2.sln'
-      WORKDIR: 'HomematicIPApi2'
-
+      
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout
       uses: actions/checkout@v3
     
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 7.0.x
+
     - name: Restore dependencies
       run: dotnet restore $SOLUTION
-      working-directory: HomematicIPApi2
-    
+          
     - name: Build
       run: dotnet build $SOLUTION --no-restore --configuration $BUILD_CONFIG
-      working-directory: HomematicIPApi2
-    
+          
     - name: Test
       env:
          accessPoint: ${{ secrets.ACCESSPOINT}}
          authToken: ${{ secrets.AUTHTOKEN}}
       run: dotnet test $SOLUTION --configuration $BUILD_CONFIG --no-build
-      working-directory: HomematicIPApi2
-    
+          
     - name: Upload dotnet test results
       uses: actions/upload-artifact@v3
       with:
