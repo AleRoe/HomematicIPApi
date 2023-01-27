@@ -17,12 +17,13 @@ namespace AleRoe.HomematicIpApi.Tests
         [OneTimeSetUp]
         protected virtual void FixtureSetup()
         {
-            IConfiguration configuration = new ConfigurationBuilder()
-                .AddUserSecrets<HomematicClientTestsBase>()
-                .Build();
+            var builder = new ConfigurationBuilder()
+                .AddEnvironmentVariables()
+                .AddUserSecrets<HomematicClientTestsBase>();
+            var config = builder.Build();
 
-            this.AccessPoint = configuration["accessPoint"];
-            this.AuthToken = configuration["authToken"];
+            this.AccessPoint = config["accessPoint"];
+            this.AuthToken = config["authToken"];
 
             Trace.Listeners.Add(new ConsoleTraceListener());
         }
