@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Authors>Alexander Röthinger</Authors>
     <Company>AleRoe</Company>
     <Copyright>Alexander Röthinger 2022</Copyright>
@@ -19,6 +19,7 @@
     <Title>AleRoe.HomematicIpApi</Title>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <Description>Provides a means of communicating with the HomematicIp API.</Description>
+    <PackageId>AleRoe.HomematicIpApi</PackageId>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
