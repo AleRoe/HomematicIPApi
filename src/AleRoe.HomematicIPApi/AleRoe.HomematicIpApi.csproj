@@ -7,7 +7,7 @@
     <Company>AleRoe</Company>
     <Copyright>Alexander Röthinger 2022</Copyright>
     <PackageOutputPath>C:\Users\Alexander\Source\LocalPackages</PackageOutputPath>
-    <Version>2.1.0</Version>
+    <Version>2.1.1</Version>
     <AssemblyName>AleRoe.HomematicIpApi</AssemblyName>
     <RootNamespace>AleRoe.HomematicIpApi</RootNamespace>
     <AssemblyVersion>2.1.0.0</AssemblyVersion>
@@ -16,6 +16,8 @@
     <PackageProjectUrl>https://github.com/AleRoe/HomematicIPApi</PackageProjectUrl>
     <RepositoryUrl>https://github.com/AleRoe/HomematicIPApi</RepositoryUrl>
     <RepositoryType>github</RepositoryType>
+    <Title>Provides a means of communicating with the HomematicIp API </Title>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -38,5 +40,12 @@
     <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
       <_Parameter1>AleRoe.HomematicIpApi.Tests</_Parameter1>
     </AssemblyAttribute>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 </Project>
