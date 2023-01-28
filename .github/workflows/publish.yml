@@ -29,8 +29,11 @@ jobs:
       with:
         dotnet-version: 7.0.x
 
-    - name: Set VERSION variable from tag
-      run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
+    - name: Set Version Variable
+      if: ${{ github.ref_type == 'tag' }}
+      env:
+        TAG: ${{ github.ref_name }}
+      run: echo "VERSION=${TAG#v}" >> $GITHUB_ENV
 
     - name: Build
       run: dotnet build $SOLUTION --configuration release /p:Version={VERSION}
