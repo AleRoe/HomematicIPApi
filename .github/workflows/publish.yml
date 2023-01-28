@@ -1,4 +1,4 @@
-name: Publish
+name: .NET Build, Test, and Publish Nuget Package
 
 on:
   push:
@@ -12,40 +12,47 @@ on:
             required: true
             type: string
 
+env:
+  VERSION: 1.0.0
+
+defaults:
+  run:
+    working-directory: src
+
 jobs:
   build:
-
-    env:
-      SOLUTION: 'src/HomematicIPApi2.sln'
       
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 7.0.x
 
+    - uses: actions/checkout@v3
+    
     - name: Set Version Variable
       if: ${{ github.ref_type == 'tag' }}
       env:
         TAG: ${{ github.ref_name }}
       run: echo "VERSION=${TAG#v}" >> $GITHUB_ENV
 
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 7.0.x
+
+    - name: Restore dependencies
+      run: dotnet restore
+    
     - name: Build
-      run: dotnet build $SOLUTION --configuration release /p:Version={VERSION}
-          
+      run: dotnet build --no-restore /p:Version=$VERSION
+    
     - name: Test
       env:
          accessPoint: ${{ secrets.ACCESSPOINT}}
          authToken: ${{ secrets.AUTHTOKEN}}
-      run: dotnet test $SOLUTION --configuration release /p:Version={VERSION} --no-build
-          
-    - name: Pack
-      run: dotnet pack --configuration Release /p:Version=${VERSION} --no-build --output .
+      run: dotnet test --no-build --verbosity normal
+    
+    - name: Pack 
+      run: dotnet pack --output nupkgs --no-restore --no-build /p:PackageVersion=$VERSION
     
     - name: Push
       run: dotnet nuget push NuGet.Workflow.${VERSION}.nupkg --source https://nuget.pkg.github.com/aleroe/index.json --api-key ${GITHUB_TOKEN}
