@@ -1,4 +1,4 @@
-name: CI
+name: Continous Integration
 
 on:
   push:
@@ -8,12 +8,15 @@ on:
     branches:
     - master
 
+defaults:
+  run:
+    working-directory: src
+
 jobs:
   build:
 
     env:
       BUILD_CONFIG: 'Release'
-      SOLUTION: 'src/HomematicIPApi2.sln'
       
     runs-on: ubuntu-latest
 
@@ -27,16 +30,16 @@ jobs:
         dotnet-version: 7.0.x
 
     - name: Restore dependencies
-      run: dotnet restore $SOLUTION
+      run: dotnet restore
           
     - name: Build
-      run: dotnet build $SOLUTION --no-restore --configuration $BUILD_CONFIG
+      run: dotnet build --no-restore --configuration $BUILD_CONFIG
           
     - name: Test
       env:
          accessPoint: ${{ secrets.ACCESSPOINT}}
          authToken: ${{ secrets.AUTHTOKEN}}
-      run: dotnet test $SOLUTION --configuration $BUILD_CONFIG --no-build
+      run: dotnet test --configuration $BUILD_CONFIG --no-build
           
     - name: Upload dotnet test results
       uses: actions/upload-artifact@v3
