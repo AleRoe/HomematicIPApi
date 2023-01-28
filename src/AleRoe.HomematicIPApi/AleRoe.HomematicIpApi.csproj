@@ -16,8 +16,9 @@
     <PackageProjectUrl>https://github.com/AleRoe/HomematicIPApi</PackageProjectUrl>
     <RepositoryUrl>https://github.com/AleRoe/HomematicIPApi</RepositoryUrl>
     <RepositoryType>github</RepositoryType>
-    <Title>Provides a means of communicating with the HomematicIp API </Title>
+    <Title>AleRoe.HomematicIpApi</Title>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Description>Provides a means of communicating with the HomematicIp API.</Description>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
