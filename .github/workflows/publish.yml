@@ -43,7 +43,7 @@ jobs:
       run: dotnet restore
     
     - name: Build
-      run: dotnet build --no-restore /p:Version=$VERSION
+      run: dotnet build --configuration Release --no-restore /p:Version=$VERSION
     
     - name: Test
       env:
@@ -55,6 +55,6 @@ jobs:
       run: dotnet pack --output nupkgs --no-restore --no-build /p:PackageVersion=$VERSION
     
     - name: Push
-      run: dotnet nuget push NuGet.Workflow.${VERSION}.nupkg --source https://nuget.pkg.github.com/aleroe/index.json --api-key ${GITHUB_TOKEN}
+      run: dotnet nuget push nupkgs/*.nupkg --source https://nuget.pkg.github.com/aleroe/index.json --api-key ${GITHUB_TOKEN}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
