@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using NUnit.Framework;
+using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
 
@@ -22,8 +23,8 @@ namespace AleRoe.HomematicIpApi.Tests
                 .AddUserSecrets<HomematicClientTestsBase>();
             var config = builder.Build();
 
-            this.AccessPoint = config["accessPoint"];
-            this.AuthToken = config["authToken"];
+            this.AccessPoint = config["accessPoint"] ?? throw new ArgumentNullException("AccessPoint","Please check UserSecrets.");
+            this.AuthToken = config["authToken"] ?? throw new ArgumentNullException("AuthToken", "Please check UserSecrets.");
 
             Trace.Listeners.Add(new ConsoleTraceListener());
         }
@@ -31,7 +32,7 @@ namespace AleRoe.HomematicIpApi.Tests
         [SetUp]
         protected virtual async Task TestSetup()
         {
-            await Task.Delay(1000);
+            await Task.Delay(2000);
         }
 
         [OneTimeTearDown]
