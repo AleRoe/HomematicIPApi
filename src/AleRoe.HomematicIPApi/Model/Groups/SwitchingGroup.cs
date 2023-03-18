@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 
 namespace AleRoe.HomematicIpApi.Model.Groups
 {
@@ -46,6 +47,9 @@ namespace AleRoe.HomematicIpApi.Model.Groups
 
         [JsonProperty("humanCentricLightActive")]
         public bool? HumanCentricLightActive { get; private set; }
+
+        [JsonProperty("lightSceneId")]
+        public Guid? LightSceneId { get; private set; }
 
     }
 }

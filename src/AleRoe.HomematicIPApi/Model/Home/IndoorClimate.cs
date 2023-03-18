@@ -44,5 +44,8 @@ namespace AleRoe.HomematicIpApi.Model.Home
 
         [JsonProperty("ventilationProfileGroups", NullValueHandling = NullValueHandling.Ignore)]
         public object VentilationProfileGroups { get; private set; }
+
+        [JsonProperty("cooling")]
+        public object Cooling { get; private set; }
     }
 }

@@ -121,5 +121,20 @@ namespace AleRoe.HomematicIpApi.Model.Home
         [JsonProperty("hueLinkingSupported")]
         public bool HueLinkingSupported { get; private set; }
 
+        [JsonProperty("pendingDeviceExchanges")]
+        public object PendingDeviceExchanges { get; private set; }
+
+        [JsonProperty("deviceExchangeErrors")]
+        public object DeviceExchangeErrors { get; private set; }
+
+        [JsonProperty("deviceExchangeHistoryEntries")]
+        public object DeviceExchangeHistoryEntries { get; private set; }
+
+        [JsonProperty("notEntireExcludedAccessPoints")]
+        public object NotEntireExcludedAccessPoints { get; private set; }
+
+        [JsonProperty("measuringBaseURL")]
+        public string MeasuringBaseURL { get; private set; }
+
     }
 }

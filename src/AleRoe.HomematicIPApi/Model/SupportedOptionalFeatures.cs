@@ -206,7 +206,33 @@ namespace AleRoe.HomematicIpApi.Model
         //[OptionalFeatureProperty(nameof(SwitchingGroup.SaturationLevel))]
         public bool? IFeatureShadingGroupSensorChannel { get; private set; }
 
-       
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        //[OptionalFeatureProperty(nameof(SwitchingGroup.SaturationLevel))]
+        public bool? IOptionalFeatureLightSceneWithShortTimes { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        //[OptionalFeatureProperty(nameof(SwitchingGroup.SaturationLevel))]
+        public bool? IOptionalFeatureLightScene { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        //[OptionalFeatureProperty(nameof(SwitchingGroup.SaturationLevel))]
+        public bool? IFeatureDeviceDaliBusError { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        //[OptionalFeatureProperty(nameof(SwitchingGroup.SaturationLevel))]
+        public bool? IOptionalFeatureDefaultLinkedGroup { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        //[OptionalFeatureProperty(nameof(SwitchingGroup.SaturationLevel))]
+        public bool? IOptionalFeatureMotionSensorZones { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        //[OptionalFeatureProperty(nameof(SwitchingGroup.SaturationLevel))]
+        public bool? IOptionalFeatureMotionSensorSensitivity { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        //[OptionalFeatureProperty(nameof(SwitchingGroup.SaturationLevel))]
+        public bool? IOptionalFeatureBlockingPeriod { get; private set; }
 
 
     }

@@ -66,6 +66,9 @@ namespace AleRoe.HomematicIpApi.Model.Devices
         [JsonProperty("deviceArchetype")]
         public DeviceArchetype DeviceArchetype { get; private set; }
 
+        [JsonProperty("manuallyUpdateForced")]
+        public bool ManuallyUpdateForced { get; private set; }
+
         [JsonIgnore] 
         public IHomematicRpcService Service { get; protected set; }
 

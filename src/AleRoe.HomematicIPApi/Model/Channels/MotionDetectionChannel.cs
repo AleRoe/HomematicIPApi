@@ -11,6 +11,9 @@ namespace AleRoe.HomematicIpApi.Model.Channels
         [JsonProperty("motionDetected")]
         public bool? MotionDetected { get; private set; }
 
+        [JsonProperty("motionDetectionActive")]
+        public bool motionDetectionActive { get; private set; }
+
         [JsonProperty("illumination")]
         public double? Illumination { get; private set; }
 
@@ -22,5 +25,14 @@ namespace AleRoe.HomematicIpApi.Model.Channels
 
         [JsonProperty("numberOfBrightnessMeasurements")]
         public int NumberOfBrightnessMeasurements { get; private set; }
+
+        [JsonProperty("blockingPeriod")]
+        public double BlockingPeriod { get; private set; }
+
+        [JsonProperty("motionSensorSensitivity")]
+        public int MotionSensorSensitivity { get; private set; }
+
+        [JsonProperty("motionSensorZones", NullValueHandling = NullValueHandling.Ignore)]
+        public object MotionSensorZones { get; private set; }
     }
 }

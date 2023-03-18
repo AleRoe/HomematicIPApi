@@ -110,5 +110,11 @@ namespace AleRoe.HomematicIpApi.Model.Channels
 
         [JsonProperty("deviceOperationMode")]
         public object DeviceOperationMode { get; private set; }
+
+        [JsonProperty("daliBusState")]
+        public object DaliBusState { get; private set; }
+
+        [JsonProperty("defaultLinkedGroup")]
+        public object DefaultLinkedGroup { get; private set; }
     }
 }
