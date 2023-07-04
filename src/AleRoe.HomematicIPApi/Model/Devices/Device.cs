@@ -69,6 +69,9 @@ namespace AleRoe.HomematicIpApi.Model.Devices
         [JsonProperty("manuallyUpdateForced")]
         public bool ManuallyUpdateForced { get; private set; }
 
+        [JsonProperty("measuredAttributes")]
+        public object MeasuredAttributes { get; private set; }
+
         [JsonIgnore] 
         public IHomematicRpcService Service { get; protected set; }
 

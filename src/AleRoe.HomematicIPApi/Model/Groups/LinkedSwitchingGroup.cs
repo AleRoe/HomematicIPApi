@@ -6,6 +6,6 @@ namespace AleRoe.HomematicIpApi.Model.Groups
     public class LinkedSwitchingGroup : SwitchGroupBase
     {
         [JsonProperty("triggered")]
-        public object Triggered { get; private set; }
+        public bool Triggered { get; private set; }
     }
 }
