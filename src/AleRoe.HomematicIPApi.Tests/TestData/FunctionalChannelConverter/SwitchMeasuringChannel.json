@@ -4,22 +4,24 @@
   "index": 1,
   "groupIndex": 1,
   "functionalChannelType": "SWITCH_MEASURING_CHANNEL",
-  "groups": [
-    "86033919-0129-40f4-97a9-af489e6febb2",
-    "abc95e89-f7e2-4c41-98dc-bca63ed867d5"
-  ],
-  "on": false,
+  "groups": [ "86033919-0129-40f4-97a9-af489e6febb2", "abc95e89-f7e2-4c41-98dc-bca63ed867d5" ],
+  "channelRole": "SWITCH_ACTUATOR_WITH_MEASURING",
+  "supportedOptionalFeatures": {
+    "IFeatureLightGroupActuatorChannel": true,
+    "IFeatureAccessAuthorizationActuatorChannel": false,
+    "IOptionalFeatureInternalLinkConfiguration": true,
+    "IOptionalFeatureEnergyMeterMode": false,
+    "IOptionalFeaturePowerUpSwitchState": true,
+    "IFeatureLightProfileActuatorChannel": true
+  },
   "profileMode": null,
   "userDesiredProfileMode": "AUTOMATIC",
+  "on": false,
   "internalLinkConfiguration": {
     "internalLinkConfigurationType": "SINGLE_INPUT_SWITCH",
     "onTime": 111600.0,
     "firstInputAction": "TOGGLE",
     "longPressOnTimeEnabled": false
-  },
-  "supportedOptionalFeatures": {
-    "IOptionalFeatureInternalLinkConfiguration": true,
-    "IOptionalFeatureEnergyMeterMode": false
   },
   "powerUpSwitchState": "PERMANENT_OFF",
   "energyCounter": null,

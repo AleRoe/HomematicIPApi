@@ -4,10 +4,8 @@
   "index": 1,
   "groupIndex": 1,
   "functionalChannelType": "SHUTTER_CONTACT_CHANNEL",
-  "groups": [
-    "ae83e9db-1f93-4352-ac17-c103ca838d8b",
-    "389d0062-dc2e-48e5-a80b-65a38dc447c8"
-  ],
+  "groups": [ "c3c9443f-9b70-4005-b87d-5ae7efab53b4", "ae83e9db-1f93-4352-ac17-c103ca838d8b", "389d0062-dc2e-48e5-a80b-65a38dc447c8" ],
+  "channelRole": "WINDOW_SENSOR",
   "windowState": null,
   "eventDelay": 0
 }

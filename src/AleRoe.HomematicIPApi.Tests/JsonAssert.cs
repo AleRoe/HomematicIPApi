@@ -24,7 +24,7 @@ namespace AleRoe.HomematicIpApi.Tests
             {
                 TraceWriter = new TestContextTraceWriter(),
                 MissingMemberHandling = MissingMemberHandling.Error,
-                NullValueHandling = NullValueHandling.Ignore,
+                NullValueHandling = NullValueHandling.Include,
             };
             return settings;
         }

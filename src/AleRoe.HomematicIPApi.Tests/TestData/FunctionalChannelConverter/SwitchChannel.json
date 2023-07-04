@@ -4,21 +4,23 @@
   "index": 1,
   "groupIndex": 1,
   "functionalChannelType": "SWITCH_CHANNEL",
-  "groups": [
-    "71bf0a36-4495-4a00-a3e9-82e6c6ff4eba"
-  ],
-  "on": false,
+  "groups": [ "71bf0a36-4495-4a00-a3e9-82e6c6ff4eba" ],
+  "channelRole": "SWITCH_ACTUATOR",
+  "supportedOptionalFeatures": {
+    "IFeatureLightGroupActuatorChannel": true,
+    "IFeatureAccessAuthorizationActuatorChannel": false,
+    "IOptionalFeatureInternalLinkConfiguration": true,
+    "IOptionalFeaturePowerUpSwitchState": true,
+    "IFeatureLightProfileActuatorChannel": true
+  },
   "profileMode": "AUTOMATIC",
   "userDesiredProfileMode": "AUTOMATIC",
+  "on": false,
   "internalLinkConfiguration": {
     "internalLinkConfigurationType": "SINGLE_INPUT_SWITCH",
     "onTime": 111600.0,
     "firstInputAction": "TOGGLE",
     "longPressOnTimeEnabled": false
   },
-  "powerUpSwitchState": "PERMANENT_OFF",
-  "supportedOptionalFeatures": {
-    "IOptionalFeatureInternalLinkConfiguration": true,
-    "IOptionalFeaturePowerUpSwitchState": true
-  }
+  "powerUpSwitchState": "PERMANENT_OFF"
 }
