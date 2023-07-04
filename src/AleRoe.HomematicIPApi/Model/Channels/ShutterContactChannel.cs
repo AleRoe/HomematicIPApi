@@ -12,5 +12,8 @@ namespace AleRoe.HomematicIpApi.Model.Channels
 
         [JsonProperty("eventDelay")]
         public long EventDelay { get; private set; }
+
+        [JsonProperty("channelRole")]
+        public ChannelRole? ChannelRole { get; private set; }
     }
 }

@@ -24,11 +24,8 @@ namespace AleRoe.HomematicIpApi.Model.Channels
 
         [JsonProperty("groups")] 
         public List<Guid> Groups { get; private set; }
-
-        [JsonProperty("channelRole")]
-        public ChannelRole? ChannelRole { get; private set; }
-
-        [JsonProperty("supportedOptionalFeatures")]
+                
+        [JsonProperty("supportedOptionalFeatures", NullValueHandling = NullValueHandling.Ignore)]
         public SupportedOptionalFeatures SupportedOptionalFeatures { get; private set; }
     }
 }

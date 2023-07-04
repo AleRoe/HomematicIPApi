@@ -24,6 +24,11 @@ namespace AleRoe.HomematicIpApi.Json
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
+            var value = reader.Value;
+            if (value == null)
+            {
+                return null;
+            }
             var offset = DateTimeOffset.FromUnixTimeMilliseconds((long) reader.Value);
             return offset.UtcDateTime;
         }

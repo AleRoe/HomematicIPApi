@@ -142,7 +142,7 @@ namespace AleRoe.HomematicIpApi
             }
         }
 
-        private JsonSerializerSettings JsonSerializerSettings { get; } = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver(), TraceWriter = new DiagnosticsTraceWriter(), MissingMemberHandling = MissingMemberHandling.Error, NullValueHandling = NullValueHandling.Ignore};
+        private JsonSerializerSettings JsonSerializerSettings { get; } = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver(), TraceWriter = new DiagnosticsTraceWriter(), MissingMemberHandling = MissingMemberHandling.Error, NullValueHandling = NullValueHandling.Include};
 
         
 

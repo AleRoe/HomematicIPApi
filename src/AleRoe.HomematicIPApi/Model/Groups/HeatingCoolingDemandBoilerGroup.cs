@@ -16,11 +16,5 @@ namespace AleRoe.HomematicIpApi.Model.Groups
 
         [JsonProperty("heatDemand")]
         public object HeatDemand { get; private set; }
-
-        [JsonProperty("heatDemandRuleEnabled")]
-        public bool? HeatDemandRuleEnabled { get; private set; }
-
-        [JsonProperty("triggered")]
-        public bool? Triggered { get; private set; }
     }
 }

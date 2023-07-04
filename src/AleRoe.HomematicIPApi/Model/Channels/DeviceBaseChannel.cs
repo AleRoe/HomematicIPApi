@@ -8,7 +8,7 @@ namespace AleRoe.HomematicIpApi.Model.Channels
         [JsonProperty("unreach")] 
         public bool? UnReach { get; private set; }
 
-        [JsonProperty("lowBat", NullValueHandling = NullValueHandling.Include)]
+        [JsonProperty("lowBat")]
         public bool? LowBat { get; private set; }
 
         [JsonProperty("routerModuleEnabled")] 
@@ -38,7 +38,7 @@ namespace AleRoe.HomematicIpApi.Model.Channels
         [JsonProperty("coProUpdateFailure")]
         public bool CoProUpdateFailure { get; private set; }
 
-        [JsonProperty("deviceOverheated", NullValueHandling = NullValueHandling.Include)]
+        [JsonProperty("deviceOverheated")]
         public bool? DeviceOverheated { get; private set; }
 
         [JsonProperty("deviceOverloaded")]
@@ -57,13 +57,13 @@ namespace AleRoe.HomematicIpApi.Model.Channels
         [JsonProperty("multicastRoutingEnabled")]
         public bool MulticastRoutingEnabled { get; private set; }
 
-        [JsonProperty("busConfigMismatch", NullValueHandling = NullValueHandling.Include)]
+        [JsonProperty("busConfigMismatch")]
         public bool? BusConfigMismatch { get; private set; }
 
-        [JsonProperty("powerShortCircuit", NullValueHandling = NullValueHandling.Include)]
+        [JsonProperty("powerShortCircuit")]
         public bool? PowerShortCircuit { get; private set; }
 
-        [JsonProperty("shortCircuitDataLine", NullValueHandling = NullValueHandling.Include)]
+        [JsonProperty("shortCircuitDataLine")]
         public object ShortCircuitDataLine { get; private set; }
 
         [JsonProperty("particulateMatterSensorError")]
@@ -89,12 +89,6 @@ namespace AleRoe.HomematicIpApi.Model.Channels
 
         [JsonProperty("lockJammed")]
         public bool? LockJammed { get; private set; }
-
-        [JsonProperty("internalLinkConfiguration")]
-        public bool? InternalLinkConfiguration { get; private set; }
-
-        [JsonProperty("energyMeterMode")]
-        public bool? EnergyMeterMode { get; private set; }
 
         [JsonProperty("deviceDriveError")]
         public bool? DeviceDriveError { get; private set; }

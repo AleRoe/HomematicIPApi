@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AleRoe.HomematicIpApi.Model.Devices.Device">
+    <Position X="16" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACIgAEEAAGAMAAAQAAAIAMAAAAQACEAQAAhgCAAAA=</HashCode>
+      <FileName>Model\Devices\Device.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Devices.DimmerDeviceBase">
+    <Position X="12.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Devices\DimmerDeviceBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Devices.HomeControlAccessPointDevice">
+    <Position X="9.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Devices\HomeControlAccessPointDevice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Devices.OpenCollector8ModuleDevice">
+    <Position X="2.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Devices\OpenCollector8ModuleDevice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Devices.OperationLockableDevice">
+    <Position X="18.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Devices\OperationLockableDevice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Devices.PluggableMainsFailureSurveillance">
+    <Position X="20.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Devices\PluggableMainsFailureSurveillance.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Devices.PushButtonDevice">
+    <Position X="16.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Devices\PushButtonDevice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Devices.BrandDimmerDevice">
+    <Position X="11.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Devices\BrandDimmerDevice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Devices.PlugableDimmerDevice">
+    <Position X="14" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Devices\PlugableDimmerDevice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Devices.HeatingThermostatDevice">
+    <Position X="18.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Devices\HeatingThermostatDevice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Devices.PushButton6Device">
+    <Position X="16.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Devices\PushButton6Device.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Devices.MotionDetectorIndoor">
+    <Position X="23" Y="6.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAIAABAAAAAAAAAAAFAAABAAAAAQA=</HashCode>
+      <FileName>Model\Devices\MotionDetectorIndoor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Devices.ShutterContactDevice">
+    <Position X="26" Y="6.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAgAAAAAAAA=</HashCode>
+      <FileName>Model\Devices\ShutterContactDevice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Devices.PlugableSwitchDevice">
+    <Position X="5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Devices\PlugableSwitchDevice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Devices.PlugableSwitchMeasuringDevice">
+    <Position X="7.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Devices\PlugableSwitchMeasuringDevice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Devices.SwitchDeviceBase">
+    <Position X="6" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAIA=</HashCode>
+      <FileName>Model\Devices\SwitchDeviceBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Devices.SwitchMeasuringDevice">
+    <Position X="29.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAEAQAAAAAAAAA=</HashCode>
+      <FileName>Model\Devices\SwitchMeasuringDevice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

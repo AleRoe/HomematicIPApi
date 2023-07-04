@@ -6,78 +6,75 @@ namespace AleRoe.HomematicIpApi.Model.Home
     public class SecurityAndAlarm
     {
         [JsonProperty("activationInProgress")]
-        public bool ActivationInProgress { get; set; }
+        public bool ActivationInProgress { get; private set; }
 
         [JsonProperty("active")]
-        public bool Active { get; set; }
+        public bool Active { get; private set; }
 
         [JsonProperty("alarmActive")]
-        public bool AlarmActive { get; set; }
+        public bool AlarmActive { get; private set; }
 
         [JsonProperty("alarmEventDeviceChannel")]
-        public object AlarmEventDeviceChannel { get; set; }
-
-        [JsonProperty("alarmEventDeviceId")]
-        public string AlarmEventDeviceId { get; set; }
+        public object AlarmEventDeviceChannel { get; private set; }
 
         [JsonProperty("alarmEventTimestamp")]
-        public long? AlarmEventTimestamp { get; set; }
+        public long? AlarmEventTimestamp { get; private set; }
 
         [JsonProperty("alarmEventTriggerId")]
-        public object AlarmEventTriggerId { get; set; }
+        public object AlarmEventTriggerId { get; private set; }
 
         [JsonProperty("alarmSecurityJournalEntryType")]
-        public object AlarmSecurityJournalEntryType { get; set; }
+        public object AlarmSecurityJournalEntryType { get; private set; }
 
         [JsonProperty("functionalGroups")] 
-        public List<string> FunctionalGroups { get; set; }
+        public FunctionalGroups FunctionalGroups { get; private set; }
 
         [JsonProperty("intrusionAlarmActive")]
-        public bool? IntrusionAlarmActive { get; set; }
+        public bool? IntrusionAlarmActive { get; private set; }
 
         [JsonProperty("intrusionAlarmEventDeviceChannel")]
-        public object IntrusionAlarmEventDeviceChannel { get; set; }
+        public object IntrusionAlarmEventDeviceChannel { get; private set; }
 
         [JsonProperty("intrusionAlarmEventTimestamp")]
-        public long? IntrusionAlarmEventTimestamp { get; set; }
+        public long? IntrusionAlarmEventTimestamp { get; private set; }
 
         [JsonProperty("intrusionAlarmEventTriggerId")]
-        public object IntrusionAlarmEventTriggerId { get; set; }
+        public object IntrusionAlarmEventTriggerId { get; private set; }
 
         [JsonProperty("intrusionAlarmSecurityJournalEntryType")]
-        public object IntrusionAlarmSecurityJournalEntryType { get; set; }
+        public object IntrusionAlarmSecurityJournalEntryType { get; private set; }
         
         [JsonProperty("intrusionAlertThroughSmokeDetectors")]
-        public bool IntrusionAlertThroughSmokeDetectors { get; set; }
+        public bool IntrusionAlertThroughSmokeDetectors { get; private set; }
 
         [JsonProperty("safetyAlarmActive")]
-        public bool? SafetyAlarmActive { get; set; }
+        public bool? SafetyAlarmActive { get; private set; }
 
         [JsonProperty("safetyAlarmEventDeviceChannel")]
-        public object SafetyAlarmEventDeviceChannel { get; set; }
+        public object SafetyAlarmEventDeviceChannel { get; private set; }
 
         [JsonProperty("safetyAlarmEventTimestamp")]
-        public long? SafetyAlarmEventTimestamp { get; set; }
+        public long? SafetyAlarmEventTimestamp { get; private set; }
 
         [JsonProperty("safetyAlarmSecurityJournalEntryType")]
-        public object SafetyAlarmSecurityJournalEntryType { get; set; }
+        public object SafetyAlarmSecurityJournalEntryType { get; private set; }
 
         [JsonProperty("securitySwitchingGroups")]
-        public SecuritySwitchingGroups SecuritySwitchingGroups { get; set; }
+        public SecuritySwitchingGroups SecuritySwitchingGroups { get; private set; }
 
         [JsonProperty("securityZoneActivationMode")]
-        public string SecurityZoneActivationMode { get; set; }
+        public string SecurityZoneActivationMode { get; private set; }
 
         [JsonProperty("securityZones")] 
-        public SecurityZones SecurityZones { get; set; }
+        public SecurityZones SecurityZones { get; private set; }
 
         [JsonProperty("solution")]
-        public string Solution { get; set; }
+        public string Solution { get; private set; }
 
         [JsonProperty("zoneActivationDelay")] 
-        public double ZoneActivationDelay { get; set; }
+        public double ZoneActivationDelay { get; private set; }
 
         [JsonProperty("deviceChannelSpecificFunction")]
-        public object DeviceChannelSpecificFunction { get; set; }
+        public object DeviceChannelSpecificFunction { get; private set; }
     }
 }

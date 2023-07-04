@@ -7,12 +7,12 @@ namespace AleRoe.HomematicIpApi.Model.Home
     public class IndoorClimate
     {
         [JsonProperty("functionalGroups")] 
-        public List<object> FunctionalGroups { get; set; }
+        public FunctionalGroups FunctionalGroups { get; set; }
 
         [JsonProperty("absenceType")] 
         public AbsenceType AbsenceType { get; set; }
 
-        [JsonProperty("absenceEndTime", NullValueHandling = NullValueHandling.Include)] 
+        [JsonProperty("absenceEndTime")] 
         public DateTime? AbsenceEndTime { get; private set; }
 
         [JsonProperty("floorHeatingSpecificGroups")]
@@ -30,7 +30,7 @@ namespace AleRoe.HomematicIpApi.Model.Home
         [JsonProperty("optimumStartStopEnabled")]
         public bool OptimumStartStopEnabled { get; private set; }
 
-        [JsonProperty("deviceChannelSpecificFunction", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("deviceChannelSpecificFunction")]
         public object DeviceChannelSpecificFunction { get; private set; }
 
         [JsonProperty("solution")] 
@@ -39,10 +39,10 @@ namespace AleRoe.HomematicIpApi.Model.Home
         [JsonProperty("active")] 
         public bool Active { get; private set; }
 
-        [JsonProperty("extendedLinkedVentilationGroups", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("extendedLinkedVentilationGroups")]
         public object ExtendedLinkedVentilationGroups { get; private set; }
 
-        [JsonProperty("ventilationProfileGroups", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("ventilationProfileGroups")]
         public object VentilationProfileGroups { get; private set; }
 
         [JsonProperty("cooling")]

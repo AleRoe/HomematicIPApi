@@ -7,7 +7,7 @@ namespace AleRoe.HomematicIpApi.Model.Home
     public class LightAndShadow
     {
         [JsonProperty("functionalGroups")] 
-        public List<Guid> FunctionalGroups { get; private set; }
+        public FunctionalGroups FunctionalGroups { get; private set; }
 
         [JsonProperty("extendedLinkedSwitchingGroups")]
         public List<object> ExtendedLinkedSwitchingGroups { get; private set; }

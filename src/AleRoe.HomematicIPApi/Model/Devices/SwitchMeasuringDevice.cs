@@ -4,7 +4,7 @@ using AleRoe.HomematicIpApi.Model.Channels;
 
 namespace AleRoe.HomematicIpApi.Model.Devices
 {
-    public class SwitchMeasuringDevice : SwitchDeviceBase
+    public class SwitchMeasuringDevice : Device
     {
         public double EnergyCounter { get; private set; }
 

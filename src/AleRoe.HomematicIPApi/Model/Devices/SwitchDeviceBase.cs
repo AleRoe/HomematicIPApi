@@ -5,22 +5,15 @@ using Newtonsoft.Json;
 
 namespace AleRoe.HomematicIpApi.Model.Devices
 {
-    [DataContract]
-    public abstract class SwitchDeviceBase : DeviceBase
+    public abstract class SwitchDeviceBase : Device
     {
+        [JsonIgnore]
         public bool On { get; private set; }
-        
-        [JsonIgnore]
-        public string ProfileMode { get; private set; }
-        
-        [JsonIgnore]
-        public string UserDesiredProfileMode { get; private set; }
 
         [OnDeserialized]
         internal new void OnDeserializedMethod(StreamingContext context)
         {
-            this.GetFunctionalChannel<SwitchChannel>()
-                .CopyTo<SwitchDeviceBase>(this);
+            this.GetFunctionalChannel<SwitchChannel>().CopyTo(this);
         }
     }
 }

@@ -6,18 +6,18 @@ namespace AleRoe.HomematicIpApi.Model.Groups
     public class AlarmSwitchingGroup : SwitchGroupBase
     {
         [JsonProperty("onTime")]
-        public double OnTime { get; set; }
+        public double OnTime { get; private set; }
 
         [JsonProperty("signalAcoustic")]
-        public AcousticAlarmSignalType SignalAcoustic { get; set; }
+        public AcousticAlarmSignalType SignalAcoustic { get; private set; }
 
         [JsonProperty("signalOptical")]
-        public OpticalAlarmSignalType SignalOptical { get; set; }
-
-        [JsonProperty("smokeDetectorAlarmType", NullValueHandling = NullValueHandling.Include)]
-        public SmokeDetectorAlarmType? SmokeDetectorAlarmType { get; set; }
+        public OpticalAlarmSignalType SignalOptical { get; private set; }
+            
+        [JsonProperty("smokeDetectorAlarmType")]
+        public SmokeDetectorAlarmType? SmokeDetectorAlarmType { get; private set; }
 
         [JsonProperty("acousticFeedbackEnabled")]
-        public bool AcousticFeedbackEnabled { get; set; }
+        public bool AcousticFeedbackEnabled { get; private set; }
     }
 }

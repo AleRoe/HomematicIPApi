@@ -19,5 +19,8 @@ namespace AleRoe.HomematicIpApi.Model.Channels
 
        [JsonProperty("powerUpSwitchState")]
         public PowerUpSwitchState PowerUpSwitchState { get; private set; }
+
+        [JsonProperty("channelRole")]
+        public ChannelRole? ChannelRole { get; private set; }
     }
 }

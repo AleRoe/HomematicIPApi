@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AleRoe.HomematicIpApi.Model.Groups.Group">
+    <Position X="35" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACIAAAEAAAAIAAAAACQAAAAAAAQAAEAQBAgAAAEAA=</HashCode>
+      <FileName>Model\Groups\Group.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Groups.EnvironmentGroup">
+    <Position X="8" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAMAAAAAAAAAACAAIAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Model\Groups\EnvironmentGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Groups.ExtendedLinkedShutterGroup">
+    <Position X="10.25" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>BEAAIAAAQAABIAAAgAAACAACAAAAAABAAAIAAIAAAAI=</HashCode>
+      <FileName>Model\Groups\ExtendedLinkedShutterGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Groups.HeatingChangeoverGroup">
+    <Position X="12.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Model\Groups\HeatingChangeoverGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Groups.HeatingCoolingDemandBoilerGroup">
+    <Position X="14.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAgAAACAAAAQgAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Model\Groups\HeatingCoolingDemandBoilerGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Groups.HeatingCoolingDemandPumpGroup">
+    <Position X="17" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAEAAAAAAgAAEAAAAAAAAAAAACIA=</HashCode>
+      <FileName>Model\Groups\HeatingCoolingDemandPumpGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Groups.HeatingDehumidifierGroup">
+    <Position X="19.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Model\Groups\HeatingDehumidifierGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Groups.HeatingExternalClockGroup">
+    <Position X="21.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Groups\HeatingExternalClockGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Groups.HeatingFailureAlertRuleGroup">
+    <Position X="23.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIgAAFIAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Model\Groups\HeatingFailureAlertRuleGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Groups.HeatingGroup">
+    <Position X="26" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABECEAhCUAAgQiABAgADAhAOIgAdQCQBgBiBAlCAAAA=</HashCode>
+      <FileName>Model\Groups\HeatingGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Groups.HeatingHumidyLimiterGroup">
+    <Position X="28.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Groups\HeatingHumidyLimiterGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Groups.HeatingTemperatureLimiterGroup">
+    <Position X="30.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Groups\HeatingTemperatureLimiterGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Groups.HotWaterGroup">
+    <Position X="32.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAgIA=</HashCode>
+      <FileName>Model\Groups\HotWaterGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Groups.HumidityWarningRuleGroup">
+    <Position X="35" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAIAAYgAAEAAAAAAAACgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Groups\HumidityWarningRuleGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Groups.InboxGroup">
+    <Position X="37.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Groups\InboxGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Groups.IndoorClimateGroup">
+    <Position X="39.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAAQAAAgAgAAgAAAAA=</HashCode>
+      <FileName>Model\Groups\IndoorClimate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Groups.LockOutProtectionRule">
+    <Position X="41.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Groups\LockOutProtectionRule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Groups.MetaGroup">
+    <Position X="44" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAgIAAEA=</HashCode>
+      <FileName>Model\Groups\MetaGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Groups.OverHeatProtectionRule">
+    <Position X="46.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Groups\OverHeatProtectionRule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Groups.SecurityGroup">
+    <Position X="48.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACFABAAAAAQAAAAAAAAAAAAAAAAAABAAgAAgAAAAA=</HashCode>
+      <FileName>Model\Groups\SecurityGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Groups.SecurityZoneGroup">
+    <Position X="50.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAABACAAAAAAAAAAAAAAAAAAAAAlAggAAgAAAEA=</HashCode>
+      <FileName>Model\Groups\SecurityZoneGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Groups.ShutterProfile">
+    <Position X="53" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAIAAAQAAAAAAAAAAAAAECAAAAAAAAAAIAAIAAgAI=</HashCode>
+      <FileName>Model\Groups\ShutterProfile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Groups.ShutterWindProtectionRule">
+    <Position X="55.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Groups\ShutterWindProtectionRule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Groups.SmokeAlarmDetectionRule">
+    <Position X="57.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Groups\SmokeAlarmDetectionRule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Groups.SwitchGroupBase">
+    <Position X="59.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Model\Groups\SwitchGroupBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Groups.SwitchingProfileGroup">
+    <Position X="62" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAgIA=</HashCode>
+      <FileName>Model\Groups\SwitchingProfileGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Groups.AlarmSwitchingGroup">
+    <Position X="57.5" Y="7.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAgAAAAAAAAACAAAAAAAAAAAAAAAQIAAAA=</HashCode>
+      <FileName>Model\Groups\AlarmSwitchingGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Groups.LinkedSwitchingGroup">
+    <Position X="59.75" Y="7.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Groups\LinkedSwitchingGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Groups.SwitchingGroup">
+    <Position X="65" Y="7.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>DACAIABAQAAAAAAAIAAAAAACAAAAICAAAAIAAIwAAAI=</HashCode>
+      <FileName>Model\Groups\SwitchingGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Groups.ExtendedLinkedSwitchingGroup">
+    <Position X="59.5" Y="9.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>ABAAACAAAAAAgAAAACAACAAAAAAAAAJAAAAAABIAAAQ=</HashCode>
+      <FileName>Model\Groups\ExtendedLinkedSwitchingGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

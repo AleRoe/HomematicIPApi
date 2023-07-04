@@ -32,7 +32,10 @@ namespace AleRoe.HomematicIpApi.Model.Channels
         [JsonProperty("motionSensorSensitivity")]
         public int MotionSensorSensitivity { get; private set; }
 
-        [JsonProperty("motionSensorZones", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("motionSensorZones")]
         public object MotionSensorZones { get; private set; }
+
+        [JsonProperty("channelRole")]
+        public ChannelRole? ChannelRole { get; private set; }
     }
 }

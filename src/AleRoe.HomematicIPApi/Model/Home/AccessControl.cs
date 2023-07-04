@@ -6,7 +6,7 @@ namespace AleRoe.HomematicIpApi.Model.Home
     public class AccessControl
     {
         [JsonProperty("functionalGroups")]
-        public List<object> FunctionalGroups { get; private set; }
+        public FunctionalGroups FunctionalGroups { get; private set; }
 
         [JsonProperty("accessAuthorizationProfileGroups")]
         public List<object> AccessAuthorizationProfileGroups { get; private set; }

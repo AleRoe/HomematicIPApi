@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AleRoe.HomematicIpApi.Model.Channels.FunctionalChannel">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEBCEAAEAAAAAAAAAAAAAAAAAAAAAAAEAEAAAAAAAA=</HashCode>
+      <FileName>Model\Channels\FunctionalChannel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Channels.DeviceBaseChannel">
+    <Position X="1.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UMAgDEQBCAACAAAAAABSQAADAIAIAIMAIABFAIgAJGA=</HashCode>
+      <FileName>Model\Channels\DeviceBaseChannel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Channels.DimmerChannel">
+    <Position X="4" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAIAAAAAAAAAAAAABAEAAIAAAAAAAAAEAAAAAKA=</HashCode>
+      <FileName>Model\Channels\DimmerChannel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Channels.MainsFailureChannel">
+    <Position X="6.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Model\Channels\MainsFailureChannel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Channels.MotionDetectionChannel">
+    <Position X="8.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgACAAAAABAIAABAAAAAAAAAAABAAABAQAAAYA=</HashCode>
+      <FileName>Model\Channels\MotionDetectionChannel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Channels.ShutterContactChannel">
+    <Position X="10.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAABgAAAAAAAA=</HashCode>
+      <FileName>Model\Channels\ShutterContactChannel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Channels.SingleKeyChannel">
+    <Position X="13" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIEAAAAAAAAAAAAAABAAAAAAIBAAAAAAAAI=</HashCode>
+      <FileName>Model\Channels\SingleKeyChannel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Channels.SwitchChannel">
+    <Position X="15.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAECAAAAAAAAABEAAAAAAIA=</HashCode>
+      <FileName>Model\Channels\SwitchChannel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Channels.AccessControllerChannel">
+    <Position X="0.5" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAQAAAEAAAAA=</HashCode>
+      <FileName>Model\Channels\AccessControllerChannel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Channels.DeviceSabotageChannel">
+    <Position X="2.75" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Model\Channels\DeviceSabotageChannel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AleRoe.HomematicIpApi.Model.Channels.SwitchMeasuringChannel">
+    <Position X="15.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAEAAQAAAAAAAAA=</HashCode>
+      <FileName>Model\Channels\SwitchMeasuringChannel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

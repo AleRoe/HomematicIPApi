@@ -51,5 +51,8 @@ namespace AleRoe.HomematicIpApi.Model.Groups
         [JsonProperty("lightSceneId")]
         public Guid? LightSceneId { get; private set; }
 
+        [JsonProperty("supportedOptionalFeatures")]
+        public SupportedOptionalFeatures SupportedOptionalFeatures { get; private set; }
+
     }
 }

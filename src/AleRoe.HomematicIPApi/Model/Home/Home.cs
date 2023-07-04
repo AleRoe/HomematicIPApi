@@ -22,7 +22,7 @@ namespace AleRoe.HomematicIpApi.Model.Home
         [JsonProperty("currentAPVersion")] 
         public string CurrentAPVersion { get; private set; }
 
-        [JsonProperty("availableAPVersion", NullValueHandling= NullValueHandling.Include)] 
+        [JsonProperty("availableAPVersion")] 
         public string AvailableAPVersion { get; private set; }
 
         [JsonProperty("timeZoneId")] 
@@ -34,14 +34,14 @@ namespace AleRoe.HomematicIpApi.Model.Home
         [JsonProperty("pinAssigned")] 
         public bool PinAssigned { get; private set; }
 
-        [JsonProperty("isLiveUpdateSupported")]
-        public bool? IsLiveUpdateSupported { get; private set; }
+        [JsonProperty("liveUpdateSupported")]
+        public bool LiveUpdateSupported { get; private set; }
 
         [JsonProperty("dutyCycle")] 
-        public double? DutyCycle { get; private set; }
+        public double DutyCycle { get; private set; }
 
-        [JsonProperty("carrierSense", NullValueHandling = NullValueHandling.Include)] 
-        public double? CarrierSense { get; private set; }
+        [JsonProperty("carrierSense")] 
+        public double CarrierSense { get; private set; }
 
         [JsonProperty("updateState")] 
         public LiveUpdateState UpdateState { get; private set; }
@@ -65,7 +65,7 @@ namespace AleRoe.HomematicIpApi.Model.Home
         [JsonProperty("inboxGroup")] 
         public Guid InboxGroup { get; private set; }
 
-        [JsonProperty("apExchangeClientId", NullValueHandling = NullValueHandling.Include)] 
+        [JsonProperty("apExchangeClientId")] 
         public object ApExchangeClientId { get; private set; }
 
         [JsonProperty("apExchangeState")] 
@@ -83,18 +83,15 @@ namespace AleRoe.HomematicIpApi.Model.Home
         [JsonProperty("liveOTAUStatus")] 
         public LiveOTAUStatus LiveOTAUStatus { get; private set; }
 
-        [JsonProperty("liveUpdateSupported")] 
-        public bool? LiveUpdateSupported { get; private set; }
-
         [JsonProperty("id")] 
         public string Id { get; private set; }
 
         [JsonProperty("accessPointUpdateStates")]
         public AccessPointUpdateStatesDictionary AccessPointUpdateStates { get; private set; }
 
-        [JsonProperty("pinChangeTimestamp", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("pinChangeTimestamp")]
         [JsonConverter(typeof(UnixTimestampConverter))]
-        public DateTime PinChangeTimestamp { get; private set; }
+        public DateTime? PinChangeTimestamp { get; private set; }
 
         [JsonProperty("pinChangeClientLabel")]
         public string PinChangeClientLabel { get; private set; }

@@ -7,7 +7,7 @@ namespace AleRoe.HomematicIpApi.Model.Devices
 {
     [DeviceType(DeviceType.MOTION_DETECTOR_INDOOR)]
     [FunctionalChannelType(FunctionalChannelType.MOTION_DETECTION_CHANNEL)]
-    public class MotionDetectorIndoor : SabotageDeviceBase
+    public class MotionDetectorIndoor : Device
     {
         [JsonIgnore]
         public double? CurrentIllumination { get; private set; }
@@ -30,8 +30,7 @@ namespace AleRoe.HomematicIpApi.Model.Devices
         [OnDeserialized]
         internal new void OnDeserializedMethod(StreamingContext context)
         {
-            this.GetFunctionalChannel<MotionDetectionChannel>()
-                .CopyTo(this);
+            this.GetFunctionalChannel<MotionDetectionChannel>().CopyTo(this);
         }
     }
 }

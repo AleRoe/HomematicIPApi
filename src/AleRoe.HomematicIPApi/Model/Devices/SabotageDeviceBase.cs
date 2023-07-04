@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 namespace AleRoe.HomematicIpApi.Model.Devices
 {
     [FunctionalChannelType(FunctionalChannelType.DEVICE_SABOTAGE)]
-    public abstract class SabotageDeviceBase : DeviceBase
+    public abstract class SabotageDeviceBase : Device
     {
         [JsonIgnore]
         public bool? Sabotage { get; set; }

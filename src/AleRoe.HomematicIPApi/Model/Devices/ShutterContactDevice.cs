@@ -8,17 +8,15 @@ namespace AleRoe.HomematicIpApi.Model.Devices
     [DeviceType(DeviceType.SHUTTER_CONTACT)]
     [FunctionalChannelType(FunctionalChannelType.SHUTTER_CONTACT_CHANNEL)]
     [DataContract]
-    public class ShutterContactDevice : SabotageDeviceBase
+    public class ShutterContactDevice : Device
     {
-        [JsonProperty("windowState")]
+        [JsonIgnore]
         public WindowState? WindowState { get; private set; } = Model.WindowState.CLOSED;
-
         
         [OnDeserialized]
         internal new void OnDeserializedMethod(StreamingContext context)
         {
-            this.GetFunctionalChannel<ShutterContactChannel>()
-                .CopyTo<ShutterContactDevice>(this);
+            this.GetFunctionalChannel<ShutterContactChannel>().CopyTo(this);
         }
     }
 }

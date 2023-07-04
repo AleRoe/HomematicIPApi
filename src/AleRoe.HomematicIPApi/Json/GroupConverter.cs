@@ -9,8 +9,17 @@ using AleRoe.HomematicIpApi.Model;
 
 namespace AleRoe.HomematicIpApi.Json
 {
+    /// <summary>
+    /// A <see cref="JsonConverter{T}"/> class used to deserialize group definitions.
+    /// </summary>
+    /// <remarks>
+    /// This converter relies on the group classes being decorated with <see cref="GroupTypeAttribute"/> attribute in order to instantiate the concrete type.
+    /// </remarks>
+    /// <seealso cref="Newtonsoft.Json.JsonConverter{IGroup}" />
+    /// <inheritdoc/>
     internal class GroupConverter : ModelConverter<IGroup>
     {
+        /// <inheritdoc/>
         public override IGroup ReadJson(JsonReader reader, Type objectType, [AllowNull] IGroup existingValue, bool hasExistingValue, JsonSerializer serializer)
         {
             if (reader.TokenType == JsonToken.Null)
