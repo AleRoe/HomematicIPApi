@@ -70,9 +70,11 @@ namespace AleRoe.HomematicIpApi.Tests
             var config = new HomematicIpConfiguration() {AccessPointId = AccessPoint, AuthToken = AuthToken };
             using var httpClient = new HttpClient();
             var client = new HomematicIpClient(config, httpClient);
+            await client.InitializeAsync(CancellationToken.None);
+            var events = client.PushEventReceived.Subscribe(msg => { });
+            
             Assert.DoesNotThrow(client.Dispose);
             Assert.IsNotNull(client.httpClient);
-
             await Task.CompletedTask;
         }
     }

@@ -6,7 +6,6 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Formatting;
@@ -37,6 +36,9 @@ namespace AleRoe.HomematicIpApi
         private const string GetHostUri = @"https://lookup.homematic.com:48335/getHost";
         private const string CLIENTAUTH = "CLIENTAUTH";
         private const string AUTHTOKEN = "AUTHTOKEN";
+        private const string MEDIATYPE = "application/json";
+        private const string VERSION = "Version";
+        private const string VERSIONNUMBER = "12";
 
         private readonly HomematicIpConfiguration homematicIpConfiguration;
         private Hosts hosts;
@@ -71,6 +73,10 @@ namespace AleRoe.HomematicIpApi
         /// </summary>
         public IObservable<PushEventArgs> PushEventReceived => messageReceivedSubject.AsObservable();
 
+        /// <summary>
+        /// The <see cref="JsonSerializerSettings"/> used for serialization/desierialization
+        /// </summary>
+        public JsonSerializerSettings JsonSerializerSettings { get; private set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="HomematicIpClient"/> class with the specified <see cref="HomematicIpConfiguration"/> configuration.
@@ -92,6 +98,14 @@ namespace AleRoe.HomematicIpApi
         {
             this.homematicIpConfiguration = homematicIpConfiguration ?? throw new ArgumentNullException(nameof(homematicIpConfiguration));
             this.httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
+            this.JsonSerializerSettings = new JsonSerializerSettings 
+            { 
+                ContractResolver = new CamelCasePropertyNamesContractResolver(), 
+                TraceWriter = new DiagnosticsTraceWriter(), 
+                MissingMemberHandling = MissingMemberHandling.Error, 
+                NullValueHandling = NullValueHandling.Include
+            };
+            this.JsonSerializerSettings.Error += SerializerError;
         }
 
 
@@ -112,18 +126,18 @@ namespace AleRoe.HomematicIpApi
             }
             else
             {
-                var factory = new Func<ClientWebSocket>(() =>
+                var factory = new Func<ClientWebSocket>(() => 
                 {
                     var client = new ClientWebSocket();
                     client.Options.SetRequestHeader(AUTHTOKEN, homematicIpConfiguration.AuthToken);
                     client.Options.SetRequestHeader(CLIENTAUTH, homematicIpConfiguration.ClientAuthToken);
                     return client;
-
                 });
 
                 socketClient = new WebsocketClient(new Uri(hosts.WebSocketUrl), factory)
                 {
-                    ReconnectTimeout = TimeSpan.FromMinutes(5)
+                    ReconnectTimeout = homematicIpConfiguration.IdleReconnectTimout,
+                    IsReconnectionEnabled = homematicIpConfiguration.ReconnectionEnabled
                 };
 
                 messageSubscription = socketClient.MessageReceived
@@ -141,10 +155,6 @@ namespace AleRoe.HomematicIpApi
                 await socketClient.StartOrFail().ConfigureAwait(false);
             }
         }
-
-        private JsonSerializerSettings JsonSerializerSettings { get; } = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver(), TraceWriter = new DiagnosticsTraceWriter(), MissingMemberHandling = MissingMemberHandling.Error, NullValueHandling = NullValueHandling.Include};
-
-        
 
         public async Task<IEnumerable<IDevice>> GetDevicesAsync(CancellationToken cancellationToken)
         {
@@ -228,39 +238,31 @@ namespace AleRoe.HomematicIpApi
 
         internal async Task<TResponse> PostRequestAsync<TResponse, TRequest>(RequestUri requestUri, TRequest value, CancellationToken cancellationToken)
         {
-            if (hosts is null)
-            {
-                throw new InvalidOperationException("Missing Hosts data. Make sure to call Initialize().");
-            }
+            if (hosts is null) throw new InvalidOperationException("Missing Hosts data. Make sure to call Initialize().");
 
             var uri = new Uri(hosts.GetRestUri(), requestUri.ToString());
-            using var request = CreateJsonRequestMessage(value, HttpMethod.Post, uri);                  
+            var settings = JsonSerializerSettings;
+
+            using var request = CreateJsonRequestMessage(value, HttpMethod.Post, uri, settings, Encoding.UTF8);                  
             using var response = await httpClient.SendAsync(request, cancellationToken).ConfigureAwait(false); 
                 
             response.EnsureSuccessStatusCode();
 
-            var settings = JsonSerializerSettings;
             settings.Context = new StreamingContext(StreamingContextStates.Other, this);
-            settings.Error += SerializerError;
             var formatters = new List<MediaTypeFormatter>{new DefaultJsonMediaTypeFormatter(settings)};
 
             return await response.Content.ReadAsAsync<TResponse>(formatters, cancellationToken).ConfigureAwait(false);
-
         }
 
-        private HttpRequestMessage CreateJsonRequestMessage<T>(T value, HttpMethod method, Uri uri)
+        private HttpRequestMessage CreateJsonRequestMessage<T>(T value, HttpMethod method, Uri uri, JsonSerializerSettings settings, Encoding encoding)
         {
-            var content = new StringContent(JsonConvert.SerializeObject(value), Encoding.UTF8, "application/json");
-            var request = new HttpRequestMessage(method, uri)
-                {
-                    Content = content,
-                };
-                request.Headers.Add("VERSION", "12");
-                request.Headers.Add(CLIENTAUTH, homematicIpConfiguration.ClientAuthToken);
-                request.Headers.Add(AUTHTOKEN, homematicIpConfiguration.AuthToken); 
+            var content = new StringContent(JsonConvert.SerializeObject(value, settings), encoding, MEDIATYPE);
+            var request = new HttpRequestMessage(method, uri) {Content = content};
+            request.Headers.Add(VERSION, VERSIONNUMBER);
+            request.Headers.Add(CLIENTAUTH, homematicIpConfiguration.ClientAuthToken);
+            request.Headers.Add(AUTHTOKEN, homematicIpConfiguration.AuthToken); 
                 
-                return request;
-            
+            return request;
         }
 
         private void SerializerError(object sender, ErrorEventArgs args)
@@ -286,7 +288,6 @@ namespace AleRoe.HomematicIpApi
             {
                 if (disposing)
                 {
-                    Debug.WriteLine("Disposing");
                     messageSubscription?.Dispose();
                     connectSubscription?.Dispose();
                     disconnectSubscription?.Dispose();
