@@ -33,7 +33,7 @@ namespace AleRoe.HomematicIpApi.Tests.Extensions
             await client.InitializeAsync(CancellationToken.None);
             var result = await client.GetDevicesAsync(CancellationToken.None);
             var light = result.OfType<SwitchDeviceBase>().First();
-            await Task.Delay(1000);
+            //await Task.Delay(1000);
             await light.ToggleStateAsync();
             var expected = await client.GetDeviceAsync<SwitchDeviceBase>(light.Id);
 

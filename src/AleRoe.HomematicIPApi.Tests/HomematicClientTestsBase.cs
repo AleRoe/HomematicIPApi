@@ -32,7 +32,7 @@ namespace AleRoe.HomematicIpApi.Tests
         [SetUp]
         protected virtual async Task TestSetup()
         {
-            await Task.Delay(2000);
+            await Task.Delay(1000);
         }
 
         [OneTimeTearDown]

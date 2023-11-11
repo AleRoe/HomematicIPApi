@@ -4,14 +4,16 @@
   "index": 0,
   "groupIndex": 0,
   "functionalChannelType": "DEVICE_BASE",
-  "groups": [ "7b9cd387-866e-4f72-9516-202df2941694" ],
+  "groups": [
+    "7b9cd387-866e-4f72-9516-202df2941694"
+  ],
   "unreach": false,
   "lowBat": null,
   "routerModuleEnabled": true,
   "multicastRoutingEnabled": false,
   "routerModuleSupported": true,
-  "rssiDeviceValue": -76,
-  "rssiPeerValue": -93,
+  "rssiDeviceValue": -74,
+  "rssiPeerValue": -87,
   "configPending": false,
   "dutyCycle": false,
   "deviceOverloaded": false,
@@ -45,9 +47,11 @@
     "IOptionalFeatureDeviceErrorLockJammed": false,
     "IFeatureProfilePeriodLimit": true,
     "IFeatureDeviceCoProUpdate": false,
+    "IFeatureDeviceSensorCommunicationError": false,
     "IOptionalFeatureDefaultLinkedGroup": false,
     "IFeatureDevicePowerFailure": false,
     "IFeatureShortCircuitDataLine": false,
+    "IFeatureDeviceSensorError": false,
     "IOptionalFeatureDeviceOperationMode": false,
     "IFeatureDeviceCommunicationError": false,
     "IFeatureDeviceUndervoltage": false,
@@ -64,6 +68,8 @@
   "temperatureHumiditySensorCommunicationError": null,
   "particulateMatterSensorError": null,
   "particulateMatterSensorCommunicationError": null,
+  "sensorError": null,
+  "sensorCommunicationError": null,
   "displayContrast": null,
   "lockJammed": null,
   "deviceDriveError": null,
@@ -71,5 +77,6 @@
   "deviceCommunicationError": null,
   "daliBusState": null,
   "deviceOperationMode": null,
-  "defaultLinkedGroup": []
+  "defaultLinkedGroup": [
+  ]
 }

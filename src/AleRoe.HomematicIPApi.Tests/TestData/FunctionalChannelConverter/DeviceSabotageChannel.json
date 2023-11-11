@@ -4,7 +4,9 @@
   "index": 0,
   "groupIndex": 0,
   "functionalChannelType": "DEVICE_SABOTAGE",
-  "groups": [ "7b9cd387-866e-4f72-9516-202df2941694" ],
+  "groups": [
+    "7b9cd387-866e-4f72-9516-202df2941694"
+  ],
   "unreach": null,
   "lowBat": null,
   "routerModuleEnabled": false,
@@ -45,9 +47,11 @@
     "IOptionalFeatureDeviceErrorLockJammed": false,
     "IFeatureProfilePeriodLimit": false,
     "IFeatureDeviceCoProUpdate": false,
+    "IFeatureDeviceSensorCommunicationError": false,
     "IOptionalFeatureDefaultLinkedGroup": false,
     "IFeatureDevicePowerFailure": false,
     "IFeatureShortCircuitDataLine": false,
+    "IFeatureDeviceSensorError": false,
     "IOptionalFeatureDeviceOperationMode": false,
     "IFeatureDeviceCommunicationError": false,
     "IFeatureDeviceUndervoltage": false,
@@ -64,6 +68,8 @@
   "temperatureHumiditySensorCommunicationError": null,
   "particulateMatterSensorError": null,
   "particulateMatterSensorCommunicationError": null,
+  "sensorError": null,
+  "sensorCommunicationError": null,
   "displayContrast": null,
   "lockJammed": null,
   "deviceDriveError": null,
@@ -71,6 +77,7 @@
   "deviceCommunicationError": null,
   "daliBusState": null,
   "deviceOperationMode": null,
-  "defaultLinkedGroup": [],
+  "defaultLinkedGroup": [
+  ],
   "sabotage": null
 }
