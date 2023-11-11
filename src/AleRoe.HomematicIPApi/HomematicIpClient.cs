@@ -2,6 +2,8 @@
 using AleRoe.HomematicIpApi.Model.Devices;
 using AleRoe.HomematicIpApi.Model.Groups;
 using AleRoe.HomematicIpApi.Rpc;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System;
@@ -31,8 +33,9 @@ namespace AleRoe.HomematicIpApi
     public class HomematicIpClient : IDisposable, IHomematicRpcService
     {
         private bool disposedValue;
-        private readonly bool disposeHttpClient;
-        
+        private readonly bool disposeHttpClient = true;
+        private readonly bool disposeLoggerFactory = true;
+
         private const string GetHostUri = @"https://lookup.homematic.com:48335/getHost";
         private const string CLIENTAUTH = "CLIENTAUTH";
         private const string AUTHTOKEN = "AUTHTOKEN";
@@ -45,6 +48,7 @@ namespace AleRoe.HomematicIpApi
 
         internal readonly HttpClient httpClient;
         internal WebsocketClient socketClient;
+        internal readonly ILoggerFactory loggerFactory;
 
         private readonly Subject<PushEventArgs> messageReceivedSubject = new();
         private IDisposable messageSubscription;
@@ -83,10 +87,7 @@ namespace AleRoe.HomematicIpApi
         /// </summary>
         /// <param name="homematicIpConfiguration">The <see cref="HomematicIpConfiguration"/> to use for sending requests.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public HomematicIpClient(HomematicIpConfiguration homematicIpConfiguration) : this(homematicIpConfiguration, new HttpClient()) 
-        {
-            disposeHttpClient = true;    
-        }
+        public HomematicIpClient(HomematicIpConfiguration homematicIpConfiguration) : this(homematicIpConfiguration, new HttpClient(), new NullLoggerFactory()) {}
 
         /// <summary>
         /// Initializes a new instance of the <see cref="HomematicIpClient"/> class with the specified <see cref="HomematicIpConfiguration"/> configuration and <see cref="HttpClient"/> instance.
@@ -94,16 +95,41 @@ namespace AleRoe.HomematicIpApi
         /// <param name="homematicIpConfiguration">The <see cref="HomematicIpConfiguration"/> to use for sending requests.</param>
         /// <param name="httpClient">The <see cref="HttpClient"/> instance to use for sending requests. The instance will not be disposed.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public HomematicIpClient(HomematicIpConfiguration homematicIpConfiguration, HttpClient httpClient)
+        public HomematicIpClient(HomematicIpConfiguration homematicIpConfiguration, HttpClient httpClient) : this(homematicIpConfiguration, httpClient, new NullLoggerFactory()) 
+        {
+            disposeHttpClient = false;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HomematicIpClient"/> class with the specified <see cref="HomematicIpConfiguration"/> configuration and <see cref="ILoggerFactory"/> instance.
+        /// </summary>
+        /// <param name="homematicIpConfiguration">The <see cref="HomematicIpConfiguration"/> to use for sending requests.</param>
+        /// <param name="loggerFactory">The <see cref="ILoggerFactory"/> instance to use for logger creation. The instance will not be disposed.</param>
+        /// <exception cref="ArgumentNullException"></exception>
+        public HomematicIpClient(HomematicIpConfiguration homematicIpConfiguration, ILoggerFactory loggerFactory) : this(homematicIpConfiguration, new HttpClient(), loggerFactory) 
+        {
+            disposeLoggerFactory = false;
+        }
+
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HomematicIpClient"/> class with the specified <see cref="HomematicIpConfiguration"/> configuration and <see cref="HttpClient"/> and <see cref="ILoggerFactory"/> instances.
+        /// </summary>
+        /// <param name="homematicIpConfiguration">The <see cref="HomematicIpConfiguration"/> to use for sending requests.</param>
+        /// <param name="httpClient">The <see cref="HttpClient"/> instance to use for sending requests. The instance will not be disposed.</param>
+        /// <param name="loggerFactory">The <see cref="ILoggerFactory"/> instance to use for logger creation. The instance will not be disposed.</param>
+        /// <exception cref="ArgumentNullException"></exception>
+        public HomematicIpClient(HomematicIpConfiguration homematicIpConfiguration, HttpClient httpClient, ILoggerFactory loggerFactory)
         {
             this.homematicIpConfiguration = homematicIpConfiguration ?? throw new ArgumentNullException(nameof(homematicIpConfiguration));
             this.httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
+            this.loggerFactory = loggerFactory ?? throw new ArgumentNullException(nameof(loggerFactory));
             this.JsonSerializerSettings = new JsonSerializerSettings 
             { 
                 ContractResolver = new CamelCasePropertyNamesContractResolver(), 
                 TraceWriter = new DiagnosticsTraceWriter(), 
                 MissingMemberHandling = MissingMemberHandling.Error, 
-                NullValueHandling = NullValueHandling.Include
+                NullValueHandling = NullValueHandling.Include,
             };
             this.JsonSerializerSettings.Error += SerializerError;
         }
@@ -134,7 +160,9 @@ namespace AleRoe.HomematicIpApi
                     return client;
                 });
 
-                socketClient = new WebsocketClient(new Uri(hosts.WebSocketUrl), factory)
+                var logger = loggerFactory.CreateLogger<WebsocketClient>();
+
+                socketClient = new WebsocketClient(new Uri(hosts.WebSocketUrl), logger, factory)
                 {
                     ReconnectTimeout = homematicIpConfiguration.IdleReconnectTimout,
                     IsReconnectionEnabled = homematicIpConfiguration.ReconnectionEnabled
@@ -288,6 +316,7 @@ namespace AleRoe.HomematicIpApi
             {
                 if (disposing)
                 {
+                    JsonSerializerSettings.Error -= SerializerError;
                     messageSubscription?.Dispose();
                     connectSubscription?.Dispose();
                     disconnectSubscription?.Dispose();
@@ -295,9 +324,10 @@ namespace AleRoe.HomematicIpApi
                     socketClient?.Dispose();
 
                     if (disposeHttpClient)
-                    {
                         httpClient?.Dispose();
-                    }
+
+                    if (disposeLoggerFactory)
+                        loggerFactory?.Dispose();
                 }
                 disposedValue = true;
             }

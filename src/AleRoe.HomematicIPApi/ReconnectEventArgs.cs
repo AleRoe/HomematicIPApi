@@ -1,6 +1,5 @@
 ﻿using System;
 using Websocket.Client;
-using Websocket.Client.Models;
 
 namespace AleRoe.HomematicIpApi
 {

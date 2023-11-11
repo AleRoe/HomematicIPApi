@@ -7,7 +7,7 @@
     <Company>AleRoe</Company>
     <Copyright>Alexander Röthinger 2022</Copyright>
     <PackageOutputPath>C:\Users\Alexander\Source\LocalPackages</PackageOutputPath>
-    <Version>2.1.4</Version>
+    <Version>2.1.7</Version>
     <AssemblyName>AleRoe.HomematicIpApi</AssemblyName>
     <RootNamespace>AleRoe.HomematicIpApi</RootNamespace>
     <AssemblyVersion>2.1.0.0</AssemblyVersion>
@@ -26,17 +26,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="HomematicListener.cs" />
-    <Compile Remove="HomematicRpcService.cs" />
-    <Compile Remove="JsonClient.cs" />
-    <Compile Remove="Model\Devices\DeviceBase.cs" />
-    <Compile Remove="Model\Devices\SabotageDeviceBase.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.9" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="6.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="Websocket.Client" Version="4.6.1" />
+    <PackageReference Include="Websocket.Client" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
