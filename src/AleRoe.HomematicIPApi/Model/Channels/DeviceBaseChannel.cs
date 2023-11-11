@@ -110,5 +110,11 @@ namespace AleRoe.HomematicIpApi.Model.Channels
 
         [JsonProperty("defaultLinkedGroup")]
         public object DefaultLinkedGroup { get; private set; }
+
+        [JsonProperty("sensorError")]
+        public object SensorError { get; private set; }
+
+        [JsonProperty("sensorCommunicationError")]
+        public object SensorCommunicationError { get; private set; }
     }
 }

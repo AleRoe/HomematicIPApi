@@ -18,5 +18,8 @@ namespace AleRoe.HomematicIpApi.Model.Home
 
         [JsonProperty("ACCESS_CONTROL")]
         public AccessControl AccessControl { get; private set; }
+
+        [JsonProperty("ENERGY")]
+        public Energy Energy { get; private set; }
     }
 }

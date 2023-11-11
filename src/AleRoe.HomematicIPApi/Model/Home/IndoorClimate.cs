@@ -47,5 +47,11 @@ namespace AleRoe.HomematicIpApi.Model.Home
 
         [JsonProperty("cooling")]
         public object Cooling { get; private set; }
+
+        [JsonProperty("demandControlledVentilationGroups")]
+        public object DemandControlledVentilationGroups { get; private set; }
+
+        [JsonProperty("demandControlledVentilationSpecificGroups")]
+        public object DemandControlledVentilationSpecificGroups { get; private set; }
     }
 }

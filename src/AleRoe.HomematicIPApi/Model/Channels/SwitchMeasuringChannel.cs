@@ -14,7 +14,8 @@ namespace AleRoe.HomematicIpApi.Model.Channels
         [JsonProperty("energyMeterMode")]
         public EnergyMeterMode EnergyMeterMode { get; private set; }
 
-        
+        [JsonProperty("currentDetectionBehavior")]
+        public CurrentDetectionBehavior CurrentDetectionBehavior { get; private set; }
 
 
 

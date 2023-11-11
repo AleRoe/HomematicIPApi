@@ -37,5 +37,8 @@ namespace AleRoe.HomematicIpApi.Model.Channels
 
         [JsonProperty("channelRole")]
         public ChannelRole? ChannelRole { get; private set; }
+
+        [JsonProperty("motionSensorZoneSensitivityMap")]
+        public object MotionSensorZoneSensitivityMap { get; private set; }
     }
 }

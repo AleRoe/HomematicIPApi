@@ -5,9 +5,9 @@ namespace AleRoe.HomematicIpApi.Model.Channels
     [FunctionalChannelType(FunctionalChannelType.ACCESS_CONTROLLER_CHANNEL)]
     public class AccessControllerChannel : DeviceBaseChannel
     {
-        [JsonProperty("accessPointPriority")]
-        public int AccessPointPriority { get; private set; }
-        
+        //[JsonProperty("accessPointPriority")]
+        //public int AccessPointPriority { get; private set; }
+
         [JsonProperty("carrierSenseLevel")]
         public double CarrierSenseLevel { get; private set; }
 
@@ -16,5 +16,8 @@ namespace AleRoe.HomematicIpApi.Model.Channels
 
         [JsonProperty("signalBrightness")]
         public double SignalBrightness { get; private set; }
+
+        [JsonProperty("filteredMulticastRoutingEnabled")]
+        public bool FilteredMulticastRoutingEnabled { get; private set; }
     }
 }

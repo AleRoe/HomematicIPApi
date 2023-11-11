@@ -1,9 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AleRoe.HomematicIpApi.Model.Groups
 {
@@ -24,5 +19,6 @@ namespace AleRoe.HomematicIpApi.Model.Groups
 
         [JsonProperty("sabotage")]
         public bool? Sabotage { get; private set; }
+
     }
 }
