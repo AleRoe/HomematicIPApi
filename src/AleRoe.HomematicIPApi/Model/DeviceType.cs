@@ -63,6 +63,7 @@ namespace AleRoe.HomematicIpApi.Model
         WEATHER_SENSOR_PLUS,
         WEATHER_SENSOR_PRO,
         HOME_CONTROL_ACCESS_POINT,
-        BLIND_MODULE
+        BLIND_MODULE,
+        EXTERNAL
     }
 }
