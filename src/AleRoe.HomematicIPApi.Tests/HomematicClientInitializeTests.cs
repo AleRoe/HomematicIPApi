@@ -52,7 +52,7 @@ namespace AleRoe.HomematicIpApi.Tests
             Assert.DoesNotThrowAsync(async () => await client.InitializeAsync(CancellationToken.None));
             var socket = client.socketClient.NativeClient;
             Assert.DoesNotThrowAsync(async () => await client.InitializeAsync(CancellationToken.None));
-            Assert.AreNotSame(client.socketClient.NativeClient, socket);
+            Assert.That(client.socketClient.NativeClient, Is.Not.SameAs(socket));
             await Task.CompletedTask;
         }
 

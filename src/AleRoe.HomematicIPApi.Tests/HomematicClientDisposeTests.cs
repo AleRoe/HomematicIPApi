@@ -40,7 +40,7 @@ namespace AleRoe.HomematicIpApi.Tests
             var events = client.PushEventReceived.Subscribe(msg => { });
 
             Assert.DoesNotThrow(client.Dispose);
-            Assert.IsNotNull(client.httpClient);
+            Assert.That(client.httpClient, Is.Not.Null);
             await Task.CompletedTask;
         }
 
@@ -55,7 +55,7 @@ namespace AleRoe.HomematicIpApi.Tests
             var events = client.PushEventReceived.Subscribe(msg => { });
 
             Assert.DoesNotThrow(client.Dispose);
-            Assert.IsNotNull(client.loggerFactory);
+            Assert.That(client.loggerFactory, Is.Not.Null);
             await Task.CompletedTask;
         }
     }

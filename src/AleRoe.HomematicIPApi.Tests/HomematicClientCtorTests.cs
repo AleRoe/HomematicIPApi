@@ -2,7 +2,6 @@
 using NUnit.Framework;
 using System;
 using System.Net.Http;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace AleRoe.HomematicIpApi.Tests
@@ -40,7 +39,7 @@ namespace AleRoe.HomematicIpApi.Tests
                 using var httpClient = new HttpClient();
                 var config = new HomematicIpConfiguration() { AccessPointId = AccessPoint, AuthToken = AuthToken };
                 using var client = new HomematicIpClient(config, httpClient);
-                Assert.AreSame(httpClient, client.httpClient);
+                Assert.That(httpClient, Is.SameAs(client.httpClient));
             });
             await Task.CompletedTask;
         }
@@ -53,7 +52,7 @@ namespace AleRoe.HomematicIpApi.Tests
                 using var loggerFactory = new NullLoggerFactory();
                 var config = new HomematicIpConfiguration() { AccessPointId = AccessPoint, AuthToken = AuthToken };
                 using var client = new HomematicIpClient(config, loggerFactory);
-                Assert.AreSame(loggerFactory, client.loggerFactory);
+                Assert.That(loggerFactory, Is.SameAs(client.loggerFactory));
             });
             await Task.CompletedTask;
         }
@@ -67,8 +66,8 @@ namespace AleRoe.HomematicIpApi.Tests
                 using var httpClient = new HttpClient();
                 var config = new HomematicIpConfiguration() { AccessPointId = AccessPoint, AuthToken = AuthToken };
                 using var client = new HomematicIpClient(config, httpClient, loggerFactory);
-                Assert.AreSame(loggerFactory, client.loggerFactory);
-                Assert.AreSame(httpClient, client.httpClient);
+                Assert.That(loggerFactory, Is.SameAs(client.loggerFactory));
+                Assert.That(httpClient, Is.SameAs(client.httpClient));
             });
             await Task.CompletedTask;
         }

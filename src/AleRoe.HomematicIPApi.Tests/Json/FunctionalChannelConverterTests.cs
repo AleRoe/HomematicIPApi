@@ -29,7 +29,7 @@ namespace AleRoe.HomematicIpApi.Tests.Json
             
             JsonAssert.Deserialize<IFunctionalChannel>(json, out var result);
             
-            Assert.IsInstanceOf(type, result);
+            Assert.That(result, Is.InstanceOf(type));
 
             JsonAssert.Serialize(result, out var jsonResult);
             JsonAssert.AreDeepEqual(json, jsonResult);

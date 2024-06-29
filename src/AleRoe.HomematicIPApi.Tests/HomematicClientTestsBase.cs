@@ -1,8 +1,11 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using NUnit.Framework;
 using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using AleRoe.Extensions.Logging.NUnit;
 
 namespace AleRoe.HomematicIpApi.Tests
 {
@@ -14,6 +17,7 @@ namespace AleRoe.HomematicIpApi.Tests
     {
         protected string AccessPoint;
         protected string AuthToken;
+        protected IServiceProvider ServiceProvider;
 
         [OneTimeSetUp]
         protected virtual void FixtureSetup()
@@ -23,10 +27,15 @@ namespace AleRoe.HomematicIpApi.Tests
                 .AddUserSecrets<HomematicClientTestsBase>();
             var config = builder.Build();
 
+            ServiceProvider = new ServiceCollection()
+                .AddLogging(builder => 
+                    { 
+                        //builder.AddNUnit();
+                    })
+                .BuildServiceProvider();
+
             this.AccessPoint = config["accessPoint"] ?? throw new ArgumentNullException("AccessPoint","Please check UserSecrets.");
             this.AuthToken = config["authToken"] ?? throw new ArgumentNullException("AuthToken", "Please check UserSecrets.");
-
-            Trace.Listeners.Add(new ConsoleTraceListener());
         }
 
         [SetUp]

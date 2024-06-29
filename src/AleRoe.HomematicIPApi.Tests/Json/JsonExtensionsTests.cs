@@ -34,7 +34,7 @@ namespace AleRoe.HomematicIpApi.Tests.Json
             var result = stream.Deserialize<TestClass>();
             JsonAssert.AreDeepEqual(JToken.FromObject(test), JToken.FromObject(result));
 
-            Assert.IsFalse(stream.CanRead);
+            Assert.That(stream.CanRead, Is.False);
 
         }
 
@@ -50,7 +50,7 @@ namespace AleRoe.HomematicIpApi.Tests.Json
             var result = stream.Deserialize<TestClass>(leaveOpen: true);
             JsonAssert.AreDeepEqual(JToken.FromObject(test), JToken.FromObject(result));
 
-            Assert.IsTrue(stream.CanRead);
+            Assert.That(stream.CanRead, Is.True);
 
         }
 

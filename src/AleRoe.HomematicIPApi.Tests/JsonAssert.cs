@@ -40,7 +40,7 @@ namespace AleRoe.HomematicIpApi.Tests
             };
 
             result = JsonConvert.DeserializeObject(json, type, settings);
-            Assert.IsFalse(hasErrors, "Serialization errors occured.");
+            Assert.That(hasErrors, Is.False, "Serialization errors occured.");
         }
 
         public static void Deserialize(string json, Type type, JsonConverter[] converters, out object result)
@@ -83,7 +83,7 @@ namespace AleRoe.HomematicIpApi.Tests
             };
             
             result = JsonConvert.SerializeObject(value, Formatting.Indented, settings);
-            Assert.IsFalse(hasErrors, "Serialization errors occured.");
+            Assert.That(hasErrors, Is.False, "Serialization errors occured.");
         }
 
         public static void Serialize(object value, out string result)

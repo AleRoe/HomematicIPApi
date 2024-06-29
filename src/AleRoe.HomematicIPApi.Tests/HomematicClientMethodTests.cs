@@ -1,5 +1,7 @@
 ﻿using AleRoe.HomematicIpApi.Model.Devices;
 using AleRoe.HomematicIpApi.Rpc;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using NUnit.Framework;
 using System;
 using System.Linq;
@@ -18,14 +20,15 @@ namespace AleRoe.HomematicIpApi.Tests
         public async Task Init()
         {
             var config = new HomematicIpConfiguration() {AccessPointId = AccessPoint, AuthToken = AuthToken };
-            client = new HomematicIpClient(config);
+            var loggerFactory = ServiceProvider.GetRequiredService<ILoggerFactory>();
+            client = new HomematicIpClient(config,loggerFactory);
 
             await client.InitializeAsync(CancellationToken.None);
             
             client.OnSerializerError += (s, e) =>
             {
-                TestContext.Out.WriteLine(e.ErrorContext.Error.ToString());
-                TestContext.Out.WriteLine();
+                TestContext.Out.WriteLine("Test " + e.ErrorContext.Error.Message);
+                //TestContext.Out.WriteLine();
                 hasError = true;
             };
 
@@ -48,16 +51,16 @@ namespace AleRoe.HomematicIpApi.Tests
         public async Task GetDevicesAsyncTest_ServiceProviderIsSet()
         {
             var result = await client.GetDevicesAsync(CancellationToken.None);
-            Assert.IsTrue(result.All(x => x.Service != null));
-            Assert.IsFalse(hasError);
+            Assert.That(result.All(x => x.Service != null), Is.True);
+            Assert.That(hasError, Is.False);
         }
 
         [Test()]
         public async Task GetGroupsAsyncTest_ServiceProviderIsSet()
         {
             var result = await client.GetGroupsAsync(CancellationToken.None);
-            Assert.IsTrue(result.All(x => x.Service != null));
-            Assert.IsFalse(hasError);
+            Assert.That(result.All(x => x.Service != null), Is.True);
+            Assert.That(hasError, Is.False);
         }
 
                 
@@ -65,17 +68,16 @@ namespace AleRoe.HomematicIpApi.Tests
         public async Task GetDevicesAsyncTest()
         {
             var result = await client.GetDevicesAsync(CancellationToken.None);
-            
-            CollectionAssert.IsNotEmpty(result);
-            Assert.IsFalse(hasError);
+            Assert.That(result, Is.Not.Empty);
+            Assert.That(hasError, Is.False);
         }
 
         [Test()]
         public async Task GetGroupsAsyncTest()
         {
             var result = await client.GetGroupsAsync(CancellationToken.None);
-            CollectionAssert.IsNotEmpty(result);
-            Assert.IsFalse(hasError);
+            Assert.That(result, Is.Not.Empty);
+            Assert.That(hasError, Is.False);
         }
 
         [Test()]
@@ -83,9 +85,8 @@ namespace AleRoe.HomematicIpApi.Tests
         {
             var result = await client.GetCurrentStateAsync(CancellationToken.None);
             
-            Assert.IsNotNull(result);
-            Assert.IsFalse(hasError);
-
+            Assert.That(result, Is.Not.Null);
+            Assert.That(hasError, Is.False);
         }
 
 

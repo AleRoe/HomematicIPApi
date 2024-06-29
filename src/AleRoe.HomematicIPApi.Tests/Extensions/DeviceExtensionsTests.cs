@@ -37,8 +37,8 @@ namespace AleRoe.HomematicIpApi.Tests.Extensions
             await light.ToggleStateAsync();
             var expected = await client.GetDeviceAsync<SwitchDeviceBase>(light.Id);
 
-            Assert.AreEqual(light.Id, expected.Id);
-            Assert.AreNotEqual(light.On, expected.On);
+            Assert.That(light.Id, Is.EqualTo(expected.Id));
+            Assert.That(light.On, Is.Not.EqualTo(expected.On));
         }
     }
 }
