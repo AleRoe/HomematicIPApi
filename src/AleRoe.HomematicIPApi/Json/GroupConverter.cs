@@ -22,27 +22,16 @@ namespace AleRoe.HomematicIpApi.Json
         /// <inheritdoc/>
         public override IGroup ReadJson(JsonReader reader, Type objectType, [AllowNull] IGroup existingValue, bool hasExistingValue, JsonSerializer serializer)
         {
-            if (reader.TokenType == JsonToken.Null)
-                return null;
+            if (reader.TokenType == JsonToken.Null) return null;
 
             var jsonObject = JObject.Load(reader);
-            var groupType = jsonObject.SelectToken("type")?.ToObject<GroupType>();
-            if (groupType == null)
-                throw new InvalidOperationException($"Could not find GroupType.");
-
+            var groupType = jsonObject.SelectToken("type",true).ToObject<GroupType>(serializer);
             var type = this.GetType().Assembly.GetTypes()
                 .Where(t => typeof(IGroup).IsAssignableFrom(t) && !t.IsInterface && !t.IsAbstract)
-                .SingleOrDefault(t => t.GetCustomAttribute<GroupTypeAttribute>()?.GroupType == groupType);
+                .SingleOrDefault(t => t.GetCustomAttribute<GroupTypeAttribute>()?.GroupType == groupType)
+                ?? throw new JsonReaderException($"Could not find Group with type {groupType}");
 
-            if (type == null)
-                throw new InvalidOperationException($"Could not find Group with type {groupType}");
-
-            if (Activator.CreateInstance(type) is IGroup result)
-            {
-                serializer.Populate(jsonObject.CreateReader(), result);
-                return result;
-            }
-            throw new InvalidOperationException($"Could not create Group with type {type}");
+            return base.ReadJson(jsonObject.CreateReader(), type, existingValue, hasExistingValue, serializer);
         }
     }
 }

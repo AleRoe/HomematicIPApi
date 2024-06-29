@@ -130,5 +130,23 @@ namespace AleRoe.HomematicIpApi.Model.Groups
 
         [JsonProperty("ventilationLevel")]
         public object VentilationLevel { get; private set; }
+
+        [JsonProperty("switchClimateCoolingEnable")]
+        public bool SwitchClimateCoolingEnable { get; private set; }
+
+        [JsonProperty("switchClimateHeatingEnable")]
+        public bool SwitchClimateHeatingEnable { get; private set; }
+
+        [JsonProperty("windowOpenTemperatureCooling")]
+        public object WindowOpenTemperatureCooling { get; private set; }
+
+        [JsonProperty("controlDifferantialTemperature")]
+        public double ControlDifferantialTemperature { get; private set; }
+        
+        [JsonProperty("duration")]
+        public double Duration { get; private set; }
+
+        [JsonProperty("valveActualTemperature")]
+        public double? ValveActualTemperature { get; private set; }
     }
 }

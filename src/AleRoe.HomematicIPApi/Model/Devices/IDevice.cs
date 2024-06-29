@@ -17,17 +17,17 @@ namespace AleRoe.HomematicIpApi.Model.Devices
         DateTime LastStatusUpdate { get; }
         DeviceType Type { get; }
         FunctionalChannelCollection FunctionalChannels { get; }
-        long ManufacturerCode { get; }
+        long? ManufacturerCode { get; }
         string Oem { get; }
         ConnectionType ConnectionType { get; }
-        DeviceUpdateState UpdateState { get; }
+        DeviceUpdateState? UpdateState { get; }
         string FirmwareVersion { get; }
-        long FirmwareVersionInteger { get; }
-        LiveUpdateState LiveUpdateState { get; }
+        long? FirmwareVersionInteger { get; }
+        LiveUpdateState? LiveUpdateState { get; }
         string AvailableFirmwareVersion { get; }
         string SerializedGlobalTradeItemNumber { get; }
         string ModelType { get; }
-        long ModelId { get; }
+        long? ModelId { get; }
         bool PermanentlyReachable { get; }
 
         IHomematicRpcService Service { get; }

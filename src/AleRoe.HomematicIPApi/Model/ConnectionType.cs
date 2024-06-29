@@ -7,6 +7,7 @@ namespace AleRoe.HomematicIpApi.Model
     public enum ConnectionType
     {
         HMIP_RF,
-        HMIP_LAN
+        HMIP_LAN,
+        EXTERNAL
     }
 }

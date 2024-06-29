@@ -7,13 +7,16 @@ namespace AleRoe.HomematicIpApi.Model.Home
     public class IndoorClimate
     {
         [JsonProperty("functionalGroups")] 
-        public FunctionalGroups FunctionalGroups { get; set; }
+        public FunctionalGroups FunctionalGroups { get; private set; }
 
         [JsonProperty("absenceType")] 
-        public AbsenceType AbsenceType { get; set; }
+        public AbsenceType AbsenceType { get; private set; }
 
         [JsonProperty("absenceEndTime")] 
         public DateTime? AbsenceEndTime { get; private set; }
+
+        [JsonProperty("absenceStartTime")]
+        public DateTime? AbsenceStartTime { get; private set; }
 
         [JsonProperty("floorHeatingSpecificGroups")]
         public FloorHeatingSpecificGroups FloorHeatingSpecificGroups { get; private set; }

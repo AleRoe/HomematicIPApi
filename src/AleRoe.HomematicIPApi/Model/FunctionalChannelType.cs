@@ -48,6 +48,8 @@ namespace AleRoe.HomematicIpApi.Model
         WIRED_DIMMER_3,
         WIRED_INPUT_32,
         WIRED_SWITCH_8,
-        ACCESS_CONTROLLER_CHANNEL
+        ACCESS_CONTROLLER_CHANNEL,
+        EXTERNAL_UNIVERSAL_LIGHT_CHANNEL,
+        EXTERNAL_BASE_CHANNEL
     }
 }

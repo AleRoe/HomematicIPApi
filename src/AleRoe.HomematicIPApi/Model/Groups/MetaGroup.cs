@@ -8,20 +8,19 @@ namespace AleRoe.HomematicIpApi.Model.Groups
     public class MetaGroup : Group
     {
         [JsonProperty("groups", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Guid> Groups { get; set; }
-
-        
+        public List<Guid> Groups { get; private set; }
+                
         [JsonProperty("sabotage")]
-        public bool? Sabotage { get; set; }
+        public bool? Sabotage { get; private set; }
 
         [JsonProperty("configPending", NullValueHandling = NullValueHandling.Ignore)]
-        public bool ConfigPending { get; set; }
+        public bool? ConfigPending { get; private set; }
 
         [JsonProperty("incorrectPositioned")]
-        public bool? IncorrectPositioned { get; set; }
+        public bool? IncorrectPositioned { get; private set; }
         
         [JsonProperty("groupIcon")]
-        public object GroupIcon { get; set; }
+        public object GroupIcon { get; private set; }
 
     }
 }

@@ -10,8 +10,7 @@ namespace AleRoe.HomematicIpApi.Json
             serializer.Serialize(writer, value.ToString());
         }
 
-        public override long ReadJson(JsonReader reader, Type objectType, long existingValue, bool hasExistingValue,
-            JsonSerializer serializer)
+        public override long ReadJson(JsonReader reader, Type objectType, long existingValue, bool hasExistingValue, JsonSerializer serializer)
         {
             if (reader.TokenType == JsonToken.Null) return 0;
             var value = serializer.Deserialize<string>(reader);

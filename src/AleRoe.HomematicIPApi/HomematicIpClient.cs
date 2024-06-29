@@ -20,6 +20,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Websocket.Client;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 [assembly: InternalsVisibleTo("AleRoe.HomematicIpApi.Tests")]
 
@@ -126,12 +127,19 @@ namespace AleRoe.HomematicIpApi
             this.loggerFactory = loggerFactory ?? throw new ArgumentNullException(nameof(loggerFactory));
             this.JsonSerializerSettings = new JsonSerializerSettings 
             { 
-                ContractResolver = new CamelCasePropertyNamesContractResolver(), 
-                TraceWriter = new DiagnosticsTraceWriter(), 
+                ContractResolver = new CamelCasePropertyNamesContractResolver(),
+                TraceWriter = new LoggingTraceWriter(loggerFactory.CreateLogger<HomematicIpClient>()),
                 MissingMemberHandling = MissingMemberHandling.Error, 
                 NullValueHandling = NullValueHandling.Include,
+                Error = delegate (object sender, ErrorEventArgs args)
+                {
+                    if (args.CurrentObject == args.ErrorContext.OriginalObject)
+                    {
+                        OnSerializerError?.Invoke(this, args);
+                    }
+                    args.ErrorContext.Handled = true;
+                }
             };
-            this.JsonSerializerSettings.Error += SerializerError;
         }
 
 

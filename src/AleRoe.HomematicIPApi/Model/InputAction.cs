@@ -4,8 +4,10 @@ using Newtonsoft.Json.Converters;
 namespace AleRoe.HomematicIpApi.Model
 {
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum FirstInputAction
+    public enum InputAction
     {
+        OFF,
+        ON,
         TOGGLE
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 
 namespace AleRoe.HomematicIpApi.Model.Channels
 {
@@ -116,5 +117,20 @@ namespace AleRoe.HomematicIpApi.Model.Channels
 
         [JsonProperty("sensorCommunicationError")]
         public object SensorCommunicationError { get; private set; }
+
+        [JsonProperty("displayMountingOrientation")]
+        public object DisplayMountingOrientation { get; private set; }
+
+        [JsonProperty("displayMode")]
+        public object DisplayMode { get; private set; }
+
+        [JsonProperty("invertedDisplayColors")]
+        public object InvertedDisplayColors { get; private set; }
+
+        [JsonProperty("operationDays")]
+        public object OperationDays { get; private set; }
+
+        [JsonProperty("deviceAliveSignalEnabled")]
+        public object DeviceAliveSignalEnabled { get; private set; }
     }
 }

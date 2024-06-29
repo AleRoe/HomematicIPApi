@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Reflection;
 using AleRoe.HomematicIpApi.Model;
 using AleRoe.HomematicIpApi.Model.Devices;
@@ -22,24 +23,16 @@ namespace AleRoe.HomematicIpApi.Json
         /// <inheritdoc/>
         public override IDevice ReadJson(JsonReader reader, Type objectType, [AllowNull] IDevice existingValue, bool hasExistingValue, JsonSerializer serializer)
         {
-            var jsonObject = JObject.Load(reader);
-            var deviceType = jsonObject.SelectToken("type")?.ToObject<DeviceType>();
-            if (deviceType == null)
-                throw new InvalidOperationException($"Could not find DeviceType.");
+            if (reader.TokenType == JsonToken.Null) return null;
 
+            var jsonObject = JObject.Load(reader);
+            var deviceType = jsonObject.SelectToken("type",true).ToObject<DeviceType>(serializer);
             var type = this.GetType().Assembly.GetTypes()
                 .Where(t => typeof(IDevice).IsAssignableFrom(t) && !t.IsInterface && !t.IsAbstract)
-                .SingleOrDefault(t => t.GetCustomAttribute<DeviceTypeAttribute>()?.DeviceType == deviceType);
-
-            if (type == null)
-                throw new InvalidOperationException($"Could not find Device with type {deviceType}.");
-
-            if (Activator.CreateInstance(type) is IDevice result)
-            {
-                serializer.Populate(jsonObject.CreateReader(), result);
-                return result;
-            }
-            throw new InvalidOperationException($"Could not create Device with type {type}");
+                .SingleOrDefault(t => t.GetCustomAttribute<DeviceTypeAttribute>()?.DeviceType == deviceType) 
+                ?? throw new JsonReaderException($"Could not find Device with type {deviceType}.");
+            
+            return base.ReadJson(jsonObject.CreateReader(), type, existingValue, hasExistingValue, serializer);
         }
     }
 }

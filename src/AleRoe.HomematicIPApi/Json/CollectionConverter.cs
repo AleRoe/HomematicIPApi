@@ -8,7 +8,12 @@ using System.Linq;
 
 namespace AleRoe.HomematicIpApi.Json
 {
-    public class CollectionConverter<TCollection, TItem> : JsonConverter<TCollection> where TCollection : IModelCollection<TItem>, new()
+    /// <summary>
+    /// A <see cref="JsonConverter{TCollection}"/> class used to deserialize collection definitions.
+    /// </summary>
+    /// <typeparam name="TCollection"> The type of collection to deserialize.</typeparam>
+    /// <typeparam name="TItem">The type of collection item.</typeparam>
+    internal class CollectionConverter<TCollection, TItem> : JsonConverter<TCollection> where TCollection : IModelCollection<TItem>, new()
     {
         public override TCollection ReadJson(JsonReader reader, Type objectType, [AllowNull] TCollection existingValue, bool hasExistingValue, JsonSerializer serializer)
         {
@@ -22,10 +27,8 @@ namespace AleRoe.HomematicIpApi.Json
                 }
                 catch (Exception e)
                 {
-                    var errorMessage = e.InnerException?.Message ?? e.Message;
-                    serializer.TraceWriter?.Trace(TraceLevel.Error,
-                        $"Error deserializing collection item {typeof(TItem).Name}. \r{errorMessage}\rItem will be skipped.",
-                        e);
+                    var message = $"Error deserializing {typeof(TCollection).FullName}. {e.InnerException?.Message ?? e.Message} - Item will be skipped.";
+                    serializer.TraceWriter?.Trace(TraceLevel.Error, message, e);
                 }
 
             return result;

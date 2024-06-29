@@ -258,6 +258,38 @@ namespace AleRoe.HomematicIpApi.Model
         //[OptionalFeatureProperty(nameof(SwitchingGroup.SaturationLevel))]
         public bool? IOptionalFeatureMotionSensorZoneSensitivity { get; private set; }
 
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        //[OptionalFeatureProperty(nameof(SwitchingGroup.SaturationLevel))]
+        public bool? IOptionalFeatureSwitchClimateHeatingCoolingEnabled { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        //[OptionalFeatureProperty(nameof(SwitchingGroup.SaturationLevel))]
+        public bool? IOptionalFeatureWindowOpenTemperatureCooling { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IOptionalFeatureInvertedDisplayColors { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IOptionalFeatureOperationDays { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IOptionalFeatureDisplayMode { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IOptionalFeatureDeviceAliveSignalEnabled { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IOptionalFeatureDimmerMode { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IOptionalFeatureLedDimmingRange { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IOptionalFeatureOnMinLevel { get; private set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IOptionalFeatureControlsMountingOrientation { get; private set; }
+
 
     }
 }

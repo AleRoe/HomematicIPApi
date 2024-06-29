@@ -34,5 +34,22 @@ namespace AleRoe.HomematicIpApi.Model.Channels
         [DefaultValue(null)]
         public bool? DeviceOverheated { get; private set; }
 
+        [JsonProperty("channelRole")]
+        public ChannelRole? ChannelRole { get; private set; }
+
+        [JsonProperty("onMinLevel")]
+        public double OnMinLevel { get; private set; }
+
+        [JsonProperty("dimmingMode")]
+        public DimmingMode DimmingMode { get; private set; }
+
+        [JsonProperty("dimLevelLowest")]
+        public double DimLevelLowest { get; private set; }
+
+        [JsonProperty("dimLevelHighest")]
+        public double DimLevelHighest { get; private set; }
+
+        [JsonProperty("internalLinkConfiguration")]
+        public InternalLinkConfiguration InternalLinkConfiguration { get; private set; }
     }
 }

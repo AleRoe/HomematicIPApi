@@ -133,5 +133,11 @@ namespace AleRoe.HomematicIpApi.Model.Home
         [JsonProperty("measuringBaseURL")]
         public string MeasuringBaseURL { get; private set; }
 
+        [JsonProperty("pluginInformationMap")]
+        public object PluginInformationMap { get; private set; }
+
+        [JsonProperty("homeExtension")]
+        public object HomeExtension { get; private set; }
+
     }
 }

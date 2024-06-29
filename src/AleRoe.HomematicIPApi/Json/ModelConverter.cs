@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using System;
 using System.Diagnostics.CodeAnalysis;
 
 namespace AleRoe.HomematicIpApi.Json
@@ -13,6 +14,17 @@ namespace AleRoe.HomematicIpApi.Json
     internal abstract class ModelConverter<T> : JsonConverter<T>
     {
         /// <inheritdoc/>
+        public override T ReadJson(JsonReader reader, Type objectType, [AllowNull] T existingValue, bool hasExistingValue, JsonSerializer serializer)
+        {
+            if (Activator.CreateInstance(objectType) is T result)
+            {
+                serializer.Populate(reader, result);
+                return result;
+            }
+            throw new JsonReaderException($"Could not create object of type {objectType}");
+        }
+
+        /// <inheritdoc/>
         public override void WriteJson(JsonWriter writer, [AllowNull] T value, JsonSerializer serializer)
         {
             var contract = (JsonObjectContract)serializer.ContractResolver.ResolveContract(value.GetType());
@@ -25,10 +37,7 @@ namespace AleRoe.HomematicIpApi.Json
                 var propertyName = property.PropertyName;
                 var propertyValue = property.ValueProvider.GetValue(value) ?? property.DefaultValue;
 
-                var nullValueHandling = property.NullValueHandling == NullValueHandling.Ignore ||
-                                        serializer.NullValueHandling == NullValueHandling.Ignore;
-
-                if (propertyValue == null & nullValueHandling & property.NullValueHandling != NullValueHandling.Include)
+                if (propertyValue == null & (property.NullValueHandling == NullValueHandling.Ignore || serializer.NullValueHandling == NullValueHandling.Ignore))
                 {
                     continue;
                 }

@@ -24,38 +24,38 @@ namespace AleRoe.HomematicIpApi.Model.Devices
         [JsonProperty("type")] 
         public DeviceType Type { get; private set; }
 
-        [JsonProperty("updateState")]
-        public DeviceUpdateState UpdateState { get; private set; } = DeviceUpdateState.UP_TO_DATE;
+        [JsonProperty("updateState", NullValueHandling = NullValueHandling.Ignore)]
+        public DeviceUpdateState? UpdateState { get; private set; } 
 
         [JsonProperty("firmwareVersion")] 
         public string FirmwareVersion { get; private set; }
 
-        [JsonProperty("firmwareVersionInteger")]
-        public long FirmwareVersionInteger { get; private set; }
+        [JsonProperty("firmwareVersionInteger", NullValueHandling = NullValueHandling.Ignore)]
+        public long? FirmwareVersionInteger { get; private set; }
 
-        [JsonProperty("availableFirmwareVersion")]
+        [JsonProperty("availableFirmwareVersion", NullValueHandling = NullValueHandling.Ignore)]
         public string AvailableFirmwareVersion { get; private set; }
 
         [JsonProperty("modelType")] 
         public string ModelType { get; private set; }
 
-        [JsonProperty("modelId")] 
-        public long ModelId { get; private set; }
+        [JsonProperty("modelId", NullValueHandling = NullValueHandling.Ignore)] 
+        public long? ModelId { get; private set; }
 
-        [JsonProperty("oem")] 
+        [JsonProperty("oem", NullValueHandling = NullValueHandling.Ignore)] 
         public string Oem { get; private set; }
 
-        [JsonProperty("manufacturerCode")] 
-        public long ManufacturerCode { get; private set; }
+        [JsonProperty("manufacturerCode", NullValueHandling = NullValueHandling.Ignore)] 
+        public long? ManufacturerCode { get; private set; }
 
-        [JsonProperty("serializedGlobalTradeItemNumber")]
+        [JsonProperty("serializedGlobalTradeItemNumber", NullValueHandling = NullValueHandling.Ignore)]
         public string SerializedGlobalTradeItemNumber { get; private set; }
 
         [JsonProperty("permanentlyReachable")] 
         public bool PermanentlyReachable { get; private set; }
 
-        [JsonProperty("liveUpdateState")] 
-        public LiveUpdateState LiveUpdateState { get; private set; }
+        [JsonProperty("liveUpdateState", NullValueHandling = NullValueHandling.Ignore)] 
+        public LiveUpdateState? LiveUpdateState { get; private set; }
 
         [JsonProperty("functionalChannels")] 
         public FunctionalChannelCollection FunctionalChannels { get; private set; }
@@ -66,10 +66,10 @@ namespace AleRoe.HomematicIpApi.Model.Devices
         [JsonProperty("deviceArchetype")]
         public DeviceArchetype DeviceArchetype { get; private set; }
 
-        [JsonProperty("manuallyUpdateForced")]
-        public bool ManuallyUpdateForced { get; private set; }
+        [JsonProperty("manuallyUpdateForced", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ManuallyUpdateForced { get; private set; }
 
-        [JsonProperty("measuredAttributes")]
+        [JsonProperty("measuredAttributes", NullValueHandling = NullValueHandling.Ignore)]
         public object MeasuredAttributes { get; private set; }
 
         [JsonIgnore] 

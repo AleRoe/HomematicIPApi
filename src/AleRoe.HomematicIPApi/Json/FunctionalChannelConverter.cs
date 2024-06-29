@@ -14,26 +14,16 @@ namespace AleRoe.HomematicIpApi.Json
     {
         public override IFunctionalChannel ReadJson(JsonReader reader, Type objectType, [AllowNull] IFunctionalChannel existingValue, bool hasExistingValue, JsonSerializer serializer)
         {
-            if (reader.TokenType == JsonToken.Null)
-                return null;
+            if (reader.TokenType == JsonToken.Null) return null;
 
             var jsonObject = JObject.Load(reader);
-            var channelType = jsonObject.SelectToken("functionalChannelType")?.ToObject<FunctionalChannelType>();
-            if (channelType == null)
-                throw new InvalidOperationException($"Could not find FunctionalChannelType.");
-
+            var channelType = jsonObject.SelectToken("functionalChannelType", true).ToObject<FunctionalChannelType>(serializer);
             var type = this.GetType().Assembly.GetTypesWithInterface<IFunctionalChannel>()
-                  .SingleOrDefault(t => t.GetCustomAttribute<FunctionalChannelTypeAttribute>()?.FunctionalChannelType == channelType);
-
-            if (type == null)
-                throw new InvalidOperationException($"Could not find Channel with type {channelType}");
-
-            if (Activator.CreateInstance(type) is IFunctionalChannel result)
-            {
-                serializer.Populate(jsonObject.CreateReader(), result);
-                return result;
-            }
-            throw new InvalidOperationException($"Could not create Channel with type {type}");
+                  .SingleOrDefault(t => t.GetCustomAttribute<FunctionalChannelTypeAttribute>()?.FunctionalChannelType == channelType)
+                  ?? throw new JsonReaderException($"Could not find Channel with type {channelType}");
+            
+            return base.ReadJson(jsonObject.CreateReader(), type, existingValue, hasExistingValue, serializer);
+            
         }
     }
 }

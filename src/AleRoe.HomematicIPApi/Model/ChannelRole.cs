@@ -10,6 +10,9 @@ namespace AleRoe.HomematicIpApi.Model
         WINDOW_SENSOR,
         MOTION_SENSOR,
         SWITCH_ACTUATOR_WITH_MEASURING,
-        SWITCH_ACTUATOR
+        SWITCH_ACTUATOR,
+        DIMMING_ACTUATOR,
+        DOUBLE_INPUT_DIMMER,
+        UNIVERSAL_LIGHT_ACTUATOR
     }
 }

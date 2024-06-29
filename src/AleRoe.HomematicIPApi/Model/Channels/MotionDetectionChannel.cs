@@ -12,7 +12,7 @@ namespace AleRoe.HomematicIpApi.Model.Channels
         public bool? MotionDetected { get; private set; }
 
         [JsonProperty("motionDetectionActive")]
-        public bool motionDetectionActive { get; private set; }
+        public bool? motionDetectionActive { get; private set; }
 
         [JsonProperty("illumination")]
         public double? Illumination { get; private set; }
